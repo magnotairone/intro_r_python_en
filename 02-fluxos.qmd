@@ -1,0 +1,378 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Fluxos de execução
+
+## Estruturas condicionais
+
+O fluxo de código em R pode ser controlado por meio de estruturas condicionais, como o `if`, `else if` e `else`. Essas estruturas permitem que você execute diferentes blocos de código com base em condições específicas.
+
+### `if` e `else`
+
+O `if` é uma estrutura de controle de fluxo que executa um bloco de código se uma condição especificada for verdadeira. Se a condição for falsa, o bloco de código dentro do if não será executado. Por outro lado, o `else` é usado para executar um bloco de código quando a condição do if for falsa.
+
+A sintaxe básica do `if` e `else` em R é a seguinte:
+
+```{r eval=FALSE}
+if (condição) {
+  # Bloco de código a ser executado se a condição for verdadeira
+} else {
+  # Bloco de código a ser executado se a condição for falsa
+}
+```
+
+Aqui está um exemplo prático de como usar o `if` e `else` para verificar se um número inteiro escolhido aleatóriamente entre -10 e 10 é positivo ou negativo:
+
+```{r}
+# Definindo a semente para garantir reprodutibilidade
+set.seed(42)
+
+# Gerando um número aleatório entre -10 e 10
+numero <- sample(-10:10, 1)
+
+if (numero > 0) {
+  print("O número é positivo.")
+} else {
+  print("O número é negativo ou zero.")
+}
+```
+
+Neste exemplo, `sample(-10:10, 1)` gera um número aleatório entre -10 e 10, e o valor é atribuído à variável numero. Além disso, `set.seed(123)` define a semente como 123. Isso garante que, ao gerar o número aleatório com `sample()`, o mesmo número seja escolhido sempre que o código for executado. Em seguida, verificamos se o número é positivo ou não e imprimimos a mensagem correspondente.
+
+### `else if`
+
+Além do `if` e `else`, também podemos usar o `else if` para adicionar mais condições à estrutura condicional. O `else if` permite verificar múltiplas condições em sequência. Se a condição do `if` for falsa, ele verifica a próxima condição do `else if`. Se todas as condições do `if` e `else if` forem falsas, o bloco de código dentro do `else` é executado.
+
+Aqui está a sintaxe do else if:
+
+```{r eval=FALSE}
+if (condição1) {
+  # Bloco de código a ser executado se a condição1 for verdadeira
+} else if (condição2) {
+  # Bloco de código a ser executado se a condição2 for verdadeira
+} else {
+  # Bloco de código a ser executado se nenhuma das condições anteriores for verdadeira
+}
+```
+
+Veja um exemplo prático de como usar o if, else if e else para avaliar o desempenho de uma empresa com base em sua receita anual:
+
+```{r}
+# Determina a classificação da empresa com base na receita anual
+receita_anual <- 1500000
+
+if (receita_anual >= 2000000) {
+  print("Empresa de Grande Porte")
+} else if (receita_anual >= 1000000) {
+  print("Empresa de Médio Porte")
+} else if (receita_anual >= 500000) {
+  print("Empresa de Pequeno Porte")
+} else {
+  print("Microempresa")
+}
+```
+
+Neste exemplo, a empresa é classificada com base em sua receita anual. Se a receita for igual ou superior a 2.000.000, a empresa será classificada como "Empresa de Grande Porte". Se estiver entre 1.000.000 e 1.999.999, será classificada como "Empresa de Médio Porte". Se estiver entre 500.000 e 999.999, será classificada como "Empresa de Pequeno Porte". Caso contrário, será considerada uma "Microempresa".
+
+## Estruturas de repetição
+
+As estruturas de repetição, também conhecidas como loops, são utilizadas para executar um bloco de código repetidamente enquanto uma condição específica for verdadeira ou para percorrer uma sequência de elementos. Isso é útil quando você precisa executar uma tarefa várias vezes ou quando deseja iterar sobre uma coleção de dados.
+
+### `for` {#sec-fluxos-for}
+
+Uma das estruturas de repetição mais comuns é o loop `for.` O loop for é usado para iterar sobre uma sequência de valores, como uma sequência numérica de números inteiros ou os elementos de um vetor.
+
+Existem duas maneiras de se usar o `for` loop.
+
+-   Usando for para iterar sobre índices:
+
+```{r}
+# Exemplo de loop for para iterar sobre índices
+for (i in 1:5) {
+  print(i)
+}
+```
+
+Neste exemplo, o loop `for` itera sobre os valores de 1 a 5. Na primeira iteração, `i` é igual a 1; na segunda iteração, `i` é igual a 2; e assim por diante, até que `i` seja igual a 5.
+
+-   Usando for para iterar sobre elementos:
+
+```{r}
+# Exemplo de loop for para iterar sobre elementos de um vetor
+clientes <- c("João", "Maria", "José", "Ana")
+for (nome in clientes) {
+  print(nome)
+}
+
+```
+
+Neste exemplo acima, o loop for itera sobre os elementos do vetor `clientes`. Na primeira iteração, nome é igual a "João"; na segunda iteração, `nome` é igual a "Maria"; e assim por diante, até que todos os elementos do vetor sejam percorridos.
+
+Em ambos os exemplos, o bloco de código dentro do loop `for` é executado repetidamente para cada valor de `i` (no primeiro exemplo) ou `nome` (no segundo exemplo) até que a sequência seja completamente percorrida.
+
+No exemplo abaixo, vamos simular dados econômicos para 10 países fictícios e calcular o PIB per capita de cada país.
+
+```{r}
+set.seed(42)
+pib_paises <- runif(10, min = 25000000, max = 40000000)
+populacao_paises <- runif(10, min = 1000000, max = 15000000)
+
+pib_per_capita <- numeric(length = 10)
+
+# Loop for para calcular o PIB per capita para cada pais
+for (i in 1:10) {
+  # Calculando o PIB per capita
+  pib_per_capita[i] <- pib_paises[i] / populacao_paises[i]
+}
+print(round(pib_per_capita, 3))
+```
+
+::: {.callout-tip collapse="true" title="Clique e veja um exemplo extra"}
+Imagine que temos uma série temporal representando o preço de fechamento diário de uma ação ao longo de um período de 30 dias. Queremos calcular a média móvel de 5 dias desse preço, ou seja, para cada dia, queremos calcular a média dos preços de fechamento dos cinco dias anteriores, incluindo o dia atual.
+
+Primeiro, vamos simular os dados do preço de fechamento diário da ação:
+
+```{r}
+set.seed(42)
+preco_acao <- runif(30, min = 9, max = 15)
+```
+
+Agora, vamos calcular a média móvel de 5 dias usando um loop `for`:
+
+```{r}
+media_movel <- numeric(length = 26)  # Vetor para armazenar a média móvel
+
+for (i in 5:30) {
+  media_movel[i - 4] <- mean(preco_acao[(i - 4):i])
+}
+```
+
+Neste loop for, começamos a partir do quinto dia, pois precisamos de pelo menos cinco dias para calcular a média móvel de 5 dias. Para cada dia a partir do quinto dia até o trigésimo dia, calculamos a média dos preços de fechamento dos cinco dias anteriores, incluindo o dia atual, e armazenamos esse valor no vetor media_movel.
+
+Agora, podemos imprimir a média móvel calculada:
+
+```{r}
+print(media_movel)
+```
+
+Este exemplo demonstra como usar um loop for em conjunto com vetores para calcular a média móvel de uma série temporal. O gráfico abaixo mostra a média móvel ao longo dos dias.
+
+```{r echo=FALSE}
+ggplot2::ggplot(tidyr::tibble(t=5:30, mm=media_movel), ggplot2::aes(t, mm)) +
+  ggplot2::geom_line(linewidth=2) +
+  ggplot2::scale_x_continuous(breaks=seq(5,30,5))+
+  ggplot2::labs(x="Dia", y="Média móvel", title="Média Móvel do Preço de Fechamento")+
+  ggplot2::ylim(10,15)+
+  ggplot2::theme_bw()
+```
+
+::: callout-note
+Você vai aprender a construir gráficos como este no [Capítulo 4](04-visualizacao.qmd).
+:::
+:::
+
+### `while`
+
+A estrutura `while` é usada para repetir um bloco de código enquanto uma condição especificada for verdadeira. Aqui está a estrutura geral de um loop while:
+
+```{r eval=FALSE}
+while (condição) {
+  # Código a ser repetido enquanto a condição for verdadeira
+}
+```
+
+A condição é uma expressão lógica que é avaliada antes de cada execução do bloco de código dentro do loop. Se a condição for verdadeira, o bloco de código é executado; se a condição for falsa, o loop é interrompido e o controle é passado para a próxima linha de código após o loop.
+
+No exemplo abaixo, vamos definir um vetor chamado `acoes`, que contém uma lista de atividades possíveis que uma pessoa pode realizar durante o dia. Dentre as ações possíveis, uma será escolhida aleatoriamente.
+
+```{r}
+acoes <- c( "Aprender a programar em R",
+        "Aprender a programar em Python",
+        "Fazer um café",
+        "Descansar")
+
+set.seed(42)
+acao <- sample(acoes, 1)
+print(acao)
+```
+
+No trecho de código a seguir, usamos a estrutura `while` para continuar selecionando aleatoriamente uma atividade do vetor `acoes` até que a atividade selecionada seja "Descansar". O loop começa verificando se a variável `acao` é diferente de "Descansar". Se essa condição for verdadeira, uma nova atividade é selecionada aleatoriamente do vetor acoes usando a função `sample()` com `size = 1`, o que significa que estamos selecionando apenas um elemento aleatório do vetor. Em seguida, a atividade selecionada é impressa na tela usando a função `print()`. Esse processo se repete até que a atividade selecionada seja "Descansar", momento em que o loop é encerrado.
+
+```{r}
+set.seed(420)
+while(acao != "Descansar") {
+  acao <- sample(acoes, 1)
+  print(acao)
+}
+```
+
+::: {.callout-tip collapse="true" title="Clique e veja um exemplo extra"}
+Vamos considerar um exemplo onde queremos simular a evolução de uma população ao longo do tempo, onde não sabemos exatamente quantos períodos serão necessários para que a população atinja um determinado limite. Neste caso, usaremos um loop `while` para continuar simulando o crescimento populacional até que a população alcance um certo valor limite.
+
+```{r}
+set.seed(42)  # Define uma semente para a replicabilidade dos resultados
+
+# População inicial
+populacao <- 1000
+
+# Taxa de crescimento anual da população (em decimal)
+taxa_crescimento <- 0.02
+
+# População limite desejada
+limite_populacional <- 2000
+
+# Inicializando o contador de anos
+anos <- 0
+
+# Simulando o crescimento populacional até atingir o limite
+while (populacao < limite_populacional) {
+  # Calculando o número de novos indivíduos neste ano
+  novos_individuos <- populacao * taxa_crescimento
+  
+  # Incrementando a população com os novos indivíduos
+  populacao <- populacao + novos_individuos
+  
+  # Incrementando o contador de anos
+  anos <- anos + 1
+}
+
+# Imprimindo o número de anos necessários para atingir o limite populacional
+print(paste("Foram necessários", anos, "anos para atingir uma população de", populacao))
+
+```
+
+::: callout-note
+É possível calcular diretamente o número de anos necessários para atingir a população limite desejada. Com um pouco de álgebra você chege na seguinte fórmula para calcular o número de anos: $$\text{anos} = \frac{\log\left(\frac{\text{limite\_populacional}}{\text{populacao\_inicial}}\right)}{\log(1 + \text{taxa\_crescimento})}.$$
+:::
+:::
+
+## Funções {#sec-fluxos-funcoes}
+
+Uma função em R é um bloco de código que realiza uma tarefa específica e pode ser reutilizado várias vezes. A sintaxe para definir uma função em R segue o padrão:
+
+```{r eval=FALSE}
+nome_da_funcao <- function(parametros) {
+  # Corpo da função
+  # Código que realiza a tarefa desejada
+  # Pode incluir operações matemáticas, manipulação de dados, etc.
+  return(resultado)  # Retorna o resultado desejado
+}
+```
+
+Os parâmetros são variáveis que uma função recebe como entrada para executar suas operações. Eles são especificados entre parênteses na definição da função. Dentro do corpo da função, os parâmetros podem ser utilizados para realizar cálculos ou operações.
+
+O exemplo abaixo define uma função para realizar uma regressão linear simples. A função `regressao_linear` recebe dois parâmetros: `x` e `y`, que representam os dados de entrada para a regressão linear. Dentro da função, um modelo de regressão linear é criado usando a função `lm()` do R com os dados `y` em função de `x`. A documentação da função `lm()` pode ser acessada ao executar o comando `?lm`. O modelo resultante é retornado como resultado da função.
+
+```{r}
+# Função para realizar regressão linear simples
+regressao_linear <- function(x, y) {
+  modelo <- lm(y ~ x)  # Criando o modelo de regressão linear
+  return(modelo)  # Retornando o modelo
+}
+
+# Dados de exemplo: salário (y) em função dos anos de educação (x)
+anos_educacao <- c(10, 12, 14, 16, 18)
+salario <- c(2500, 3300, 3550, 3700, 4500)
+
+# Chamando a função de regressão linear
+modelo_regressao <- regressao_linear(anos_educacao, salario)
+```
+
+Veja o sumário com o resultado do modelo treinado.
+
+```{r}
+# Exibindo os resultados da regressão
+summary(modelo_regressao)
+```
+
+A figura abaixo mostra um gráfico de dispersão que representa a relação entre anos de educação e salário. A reta azul mostra o modelo de regressão linear treinado com os dados.
+
+```{r echo=FALSE}
+coefs = data.frame(intercept=coef(modelo_regressao)[1],
+                   slope=coef(modelo_regressao)[2],
+                   class = "coef")
+
+ggplot2::ggplot(tidyr::tibble(anos_educacao = anos_educacao,
+       salario = salario),
+       ggplot2::aes(anos_educacao, salario))+
+  ggplot2::geom_point() +
+  ggplot2::geom_abline(data=coefs,
+              ggplot2::aes(intercept=intercept,slope=slope,color=class),
+              show.legend = TRUE)+
+  ggplot2::scale_color_manual(breaks=c("coef"), 
+                              values="blue", labels=c("Modelo linear"))+
+  ggplot2::labs(x="Anos de educação", y="Salário", title="Relação entre escolaridade e salário",color="")+
+  ggplot2::theme_bw()+
+  ggplot2::theme(legend.position = "bottom")
+```
+
+::: callout-note
+Você vai aprender a construir gráficos como este no [Capítulo 4](04-visualizacao.qmd).
+:::
+
+## Pacotes {#sec-pacotes}
+
+Os pacotes no R são conjuntos de funções, conjuntos de dados e documentação que ampliam as capacidades básicas da linguagem R. Eles são essenciais para expandir a funcionalidade do R, permitindo que os usuários realizem uma ampla variedade de tarefas.
+
+Os pacotes do R estão disponíveis no CRAN (Comprehensive R Archive Network), um repositório centralizado que abriga uma vasta coleção de pacotes, manuais, documentações e outros recursos relacionados ao R. O CRAN é essencialmente o principal hub para distribuição de pacotes R e serve como uma fonte confiável e abrangente de ferramentas para análise de dados, estatísticas e muito mais. Para acessar os pacotes do CRAN, você pode usar a função `install.packages()`. Por exemplo:
+
+```{r eval=FALSE}
+install.packages("nome_do_pacote")
+```
+
+Depois de instalar um pacote, você precisa carregá-lo em sua sessão R usando a função `library()`:
+
+```{r eval=FALSE}
+library(nome_do_pacote)
+```
+
+Isso tornará as funções e conjuntos de dados do pacote disponíveis para uso em sua sessão atual.
+
+## Exercícios
+
+**1.** Neste exercício, vamos simular o lançamento de uma moeda e armazenar os resultados como um fator contendo os níveis "cara" e "coroa". Para isso, siga os passos abaixo:
+
+**a)** Utilize o comando abaixo para gerar amostras aleatórias seguindo a distribuição binomial para simular o lançamento de 100 moedas:
+
+```{r}
+set.seed(42)
+lancamentos <- rbinom(100, 1, 0.5)
+```
+
+**b)** Considere que 0 represente "cara" e 1 represente "coroa". Crie uma variável para armazenar os lançamentos como um fator contendo os níveis "cara" e "coroa".
+
+**c)** Conte quantas vezes cada um dos resultados ocorreu neste experimento.
+
+**d)** Utilize um loop para percorrer o vetor de traz para frente e descubra qual foi o último lançamento que resultado em uma "cara".
+
+**2.** Trabalhando com dados de pacotes.
+
+**a)** Instale o pacote `nycflights13` utilizando o comando abaixo:
+
+```{r eval=FALSE}
+install.packages("nycflights13")
+```
+
+**b)** Carregue no seu ambiente o pacote instalado:
+
+```{r eval=FALSE}
+library(nycflights13)
+```
+
+**c)** Utilizando os comandos abaixo, verifique o conteúdo dos dataframes `flights` e `airports`:
+
+```{r eval=FALSE}
+?flights
+?airports
+```
+
+**d)** Filtre os voos que aconteceram em 25/01/2013 e armazene-os na variável natal;
+
+**e)** Quantos voos partiram de Nova Iorque em 25/12/2013?
+
+**f)** Obtenha um sumário da coluna dep_delay. Há dados faltantes? Se sim, remova-os.
+
+**g)** Obtenha o nome do aeroporto de destino do voo com maior atraso de partida em 25/12/2013. Dica: mescle os dados de `flights` e `airports`.

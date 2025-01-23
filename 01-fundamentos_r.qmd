@@ -1,0 +1,581 @@
+---
+editor: 
+  markdown: 
+    wrap: sentence
+editor_options: 
+  chunk_output_type: console
+---
+
+# Fundamentos de R
+
+## RStudio
+
+Para instalação, faça o download do R em <http://www.r-project.org>.
+Em seguida, instale a IDE (Integrated Development Environment) [R Studio](http://www.rstudio.org).
+
+Ao abrir o RStudio, clique no menu *File*/ *New File*/ *R Script* (ou Ctrl+Shift+N).
+Você deve ver uma estrutura como a mostrada na figura abaixo.
+
+![Interface do Rstudio](img/rstudio.png)
+
+Note que são quatro paineis:
+
+-   *Painel de Scripts* (superior esquerdo): este painel é onde você pode escrever, editar e executar scripts R.
+    Ele fornece recursos como destaque de sintaxe, autocompletar e verificação de código para ajudar na escrita de código.
+
+-   *Painel de Console* (inferior esquerdo):o console é onde o código R é executado e os resultados são exibidos.
+    Você pode inserir comandos diretamente aqui e ver imediatamente os resultados.
+    Ele também mantém um histórico de comandos executados, o que pode ser útil para referência futura.
+
+-   *Ambiente/Workspace* (superior direito): este painel exibe informações sobre os objetos (como variáveis, funções, etc.) atualmente carregados na memória do R.
+    Ele mostra detalhes como o nome do objeto, tipo de objeto e seu valor atual.
+    Isso é útil para monitorar e gerenciar objetos durante uma sessão de trabalho.
+
+-   *Arquivos/Plots/Pacotes/Ajuda* (inferior direito): um painel com diversas funcionalidades.
+
+    -   Arquivos: Esta guia permite navegar e gerenciar os arquivos do seu projeto.
+        Você pode criar, renomear, excluir e organizar arquivos e pastas diretamente dentro do RStudio.
+
+    -   Gráficos (Plots): Aqui são exibidos os gráficos gerados pelo R.
+        Quando você cria um gráfico usando funções de visualização em R, o resultado é exibido nesta guia.
+        Isso facilita a análise visual dos seus dados e a inspeção dos gráficos durante o processo de criação.
+
+    -   Pacotes: Nesta guia, você pode visualizar e gerenciar os pacotes instalados no seu ambiente R.
+        Ela exibe uma lista de todos os pacotes instalados, juntamente com sua versão e status (carregado ou não).
+        Além disso, você pode instalar novos pacotes, atualizar pacotes existentes e carregar ou descarregar pacotes conforme necessário para o seu trabalho.
+
+    -   Ajuda (Help): Esta guia fornece acesso rápido à documentação e às informações de ajuda sobre funções, pacotes e outros recursos do R.
+        Você pode pesquisar por tópicos específicos e acessar a documentação oficial diretamente no RStudio.
+        Isso é útil para obter informações sobre a sintaxe de uma função, exemplos de uso e detalhes sobre os parâmetros disponíveis.
+
+## Tipos de dados {#sec-tipodedados}
+
+Sempre que estiver aprendendo uma nova linguagem, procure primeiro saber quais são os tipos de dados básicos que podem ser representandos nessa linguagem.
+
+Em R, são quatro os tipos básicos de dados disponíveis: numéricos, lógicos, caracteres e fatores.
+
+### O tipo de dado numérico {#sec-tipodedados-num}
+
+Os dados *numéricos* (numeric) são usados para expressar valores quantitativos, como preços, taxas e quantidades, sendo representados por números inteiros ou decimais.
+
+```{r}
+# Número inteiro representando quantidade de acoes em uma carteira
+qtd_acoes <- 100
+
+# Número de ponto flutuante representando a taxa de inflação
+taxa_inflacao <- 3.5
+
+# Verificando a classe de taxa_inflacao
+class(taxa_inflacao)
+```
+
+A função `class()` é usada para determinar a classe de uma variável.
+Em outras palavras, ela fornece informações sobre o tipo de dado que uma variável representa.
+Nesse caso acima, a variável `taxa_inflacao` é da classe `numeric`.
+
+### O tipo de dado lógico
+
+Os dados *lógicos* (logical) são empregados para representar estados ou condições, como verdadeiro ou falso, sendo úteis em operações de lógica e comparação.
+
+```{r}
+# Verificando se a taxa de juros está aumentando
+taxa_juros_aumentando <- TRUE
+
+# Verificando se o preço das ações está caindo
+queda_preco_acoes <- FALSE
+
+# Verificando a classe de queda_preco_acoes
+class(queda_preco_acoes)
+```
+
+### O tipo de dado caractere
+
+Já os dados do tipo *caractere* (character) são utilizados para representar texto, como nomes de países, empresas ou categorias, sendo essenciais em análises descritivas e comunicação de resultados.
+
+```{r}
+# Nome de um país
+pais <- "Brasil"
+
+# Nome de uma empresa multinacional
+empresa <- "Petróleo Brasileiro S.A."
+
+# Verificando a classe de pais
+class(pais)
+```
+
+### O tipo de dado fator
+
+Os *fatores* (factor) são empregados para representar variáveis categóricas, como classificações, categorias ou grupos, uma forma eficiente de lidar com dados discretos e qualitativos.
+
+```{r}
+# Classificação do risco de crédito de uma empresa
+risco_credito <- factor(c("Baixo", "Médio", "Alto", "Baixo", "Alto"))
+
+# Verificando a classe de risco_credito
+class(risco_credito)
+```
+
+A função `levels()` retorna os níveis (ou categorias) de um fator.
+Isso é útil para entender quais são as categorias representadas pelo fator e para realizar operações de manipulação de dados com base nessas categorias.
+
+```{r}
+# Exibindo os níveis de risco de crédito
+levels(risco_credito)
+```
+
+## Fundamentos da linguagem
+
+O ambiente R refere-se ao espaço de trabalho onde todas as variáveis, funções e objetos criados durante uma sessão R são armazenados e manipulados.
+O ambiente inclui tanto os objetos que você criou quanto os que são carregados automaticamente por meio de pacotes ou outros mecanismos de importação de dados (mais sobre pacotes na @sec-pacotes).
+
+Por exemplo, ao usar a função ls() (que lista os nomes dos objetos no ambiente atual), podemos ver todos os objetos atualmente presentes no ambiente R.
+
+<!-- TODO: tem uma variavel sobrando: hasanotations -->
+
+```{r eval=FALSE}
+ls()
+```
+
+Se você executou corretamente todos os comandos da Seção [@sec-tipodedados], deve obter como resultado no console o seguinte:
+
+`[1] "empresa"               "pais"                  "qtd_acoes"`\
+`[4] "queda_preco_acoes"     "taxa_inflacao"         "taxa_juros_aumentando"`
+
+usando R como calculadora numeros especiais
+
+## Variáveis
+
+Na [@sec-tipodedados] algumas variáveis foram criadas.
+Por exemplo a variável `empresa` que armazena uma cadeia de caracteres.
+Você viu, anteriormente a maneira de listar todas as variáveis definidas no seu ambiente.
+Mas, afinal, o que são variáveis?
+
+No R, variáveis são elementos fundamentais usados para armazenar e manipular dados.
+Elas são como recipientes que guardam valores, objetos ou expressões.
+Quando você atribui um valor a uma variável, está basicamente dando um nome a esse valor para poder acessá-lo e manipulá-lo posteriormente.
+
+Por exemplo, ao escrever `preco_acao <- 10`, você está criando uma variável chamada `preco_acao` e atribuindo a ela o valor 10.
+Agora, sempre que você usar `preco_acao` em seu código, estará se referindo a esse valor.
+
+Uma prática comum escolher nomes descritivos para variáveis que ajudem a entender seu propósito ou conteúdo.
+Por exemplo, em um contexto econômico, você pode usar `preco_acao` para representar o preço de uma ação ou `taxa_inflacao` para representar a taxa de inflação.
+
+Para atribuir um valor a uma variável, use o operador `<-`.
+O operador `=` também pode ser usado para atribuir valores a variáveis.
+Ambos os operadores têm o mesmo efeito prático na atribuição de valores a variáveis em R.
+A escolha entre eles geralmente se resume à preferência pessoal e ao estilo de codificação, embora alguns guias de estilo de código sugiram o uso do `<-`.
+
+## Verificando o tipo de uma variável
+
+Vamos usar as funções da família `is.*` para vericar os tipos de algumas das variáveis que estão no nosso ambiente de trabalho.
+
+-   Para a variável `empresa`:
+
+```{r eval=FALSE}
+is.character(empresa)
+```
+
+Isso retornará `TRUE` se a variável `empresa` for do tipo caractere (character).
+
+-   Para a variável `pais`:
+
+```{r eval=FALSE}
+is.character(pais)
+```
+
+Assim como para a variável `empresa`, isso retornará `TRUE` se a variável `pais` for do tipo caractere.
+
+-   Para a variável `qtd_acoes`:
+
+```{r eval=FALSE}
+is.numeric(qtd_acoes)
+```
+
+Isso retornará `TRUE` se a variável `qtd_acoes` for do tipo numérico (numeric).
+
+-   Para a variável `queda_preco_acoes`:
+
+```{r eval=FALSE}
+is.logical(queda_preco_acoes)
+```
+
+Isso retornará `TRUE` se a variável `queda_preco_acoes` for do tipo lógico (logical).
+
+-   Para a variável `taxa_inflacao`:
+
+```{r eval=FALSE}
+is.numeric(taxa_inflacao)
+```
+
+Assim como para a variável `qtd_acoes`, isso retornará `TRUE` se a variável `taxa_inflacao` for do tipo numérico.
+
+-   Para a variável `taxa_juros_aumentando`:
+
+```{r eval=FALSE}
+is.logical(taxa_juros_aumentando)
+```
+
+Isso retornará `TRUE` se a variável `taxa_juros_aumentando` for do tipo lógico.
+
+Esses exemplos ilustram como você pode usar as funções `is.*` para verificar o tipo de variáveis, ajudando a garantir que você esteja manipulando os dados corretamente em suas análises.
+
+Outra família de funções importantes é a das funções `as.*`.
+Elas são usadas para fazer a coerção (converter) de um objeto de um tipo para outro.
+Elas permitem que você altere o tipo de dado de uma variável, o que pode ser útil em várias situações, como quando você precisa realizar operações específicas que exigem um determinado tipo de dado ou quando deseja garantir a consistência dos tipos de dados em seu código.
+
+Algumas das funções `as.*` mais comuns incluem:
+
+-   `as.character()`: Converte um objeto para o tipo caractere (character).
+
+```{r}
+numero <- 123
+numero_caractere <- as.character(numero)
+```
+
+-   `as.numeric()`: Converte um objeto para o tipo numérico (numeric).
+
+```{r}
+texto <- "3.14"
+numero <- as.numeric(texto)
+```
+
+-   `as.logical()`:
+
+```{r}
+numero <- 0
+logico <- as.logical(numero)
+```
+
+Essas funções são úteis para garantir que os tipos de dados estejam corretos em seu código e para garantir que você possa realizar as operações desejadas em seus objetos.
+No entanto, é importante observar que nem todas as conversões podem ser bem-sucedidas, especialmente quando há perda de informações (por exemplo, ao converter de caractere para numérico).
+Portanto, é sempre uma boa prática verificar se a conversão foi feita corretamente e se os dados resultantes são os esperados.
+
+Veja um exemplo de conversão de caractere para numérico com texto não numérico:
+
+```{r}
+texto <- "abc"
+numero <- as.numeric(texto)
+```
+
+Neste exemplo, a tentativa de converter o texto "abc" para um número resultará em um valor `NA` (Not Available), indicando que a conversão falhou.
+Veja que a saída do console indica uma mensagem de *warning*.
+
+## Estruturas de dados
+
+Em toda análises de dados, é comum lidar com conjuntos de dados que possuem diferentes estruturas e formatos.
+Vamos explorar quatro estruturas de dados fundamentais em R: vetor, matriz, lista e DataFrame.
+
+### Vetores
+
+Um vetor em R é uma estrutura de dados unidimensional que armazena uma sequência ordenada de elementos do mesmo tipo.
+A função `c` nos ajuda a criar vetores.
+
+```{r}
+# Vetor de preços de ações
+precos_acoes <- c(100, 110, 105, 120, 115)
+```
+
+Em alguns casos, é de interesse definir sequências de números usando os operadores `:` e a função `seq()`.
+
+```{r}
+# Vetor de números de 1 a 10
+sequencia <- 1:10
+sequencia
+```
+
+```{r}
+# Vetor de números de 1 a 10 com incremento de 2
+sequencia_incremento <- seq(from = 1, to = 10, by = 2)
+sequencia_incremento
+```
+
+Para verificar o tamanho de um vetor, você pode usar a função `length()`.
+
+```{r}
+# Verificando o tamanho do vetor de preços de ações
+length(precos_acoes)
+length(1:10)
+```
+
+Para acessar elementos em um vetor em R, você pode usar índices numéricos ou lógicos dentro dos colchetes `[ ]`.
+
+Você pode acessar elementos usando índices numéricos dentro dos colchetes \[ \].
+Por exemplo, `vetor[i]` acessa o elemento na posição `i` do `vetor`.
+
+```{r}
+# Vetor de preços de ações
+precos_acoes <- c(100, 110, 105, 120, 115)
+
+# Acessando o segundo elemento do vetor
+segundo_elemento <- precos_acoes[2]
+
+# Acessando uma série de elementos do vetor
+varios_elementos <- precos_acoes[3:5]
+```
+
+Você também pode acessar elementos usando índices lógicos dentro dos colchetes `[ ]`.
+Por exemplo, `vetor[indices_logicos]` retorna os elementos do vetor onde os índices lógicos são TRUE.
+
+```{r}
+# Acessando preços de ações maiores que 110
+precos_maior_que_110 <- precos_acoes[precos_acoes > 110]
+```
+
+### Matrizes
+
+Uma matriz em R é uma estrutura de dados bidimensional que consiste em linhas e colunas de elementos do mesmo tipo.
+É útil para representar conjuntos de dados tabulares, como dados de séries temporais ou matrizes de covariância.
+
+```{r}
+# Matriz de retornos de ativos
+retornos_ativos <- matrix(c(0.05, 0.03, 0.02, 0.04, 0.06, 0.03), 
+                          nrow = 2, byrow = TRUE)
+rownames(retornos_ativos) <- c("Ação 1", "Ação 2")
+colnames(retornos_ativos) <- c("Ano 1", "Ano 2", "Ano 3")
+```
+
+O código acima cria uma matriz chamada retornos_ativos que armazena os retornos de dois ativos ao longo de três anos.
+
+A função `matrix()` é usada para criar a matriz.
+O vetor `c(0.05, 0.03, 0.02, 0.04, 0.06, 0.03)` contém os valores dos retornos dos ativos, fornecidos em ordem de preenchimento de coluna (de cima para baixo).
+Os parâmetros `nrow = 2` e `byrow = TRUE` indicam que a matriz deve ter 2 linhas (para representar os dois ativos) e que os valores devem ser preenchidos por linha (ou seja, primeiro os retornos para o ano 1, depois para o ano 2 e assim por diante).
+As funções `rownames()` e `colnames()` são usadas para atribuir nomes às linhas e colunas da matriz, respectivamente.
+No caso das linhas, são atribuídos os nomes "Ação 1" e "Ação 2", representando os dois ativos.
+Para as colunas, são atribuídos os nomes "Ano 1", "Ano 2" e "Ano 3", representando os anos em que os retornos foram registrados.
+
+A função `class()` retorna a classe do objeto, que neste caso será "matrix", indicando que retornos_ativos é uma matriz em R.
+
+A função `dim()` retorna as dimensões da matriz, ou seja, o número de linhas e colunas.
+
+```{r}
+# Verificando as dimensões da matriz
+dim(retornos_ativos)
+```
+
+Neste caso, o resultado será \[2, 3\], indicando que a matriz possui 2 linhas e 3 colunas.
+
+As funções `nrow()` e `ncol()` retornam o número de linhas e colunas da matriz, respectivamente.
+
+```{r}
+c(nrow(retornos_ativos), ncol(retornos_ativos))
+```
+
+A função length() retorna o número total de elementos em um objeto.
+Para uma matriz, isso retornará o número total de elementos, ou seja, o produto do número de linhas pelo número de colunas.
+
+```{r}
+length(retornos_ativos)
+```
+
+Para acessar linhas, colunas e elementos em uma matriz em R, você pode usar índices numéricos ou nomes (se definidos).
+Aqui está como fazer:
+
+-   Acessando Linhas e Colunas: Você pode acessar linhas e colunas usando índices numéricos dentro dos colchetes \[ \]. Por exemplo, matriz\[i, \] acessa a linha i e matriz\[, j\] acessa a coluna j. Para acessar uma célula específica, você usa matriz\[i, j\], onde i é o número da linha e j é o número da coluna.
+
+```{r}
+# Acessando a primeira linha da matriz
+primeira_linha <- retornos_ativos[1, ]
+
+# Acessando a segunda coluna da matriz
+segunda_coluna <- retornos_ativos[, 2]
+
+# Acessando o elemento na segunda linha e terceira coluna da matriz
+elemento <- retornos_ativos[2, 3]
+
+# Acessando as três primeiras linhas da matriz
+primeiras_linhas <- retornos_ativos[1:2, ]
+
+# Acessando mais de uma coluna da matriz
+algumas_colunas <- retornos_ativos[, c(1,3)]
+```
+
+-   Acessando Linhas e Colunas por Nomes: Se você definiu nomes para as linhas e/ou colunas da matriz, você pode acessá-las usando esses nomes.
+
+```{r}
+# Acessando a linha chamada "Ação 1"
+acao1 <- retornos_ativos["Ação 1", ]
+
+# Acessando a coluna chamada "Ano 2"
+ano2 <- retornos_ativos[, "Ano 2"]
+
+# Acessando o elemento na linha "Ação 2" e coluna "Ano 3"
+elemento2 <- retornos_ativos["Ação 2", "Ano 3"]
+```
+
+Em R, diferente de outras linguagens de programação, os índices de linhas e colunas em matrizes (e também em vetores, listas, etc.) começam em 1 e não em 0.
+Isso significa que o primeiro elemento de uma matriz está no índice 1, o segundo no índice 2, e assim por diante
+
+### Listas
+
+Em R, uma lista é uma estrutura de dados flexível que pode conter elementos de diferentes tipos, como vetores, matrizes, outras listas e até mesmo funções.
+As listas são úteis quando você precisa armazenar e manipular conjuntos de dados heterogêneos ou estruturas complexas.
+
+Podemos criar uma lista que armazena informações sobre um país, como seu nome, PIB, taxa de inflação e uma série temporal de valores de câmbio.
+
+```{r}
+# Criando uma lista com informações sobre um país
+pais_info <- list(
+  nome = "Brasil",
+  pib = 1609,
+  inflacao = 0.05,
+  cambio = c(4.86, 5.13, 5.20, 5.07, 4.97)
+)
+
+```
+
+Neste exemplo, pais_info é uma lista que contém quatro elementos:
+
+-   `nome`: o nome do país (tipo caractere).
+-   `pib`: o Produto Interno Bruto do país (tipo numérico).
+-   `inflacao`: a taxa de inflação do país (tipo numérico).
+-   `cambio`: uma série temporal de valores de câmbio do país (tipo vetor numérico).
+
+Esta lista exemplifica como podemos armazenar diferentes tipos de dados em uma lista em R.
+Ela pode ser usada para representar informações econômicas de um país de forma organizada e acessível.
+
+Para acessar elementos individuais em uma lista pelo nome, usamos o operador de dólar `$`.
+
+```{r}
+# Acessando o nome do país
+pais_info$nome
+
+# Acessando o PIB do país
+pais_info$pib
+```
+
+Também podemos acessar elementos individuais em uma lista por índice usando colchetes `[ ]`.
+
+```{r}
+# Acessando o primeiro elemento da lista (nome do país)
+primeiro_elemento <- pais_info[[1]]
+
+# Acessando o terceiro elemento da lista (taxa de inflação)
+terceiro_elemento <- pais_info[[3]]
+```
+
+Você deve ter notado o uso de colchetes duplos para acessar os elementos da lista.
+Em R, os colchetes simples (`[]`) e duplos (`[[]]`) têm diferentes propósitos quando usados para acessar elementos em uma lista.
+
+Imagine que uma lista em R seja como um trem, e cada elemento dessa lista é um vagão do trem.
+Agora, dentro de cada vagão, você pode armazenar diferentes tipos de carga, como caixas, sacos ou até mesmo outros vagões.
+
+Por exemplo, em um vagão você pode ter um vetor, em outro uma matriz e em outro apenas um número.
+Cada elemento da lista pode ser diferente do outro em tipo e conteúdo, assim como cada vagão de um trem pode conter coisas diferentes.
+
+Quando você quer acessar um vagão específico do trem, você usa colchetes simples \[ \], e quando quer acessar os elementos dentro desse vagão, usa colchetes duplos \[\[ \]\].
+É como abrir a porta de um vagão para ver o que tem dentro e, em seguida, olhar dentro das caixas que estão dentro desse vagão para ver o que tem lá.
+
+Vamos usar a analogia dos trens e vagões com a lista `pais_info`, que contém informações sobre o Brasil:
+
+**Acessando um vagão específico**
+
+Para acessar informações específicas sobre o Brasil, como o nome do país ou o valor do PIB, podemos usar os colchetes simples `[ ]`.
+Por exemplo: - `pais_info["nome"]`: obtemos o vagão que contém o nome do país, e encontramos "Brasil".
+- `pais_info[2]` : obtemos o segundo vagão, neste caso é o que contem o PIB do país, e encontramos o valor 1609.
+
+**Acessando elementos dentro de um vagão**
+
+Agora, se quisermos acessar elementos específicos dentro de um vagão, usamos colchetes duplos `[[ ]]`.
+Por exemplo:
+
+-   `pais_info[["cambio"]]`: abrimos o vagão que contém informações sobre o câmbio do país e acessamos o seu conteúdo, que é um vetor com diferentes valores de câmbio ao longo do tempo.
+
+Agora, se quisermos acessar um valor específico desse vetor, podemos usar os colchetes simples `[ ]` novamente:
+
+-   `pais_info[["cambio"]][3]`: isso abre o vagão que contém o vetor de câmbio e encontra o terceiro valor, que é 5.20.
+
+Ao usar a função `class()` podemos notar a diferença entre os objetos obtidos ao usar colchetes simples e duplos.
+
+```{r}
+class(pais_info["nome"])
+class(pais_info[["nome"]])
+```
+
+::: {.callout-note title="Resumindo"}
+Em resumo, os colchetes simples são usados para acessar subconjuntos de elementos em uma lista, preservando sua estrutura, enquanto os colchetes duplos são usados para acessar valores individuais de uma lista, sem preservar a estrutura original.
+:::
+
+### DataFrames
+
+Os dataframes são estruturas de dados tabulares em R que representam conjuntos de dados retangulares onde as colunas podem ser de tipos diferentes, como numérico, caractere, lógico ou fator.
+
+Para criar um dataframe, usamos a função `data.frame()`, fornecendo vetores de dados para cada coluna.
+
+```{r}
+# Criando um dataframe com dados econômicos
+dados_economicos <- data.frame(
+  país = c("Brasil", "EUA", "China", "Índia", "Japão"),
+  continente = factor(c("América", "América", "Ásia", "Ásia", "Ásia")),
+  população = c(213, 328, 1441, 1380, 126),
+  pib_per_capita = c(10294, 65741, 10380, 2353, 41581),
+  inflação = c(0.02, 0.01, 0.04, 0.06, 0.005)
+)
+```
+
+Podemos acessar elementos individuais, linhas ou colunas de um dataframe usando índices numéricos ou nomes de colunas.
+
+```{r}
+# Acessando a primeira linha do dataframe
+(primeira_linha <- dados_economicos[1, ])
+
+# Acessando a coluna "país" do dataframe
+(paises <- dados_economicos$país)
+
+# Acessando o elemento na segunda linha e terceira coluna do dataframe
+(elemento <- dados_economicos[2, 3])
+```
+
+Podemos combinar dataframes com base em colunas comuns usando a função `merge()`.
+
+```{r}
+# Criando outro dataframe para junção
+dados_demograficos <- data.frame(
+  país = c("China", "Índia", "Japão", "Brasil", "EUA"),
+  expectativa_vida = c(76, 69, 84, 75, 79)
+)
+
+# Realizando uma junção (merge) com base na coluna "país"
+(dados_com_demografia <- merge(dados_economicos, dados_demograficos, by = "país"))
+```
+
+Podemos combinar novas linhas de dados ao dataframe existente.
+
+```{r}
+# Criando outro dataframe para combinação de linhas
+mais_dados <- data.frame(
+  país = c("África do Sul", "Alemanha"),
+  continente = c("África", "Europa"),
+  população = c(60, 83),
+  pib_per_capita = c(6151, 52947),
+  inflação = c(0.025, NA),
+  expectativa_vida = c(58, 81)
+)
+
+# Combinando os dataframes por linhas
+(todos_dados <- rbind(dados_com_demografia, mais_dados))
+```
+
+::: {.callout-important title="Dados faltantes"}
+Você deve ter observado no dataframe `mais_dados` que o valor da inflação para a Alemanha está como `NA`.
+Um dado `NA`, abreviação de "Not Available" (não disponível), é uma marcação que indica a ausência de um valor em um conjunto de dados.
+No exemplo acima, a presença do dado `NA`na coluna de inflação para a Alemanha significa que não há um valor disponível para a inflação desse país na tabela fornecida.
+
+Um dado pode ser marcado como `NA` em diversas situações, incluindo
+
+-   **Dados ausentes**: Quando não há informação disponível para um determinado campo em um conjunto de dados.
+    Por exemplo, falta de dados sobre o índice de desemprego em determinadas regiões devido à falta de disponibilidade ou relatórios incompletos.
+
+-   **Erros de medição ou coleta**: Em algumas situações, erros podem ocorrer durante o processo de medição ou coleta de dados, levando a valores inexatos ou ausentes.
+    Por exemplo, ao registrar o PIB de um país, um erro humano pode levar a valores inexatos ou até mesmo ausentes em determinados trimestres devido a falhas no processo de coleta de dados.
+
+-   **Valores inaplicáveis**: Algumas variáveis podem não ser aplicáveis a todos os casos.
+    Por exemplo, ao analisar os gastos do governo em educação, pode não haver dados disponíveis para alguns países devido a diferenças nas políticas de relatório ou à falta de investimento em educação em determinados períodos.
+
+-   **Valores não registrados**: Em algumas bases de dados, certos valores podem não ser registrados de propósito, seja por questões de privacidade ou por não serem relevantes para o contexto da análise.
+    Por exemplo, ao coletar dados sobre o patrimônio líquido dos indivíduos em uma pesquisa de renda, alguns participantes podem optar por não divulgar suas informações financeiras por motivos de privacidade.
+    Nesses casos, os valores correspondentes seriam marcados como `NA`.
+:::
+
+## Exercícios
+
+1.  Considere os seguinte setores econômico. "Financeiro", "Tecnologia da Informação", "Bens Industriais" e "Saúde". Gere aleatoriamente uma amostra de tamanho 1.000, com estes setores, com igual probabilidade de cada um ser escolhido. Mostre os primeiros valores da variável resultante e conte quantas empresas pertencem a cada setor econômico.

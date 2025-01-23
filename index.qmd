@@ -1,0 +1,27 @@
+# Introdução {.unnumbered}
+
+Este livro consiste em notas de aula do minicurso de Introdução às Linguagens de Programação R e Python.
+
+Se você está interessado nos fundamentos da linguagem R, você pode encontrar esses tópicos na primeira parte do livro. Por outro lado, se deseja explorar os fundamentos de Python, a segunda parte é onde você encontrará essas informações.
+
+Este é um livro em constante evolução, projetado para crescer e se adaptar. Se você tiver alguma sugestão ou *feedback* sobre o conteúdo apresentado, sinta-se à vontade para enviar um e-mail para magnotairone\[at\]gmail.com.
+
+Meus sinceros agradecimentos a Luiza Tuler pela revisão do conteúdo deste livro.
+
+<!-- See @knuth84 for additional discussion of literate programming. -->
+
+<!-- IDEIAS: -->
+
+<!-- um capitulo com estudos de dados -->
+
+<!-- 1. dados de produtividade policial  -->
+
+<!--   ver o arquivo C:\Users\m_tai\OneDrive - Insper\Modelos Preditivos Avancados - Hibrido\2021.3\Quizzes\Q1\raw2020\processamento -->
+
+<!--   baixar dados 2023 e fazer igual. escrever um capitulo sobre o processamento desses dados e analise descritiva dos mesmos -->
+
+<!-- https://www.ssp.sp.gov.br/estatistica/dados-mensais -->
+
+<!-- 2. o caso World Health Organisation -->
+
+<!-- ver https://r4ds.hadley.nz/data-tidy#many-variables-in-column-names -->

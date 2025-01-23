@@ -1,0 +1,42 @@
+project:
+  type: book
+  output-dir: docs
+
+python:
+  version: C:/Users/m_tai/anaconda3/python.exe
+
+book:
+  title: "Introdução à R e Python"
+  author: "Magno Severino"
+  date: "03/03/2024"
+  chapters:
+    - index.qmd
+    - part: Aprendendo R
+      chapters: 
+        - 01-fundamentos_r.qmd
+        - 02-fluxos.qmd
+        - 03-dados.qmd
+        - 04-visualizacao.qmd
+    - part: Aprendendo Python
+      chapters:
+        - 05-fundamentos_python.qmd
+        - 06-visualizacao_python.qmd
+    - part: Prova Final
+      chapters:
+        - 07-prova.qmd
+    - part: Estudo de casos
+      # chapters:
+      #   - 07-casos.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
+lang: pt    

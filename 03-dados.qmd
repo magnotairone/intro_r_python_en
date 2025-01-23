@@ -1,0 +1,408 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Manipulação de dados
+
+Dominar técnicas de manipulação e processamento de dados em R é fundamental para qualquer pessoa que trabalhe com análise de dados ou ciência de dados. A capacidade de limpar, transformar e preparar dados de maneira eficiente é essencial para garantir que os resultados das análises sejam precisos e confiáveis. Além disso, o domínio dessas técnicas economiza tempo e aumenta a produtividade.
+
+## Importar arquivos externos
+
+Dois dos formatos mais comuns para armazenamento de dados não tão grandes são `csv` e `xlsx`.
+
+Ao carregar dados de arquivos csv em R, duas opções comumente utilizadas são as funções `read.csv()` e `read_csv()`. Ambas são eficazes para importar dados tabulares, mas apresentam diferenças significativas. A função `read.csv()` é uma opção padrão no R base, sendo simples de usar e amplamente conhecida. Por outro lado, `read_csv()` faz parte do pacote `readr`, oferecendo desempenho otimizado e detecção automática de tipos de dados. Enquanto `read.csv()` tende a ser mais lenta, especialmente com grandes conjuntos de dados, `read_csv()` é mais rápida e precisa, sendo capaz de manter os nomes das colunas como símbolos e converter adequadamente os dados, inclusive lidando com strings vazias.
+
+```{r eval=FALSE}
+# Usando read.csv()
+dados_read_csv <- read.csv("dados.csv")
+
+# Usando read_csv() do pacote readr
+library(readr)
+dados_readr <- read_csv("dados.csv")
+```
+
+Para importar dados de um arquivo Excel (formato `xlsx`) em R, podemos usar a biblioteca `readxl`. Primeiro, é necessário instalá-la usando o comando `install.packages("readxl")`. Em seguida, podemos usar a função `read_excel()` para ler os dados. Por exemplo:
+
+```{r eval=FALSE}
+library(readxl)
+dados <- read_excel("arquivo.xlsx")
+```
+
+::: {.callout-tip title="Definindo o seu diretório de trabalho"}
+É uma boa prática definir um diretório de trabalho em seus scripts R porque isso ajuda a manter a organização e facilita o acesso aos arquivos de dados e resultados. Ao definir um diretório de trabalho, você garante que todos os arquivos referenciados em seus scripts serão encontrados facilmente, sem a necessidade de especificar caminhos absolutos longos.
+
+Para definir o diretório de trabalho no R, você pode usar a função `setwd()`. Por exemplo, se você deseja definir o diretório como "C:/MeuDiretorio", você pode fazer o seguinte:
+
+```{r eval=FALSE}
+setwd("C:/MeuDiretorio")
+```
+
+Você pode definir o diretório usando a interface do RStudio. Basta selecionar no menu "Session" a opção "Set Working Directory" e em seguida "Choose Directory". Isso abrirá uma caixa de diálogo onde você pode navegar até o diretório desejado e selecioná-lo. Depois de selecionar o diretório, ele se tornará o diretório de trabalho atual.
+:::
+
+## O pacote tidyverse
+
+O pacote `tidyverse` é uma coleção de pacotes do R projetados para trabalhar de forma integrada e intuitiva na análise de dados. Ele inclui uma variedade de pacotes poderosos e populares, como `ggplot2`, `dplyr`, `tidyr`, `tibble`, `readr`, `purrr`, `forcats` e `stringr`. Cada pacote no tidyverse foi projetado para lidar com uma etapa específica do fluxo de trabalho de análise de dados, desde a importação e limpeza até a visualização e modelagem. Todos os pacotes no `tidyverse` compartilham uma filosofia de design subjacente, gramática e estruturas de dados, veja mais [na página do pacote](https://www.tidyverse.org/).
+
+## O operador pipe `%>%`
+
+O operador `%\>%`, conhecido como pipe, é uma ferramenta poderosa em R que facilita a encadeamento de operações em sequência. Ele permite escrever código de forma mais clara e concisa, especialmente ao trabalhar com pacotes do tidyverse. O pipe recebe o resultado de uma expressão à esquerda e o passa como primeiro argumento para a próxima expressão à direita.
+
+::: callout-tip
+Você não precisa digitar `%\>%` toda vez que precisar. Utilize o atalho Ctrl+Shitf+M.
+:::
+
+Vamos supor que temos uma função `f`, uma função `g` e uma variável `x`. Queremos aplicar `g` a `x` e, em seguida, aplicar `f` ao resultado. Aqui está como poderíamos fazer isso de duas maneiras: usando a abordagem encadeada tradicional e usando o pipe `%>%`.
+
+```{r eval=FALSE}
+resultado <- f(g(x))
+
+x %>% 
+  g() %>%
+  f()
+```
+
+Ambos os métodos produzirão o mesmo resultado. No entanto, a segunda abordagem usando o pipe %\>% é mais legível e fácil de entender, especialmente quando estamos encadeando múltiplas operações. Isso torna o código mais conciso e mais próximo de uma leitura natural da operação que está sendo realizada.
+
+::: callout-tip
+Uma boa prática ao usar o pipe %\>% é quebrar a linha após cada pipe para melhorar a legibilidade do código.
+:::
+
+## Dados no formato *tidy*
+
+> "Tidy datasets are all alike, but every messy dataset is messy in its own way." --- Hadley Wickham.
+
+Um mesmo conjunto de dados pode ser representado de diversas maneiras. Veja o código abaixo que mostra o mesmo dado em três diferentes formatos.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+```{r}
+table1
+table2
+table4a
+```
+
+Todas as representações acima são dos mesmos dados, mas não são igualmente fáceis de utilizar. A `table1`, por exemplo, será muito mais acessível para trabalhar dentro do tidyverse devido à sua organização no formato *tidy*. Existem três regras inter-relacionadas que caracterizam um conjunto de dados no formato *tidy*:
+
+1.  Cada variável é uma coluna; cada coluna representa uma variável.
+2.  Cada observação é uma linha; cada linha representa uma observação.
+3.  Cada valor é uma célula; cada célula contém um único valor.
+
+A figura abaixo representa graficamente este conceito.
+
+![Imagem do livro R4DS.](img/tidy-1.png)
+
+A pivotação de dados é o processo de reorganizar um conjunto de dados para torná-lo compatível com o formato *tidy*. Isso envolve transformar os dados de um formato mais largo para um formato mais longo, ou vice-versa, para garantir que cada variável corresponda a uma coluna e cada observação a uma linha.
+
+No exemplo abaixo, estamos transformando os dados de `table2` para um formato mais largo, onde cada valor único da variável `type` se torna uma nova coluna. Note que cada unidade de informação (país, ano, casos e contagem) está quebrado em duas linhas. Então essa operação deixa a tabela de dados mais larga, garantindo que cada unidade de dado esteja representada em uma única linha.
+
+```{r}
+table2 %>% 
+  pivot_wider(names_from="type", values_from="count")
+```
+
+No exemplo abaixo, estamos transformando os dados de `table4a` em um formato mais longo, onde as colunas representando anos específicos (1999 e 2000) são reunidas em uma única coluna chamada `year`, e os valores correspondentes são colocados em uma nova coluna chamada `cases`. Neste caso, a informação sobre os anos estavam armazenadas como nome de colunas, mas, pelo princípio de dados *tidy*, deveriam estar em colunas. Por isso, utilizamos a função `pivot_longer`.
+
+```{r}
+table4a %>% 
+  pivot_longer(cols = c(`1999`, `2000`), names_to = "year", values_to = "cases")
+```
+
+As duas funções `pivot_wider` e `pivot_longer` são suficientes para fazer a transformação de bases de dados no formato *tidy*.
+
+## Principais verbos do pacote `dplyr`
+
+O pacote `dplyr` é uma das ferramentas mais poderosas para manipulação de dados no ambiente R. Ele oferece um conjunto coeso de funções que simplificam tarefas comuns de manipulação, como filtragem, seleção, agrupamento, ordenação e resumo de dados. O dplyr utiliza uma sintaxe intuitiva e consistente, facilitando a escrita de código limpo e legível.
+
+A seguir, vamos estudar o funcionamento dos principais verbos do pacote. Para exemplificar, vamos utilizar a base de dados `gapminder`. Ela é uma coleção de informações socioeconômicas de diversos países ao longo do tempo, veja @gapminder. Ela inclui variáveis como expectativa de vida, PIB per capita, taxa de mortalidade infantil e tamanho da população para diferentes países e anos, cobrindo um período de várias décadas.
+
+Para carregar a base de dados `gapminder`, você precisa carregar o pacote `gapminder`. Com o pacote gapminder carregado, a base de dados `gapminder` estará disponível para uso em seu ambiente R:
+
+```{r results='hide'}
+library(gapminder)
+head(gapminder)
+```
+
+A função `glimpse()` fornece uma visão geral rápida e concisa da estrutura de um conjunto de dados. Quando aplicada a um conjunto de dados, como o gapminder, ela exibe informações essenciais sobre as variáveis presentes, incluindo a quantidade de linhas, colunas e as primeiras linhas do conjunto de dados:
+
+```{r}
+glimpse(gapminder)
+```
+
+### select
+
+O verbo `select()` é utilizado para selecionar colunas específicas de um conjunto de dados. Com o `select()`, é possível escolher as colunas desejadas com base em seus nomes, tipos de dados ou outros critérios.
+
+Por exemplo, considerando a base de dados gapminder, suponha que desejamos selecionar apenas as colunas referentes ao ano, ao país, à expectativa de vida e ao PIB per capita. Podemos fazer isso da seguinte maneira:
+
+```{r eval=FALSE}
+# Selecionando as colunas pelo nome
+gapminder %>%
+  select(year, country, lifeExp, gdpPercap)
+
+# Selecionando apenas as colunas numéricas
+gapminder %>% 
+  select(where(is.numeric))
+
+# Selecionando colunas que começam com "co"
+gapminder %>% 
+  select(starts_with("co"))
+```
+
+Note que nos exemplos acima, nenhuma das seleções foi salva em variável. Para salvar as seleções em uma variável, você pode atribuir o resultado de cada operação `select()` a uma variável separada. Por exemplo:
+
+```{r eval=FALSE}
+gapminder_character <- gapminder %>% 
+  select(where(is.character))
+```
+
+### arrange
+
+O verbo `arrange()` é usado para reorganizar as linhas de um conjunto de dados com base nos valores de uma ou mais colunas. Quando aplicado a um conjunto de dados, o `arrange()` classifica as linhas em ordem crescente ou decrescente com base nos valores das colunas especificadas.
+
+No primeiro exemplo usando o verbo `select()`, podemos ordenar os dados por país em ordem alfabética, podemos fazer assim:
+
+```{r}
+gapminder %>%
+  select(year, country, lifeExp, gdpPercap, pop) %>%
+  arrange(country)
+```
+
+No exemplo abaixo, estamos organizando de acordo com o ano em ordem crescente e a expectativa de vida em ordem decrescente dentro de cada ano.
+
+```{r}
+gapminder %>%
+  select(year, country, lifeExp, gdpPercap, pop) %>%
+  arrange(year, desc(lifeExp))
+```
+
+::: callout-tip
+Ao utilizar o verbo `select()` com o prefixo `-`, você pode especificar as colunas que deseja **excluir** do conjunto de dados. No exemplo abaixo, vamos excluir a coluna `continent` da seleção no conjunto de dados.
+
+```{r}
+gapminder %>% 
+  select(-continent)
+```
+:::
+
+### filter
+
+Para analisar dados específicos de interesse, muitas vezes é necessário filtrar o conjunto de dados para incluir apenas as observações relevantes. O verbo `filter()` é usado para fazer isso. Basta definir uma ou mais condições lógicas que as linhas da base de dados devem satisfazer para serem mostradas.
+
+No exemplo abaixo, estamos filtrando os dados para incluir apenas as observações onde o país é "Brasil" ou "Argentina".
+
+```{r}
+gapminder %>%
+  select(year, country, lifeExp, gdpPercap, pop) %>%
+  arrange(year, desc(lifeExp)) %>% 
+  filter(country == "Brazil" | country == "Argentina")
+```
+
+### mutate
+
+O verbo `mutate()` é usado para criar ou modificar colunas em um conjunto de dados existente. Ele permite adicionar novas variáveis calculadas com base em variáveis existentes ou modificar as variáveis existentes de acordo com alguma lógica específica.
+
+Por exemplo, podemos usar o mutate() para calcular uma nova variável que represente o PIB total de cada país multiplicando o PIB per capita pelo tamanho da população. Aqui está um exemplo de como fazer isso com o conjunto de dados gapminder:
+
+```{r}
+gapminder_total_gdp <- gapminder %>%
+  select(country, year, lifeExp, gdpPercap, pop) %>%
+  mutate(total_gdp = gdpPercap * pop)
+```
+
+### summarise
+
+O verbo `summarise()` é usado para resumir os dados em uma única linha, geralmente calculando estatísticas resumidas como média, soma, mediana, etc. Ele permite calcular resumos estatísticos em um conjunto de dados, criando uma nova tabela contendo os resultados resumidos.
+
+Aqui está um exemplo de como usar `summarise()` para calcular a média da expectativa de vida usando os dados do `gapminder`:
+
+```{r}
+gapminder %>%
+  summarise(mean_lifeExp = mean(lifeExp, na.rm = TRUE))
+```
+
+### group by {#sec-dados-groupby}
+
+O verbo `group_by()` é usado para dividir os dados em grupos com base nos valores de uma ou mais variáveis. Ele não realiza cálculos por si só, mas altera o comportamento das funções de resumo, como summarise(), para operar em cada grupo separadamente.
+
+Aqui está um exemplo de como usar `group_by()` com os dados do gapminder para calcular a média da expectativa de vida por continente:
+
+```{r}
+gapminder %>%
+  group_by(continent) %>%
+  summarise(mean_lifeExp = mean(lifeExp, na.rm = TRUE))
+
+```
+
+O exemplo abaixo utiliza todos os principais verbos do `dplyr` para calcular a expectativa de vida média e o PIB (em milhares) médio por continente no ano de 2007.
+
+```{r}
+gapminder %>%
+  select(country, continent, year, lifeExp, gdpPercap) %>% 
+  filter(year == 2007) %>% # apenas os dados para o ano de 2007
+  mutate(gdp = gdpPercap / 1000) %>% # representa o PIB per capita em milhares
+  group_by(continent) %>% # agrupar os dados por continente
+  summarise(mean_lifeExp = mean(lifeExp, na.rm = TRUE), # média da expectativa de vida
+            mean_gdp = mean(gdp, na.rm = TRUE)) %>% #média do PIB per capita em bilhões
+  arrange(desc(mean_lifeExp))
+```
+
+O gráfico abaixo mostra a evolução da expectativa de vida média nos continentes ao longo dos anos.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(ggplot2)
+
+gapminder %>%
+  select(country, continent, year, lifeExp, gdpPercap) %>% 
+  # filter(year == 2007) %>% # apenas os dados para o ano de 2007
+  mutate(gdp = gdpPercap / 1000) %>% # representa o PIB per capita em milhares
+  group_by(year,continent) %>% # agrupar os dados por continente
+  summarise(mean_lifeExp = mean(lifeExp, na.rm = TRUE), # média da expectativa de vida
+            mean_gdp = mean(gdp, na.rm = TRUE)) %>% #média do PIB per capita em bilhões
+  arrange(desc(mean_lifeExp)) %>% 
+  ggplot(aes(year, mean_lifeExp,color=continent))+
+  geom_line()+
+  geom_point()+
+  scale_color_brewer(palette = 'Set1')+
+  labs(x="Ano", y="Expectativa de vida média", color="Continente")+
+  ggplot2::theme_bw()
+```
+
+::: {.callout-tip title="Desafio"}
+Qual mudança foi feita no código do exemplo anterior para construir os dados usados na geração deste gráfico?
+:::
+
+<!-- TODO: adicionar sobre lubridate-->
+
+<!-- ## Trabalhando com datas -->
+
+<!-- TODO: adicionar auxiliares -->
+
+## Funções auxiliares
+
+Apresentando funções auxiliares do pacote `dplyr` que podem ser muito úteis em diversos contextos.
+
+- `pull`, `distinct`, `unite`, `separate_wider_delim`, e a familia de funções `slice_*`.
+
+```{r}
+
+gapminder %>% 
+  filter(year == 1952) %>% 
+  pull(continent)
+
+gapminder %>% 
+  distinct(continent)
+
+gapminder %>% 
+  slice(1:10)
+
+gapminder %>% 
+  slice_head(n = 5)
+
+gapminder %>% 
+  slice_tail(n = 5)
+
+set.seed(1)
+gapminder %>% 
+  slice_sample(n = 10)
+
+gapminder %>% 
+  filter(year == 2007) %>% 
+  slice_max(lifeExp, n = 2)
+
+gapminder %>% 
+  filter(year == 2007) %>% 
+  slice_min(lifeExp, n = 2)
+
+
+gapminder %>% 
+  filter(year == 2007 | year == 1952) %>% 
+  group_by(year) %>% 
+  slice_max(lifeExp, n = 2)
+
+
+gapminder_united <- gapminder %>% 
+  unite("country_continent", c(country, continent),
+        sep = "_",
+        remove = TRUE,
+        na.rm = FALSE)
+
+gapminder_united %>%
+  separate_wider_delim(country_continent,
+                       delim = "_",
+                       names = c("country", "continent"))
+
+```
+
+
+## Exercícios {#sec-ex-dados}
+
+Vamos trabalhar com o conjunto de dados `billboard`. Neste conjunto de dados, cada observação é uma música. As três primeiras colunas (artista, faixa e data de entrada) são variáveis que descrevem a música. Em seguida, temos 76 colunas (wk1-wk76) que descrevem o ranking da música em cada semana. Aqui, os nomes das colunas são uma variável (a semana) e os valores das células são outra (o ranking).
+
+```{r}
+library(tidyverse)
+billboard
+```
+
+**a)** Aplique uma tranformação na base de dados para deixá-la no formato abaixo.
+
+```{r echo=FALSE}
+billboard %>% 
+  pivot_longer(
+    cols = starts_with("wk"), 
+    names_to = "week", 
+    values_to = "rank"
+  )
+```
+
+**b)** Observe o resultado do item **a)**. O que acontece se uma música estiver no top 100 por menos de 76 semanas? Pegue a música "Baby Don't Cry" de 2 Pac, por exemplo. A saída acima sugere que ela esteve no top 100 por apenas 7 semanas, e todas as semanas restantes são preenchidas com valores ausentes (`NA`). Esses NAs na verdade não representam observações desconhecidas; eles foram forçados a existir pela estrutura do conjunto de dados. Altere o código usado em **a)** para remover esses `NA`s. Responda: Quantas linhas sobraram? (Dica: veja a documentação da função `pivot_longer`.)
+
+```{r eval=FALSE, echo=FALSE}
+#resposta
+billboard %>% 
+  pivot_longer(
+    cols = starts_with("wk"), 
+    names_to = "week", 
+    values_to = "rank",
+    values_drop_na = TRUE
+  )
+```
+
+**c)** Você deve ter percebido que no resultado do item **a)**, o tipo da coluna `week` é caractere. Faça a transformação adequada para obter uma coluna com valores numéricos.
+
+```{r echo=FALSE, eval=FALSE}
+#resposta
+billboard_longer <- billboard %>% 
+  pivot_longer(
+    cols = starts_with("wk"), 
+    names_to = "week", 
+    values_to = "rank",
+    values_drop_na = TRUE
+  ) %>% 
+  mutate(
+    week = parse_number(week)
+  )
+```
+
+**d)** Qual música ficou por mais semanas no top 100 da Billboard em 2000? Por quantas semanas essa música apareceu no ranking? E qual música ficou por menos tempo no ranking.
+
+```{r echo=FALSE, eval=FALSE}
+billboard_longer %>% 
+  group_by(track) %>% 
+  summarise(n=n()) %>% 
+  arrange(desc(n)) 
+```
+
+**e)** Qual música ficou exatamente 10 semanas no top 100 da Billboard em 2000? Caso exista mais de uma música nessa condição, considere a que primeiro entrou no ranking.
+
+```{r echo=FALSE, eval=FALSE}
+billboard_longer %>% 
+  group_by(track, date.entered) %>% 
+  summarise(n=n()) %>% 
+  filter(n==10) %>% 
+  arrange(date.entered)
+```
