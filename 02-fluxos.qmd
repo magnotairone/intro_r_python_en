@@ -40,7 +40,7 @@ if (number > 0) {
 }
 ```
 
-In this example, `sample(-10:10, 1)` generates a random number between -10 and 10, and the value is assigned to the `number` variable. Additionally, `set.seed(123)` sets the seed to 123. This ensures that when generating the random number with `sample()`, the same number is chosen every time the code is executed. Then, we check if the number is positive or not and print the corresponding message.
+In this example, `sample(-10:10, 1)` generates a random number between -10 and 10, and the value is assigned to the `number` variable. Additionally, `set.seed(42)` sets the seed to 42. This ensures that when generating the random number with `sample()`, the same number is chosen every time the code is executed. Then, we check if the number is positive or not and print the corresponding message.
 
 ### `else if`
 
@@ -188,8 +188,8 @@ The condition is a logical expression that is evaluated before each execution of
 In the example below, we define a vector called `actions`, which contains a list of possible activities a person might perform during the day. One of the possible actions will be chosen randomly.
 
 ```{r}
-actions <- c("Learn to program in R",
-             "Learn to program in Python",
+actions <- c("Learn to code in R",
+             "Learn to code in Python",
              "Make coffee",
              "Rest")
 
