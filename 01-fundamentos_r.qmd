@@ -31,7 +31,7 @@ Note that there are four panels:
     It shows details such as the object's name, type, and current value.
     This is useful for monitoring and managing objects during a work session.
 
--   *Files/Plots/Packages/Help* (bottom right): A panel with various functionalities.
+-   *Files/Plots/Packages/Help* (bottom right): A panel with various features.
 
     -   Files: This tab allows you to browse and manage your project's files.
         You can create, rename, delete, and organize files and folders directly within RStudio.
@@ -119,11 +119,11 @@ The `levels()` function returns the levels (or categories) of a factor.
 This is useful to understand which categories are represented and to perform data manipulation operations based on these categories.
 
 ```{r}
-# Displaying the levels of credit risk
+# displaying credit risk levels
 levels(credit_risk)
 ```
 
-## Language Fundamentals
+## R language fundamentals
 
 The R environment refers to the workspace where all variables, functions, and objects created during an R session are stored and managed.
 The environment includes both the objects you create and those that are automatically loaded via packages or other data import mechanisms (more on packages in @sec-packages).
@@ -214,7 +214,7 @@ Another important family of functions is the `as.*` functions.
 They are used to convert an object from one type to another. 
 They allow changing the data type of a variable, which can be useful in various situations, such as performing specific operations that require a certain data type or ensuring data type consistency in the code.
 
-Some of the most common as.* functions include:
+Some of the most common `as.*` functions include:
 
 -   `as.character()` converts to character:
 
@@ -272,8 +272,8 @@ sequence
 
 ```{r}
 # Sequence from 1 to 10 with an increment of 2:
-sequence_increment <- seq(1, 10, by = 2)
-sequence_increment
+increment_sequence <- seq(1, 10, by = 2)
+increment_sequence
 ```
 
 To check the size of a vector, you can use the `length()` function.
@@ -331,7 +331,7 @@ The vector `c(0.05, 0.03, 0.02, 0.04, 0.06, 0.03)` contains the return values, f
 Parameters `nrow = 2` and `byrow = TRUE` specify that the matrix should have 2 rows (to represent two assets), and values are filled by row.  
 The `rownames()` and `colnames()` functions assign names to the rows ("Stock 1" and "Stock 2") and columns ("Year 1", "Year 2", "Year 3").  
 
-The `class()` function returns the class of the object, which in this case will be "matrix," indicating that `retornos_ativos` is a matrix in R.
+The `class()` function returns the class of the object, which in this case will be "matrix," indicating that `asset_returns` is a matrix in R.
 
 The `dim()` function returns the dimensions of the matrix, i.e., the number of rows and columns.
 
@@ -347,7 +347,7 @@ The `length()` function returns the total number of elements in an object.
 For a matrix, this will return the total number of elements, which is the product of the number of rows and columns.  
 
 ```{r}
-length(retornos_ativos)
+length(asset_returns)
 ```  
 
 To access rows, columns, and elements in a matrix in R, you can use numeric indices or names (if defined).  
