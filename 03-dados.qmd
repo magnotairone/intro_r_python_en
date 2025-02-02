@@ -193,7 +193,7 @@ gapminder |>
 
 To analyze specific data of interest, it is often necessary to filter the dataset to include only relevant observations. The verb `filter()` is used for this purpose. Simply define one or more logical conditions that the rows of the dataset must satisfy to be displayed.
 
-In the example below, we filter the data to include only observations where the country is "Brazil" or "Argentina".
+In the example below, we filter the data to include only observations where the country is either Brazil or Argentina.
 
 ```{r}
 gapminder |>
