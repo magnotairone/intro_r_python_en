@@ -17,7 +17,7 @@ It is based on the grammar of graphics (*grammar of graphics* - GG), see @GG. Th
 
 ## The `ggplot` Package
 
-The most well-known data visualization package in R is `ggplot2`, which is based on the grammar of graphics. `ggplot2` allows the creation of a wide variety of charts, including scatter plots, line plots, bar charts, histograms, and more, in a simple and flexible way. With `ggplot2`, you can customize practically all aspects of the chart, from the shape and color of the points to the axis scales and the background appearance.
+The most well-known data visualization package in R is `ggplot2`, which is based on the grammar of graphics. `ggplot2` allows the creation of a wide variety of charts, including scatter plots, line plots, bar charts, histograms, and more, in a simple and flexible way. With `ggplot2`, you can customize basicaly all aspects of the chart, from the shape and color of the points to the axis scales and the background appearance.
 
 To exemplify the use of ggplot, let's consider the `gapminder` dataset, @gapminder.
 
@@ -369,7 +369,7 @@ ggplotly(grafico)
 
 ## Extra Tips
 
-When you are exploring different types of plots to visualize your data, the site [Data to Viz](https://www.data-to-viz.com) can be a valuable tool. It provides a complete gallery of plot types and offers guidance on when and how to use each one. Additionally, the site provides specific examples of how to create these plots using different libraries, such as ggplot2 in R and matplotlib in Python.
+When exploring different types of plots to visualize your data, the website [Data to Viz](https://www.data-to-viz.com) can be a valuable tool. It provides a complete gallery of plot types and offers guidance on when and how to use each one. Additionally, the website provides specific examples of how to create these plots using different libraries, such as ggplot2 in R and matplotlib in Python.
 
 ## Exercises
 
