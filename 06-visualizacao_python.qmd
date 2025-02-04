@@ -6,6 +6,15 @@ editor_options:
 
 # Processamento e visualização de dados
 
+```{r echo=FALSE}
+library(reticulate)
+use_python("C:/Users/m_tai/anaconda3/python.exe", required = TRUE)
+```
+
+::: {.callout-caution title="Notice!"}
+Chapter to be translated!
+:::
+
 ## Instalação de bibliotecas
 
 A instalação de bibliotecas em Python é essencial para expandir a funcionalidade da linguagem. Existem várias maneiras de instalar bibliotecas, mas a mais comum é usando um gerenciador de pacotes. O pip é o gerenciador de pacotes padrão para Python e geralmente acompanha a instalação do Python.

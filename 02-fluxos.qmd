@@ -87,7 +87,7 @@ One of the most common repetition structures is the `for` loop. The `for` loop i
 
 There are two ways to use the `for` loop.
 
-- Using `for` to iterate over indices:
+-   Using `for` to iterate over indices:
 
 ```{r}
 # Example of a for loop to iterate over indices
@@ -98,7 +98,7 @@ for (i in 1:5) {
 
 In this example, the `for` loop iterates over the values from 1 to 5. In the first iteration, `i` is equal to 1; in the second iteration, `i` is equal to 2; and so on, until `i` is equal to 5.
 
-- Using `for` to iterate over elements:
+-   Using `for` to iterate over elements:
 
 ```{r}
 # Example of a for loop to iterate over elements of a vector
@@ -243,7 +243,7 @@ print(paste("It took", years, "years to reach a population of", population))
 ```
 
 ::: callout-note
-You can calculate the exact number of years needed to reach the population limit directly. Using algebra, the formula is as follows:  
+You can calculate the exact number of years needed to reach the population limit directly. Using algebra, the formula is as follows:\
 $$\text{years} = \frac{\log\left(\frac{\text{population\_limit}}{\text{initial\_population}}\right)}{\log(1 + \text{growth\_rate})}.$$
 :::
 :::
@@ -375,5 +375,4 @@ library(nycflights13)
 
 **f)** Get a summary of the `dep_delay` column. Are there missing values? If yes, remove them.
 
-**g)** Find the name of the destination airport of the flight with the longest departure delay on 12/25/2013. Hint: Merge the `flights` and `airports` datasets.
-```
+**g)** Find the name of the destination airport of the flight with the longest departure delay on 12/25/2013. Hint: Merge the `flights` and `airports` datasets. \`\`\`

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.3.433">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introdução à R e Python - 2&nbsp; Fluxos de execução</title>
+<title>Introduction to R and Python - 2&nbsp; Execution Flows</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,16 +83,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "type": "textbox",
   "limit": 20,
   "language": {
-    "search-no-results-text": "Nenhum resultado",
-    "search-matching-documents-text": "documentos correspondentes",
-    "search-copy-link-title": "Copiar link para a busca",
-    "search-hide-matches-text": "Esconder correspondências adicionais",
-    "search-more-match-text": "mais correspondência neste documento",
-    "search-more-matches-text": "mais correspondências neste documento",
-    "search-clear-button-title": "Limpar",
-    "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Procurar"
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -107,11 +107,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-fundamentos_r.html">Aprendendo R</a></li><li class="breadcrumb-item"><a href="./02-fluxos.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fluxos de execução</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-fundamentos_r.html">Learning R</a></li><li class="breadcrumb-item"><a href="./02-fluxos.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Execution Flows</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -125,12 +125,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Introdução à R e Python</a> 
+      <a href="./">Introduction to R and Python</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Procurar"></div>
+        <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -138,14 +138,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introdução</span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Aprendendo R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar seção">
+ <span class="menu-text">Learning R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -159,66 +159,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-fluxos.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fluxos de execução</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Execution Flows</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-dados.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Manipulação de dados</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Manipulation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-visualizacao.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualização de dados</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Aprendendo Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar seção">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./05-fundamentos_python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Fundamentos de Python</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./06-visualizacao_python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Processamento e visualização de dados</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Prova Final</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Alternar seção">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./07-prova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Prova Final</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Estudo de casos</span></span>
+ <span class="menu-text">Learning Python</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Case studies</span></span>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -233,22 +197,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Índice</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#estruturas-condicionais" id="toc-estruturas-condicionais" class="nav-link active" data-scroll-target="#estruturas-condicionais"><span class="header-section-number">2.1</span> Estruturas condicionais</a>
+  <li><a href="#conditional-structures" id="toc-conditional-structures" class="nav-link active" data-scroll-target="#conditional-structures"><span class="header-section-number">2.1</span> Conditional Structures</a>
   <ul class="collapse">
-  <li><a href="#if-e-else" id="toc-if-e-else" class="nav-link" data-scroll-target="#if-e-else"><span class="header-section-number">2.1.1</span> <code>if</code> e <code>else</code></a></li>
+  <li><a href="#if-and-else" id="toc-if-and-else" class="nav-link" data-scroll-target="#if-and-else"><span class="header-section-number">2.1.1</span> <code>if</code> and <code>else</code></a></li>
   <li><a href="#else-if" id="toc-else-if" class="nav-link" data-scroll-target="#else-if"><span class="header-section-number">2.1.2</span> <code>else if</code></a></li>
   </ul></li>
-  <li><a href="#estruturas-de-repetição" id="toc-estruturas-de-repetição" class="nav-link" data-scroll-target="#estruturas-de-repetição"><span class="header-section-number">2.2</span> Estruturas de repetição</a>
+  <li><a href="#loop-structures" id="toc-loop-structures" class="nav-link" data-scroll-target="#loop-structures"><span class="header-section-number">2.2</span> Loop Structures</a>
   <ul class="collapse">
   <li><a href="#sec-fluxos-for" id="toc-sec-fluxos-for" class="nav-link" data-scroll-target="#sec-fluxos-for"><span class="header-section-number">2.2.1</span> <code>for</code></a></li>
   <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while"><span class="header-section-number">2.2.2</span> <code>while</code></a></li>
   </ul></li>
-  <li><a href="#sec-fluxos-funcoes" id="toc-sec-fluxos-funcoes" class="nav-link" data-scroll-target="#sec-fluxos-funcoes"><span class="header-section-number">2.3</span> Funções</a></li>
-  <li><a href="#sec-pacotes" id="toc-sec-pacotes" class="nav-link" data-scroll-target="#sec-pacotes"><span class="header-section-number">2.4</span> Pacotes</a></li>
-  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios"><span class="header-section-number">2.5</span> Exercícios</a></li>
+  <li><a href="#sec-fluxos-functions" id="toc-sec-fluxos-functions" class="nav-link" data-scroll-target="#sec-fluxos-functions"><span class="header-section-number">2.3</span> Functions</a></li>
+  <li><a href="#sec-packages" id="toc-sec-packages" class="nav-link" data-scroll-target="#sec-packages"><span class="header-section-number">2.4</span> Packages</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.5</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -257,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fluxos de execução</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Execution Flows</span></h1>
 </div>
 
 
@@ -272,88 +236,88 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="estruturas-condicionais" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="estruturas-condicionais"><span class="header-section-number">2.1</span> Estruturas condicionais</h2>
-<p>O fluxo de código em R pode ser controlado por meio de estruturas condicionais, como o <code>if</code>, <code>else if</code> e <code>else</code>. Essas estruturas permitem que você execute diferentes blocos de código com base em condições específicas.</p>
-<section id="if-e-else" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="if-e-else"><span class="header-section-number">2.1.1</span> <code>if</code> e <code>else</code></h3>
-<p>O <code>if</code> é uma estrutura de controle de fluxo que executa um bloco de código se uma condição especificada for verdadeira. Se a condição for falsa, o bloco de código dentro do if não será executado. Por outro lado, o <code>else</code> é usado para executar um bloco de código quando a condição do if for falsa.</p>
-<p>A sintaxe básica do <code>if</code> e <code>else</code> em R é a seguinte:</p>
+<section id="conditional-structures" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="conditional-structures"><span class="header-section-number">2.1</span> Conditional Structures</h2>
+<p>Code flow in R can be controlled using conditional structures, such as <code>if</code>, <code>else if</code>, and <code>else</code>. These structures allow you to execute different code blocks based on specific conditions.</p>
+<section id="if-and-else" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="if-and-else"><span class="header-section-number">2.1.1</span> <code>if</code> and <code>else</code></h3>
+<p>The <code>if</code> structure is a control flow structure that executes a block of code if a specified condition is true. If the condition is false, the code block within the <code>if</code> will not be executed. On the other hand, <code>else</code> is used to execute a block of code when the <code>if</code> condition is false.</p>
+<p>The basic syntax of <code>if</code> and <code>else</code> in R is as follows:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condição) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Bloco de código a ser executado se a condição for verdadeira</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condition) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Code block to execute if the condition is true</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Bloco de código a ser executado se a condição for falsa</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Code block to execute if the condition is false</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Aqui está um exemplo prático de como usar o <code>if</code> e <code>else</code> para verificar se um número inteiro escolhido aleatóriamente entre -10 e 10 é positivo ou negativo:</p>
+<p>Here is a practical example of how to use <code>if</code> and <code>else</code> to check if a randomly chosen integer between -10 and 10 is positive or negative:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definindo a semente para garantir reprodutibilidade</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting the seed to ensure reproducibility</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Gerando um número aleatório entre -10 e 10</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>numero <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generating a random number between -10 and 10</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>number <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (numero <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"O número é positivo."</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (number <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"The number is positive."</span>)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"O número é negativo ou zero."</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"The number is negative or zero."</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "O número é positivo."</code></pre>
+<pre><code>[1] "The number is positive."</code></pre>
 </div>
 </div>
-<p>Neste exemplo, <code>sample(-10:10, 1)</code> gera um número aleatório entre -10 e 10, e o valor é atribuído à variável numero. Além disso, <code>set.seed(123)</code> define a semente como 123. Isso garante que, ao gerar o número aleatório com <code>sample()</code>, o mesmo número seja escolhido sempre que o código for executado. Em seguida, verificamos se o número é positivo ou não e imprimimos a mensagem correspondente.</p>
+<p>In this example, <code>sample(-10:10, 1)</code> generates a random number between -10 and 10, and the value is assigned to the <code>number</code> variable. Additionally, <code>set.seed(42)</code> sets the seed to 42. This ensures that when generating the random number with <code>sample()</code>, the same number is chosen every time the code is executed. Then, we check if the number is positive or not and print the corresponding message.</p>
 </section>
 <section id="else-if" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="else-if"><span class="header-section-number">2.1.2</span> <code>else if</code></h3>
-<p>Além do <code>if</code> e <code>else</code>, também podemos usar o <code>else if</code> para adicionar mais condições à estrutura condicional. O <code>else if</code> permite verificar múltiplas condições em sequência. Se a condição do <code>if</code> for falsa, ele verifica a próxima condição do <code>else if</code>. Se todas as condições do <code>if</code> e <code>else if</code> forem falsas, o bloco de código dentro do <code>else</code> é executado.</p>
-<p>Aqui está a sintaxe do else if:</p>
+<p>In addition to <code>if</code> and <code>else</code>, we can also use <code>else if</code> to add more conditions to the conditional structure. The <code>else if</code> allows checking multiple conditions in sequence. If the <code>if</code> condition is false, it checks the next <code>else if</code> condition. If all the <code>if</code> and <code>else if</code> conditions are false, the code block within the <code>else</code> is executed.</p>
+<p>Here is the syntax of <code>else if</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condição1) {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Bloco de código a ser executado se a condição1 for verdadeira</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (condição2) {</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Bloco de código a ser executado se a condição2 for verdadeira</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condition1) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Code block to execute if condition1 is true</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (condition2) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Code block to execute if condition2 is true</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Bloco de código a ser executado se nenhuma das condições anteriores for verdadeira</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Code block to execute if none of the previous conditions are true</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Veja um exemplo prático de como usar o if, else if e else para avaliar o desempenho de uma empresa com base em sua receita anual:</p>
+<p>Here is a practical example of how to use <code>if</code>, <code>else if</code>, and <code>else</code> to evaluate a company’s performance based on its annual revenue:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determina a classificação da empresa com base na receita anual</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>receita_anual <span class="ot">&lt;-</span> <span class="dv">1500000</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determining the company's classification based on annual revenue</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>annual_revenue <span class="ot">&lt;-</span> <span class="dv">1500000</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (receita_anual <span class="sc">&gt;=</span> <span class="dv">2000000</span>) {</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Empresa de Grande Porte"</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (receita_anual <span class="sc">&gt;=</span> <span class="dv">1000000</span>) {</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Empresa de Médio Porte"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (receita_anual <span class="sc">&gt;=</span> <span class="dv">500000</span>) {</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Empresa de Pequeno Porte"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (annual_revenue <span class="sc">&gt;=</span> <span class="dv">2000000</span>) {</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Large Company"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (annual_revenue <span class="sc">&gt;=</span> <span class="dv">1000000</span>) {</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Medium Company"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (annual_revenue <span class="sc">&gt;=</span> <span class="dv">500000</span>) {</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Small Company"</span>)</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Microempresa"</span>)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Microenterprise"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Empresa de Médio Porte"</code></pre>
+<pre><code>[1] "Medium Company"</code></pre>
 </div>
 </div>
-<p>Neste exemplo, a empresa é classificada com base em sua receita anual. Se a receita for igual ou superior a 2.000.000, a empresa será classificada como “Empresa de Grande Porte”. Se estiver entre 1.000.000 e 1.999.999, será classificada como “Empresa de Médio Porte”. Se estiver entre 500.000 e 999.999, será classificada como “Empresa de Pequeno Porte”. Caso contrário, será considerada uma “Microempresa”.</p>
+<p>In this example, the company is classified based on its annual revenue. If the revenue is equal to or greater than 2,000,000, the company will be classified as a “Large Company”. If it is between 1,000,000 and 1,999,999, it will be classified as a “Medium Company”. If it is between 500,000 and 999,999, it will be classified as a “Small Company”. Otherwise, it will be considered a “Microenterprise”.</p>
 </section>
 </section>
-<section id="estruturas-de-repetição" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="estruturas-de-repetição"><span class="header-section-number">2.2</span> Estruturas de repetição</h2>
-<p>As estruturas de repetição, também conhecidas como loops, são utilizadas para executar um bloco de código repetidamente enquanto uma condição específica for verdadeira ou para percorrer uma sequência de elementos. Isso é útil quando você precisa executar uma tarefa várias vezes ou quando deseja iterar sobre uma coleção de dados.</p>
+<section id="loop-structures" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="loop-structures"><span class="header-section-number">2.2</span> Loop Structures</h2>
+<p>Loop structures, also known as repetition structures, are used to execute a block of code repeatedly while a specific condition is true or to iterate over a sequence of elements. This is useful when you need to perform a task multiple times or want to loop through a collection of data.</p>
 <section id="sec-fluxos-for" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="sec-fluxos-for"><span class="header-section-number">2.2.1</span> <code>for</code></h3>
-<p>Uma das estruturas de repetição mais comuns é o loop <code>for.</code> O loop for é usado para iterar sobre uma sequência de valores, como uma sequência numérica de números inteiros ou os elementos de um vetor.</p>
-<p>Existem duas maneiras de se usar o <code>for</code> loop.</p>
+<p>One of the most common repetition structures is the <code>for</code> loop. The <code>for</code> loop is used to iterate over a sequence of values, such as a numeric sequence of integers or the elements of a vector.</p>
+<p>There are two ways to use the <code>for</code> loop.</p>
 <ul>
-<li>Usando for para iterar sobre índices:</li>
+<li>Using <code>for</code> to iterate over indices:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo de loop for para iterar sobre índices</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of a for loop to iterate over indices</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2
@@ -362,73 +326,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [1] 5</code></pre>
 </div>
 </div>
-<p>Neste exemplo, o loop <code>for</code> itera sobre os valores de 1 a 5. Na primeira iteração, <code>i</code> é igual a 1; na segunda iteração, <code>i</code> é igual a 2; e assim por diante, até que <code>i</code> seja igual a 5.</p>
+<p>In this example, the <code>for</code> loop iterates over the values from 1 to 5. In the first iteration, <code>i</code> is equal to 1; in the second iteration, <code>i</code> is equal to 2; and so on, until <code>i</code> is equal to 5.</p>
 <ul>
-<li>Usando for para iterar sobre elementos:</li>
+<li>Using <code>for</code> to iterate over elements:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo de loop for para iterar sobre elementos de um vetor</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>clientes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"João"</span>, <span class="st">"Maria"</span>, <span class="st">"José"</span>, <span class="st">"Ana"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (nome <span class="cf">in</span> clientes) {</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(nome)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of a for loop to iterate over elements of a vector</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>customers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"John"</span>, <span class="st">"Mary"</span>, <span class="st">"Joseph"</span>, <span class="st">"Anna"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (name <span class="cf">in</span> customers) {</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(name)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "João"
-[1] "Maria"
-[1] "José"
-[1] "Ana"</code></pre>
+<pre><code>[1] "John"
+[1] "Mary"
+[1] "Joseph"
+[1] "Anna"</code></pre>
 </div>
 </div>
-<p>Neste exemplo acima, o loop for itera sobre os elementos do vetor <code>clientes</code>. Na primeira iteração, nome é igual a “João”; na segunda iteração, <code>nome</code> é igual a “Maria”; e assim por diante, até que todos os elementos do vetor sejam percorridos.</p>
-<p>Em ambos os exemplos, o bloco de código dentro do loop <code>for</code> é executado repetidamente para cada valor de <code>i</code> (no primeiro exemplo) ou <code>nome</code> (no segundo exemplo) até que a sequência seja completamente percorrida.</p>
-<p>No exemplo abaixo, vamos simular dados econômicos para 10 países fictícios e calcular o PIB per capita de cada país.</p>
+<p>In the example above, the <code>for</code> loop iterates over the elements of the <code>customers</code> vector. In the first iteration, <code>name</code> is equal to “John”; in the second iteration, <code>name</code> is equal to “Mary”; and so on, until all elements of the vector are processed.</p>
+<p>In both examples, the code block inside the <code>for</code> loop is executed repeatedly for each value of <code>i</code> (in the first example) or <code>name</code> (in the second example) until the sequence is completely traversed.</p>
+<p>In the example below, let’s simulate economic data for 10 fictitious countries and calculate the per capita GDP of each country.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>pib_paises <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">10</span>, <span class="at">min =</span> <span class="dv">25000000</span>, <span class="at">max =</span> <span class="dv">40000000</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>populacao_paises <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">10</span>, <span class="at">min =</span> <span class="dv">1000000</span>, <span class="at">max =</span> <span class="dv">15000000</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>gdp_countries <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">10</span>, <span class="at">min =</span> <span class="dv">25000000</span>, <span class="at">max =</span> <span class="dv">40000000</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>population_countries <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">10</span>, <span class="at">min =</span> <span class="dv">1000000</span>, <span class="at">max =</span> <span class="dv">15000000</span>)</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>pib_per_capita <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="dv">10</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>gdp_per_capita <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="dv">10</span>)</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop for para calcular o PIB per capita para cada pais</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For loop to calculate per capita GDP for each country</span></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculando o PIB per capita</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  pib_per_capita[i] <span class="ot">&lt;-</span> pib_paises[i] <span class="sc">/</span> populacao_paises[i]</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculating per capita GDP</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  gdp_per_capita[i] <span class="ot">&lt;-</span> gdp_countries[i] <span class="sc">/</span> population_countries[i]</span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(pib_per_capita, <span class="dv">3</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(gdp_per_capita, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  5.227  3.529  2.080  8.185  4.634  2.315  2.453 10.216  4.556  4.022</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Clique e veja um exemplo extra">
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see an extra example">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Clique e veja um exemplo extra
+Click to see an extra example
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Imagine que temos uma série temporal representando o preço de fechamento diário de uma ação ao longo de um período de 30 dias. Queremos calcular a média móvel de 5 dias desse preço, ou seja, para cada dia, queremos calcular a média dos preços de fechamento dos cinco dias anteriores, incluindo o dia atual.</p>
-<p>Primeiro, vamos simular os dados do preço de fechamento diário da ação:</p>
+<p>Imagine we have a time series representing the daily closing price of a stock over a period of 30 days. We want to calculate the 5-day moving average of this price, that is, for each day, we want to calculate the average of the closing prices of the five previous days, including the current day.</p>
+<p>First, let’s simulate the data for the daily closing price of the stock:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>preco_acao <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">30</span>, <span class="at">min =</span> <span class="dv">9</span>, <span class="at">max =</span> <span class="dv">15</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>stock_price <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">30</span>, <span class="at">min =</span> <span class="dv">9</span>, <span class="at">max =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Agora, vamos calcular a média móvel de 5 dias usando um loop <code>for</code>:</p>
+<p>Now, let’s calculate the 5-day moving average using a <code>for</code> loop:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>media_movel <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="dv">26</span>)  <span class="co"># Vetor para armazenar a média móvel</span></span>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>moving_average <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="dv">26</span>)  <span class="co"># Vector to store the moving average</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">30</span>) {</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  media_movel[i <span class="sc">-</span> <span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">mean</span>(preco_acao[(i <span class="sc">-</span> <span class="dv">4</span>)<span class="sc">:</span>i])</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  moving_average[i <span class="sc">-</span> <span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">mean</span>(stock_price[(i <span class="sc">-</span> <span class="dv">4</span>)<span class="sc">:</span>i])</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Neste loop for, começamos a partir do quinto dia, pois precisamos de pelo menos cinco dias para calcular a média móvel de 5 dias. Para cada dia a partir do quinto dia até o trigésimo dia, calculamos a média dos preços de fechamento dos cinco dias anteriores, incluindo o dia atual, e armazenamos esse valor no vetor media_movel.</p>
-<p>Agora, podemos imprimir a média móvel calculada:</p>
+<p>In this <code>for</code> loop, we start from the fifth day, as we need at least five days to calculate the 5-day moving average. For each day from the fifth to the thirtieth day, we calculate the average of the closing prices of the five previous days, including the current day, and store this value in the <code>moving_average</code> vector.</p>
+<p>Now we can print the calculated moving average:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(media_movel)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(moving_average)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 13.33226 12.85740 12.61682 12.43505 12.22691 12.30289 12.22926 12.20829
  [9] 13.16830 12.68642 12.39510 12.97382 13.28476 12.30414 12.56762 12.68527
@@ -436,7 +400,7 @@ Clique e veja um exemplo extra
 [25] 11.80747 12.71175</code></pre>
 </div>
 </div>
-<p>Este exemplo demonstra como usar um loop for em conjunto com vetores para calcular a média móvel de uma série temporal. O gráfico abaixo mostra a média móvel ao longo dos dias.</p>
+<p>This example demonstrates how to use a <code>for</code> loop in conjunction with vectors to calculate the moving average of a time series. The chart below shows the moving average over the days.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="02-fluxos_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
@@ -448,11 +412,11 @@ Clique e veja um exemplo extra
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Nota
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Você vai aprender a construir gráficos como este no <a href="./04-visualizacao.html">Capítulo 4</a>.</p>
+<p>You will learn how to build charts like this in <a href="04-visualization.qmd">Chapter 4</a>.</p>
 </div>
 </div>
 </div>
@@ -461,86 +425,86 @@ Nota
 </section>
 <section id="while" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="while"><span class="header-section-number">2.2.2</span> <code>while</code></h3>
-<p>A estrutura <code>while</code> é usada para repetir um bloco de código enquanto uma condição especificada for verdadeira. Aqui está a estrutura geral de um loop while:</p>
+<p>The <code>while</code> structure is used to repeat a block of code as long as a specified condition is true. Here is the general structure of a while loop:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (condição) {</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Código a ser repetido enquanto a condição for verdadeira</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (condition) {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Code to be repeated while the condition is true</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>A condição é uma expressão lógica que é avaliada antes de cada execução do bloco de código dentro do loop. Se a condição for verdadeira, o bloco de código é executado; se a condição for falsa, o loop é interrompido e o controle é passado para a próxima linha de código após o loop.</p>
-<p>No exemplo abaixo, vamos definir um vetor chamado <code>acoes</code>, que contém uma lista de atividades possíveis que uma pessoa pode realizar durante o dia. Dentre as ações possíveis, uma será escolhida aleatoriamente.</p>
+<p>The condition is a logical expression that is evaluated before each execution of the code block inside the loop. If the condition is true, the code block is executed; if false, the loop terminates, and control passes to the next line of code after the loop.</p>
+<p>In the example below, we define a vector called <code>actions</code>, which contains a list of possible activities a person might perform during the day. One of the possible actions will be chosen randomly.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>acoes <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="st">"Aprender a programar em R"</span>,</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Aprender a programar em Python"</span>,</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Fazer um café"</span>,</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Descansar"</span>)</span>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>actions <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Learn to code in R"</span>,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Learn to code in Python"</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Make coffee"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Rest"</span>)</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>acao <span class="ot">&lt;-</span> <span class="fu">sample</span>(acoes, <span class="dv">1</span>)</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(acao)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>action <span class="ot">&lt;-</span> <span class="fu">sample</span>(actions, <span class="dv">1</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(action)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Aprender a programar em R"</code></pre>
+<pre><code>[1] "Learn to code in R"</code></pre>
 </div>
 </div>
-<p>No trecho de código a seguir, usamos a estrutura <code>while</code> para continuar selecionando aleatoriamente uma atividade do vetor <code>acoes</code> até que a atividade selecionada seja “Descansar”. O loop começa verificando se a variável <code>acao</code> é diferente de “Descansar”. Se essa condição for verdadeira, uma nova atividade é selecionada aleatoriamente do vetor acoes usando a função <code>sample()</code> com <code>size = 1</code>, o que significa que estamos selecionando apenas um elemento aleatório do vetor. Em seguida, a atividade selecionada é impressa na tela usando a função <code>print()</code>. Esse processo se repete até que a atividade selecionada seja “Descansar”, momento em que o loop é encerrado.</p>
+<p>In the following code snippet, we use the <code>while</code> structure to continue randomly selecting an activity from the <code>actions</code> vector until the selected activity is “Rest”. The loop starts by checking if the variable <code>action</code> is different from “Rest”. If this condition is true, a new activity is randomly selected from the <code>actions</code> vector using the <code>sample()</code> function with <code>size = 1</code>. The selected activity is then printed to the screen using the <code>print()</code> function. This process repeats until the selected activity is “Rest”, at which point the loop ends.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">420</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(acao <span class="sc">!=</span> <span class="st">"Descansar"</span>) {</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  acao <span class="ot">&lt;-</span> <span class="fu">sample</span>(acoes, <span class="dv">1</span>)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(acao)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (action <span class="sc">!=</span> <span class="st">"Rest"</span>) {</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  action <span class="ot">&lt;-</span> <span class="fu">sample</span>(actions, <span class="dv">1</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(action)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Aprender a programar em R"
-[1] "Aprender a programar em R"
-[1] "Aprender a programar em Python"
-[1] "Aprender a programar em Python"
-[1] "Descansar"</code></pre>
+<pre><code>[1] "Learn to code in R"
+[1] "Learn to code in R"
+[1] "Learn to code in Python"
+[1] "Learn to code in Python"
+[1] "Rest"</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Clique e veja um exemplo extra">
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see an additional example">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Clique e veja um exemplo extra
+Click to see an additional example
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Vamos considerar um exemplo onde queremos simular a evolução de uma população ao longo do tempo, onde não sabemos exatamente quantos períodos serão necessários para que a população atinja um determinado limite. Neste caso, usaremos um loop <code>while</code> para continuar simulando o crescimento populacional até que a população alcance um certo valor limite.</p>
+<p>Let’s consider an example where we want to simulate population growth over time, where the number of periods required to reach a certain limit is unknown. In this case, we use a <code>while</code> loop to simulate population growth until the population reaches a set threshold.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)  <span class="co"># Define uma semente para a replicabilidade dos resultados</span></span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)  <span class="co"># Set seed for reproducibility</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># População inicial</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>populacao <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial population</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>population <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Taxa de crescimento anual da população (em decimal)</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>taxa_crescimento <span class="ot">&lt;-</span> <span class="fl">0.02</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Annual population growth rate (in decimal)</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>growth_rate <span class="ot">&lt;-</span> <span class="fl">0.02</span></span>
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># População limite desejada</span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>limite_populacional <span class="ot">&lt;-</span> <span class="dv">2000</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Desired population limit</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>population_limit <span class="ot">&lt;-</span> <span class="dv">2000</span></span>
 <span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Inicializando o contador de anos</span></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>anos <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize year counter</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando o crescimento populacional até atingir o limite</span></span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (populacao <span class="sc">&lt;</span> limite_populacional) {</span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculando o número de novos indivíduos neste ano</span></span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>  novos_individuos <span class="ot">&lt;-</span> populacao <span class="sc">*</span> taxa_crescimento</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulating population growth until the limit is reached</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (population <span class="sc">&lt;</span> population_limit) {</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate new individuals this year</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>  new_individuals <span class="ot">&lt;-</span> population <span class="sc">*</span> growth_rate</span>
 <span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Incrementando a população com os novos indivíduos</span></span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>  populacao <span class="ot">&lt;-</span> populacao <span class="sc">+</span> novos_individuos</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Increment population with new individuals</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>  population <span class="ot">&lt;-</span> population <span class="sc">+</span> new_individuals</span>
 <span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Incrementando o contador de anos</span></span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>  anos <span class="ot">&lt;-</span> anos <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Increment year counter</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>  years <span class="ot">&lt;-</span> years <span class="sc">+</span> <span class="dv">1</span></span>
 <span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimindo o número de anos necessários para atingir o limite populacional</span></span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Foram necessários"</span>, anos, <span class="st">"anos para atingir uma população de"</span>, populacao))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the number of years required to reach the population limit</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"It took"</span>, years, <span class="st">"years to reach a population of"</span>, population))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Foram necessários 36 anos para atingir uma população de 2039.8873437157"</code></pre>
+<pre><code>[1] "It took 36 years to reach a population of 2039.8873437157"</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -549,11 +513,12 @@ Clique e veja um exemplo extra
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Nota
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>É possível calcular diretamente o número de anos necessários para atingir a população limite desejada. Com um pouco de álgebra você chege na seguinte fórmula para calcular o número de anos: <span class="math display">\[\text{anos} = \frac{\log\left(\frac{\text{limite\_populacional}}{\text{populacao\_inicial}}\right)}{\log(1 + \text{taxa\_crescimento})}.\]</span></p>
+<p>You can calculate the exact number of years needed to reach the population limit directly. Using algebra, the formula is as follows:<br>
+<span class="math display">\[\text{years} = \frac{\log\left(\frac{\text{population\_limit}}{\text{initial\_population}}\right)}{\log(1 + \text{growth\_rate})}.\]</span></p>
 </div>
 </div>
 </div>
@@ -561,37 +526,37 @@ Nota
 </div>
 </section>
 </section>
-<section id="sec-fluxos-funcoes" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="sec-fluxos-funcoes"><span class="header-section-number">2.3</span> Funções</h2>
-<p>Uma função em R é um bloco de código que realiza uma tarefa específica e pode ser reutilizado várias vezes. A sintaxe para definir uma função em R segue o padrão:</p>
+<section id="sec-fluxos-functions" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-fluxos-functions"><span class="header-section-number">2.3</span> Functions</h2>
+<p>A function in R is a block of code that performs a specific task and can be reused multiple times. The syntax for defining a function in R follows this pattern:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>nome_da_funcao <span class="ot">&lt;-</span> <span class="cf">function</span>(parametros) {</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Corpo da função</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Código que realiza a tarefa desejada</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Pode incluir operações matemáticas, manipulação de dados, etc.</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(resultado)  <span class="co"># Retorna o resultado desejado</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(parameters) {</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Function body</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Code that performs the desired task</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># May include mathematical operations, data manipulation, etc.</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)  <span class="co"># Returns the desired result</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Os parâmetros são variáveis que uma função recebe como entrada para executar suas operações. Eles são especificados entre parênteses na definição da função. Dentro do corpo da função, os parâmetros podem ser utilizados para realizar cálculos ou operações.</p>
-<p>O exemplo abaixo define uma função para realizar uma regressão linear simples. A função <code>regressao_linear</code> recebe dois parâmetros: <code>x</code> e <code>y</code>, que representam os dados de entrada para a regressão linear. Dentro da função, um modelo de regressão linear é criado usando a função <code>lm()</code> do R com os dados <code>y</code> em função de <code>x</code>. A documentação da função <code>lm()</code> pode ser acessada ao executar o comando <code>?lm</code>. O modelo resultante é retornado como resultado da função.</p>
+<p>Parameters are variables that a function takes as input to perform its operations. They are specified within parentheses when defining the function. Inside the function body, these parameters can be used to perform calculations or operations.</p>
+<p>The example below defines a function to perform a simple linear regression. The <code>linear_regression</code> function takes two parameters: <code>x</code> and <code>y</code>, which represent the input data for the regression. Inside the function, a linear regression model is created using the <code>lm()</code> function in R, with <code>y</code> as a function of <code>x</code>. The model is then returned as the function result.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Função para realizar regressão linear simples</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>regressao_linear <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)  <span class="co"># Criando o modelo de regressão linear</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(modelo)  <span class="co"># Retornando o modelo</span></span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to perform simple linear regression</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>linear_regression <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)  <span class="co"># Creating the linear regression model</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(model)  <span class="co"># Returning the model</span></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados de exemplo: salário (y) em função dos anos de educação (x)</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>anos_educacao <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">18</span>)</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>salario <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2500</span>, <span class="dv">3300</span>, <span class="dv">3550</span>, <span class="dv">3700</span>, <span class="dv">4500</span>)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Example data: salary (y) as a function of years of education (x)</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>education_years <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">18</span>)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>salary <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2500</span>, <span class="dv">3300</span>, <span class="dv">3550</span>, <span class="dv">3700</span>, <span class="dv">4500</span>)</span>
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Chamando a função de regressão linear</span></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>modelo_regressao <span class="ot">&lt;-</span> <span class="fu">regressao_linear</span>(anos_educacao, salario)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calling the linear regression function</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>regression_model <span class="ot">&lt;-</span> <span class="fu">linear_regression</span>(education_years, salary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Veja o sumário com o resultado do modelo treinado.</p>
+<p>Display the summary of the trained model:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibindo os resultados da regressão</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo_regressao)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display regression results</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(regression_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -613,7 +578,7 @@ Multiple R-squared:  0.9299,    Adjusted R-squared:  0.9065
 F-statistic: 39.78 on 1 and 3 DF,  p-value: 0.008054</code></pre>
 </div>
 </div>
-<p>A figura abaixo mostra um gráfico de dispersão que representa a relação entre anos de educação e salário. A reta azul mostra o modelo de regressão linear treinado com os dados.</p>
+<p>Below is a scatter plot showing the relationship between years of education and salary. The blue line represents the linear regression model trained on the data.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="02-fluxos_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
@@ -625,56 +590,56 @@ F-statistic: 39.78 on 1 and 3 DF,  p-value: 0.008054</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Nota
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Você vai aprender a construir gráficos como este no <a href="./04-visualizacao.html">Capítulo 4</a>.</p>
+<p>You will learn how to build charts like this in <a href="04-visualization.qmd">Chapter 4</a>.</p>
 </div>
 </div>
 </section>
-<section id="sec-pacotes" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="sec-pacotes"><span class="header-section-number">2.4</span> Pacotes</h2>
-<p>Os pacotes no R são conjuntos de funções, conjuntos de dados e documentação que ampliam as capacidades básicas da linguagem R. Eles são essenciais para expandir a funcionalidade do R, permitindo que os usuários realizem uma ampla variedade de tarefas.</p>
-<p>Os pacotes do R estão disponíveis no CRAN (Comprehensive R Archive Network), um repositório centralizado que abriga uma vasta coleção de pacotes, manuais, documentações e outros recursos relacionados ao R. O CRAN é essencialmente o principal hub para distribuição de pacotes R e serve como uma fonte confiável e abrangente de ferramentas para análise de dados, estatísticas e muito mais. Para acessar os pacotes do CRAN, você pode usar a função <code>install.packages()</code>. Por exemplo:</p>
+<section id="sec-packages" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-packages"><span class="header-section-number">2.4</span> Packages</h2>
+<p>Packages in R are collections of functions, datasets, and documentation that extend the core capabilities of the R language. They are essential for performing a wide variety of tasks.</p>
+<p>R packages are available on CRAN (Comprehensive R Archive Network), a centralized repository that hosts a vast collection of packages. To access CRAN packages, use the <code>install.packages()</code> function. For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"nome_do_pacote"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"package_name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Depois de instalar um pacote, você precisa carregá-lo em sua sessão R usando a função <code>library()</code>:</p>
+<p>After installation, load the package into your R session using the <code>library()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nome_do_pacote)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(package_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Isso tornará as funções e conjuntos de dados do pacote disponíveis para uso em sua sessão atual.</p>
+<p>This makes the package’s functions and datasets available for use in your current session.</p>
 </section>
-<section id="exercícios" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="exercícios"><span class="header-section-number">2.5</span> Exercícios</h2>
-<p><strong>1.</strong> Neste exercício, vamos simular o lançamento de uma moeda e armazenar os resultados como um fator contendo os níveis “cara” e “coroa”. Para isso, siga os passos abaixo:</p>
-<p><strong>a)</strong> Utilize o comando abaixo para gerar amostras aleatórias seguindo a distribuição binomial para simular o lançamento de 100 moedas:</p>
+<section id="exercises" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.5</span> Exercises</h2>
+<p><strong>1.</strong> In this exercise, simulate a coin toss and store the results as a factor with levels “heads” and “tails”. Follow these steps:</p>
+<p><strong>a)</strong> Use the command below to generate random samples following a binomial distribution to simulate 100 coin tosses:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>lancamentos <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>tosses <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>b)</strong> Considere que 0 represente “cara” e 1 represente “coroa”. Crie uma variável para armazenar os lançamentos como um fator contendo os níveis “cara” e “coroa”.</p>
-<p><strong>c)</strong> Conte quantas vezes cada um dos resultados ocorreu neste experimento.</p>
-<p><strong>d)</strong> Utilize um loop para percorrer o vetor de traz para frente e descubra qual foi o último lançamento que resultado em uma “cara”.</p>
-<p><strong>2.</strong> Trabalhando com dados de pacotes.</p>
-<p><strong>a)</strong> Instale o pacote <code>nycflights13</code> utilizando o comando abaixo:</p>
+<p><strong>b)</strong> Assume 0 represents “heads” and 1 represents “tails”. Create a variable to store the tosses as a factor with levels “heads” and “tails”.</p>
+<p><strong>c)</strong> Count how many times each result occurred in this experiment.</p>
+<p><strong>d)</strong> Use a loop to iterate backward through the vector and find the last “heads” result.</p>
+<p><strong>2.</strong> Working with package datasets.</p>
+<p><strong>a)</strong> Install the <code>nycflights13</code> package:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"nycflights13"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"nycflights13"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>b)</strong> Carregue no seu ambiente o pacote instalado:</p>
+<p><strong>b)</strong> Load the package into your environment:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>c)</strong> Utilizando os comandos abaixo, verifique o conteúdo dos dataframes <code>flights</code> e <code>airports</code>:</p>
+<p><strong>c)</strong> Use the commands below to explore the contents of the <code>flights</code> and <code>airports</code> data frames:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>?flights</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>?airports</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>?airports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>d)</strong> Filtre os voos que aconteceram em 25/01/2013 e armazene-os na variável natal;</p>
-<p><strong>e)</strong> Quantos voos partiram de Nova Iorque em 25/12/2013?</p>
-<p><strong>f)</strong> Obtenha um sumário da coluna dep_delay. Há dados faltantes? Se sim, remova-os.</p>
-<p><strong>g)</strong> Obtenha o nome do aeroporto de destino do voo com maior atraso de partida em 25/12/2013. Dica: mescle os dados de <code>flights</code> e <code>airports</code>.</p>
+<p><strong>d)</strong> Filter the flights that occurred on 01/25/2013 and store them in the variable <code>christmas</code>.</p>
+<p><strong>e)</strong> How many flights departed from New York on 12/25/2013?</p>
+<p><strong>f)</strong> Get a summary of the <code>dep_delay</code> column. Are there missing values? If yes, remove them.</p>
+<p><strong>g)</strong> Find the name of the destination airport of the flight with the longest departure delay on 12/25/2013. Hint: Merge the <code>flights</code> and <code>airports</code> datasets. ```</p>
 
 
 </section>
@@ -734,12 +699,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copiada");
+    button.setAttribute("title", "Copied!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copiada");
+      button.setAttribute("data-bs-title", "Copied!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -921,7 +886,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./03-dados.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Manipulação de dados</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Manipulation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

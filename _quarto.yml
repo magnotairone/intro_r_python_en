@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 python:
-  version: C:/Users/m_tai/anaconda3/python.exe
+  executable: C:/Users/m_tai/anaconda3/python.exe
 
 book:
   title: "Introduction to R and Python"

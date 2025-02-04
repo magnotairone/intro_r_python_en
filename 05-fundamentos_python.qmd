@@ -6,6 +6,19 @@ editor_options:
 
 # Fundamentos de Python
 
+```{r echo=FALSE}
+library(reticulate)
+use_python("C:/Users/m_tai/anaconda3/python.exe", required = TRUE)
+```
+
+::: {.callout-caution title="Notice!"}
+Chapter to be translated!
+:::
+
+<!-- C:/Users/m_tai/anaconda3/python.exe -->
+
+<!-- C:\\Users\\m_tai\\AppData\\Local\\r-miniconda/python.exe -->
+
 ::: {.callout-important title="Atenção!!!"}
 A partir de agora, todo o código apresentado neste livro está na linguagem Python.
 :::

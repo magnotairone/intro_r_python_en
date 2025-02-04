@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.3.433">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introdução à R e Python - 4&nbsp; Visualização de dados</title>
+<title>Introduction to R and Python - 4&nbsp; Data Visualization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,16 +102,16 @@ div.csl-indent {
   "type": "textbox",
   "limit": 20,
   "language": {
-    "search-no-results-text": "Nenhum resultado",
-    "search-matching-documents-text": "documentos correspondentes",
-    "search-copy-link-title": "Copiar link para a busca",
-    "search-hide-matches-text": "Esconder correspondências adicionais",
-    "search-more-match-text": "mais correspondência neste documento",
-    "search-more-matches-text": "mais correspondências neste documento",
-    "search-clear-button-title": "Limpar",
-    "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Procurar"
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -124,11 +124,11 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-fundamentos_r.html">Aprendendo R</a></li><li class="breadcrumb-item"><a href="./04-visualizacao.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualização de dados</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-fundamentos_r.html">Learning R</a></li><li class="breadcrumb-item"><a href="./04-visualizacao.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Visualization</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -142,12 +142,12 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Introdução à R e Python</a> 
+      <a href="./">Introduction to R and Python</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Procurar"></div>
+        <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -155,14 +155,14 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introdução</span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Aprendendo R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar seção">
+ <span class="menu-text">Learning R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -176,19 +176,19 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-fluxos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fluxos de execução</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Execution Flows</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-dados.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Manipulação de dados</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Manipulation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-visualizacao.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualização de dados</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
   </div>
 </li>
       </ul>
@@ -196,8 +196,8 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Aprendendo Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar seção">
+ <span class="menu-text">Learning Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -217,25 +217,8 @@ div.csl-indent {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Prova Final</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Alternar seção">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./07-prova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Prova Final</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Estudo de casos</span></span>
+ <span class="menu-text">Case studies</span></span>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -250,28 +233,28 @@ div.csl-indent {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Índice</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#gramática-dos-gráficos" id="toc-gramática-dos-gráficos" class="nav-link active" data-scroll-target="#gramática-dos-gráficos"><span class="header-section-number">4.1</span> Gramática dos Gráficos</a></li>
-  <li><a href="#o-pacote-ggplot" id="toc-o-pacote-ggplot" class="nav-link" data-scroll-target="#o-pacote-ggplot"><span class="header-section-number">4.2</span> O pacote <code>ggplot</code></a>
+  <li><a href="#grammar-of-graphics" id="toc-grammar-of-graphics" class="nav-link active" data-scroll-target="#grammar-of-graphics"><span class="header-section-number">4.1</span> Grammar of Graphics</a></li>
+  <li><a href="#the-ggplot-package" id="toc-the-ggplot-package" class="nav-link" data-scroll-target="#the-ggplot-package"><span class="header-section-number">4.2</span> The <code>ggplot</code> Package</a>
   <ul class="collapse">
-  <li><a href="#dados" id="toc-dados" class="nav-link" data-scroll-target="#dados"><span class="header-section-number">4.2.1</span> Dados</a></li>
-  <li><a href="#estética" id="toc-estética" class="nav-link" data-scroll-target="#estética"><span class="header-section-number">4.2.2</span> Estética</a></li>
-  <li><a href="#geometria" id="toc-geometria" class="nav-link" data-scroll-target="#geometria"><span class="header-section-number">4.2.3</span> Geometria</a></li>
-  <li><a href="#facetas" id="toc-facetas" class="nav-link" data-scroll-target="#facetas"><span class="header-section-number">4.2.4</span> Facetas</a></li>
-  <li><a href="#coordenadas" id="toc-coordenadas" class="nav-link" data-scroll-target="#coordenadas"><span class="header-section-number">4.2.5</span> Coordenadas</a></li>
-  <li><a href="#temas" id="toc-temas" class="nav-link" data-scroll-target="#temas"><span class="header-section-number">4.2.6</span> Temas</a></li>
-  <li><a href="#personalização-e-estilização-de-gráficos" id="toc-personalização-e-estilização-de-gráficos" class="nav-link" data-scroll-target="#personalização-e-estilização-de-gráficos"><span class="header-section-number">4.2.7</span> Personalização e Estilização de Gráficos</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">4.2.1</span> Data</a></li>
+  <li><a href="#aesthetics" id="toc-aesthetics" class="nav-link" data-scroll-target="#aesthetics"><span class="header-section-number">4.2.2</span> Aesthetics</a></li>
+  <li><a href="#geometry" id="toc-geometry" class="nav-link" data-scroll-target="#geometry"><span class="header-section-number">4.2.3</span> Geometry</a></li>
+  <li><a href="#facets" id="toc-facets" class="nav-link" data-scroll-target="#facets"><span class="header-section-number">4.2.4</span> Facets</a></li>
+  <li><a href="#coordinates" id="toc-coordinates" class="nav-link" data-scroll-target="#coordinates"><span class="header-section-number">4.2.5</span> Coordinates</a></li>
+  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes"><span class="header-section-number">4.2.6</span> Themes</a></li>
+  <li><a href="#customization-and-styling-of-graphs" id="toc-customization-and-styling-of-graphs" class="nav-link" data-scroll-target="#customization-and-styling-of-graphs"><span class="header-section-number">4.2.7</span> Customization and Styling of Graphs</a></li>
   </ul></li>
-  <li><a href="#pacotes-extras" id="toc-pacotes-extras" class="nav-link" data-scroll-target="#pacotes-extras"><span class="header-section-number">4.3</span> Pacotes extras</a>
+  <li><a href="#additional-packages" id="toc-additional-packages" class="nav-link" data-scroll-target="#additional-packages"><span class="header-section-number">4.3</span> Additional Packages</a>
   <ul class="collapse">
-  <li><a href="#o-pacote-patchwork" id="toc-o-pacote-patchwork" class="nav-link" data-scroll-target="#o-pacote-patchwork"><span class="header-section-number">4.3.1</span> O pacote <code>patchwork</code></a></li>
-  <li><a href="#o-pacote-ggthemes" id="toc-o-pacote-ggthemes" class="nav-link" data-scroll-target="#o-pacote-ggthemes"><span class="header-section-number">4.3.2</span> O pacote <code>ggthemes</code></a></li>
-  <li><a href="#o-pacote-plotly" id="toc-o-pacote-plotly" class="nav-link" data-scroll-target="#o-pacote-plotly"><span class="header-section-number">4.3.3</span> O pacote <code>plotly</code></a></li>
+  <li><a href="#the-patchwork-package" id="toc-the-patchwork-package" class="nav-link" data-scroll-target="#the-patchwork-package"><span class="header-section-number">4.3.1</span> The <code>patchwork</code> Package</a></li>
+  <li><a href="#the-ggthemes-package" id="toc-the-ggthemes-package" class="nav-link" data-scroll-target="#the-ggthemes-package"><span class="header-section-number">4.3.2</span> The <code>ggthemes</code> Package</a></li>
+  <li><a href="#the-plotly-package" id="toc-the-plotly-package" class="nav-link" data-scroll-target="#the-plotly-package"><span class="header-section-number">4.3.3</span> The <code>plotly</code> Package</a></li>
   </ul></li>
-  <li><a href="#dicas-extras" id="toc-dicas-extras" class="nav-link" data-scroll-target="#dicas-extras"><span class="header-section-number">4.4</span> Dicas extras</a></li>
-  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios"><span class="header-section-number">4.5</span> Exercícios</a></li>
+  <li><a href="#extra-tips" id="toc-extra-tips" class="nav-link" data-scroll-target="#extra-tips"><span class="header-section-number">4.4</span> Extra Tips</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">4.5</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -280,7 +263,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="ch-dataviz" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualização de dados</span></span></h1>
+<h1 class="title"><span id="ch-dataviz" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></h1>
 </div>
 
 
@@ -295,24 +278,24 @@ div.csl-indent {
 
 </header>
 
-<p>A visualização de dados desempenha um papel fundamental na compreensão e comunicação de informações complexas. Ao transformar números e estatísticas em gráficos, tabelas e outras representações visuais, podemos identificar padrões, tendências e insights que podem não ser imediatamente aparentes em conjuntos de dados brutos. Além disso, a visualização de dados facilita a comunicação de resultados e descobertas para uma audiência mais ampla, tornando informações complexas mais acessíveis e compreensíveis.</p>
-<section id="gramática-dos-gráficos" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="gramática-dos-gráficos"><span class="header-section-number">4.1</span> Gramática dos Gráficos</h2>
-<p>Ele é baseado na gramática dos gráficos (<em>grammar of graphics</em> - GG), veja <span class="citation" data-cites="GG">Wilkinson (<a href="references.html#ref-GG" role="doc-biblioref">2012</a>)</span>. A gramática dos gráficos é um conjunto de princípios e conceitos que descrevem a estrutura e as regras para criar gráficos de forma consistente e eficaz. A GG é um <em>framework</em> para visualização de dados que desmembra cada componente de um gráfico em elementos individuais, criando camadas distintas. Usando o sistema GG, podemos construir gráficos passo a passo para obter resultados flexíveis e personalizáveis. Cada aspecto do gráfico, como pontos, linhas, cores e escalas, é tratado como uma peça separada, permitindo um controle detalhado sobre a aparência e o conteúdo do gráfico final.</p>
+<p>Data visualization plays a fundamental role in understanding and communicating complex information. By transforming numbers and statistics into charts, tables, and other visual representations, we can identify patterns, trends, and insights that may not be immediately apparent in raw datasets. Additionally, data visualization facilitates the communication of results and findings to a broader audience, making complex information more accessible and understandable.</p>
+<section id="grammar-of-graphics" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="grammar-of-graphics"><span class="header-section-number">4.1</span> Grammar of Graphics</h2>
+<p>It is based on the grammar of graphics (<em>grammar of graphics</em> - GG), see <span class="citation" data-cites="GG">Wilkinson (<a href="references.html#ref-GG" role="doc-biblioref">2012</a>)</span>. The grammar of graphics is a set of principles and concepts that describe the structure and rules for creating charts consistently and effectively. GG is a framework for data visualization that breaks down each component of a chart into individual elements, creating distinct layers. Using the GG system, we can build charts step by step to achieve flexible and customizable results. Each aspect of the chart, such as points, lines, colors, and scales, is treated as a separate piece, allowing detailed control over the appearance and content of the final chart.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/gglayers.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figura de <span class="citation" data-cites="GG">Wilkinson (<a href="references.html#ref-GG" role="doc-biblioref">2012</a>)</span>.</figcaption>
+<figcaption class="figure-caption">Figure from <span class="citation" data-cites="GG">Wilkinson (<a href="references.html#ref-GG" role="doc-biblioref">2012</a>)</span>.</figcaption>
 </figure>
 </div>
 </section>
-<section id="o-pacote-ggplot" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="o-pacote-ggplot"><span class="header-section-number">4.2</span> O pacote <code>ggplot</code></h2>
-<p>O pacote mais conhecido de visualização de dados em R é o <code>ggplot2</code>, que é baseado na gramática dos gráficos. O <code>ggplot2</code> permite criar uma ampla variedade de gráficos, incluindo gráficos de dispersão, linhas, barras, histogramas, entre outros, de forma simples e flexível. Com o <code>ggplot2</code>, você pode personalizar praticamente todos os aspectos do gráfico, desde a forma e a cor dos pontos até a escala dos eixos e a aparência do plano de fundo.</p>
-<p>Para exemplificar o uso do ggplot, vamos considerar os dados <code>gapminder</code>, <span class="citation" data-cites="gapminder">Rosling (<a href="references.html#ref-gapminder" role="doc-biblioref">2012</a>)</span>.</p>
-<section id="dados" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="dados"><span class="header-section-number">4.2.1</span> Dados</h3>
-<p>A função <code>ggplot()</code> inicializa um gráfico ggplot2 e define os dados que serão usados.</p>
+<section id="the-ggplot-package" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="the-ggplot-package"><span class="header-section-number">4.2</span> The <code>ggplot</code> Package</h2>
+<p>The most well-known data visualization package in R is <code>ggplot2</code>, which is based on the grammar of graphics. <code>ggplot2</code> allows the creation of a wide variety of charts, including scatter plots, line plots, bar charts, histograms, and more, in a simple and flexible way. With <code>ggplot2</code>, you can customize basicaly all aspects of the chart, from the shape and color of the points to the axis scales and the background appearance.</p>
+<p>To exemplify the use of ggplot, let’s consider the <code>gapminder</code> dataset, <span class="citation" data-cites="gapminder">Rosling (<a href="references.html#ref-gapminder" role="doc-biblioref">2012</a>)</span>.</p>
+<section id="data" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="data"><span class="header-section-number">4.2.1</span> Data</h3>
+<p>The <code>ggplot()</code> function initializes a ggplot2 chart and defines the data to be used.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
@@ -320,107 +303,107 @@ div.csl-indent {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>gapminder_2007 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_2007)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_2007)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="O gráfico gerado também não está errado!">
+<div class="callout callout-style-default callout-note callout-titled" title="The generated plot is also not wrong!">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-O gráfico gerado também não está errado!
+The generated plot is also not wrong!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Esse código cria um gráfico utilizando os dados do <code>gapminder</code> apenas para o ano de 2007. Apenas isso. Não há instruções extras sobre o que exibir em cada eixo (estética do gráfico).</p>
+<p>This code creates a chart using the <code>gapminder</code> data for the year 2007 only. That’s all. There are no extra instructions about what to display on each axis (chart aesthetics).</p>
 </div>
 </div>
 </section>
-<section id="estética" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="estética"><span class="header-section-number">4.2.2</span> Estética</h3>
-<p>O mapeamento estético (<code>aes</code>) no <code>ggplot2</code> é uma função que permite vincular variáveis de um conjunto de dados às propriedades visuais de um gráfico, como cor, forma, tamanho e posição. Por meio do mapeamento estético, podemos controlar como os dados são representados visualmente no gráfico.</p>
-<p>Por exemplo, ao criar um gráfico de dispersão, podemos mapear a variável x (horizontal) e a variável y (vertical) do conjunto de dados às coordenadas do gráfico.</p>
+<section id="aesthetics" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="aesthetics"><span class="header-section-number">4.2.2</span> Aesthetics</h3>
+<p>The aesthetic mapping (<code>aes</code>) in <code>ggplot2</code> is a function that allows linking variables from a dataset to the visual properties of a chart, such as color, shape, size, and position. Through aesthetic mapping, we can control how the data is visually represented in the chart.</p>
+<p>For example, when creating a scatter plot, we can map the x (horizontal) variable and the y (vertical) variable from the dataset to the chart coordinates.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_2007, </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="O gráfico gerado também não está errado!">
+<div class="callout callout-style-default callout-note callout-titled" title="The generated plot is also not wrong!">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-O gráfico gerado também não está errado!
+The generated plot is also not wrong!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Esse código define um gráfico de dispersão utilizando os dados do gapminder apenas para o ano de 2007. O eixo x representa o PIB per capita (gdpPercap) e o eixo y representa a expectativa de vida (lifeExp). Apenas isso. Não há instruções extra no techo de código sobre o fomato (geometria) que deve ser usado para exibir os dados.</p>
+<p>This code defines a scatter plot using the gapminder data for the year 2007 only. The x-axis represents GDP per capita (gdpPercap), and the y-axis represents life expectancy (lifeExp). That’s all. There are no extra instructions in the code snippet about the format (geometry) that should be used to display the data.</p>
 </div>
 </div>
 </section>
-<section id="geometria" class="level3" data-number="4.2.3">
-<h3 data-number="4.2.3" class="anchored" data-anchor-id="geometria"><span class="header-section-number">4.2.3</span> Geometria</h3>
-<p>A geometria refere-se aos elementos visuais que compõem um gráfico, como pontos, linhas, barras e áreas. Cada tipo de gráfico tem sua própria geometria correspondente, e é especificada pela função <code>geom_*</code>, seguida pelo tipo de geometria desejado.</p>
-<p>Por exemplo, para criar um gráfico de dispersão, usamos a geometria geom_point(), enquanto para criar um gráfico de barras, usamos a geometria geom_bar().</p>
+<section id="geometry" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="geometry"><span class="header-section-number">4.2.3</span> Geometry</h3>
+<p>Geometry refers to the visual elements that make up a chart, such as points, lines, bars, and areas. Each chart type has its corresponding geometry, specified by the <code>geom_*</code> function followed by the desired geometry type.</p>
+<p>For example, to create a scatter plot, we use the <code>geom_point()</code> geometry, while for creating a bar chart, we use the <code>geom_bar()</code> geometry.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_2007, </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Cada geometria tem seus próprios parâmetros específicos que podem ser ajustados para personalizar a aparência do gráfico, como cor, tamanho, preenchimento e transparência.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Adicionando uma estética de cores no gráfico">
+<p>Each geometry has its specific parameters that can be adjusted to customize the appearance of the chart, such as color, size, fill, and transparency.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Adding color aesthetics to the chart">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Adicionando uma estética de cores no gráfico
+Adding color aesthetics to the chart
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Veja que para colorir cada ponto do gráfico de dispersão de acordo com o continente, basta adicionar no mapeamento estético <code>color = continent</code>.</p>
+<p>To color each point in the scatter plot according to the continent, just add <code>color = continent</code> to the aesthetic mapping.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_2007, </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </div>
-<section id="outras-geometrias" class="level4" data-number="4.2.3.1">
-<h4 data-number="4.2.3.1" class="anchored" data-anchor-id="outras-geometrias"><span class="header-section-number">4.2.3.1</span> Outras geometrias</h4>
-<p>Abaixo, mostramos outras possíveis geometrias. Algumas alterações foram feitas na forma como as funções do <code>ggplot</code> são usadas. Propositalmente não foi adicionado texto descritivoos pois essas alterações devem ser fáceis de interpretar.</p>
+<section id="other-geometries" class="level4" data-number="4.2.3.1">
+<h4 data-number="4.2.3.1" class="anchored" data-anchor-id="other-geometries"><span class="header-section-number">4.2.3.1</span> Other Geometries</h4>
+<p>Below are examples of other possible geometries. Some changes were made to how the <code>ggplot</code> functions are used. Purposefully, no descriptive text was added as these changes should be easy to interpret.</p>
 <p><code>geom_line()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrar dados para o Brasil</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter data for Brazil</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dados_pais <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"Brazil"</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar gráfico de linha</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create line plot</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder <span class="sc">%&gt;%</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>         <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"Brazil"</span>), </span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p><code>geom_bar()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar gráfico de barras</span></span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create bar plot</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_2007, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"summary"</span>, <span class="at">fun =</span> <span class="st">"mean"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"summary"</span>, <span class="at">fun =</span> <span class="st">"mean"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -428,7 +411,7 @@ Adicionando uma estética de cores no gráfico
 <p><code>geom_boxplot()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_2007, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -441,23 +424,23 @@ Adicionando uma estética de cores no gráfico
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_gdpPercap =</span> <span class="fu">mean</span>(gdpPercap)) <span class="sc">%&gt;%</span> </span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean_gdpPercap, <span class="at">y =</span> mean_lifeExp, <span class="at">label =</span> continent)) <span class="sc">+</span></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Note que estamos combinando duas geometrias em um único gráfico (ponto e texto). Os rótulos de texto são adicionados aos pontos usando a geometria <code>geom_text()</code>, com os parâmetros <code>vjust</code> e <code>hjust</code> definindo a posição vertical e horizontal do texto, respectivamente:</p>
+<p>Note that we are combining two geometries in a single plot (point and text). Text labels are added to points using the <code>geom_text()</code> geometry, with the parameters <code>vjust</code> and <code>hjust</code> defining the vertical and horizontal position of the text, respectively:</p>
 <ul>
-<li><p>o parâmetro <code>vjust</code> ajusta o alinhamento vertical do texto em relação ao ponto. Um valor negativo (-0.5, por exemplo) move o texto acima do ponto, enquanto um valor positivo move o texto abaixo do ponto.</p></li>
-<li><p>o parâmetro <code>hjust</code> ajusta o alinhamento horizontal do texto em relação ao ponto. Um valor de 0.5 centraliza o texto horizontalmente em relação ao ponto.</p></li>
+<li><p>The <code>vjust</code> parameter adjusts the vertical alignment of the text relative to the point. A negative value (-0.5, for example) moves the text above the point, while a positive value moves it below the point.</p></li>
+<li><p>The <code>hjust</code> parameter adjusts the horizontal alignment of the text relative to the point. A value of 0.5 centers the text horizontally relative to the point.</p></li>
 </ul>
 </section>
 </section>
-<section id="facetas" class="level3" data-number="4.2.4">
-<h3 data-number="4.2.4" class="anchored" data-anchor-id="facetas"><span class="header-section-number">4.2.4</span> Facetas</h3>
-<p>As facetas (<code>facet</code>) referem-se à capacidade de dividir um gráfico em múltiplas visualizações com base em uma ou mais variáveis categóricas. Isso permite comparar as relações entre variáveis em diferentes segmentos dos dados.</p>
-<p>As facetas são adicionadas usando a função <code>facet_wrap()</code> para criar uma matriz de painéis com base em uma variável categórica ou <code>facet_grid()</code> para criar uma grade de painéis com base em duas variáveis categóricas.</p>
-<p>Por exemplo, podemos usar facetas para criar um gráfico de dispersão separado para dois anos distintos, permitindo comparar as relações entre o PIB per capta e a expectativa de vida nesses dois anos.</p>
+<section id="facets" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="facets"><span class="header-section-number">4.2.4</span> Facets</h3>
+<p>Facets refer to the ability to split a plot into multiple visualizations based on one or more categorical variables. This allows comparing relationships between variables in different data segments.</p>
+<p>Facets are added using the <code>facet_wrap()</code> function to create a matrix of panels based on a categorical variable or <code>facet_grid()</code> to create a panel grid based on two categorical variables.</p>
+<p>For example, we can use facets to create separate scatter plots for two distinct years, allowing comparisons of the relationships between GDP per capita and life expectancy in those two years.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>gapminder_anos <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1952</span> <span class="sc">|</span> year <span class="sc">==</span> <span class="dv">2007</span>)</span>
@@ -465,66 +448,66 @@ Adicionando uma estética de cores no gráfico
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_anos, </span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="coordenadas" class="level3" data-number="4.2.5">
-<h3 data-number="4.2.5" class="anchored" data-anchor-id="coordenadas"><span class="header-section-number">4.2.5</span> Coordenadas</h3>
-<p>As coordenadas em ggplot2 determinam como os dados são mapeados em um espaço gráfico. Isso inclui a escala dos eixos x e y, bem como qualquer transformação ou ajuste aplicado aos dados. As coordenadas afetam a aparência geral do gráfico, incluindo sua orientação, proporção e escala.</p>
-<p>Para definir limites nos eixos x e y, podemos usar a função <code>coord_cartesian()</code> para controlar quais intervalos de valores são exibidos no gráfico. Isso é útil quando queremos focar em uma parte específica dos dados ou evitar que outliers influenciem a escala dos eixos.</p>
+<section id="coordinates" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="coordinates"><span class="header-section-number">4.2.5</span> Coordinates</h3>
+<p>Coordinates in ggplot2 determine how data is mapped in a graphic space. This includes the scales of the x and y axes, as well as any transformation or adjustment applied to the data. Coordinates affect the overall appearance of the chart, including its orientation, proportion, and scale.</p>
+<p>To set limits on the x and y axes, we can use the <code>coord_cartesian()</code> function to control which value ranges are displayed on the chart. This is useful when we want to focus on a specific part of the data or prevent outliers from influencing the axis scales.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_anos, </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year) <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">83</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">83</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>É possível aplicar a escala logarítmica aos eixos também. Isso é útil quando os dados têm uma ampla variação de valores e estamos interessados em destacar diferenças em uma ampla gama de valores, como em dados de renda ou PIB. Para fazer isso, basta utilizar a função <code>scale_*_log10()</code>:</p>
+<p>It is possible to apply a logarithmic scale to the axes as well. This is useful when the data has a wide range of values and we are interested in highlighting differences across a broad range of values, such as in income or GDP data. To do this, simply use the <code>scale_*_log10()</code> function:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_anos, </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year) <span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="temas" class="level3" data-number="4.2.6">
-<h3 data-number="4.2.6" class="anchored" data-anchor-id="temas"><span class="header-section-number">4.2.6</span> Temas</h3>
-<p>Os temas controlam os aspectos visuais dos gráficos, como títulos, legendas, eixos e cores de fundo. Os temas pré-definidos, como <code>theme_bw()</code>, <code>theme_minimal()</code>, <code>theme_classic()</code> etc., oferecem estilos visuais consistentes que podem ser aplicados aos gráficos para obter uma aparência específica.</p>
+<section id="themes" class="level3" data-number="4.2.6">
+<h3 data-number="4.2.6" class="anchored" data-anchor-id="themes"><span class="header-section-number">4.2.6</span> Themes</h3>
+<p>Themes control the visual aspects of charts, such as titles, legends, axes, and background colors. Predefined themes, such as <code>theme_bw()</code>, <code>theme_minimal()</code>, and <code>theme_classic()</code>, offer consistent visual styles that can be applied to charts for a specific appearance.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_anos, </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year) <span class="sc">+</span></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Tente também">
+<div class="callout callout-style-default callout-tip callout-titled" title="Try it too">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tente também
+Try it too
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Apague a última linha do exemplo acima, digite <code>theme_</code>, aperte a tecla tab e experimente os diferentes temas pré-definidos no <code>ggplot</code>.</p>
+<p>Delete the last line from the example above, type <code>theme_</code>, press the tab key, and experiment with the different predefined themes in <code>ggplot</code>.</p>
 </div>
 </div>
-<p>Além disso, podemos definir praticamente todos os aspectos do gráfico. Por exemplo, para trocar a posição da legenda para baixo, podemos usar a função <code>theme(legend.position = "bottom")</code>. Para alterar o tamanho da fonte, podemos usar a função <code>theme(text = element_text(size = 12))</code>. Essas definições podem ser combinadas em uma única chamada da função <code>theme()</code>, veja abaixo.</p>
+<p>Additionally, we can define virtually all aspects of the chart. For example, to move the legend position to the bottom, we can use the function <code>theme(legend.position = "bottom")</code>. To change the font size, we can use the function <code>theme(text = element_text(size = 12))</code>. These settings can be combined in a single call to the <code>theme()</code> function, as shown below.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_anos, </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
@@ -533,47 +516,47 @@ Tente também
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, </span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="personalização-e-estilização-de-gráficos" class="level3" data-number="4.2.7">
-<h3 data-number="4.2.7" class="anchored" data-anchor-id="personalização-e-estilização-de-gráficos"><span class="header-section-number">4.2.7</span> Personalização e Estilização de Gráficos</h3>
-<p>A função <code>labs()</code> é responsável por personalizar rótulos e títulos em gráficos. No exemplo abaixo, renomeamos os eixos x e y e atribuimos um nome mais descritivo para a legenda de cores, que neste caso representa o continente.</p>
+<section id="customization-and-styling-of-graphs" class="level3" data-number="4.2.7">
+<h3 data-number="4.2.7" class="anchored" data-anchor-id="customization-and-styling-of-graphs"><span class="header-section-number">4.2.7</span> Customization and Styling of Graphs</h3>
+<p>The <code>labs()</code> function is responsible for customizing labels and titles in plots. In the example below, we rename the x and y axes and assign a more descriptive name to the color legend, which in this case represents the continent.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_anos, </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year) <span class="sc">+</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"PIB per capita (log)"</span>, </span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Expectativa de vida"</span>, </span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continente"</span>, </span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relação entre PIB per capita e Expectativa de Vida"</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP per capita (log)"</span>, </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Life Expectancy"</span>, </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continent"</span>, </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relationship between GDP per capita and Life Expectancy"</span>) <span class="sc">+</span></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>O parâmetro <code>alpha</code> controla a opacidade dos elementos geométricos, variando de 0 a 1. Por exemplo, geom_point(alpha = 0.5) torna os pontos semi-transparentes, o que pode ser útil para visualizar sobreposições de dados em um gráfico de dispersão.</p>
+<p>The <code>alpha</code> parameter controls the opacity of geometric elements, ranging from 0 to 1. For example, <code>geom_point(alpha = 0.5)</code> makes the points semi-transparent, which can be useful for visualizing data overlaps in a scatter plot.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_anos, </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year) <span class="sc">+</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"PIB per capita (log)"</span>, </span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Expectativa de vida"</span>, </span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continente"</span>, </span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relação entre PIB per capita e Expectativa de Vida"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP per capita (log)"</span>, </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Life Expectancy"</span>, </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continent"</span>, </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relationship between GDP per capita and Life Expectancy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Para escolher cores específicas para os níveis de uma variável categórica, podemos utilizar a função scale_color_manual() para atribuir manualmente cores a cada nível da variável.</p>
+<p>To choose specific colors for the levels of a categorical variable, we can use the <code>scale_color_manual()</code> function to manually assign colors to each level of the variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_anos, </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
@@ -581,25 +564,25 @@ Tente também
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year) <span class="sc">+</span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"orange"</span>, <span class="st">"purple"</span>, <span class="st">"red"</span>))<span class="sc">+</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"PIB per capita (log)"</span>, </span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Expectativa de vida"</span>, </span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continente"</span>, </span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relação entre PIB per capita e Expectativa de Vida"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP per capita (log)"</span>, </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Life Expectancy"</span>, </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continent"</span>, </span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relationship between GDP per capita and Life Expectancy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Outras paletas de cores">
+<div class="callout callout-style-default callout-tip callout-titled" title="Other Color Palettes">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Outras paletas de cores
+Other Color Palettes
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Você pode usar paletas de cores do pacote <code>RColorBrewer</code> usando a função <code>scale_color_brewer()</code>.</p>
+<p>You can use color palettes from the <code>RColorBrewer</code> package using the <code>scale_color_brewer()</code> function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_anos, </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
@@ -607,93 +590,93 @@ Outras paletas de cores
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year) <span class="sc">+</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>)<span class="sc">+</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"PIB per capita (log)"</span>, </span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Expectativa de vida"</span>, </span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continente"</span>, </span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relação entre PIB per capita e Expectativa de Vida"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP per capita (log)"</span>, </span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Life Expectancy"</span>, </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continent"</span>, </span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relationship between GDP per capita and Life Expectancy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>A vantagem de usar as paletas de cores do RColorBrewer é que elas foram cuidadosamente projetadas para serem perceptualmente distintas e adequadas para representar diferentes grupos ou categorias em gráficos. Isso significa que as cores em uma paleta são mais facilmente distinguíveis umas das outras, mesmo quando impressas em preto e branco ou quando vistas por pessoas com deficiências visuais. Veja todas paletas disponíves <a href="https://r-graph-gallery.com/38-rcolorbrewers-palettes.html">aqui</a></p>
+<p>The advantage of using RColorBrewer color palettes is that they are carefully designed to be perceptually distinct and suitable for representing different groups or categories in plots. This means that the colors in a palette are more easily distinguishable from each other, even when printed in black and white or viewed by people with visual impairments. See all available palettes <a href="https://r-graph-gallery.com/38-rcolorbrewers-palettes.html">here</a>.</p>
 </div>
 </div>
 </section>
 </section>
-<section id="pacotes-extras" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="pacotes-extras"><span class="header-section-number">4.3</span> Pacotes extras</h2>
-<p>Existem alguns pacotes extras que funcionam como extensões do <code>ggplot2</code>. Apresentamos alguns nessa seção.</p>
-<section id="o-pacote-patchwork" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="o-pacote-patchwork"><span class="header-section-number">4.3.1</span> O pacote <code>patchwork</code></h3>
-<p>O pacote <code>patchwork</code> é usada para combinar múltiplos gráficos ggplot2 em uma única visualização. Ele permite criar layouts flexíveis e complexos, adicionando, organizando e ajustando gráficos individualmente.</p>
+<section id="additional-packages" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="additional-packages"><span class="header-section-number">4.3</span> Additional Packages</h2>
+<p>There are some extra packages that work as extensions of <code>ggplot2</code>. We present some in this section.</p>
+<section id="the-patchwork-package" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="the-patchwork-package"><span class="header-section-number">4.3.1</span> The <code>patchwork</code> Package</h3>
+<p>The <code>patchwork</code> package is used to combine multiple ggplot2 plots into a single visualization. It allows you to create flexible and complex layouts, adding, organizing, and adjusting individual plots.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar o pacote patchwork (apenas se ainda não estiver instalado)</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"patchwork"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the patchwork package (only if not already installed)</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"patchwork"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Depois de carregar o pacote, você pode usar o operador <code>+</code> para combinar gráficos ggplot2 em uma única visualização.</p>
-<p>Aqui está um exemplo simples criando dois gráficos separados e, em seguida, são combinados usando o <code>patchwork</code>:</p>
+<p>After loading the package, you can use the <code>+</code> operator to combine ggplot2 plots into a single visualization.</p>
+<p>Here is a simple example creating two separate plots and then combining them using <code>patchwork</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'patchwork' was built under R version 4.2.3</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_2007, </span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"PIB per capita (log)"</span>, </span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Expectativa de vida em 2007"</span>, </span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relação entre PIB per capita e Expectativa de Vida"</span>) <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP per capita (log)"</span>, </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Life Expectancy in 2007"</span>, </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relationship between GDP per capita and Life Expectancy"</span>) <span class="sc">+</span></span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>plot2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_2007, </span>
 <span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(lifeExp)) <span class="sc">+</span></span>
 <span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma da expectativa de vida"</span>,</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Expectativa de Vida em 2007"</span>, </span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frequência"</span>) <span class="sc">+</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histogram of Life Expectancy"</span>,</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Life Expectancy in 2007"</span>, </span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frequency"</span>) <span class="sc">+</span></span>
 <span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>plot1 <span class="sc">+</span> plot2</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>plot1 <span class="sc">+</span> plot2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="o-pacote-ggthemes" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="o-pacote-ggthemes"><span class="header-section-number">4.3.2</span> O pacote <code>ggthemes</code></h3>
-<p>O pacote <code>ggthemes</code> é uma extensão do <code>ggplot2</code> que fornece uma variedade de temas pré-definidos para personalizar a aparência dos gráficos. Veja a <a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/">documentação aqui</a>.</p>
+<section id="the-ggthemes-package" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="the-ggthemes-package"><span class="header-section-number">4.3.2</span> The <code>ggthemes</code> Package</h3>
+<p>The <code>ggthemes</code> package is an extension of <code>ggplot2</code> that provides a variety of pre-defined themes to customize the appearance of plots. See the <a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/">documentation here</a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar o pacote ggthemes (apenas se ainda não estiver instalado)</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggthemes"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the ggthemes package (only if not already installed)</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggthemes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Depois de carregar o pacote, você pode aplicar qualquer um dos temas disponíveis aos seus gráficos <code>ggplot2</code> usando a função <code>theme_*()</code>. No exemplo abaixo, são criadas três versões do mesmo gráfico com temas diferentes. Os operadores <code>+</code> e <code>/</code> foram usados para definir como os gráficos serão exibidos.</p>
+<p>After loading the package, you can apply any of the available themes to your <code>ggplot2</code> plots using the <code>theme_*()</code> function. In the example below, three versions of the same plot are created with different themes. The <code>+</code> and <code>/</code> operators are used to define how the plots will be displayed.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregar o pacote ggthemes</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the ggthemes package</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'ggthemes' was built under R version 4.2.3</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plot0 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> gapminder_2007, </span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"PIB per capita (log)"</span>, </span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Expectativa de vida em 2007"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP per capita (log)"</span>, </span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Life Expectancy in 2007"</span>)</span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> plot0 <span class="sc">+</span> <span class="fu">theme_economist</span>()</span>
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>plot2 <span class="ot">&lt;-</span> plot0 <span class="sc">+</span> <span class="fu">theme_excel</span>()</span>
 <span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>plot3 <span class="ot">&lt;-</span> plot0 <span class="sc">+</span> <span class="fu">theme_stata</span>()</span>
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>plot1 <span class="sc">+</span>  (plot2 <span class="sc">/</span> plot3)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>plot1 <span class="sc">+</span>  (plot2 <span class="sc">/</span> plot3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="o-pacote-plotly" class="level3" data-number="4.3.3">
-<h3 data-number="4.3.3" class="anchored" data-anchor-id="o-pacote-plotly"><span class="header-section-number">4.3.3</span> O pacote <code>plotly</code></h3>
-<p>O pacote <code>plotly</code> oferece recursos para criar gráficos interativos. Para adicionar interação ao gráfico fornecido, podemos usar a função <code>ggplotly()</code> para converter um gráfico criado com <code>ggplot2</code> em um gráfico interativo. Utilize o comando <code>install.packages("plotly")</code> caso não tenha o pacote instalado.</p>
+<section id="the-plotly-package" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="the-plotly-package"><span class="header-section-number">4.3.3</span> The <code>plotly</code> Package</h3>
+<p>The <code>plotly</code> package offers features to create interactive plots. To add interactivity to the provided plot, we can use the <code>ggplotly()</code> function to convert a plot created with <code>ggplot2</code> into an interactive plot. Use the command <code>install.packages("plotly")</code> if you don’t have the package installed.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'plotly' was built under R version 4.2.3</code></pre>
 </div>
@@ -703,62 +686,62 @@ Outras paletas de cores
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>year) <span class="sc">+</span></span>
 <span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"PIB per capita (log)"</span>, </span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Expectativa de vida"</span>, </span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continente"</span>, </span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relação entre PIB per capita e Expectativa de Vida"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP per capita (log)"</span>, </span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Life Expectancy"</span>, </span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Continent"</span>, </span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Relationship between GDP per capita and Life Expectancy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(grafico) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(grafico) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="dicas-extras" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="dicas-extras"><span class="header-section-number">4.4</span> Dicas extras</h2>
-<p>Quando você estiver explorando diferentes tipos de gráficos para visualizar seus dados, o site <a href="https://www.data-to-viz.com">Data to Viz</a> pode ser uma ferramenta valiosa. Ele fornece uma galeria completa de tipos de gráficos e oferece orientações sobre quando e como usar cada um deles. Além disso, o site oferece exemplos específicos de como criar esses gráficos usando diferentes bibliotecas, como ggplot2 em R e matplotlib em Python.</p>
+<section id="extra-tips" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="extra-tips"><span class="header-section-number">4.4</span> Extra Tips</h2>
+<p>When exploring different types of plots to visualize your data, the website <a href="https://www.data-to-viz.com">Data to Viz</a> can be a valuable tool. It provides a complete gallery of plot types and offers guidance on when and how to use each one. Additionally, the website provides specific examples of how to create these plots using different libraries, such as ggplot2 in R and matplotlib in Python.</p>
 </section>
-<section id="exercícios" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="exercícios"><span class="header-section-number">4.5</span> Exercícios</h2>
-<p><strong>1.</strong> Vamos utilizar os dados da Billboard que foram apresentados na <a href="03-dados.html#sec-ex-dados"><span>Seção&nbsp;3.7</span></a>. Sua tarefa é reproduzir os gráficos abaixo utilizando técnicas de processamento de dados com <code>dplyr</code> e visualização de dados com <code>ggplot</code>.</p>
-<p><strong>a)</strong> O gráfico abaixo mostra o histórico de cada musica no ranking ao longo das semanas.</p>
+<section id="exercises" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">4.5</span> Exercises</h2>
+<p><strong>1.</strong> Let’s use the Billboard data presented in <a href="03-dados.html#sec-ex-dados"><span>Section&nbsp;3.7</span></a>. Your task is to reproduce the plots below using data processing techniques with <code>dplyr</code> and data visualization with <code>ggplot</code>.</p>
+<p><strong>a)</strong> The plot below shows the history of each song in the ranking over the weeks.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p><strong>b)</strong> O gráfico abaixo é uma pequena alteração do apresentado no item <strong>a)</strong>, no eixo x é apresentada a data que a música entrou no ranking.</p>
+<p><strong>b)</strong> The plot below is a small modification of the one presented in item <strong>a)</strong>; the x-axis shows the date the song entered the ranking.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p><strong>c)</strong> O gráfico abaixo mostra o histórico de duas músicas no ranking: “Higher” e “With Arms Wide Open”.</p>
+<p><strong>c)</strong> The plot below shows the ranking history of two songs: “Higher” and “With Arms Wide Open.”</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p><strong>2.</strong> Utilize os dados gerados na <a href="02-fluxos.html#sec-fluxos-for"><span>Seção&nbsp;2.2.1</span></a> que representam o preço de fechamento de uma ação e reproduza o gráfico abaixo, mostrando a evolução da média móvel ao longo do tempo.</p>
+<p><strong>2.</strong> Use the data generated in <a href="02-fluxos.html#sec-fluxos-for"><span>Section&nbsp;2.2.1</span></a> representing the closing price of a stock and reproduce the plot below, showing the evolution of the moving average over time.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p><strong>3. (Desafio)</strong> Reproduza o gráfico de dispersão abaixo que foi apresentado na <a href="02-fluxos.html#sec-fluxos-funcoes"><span>Seção&nbsp;2.3</span></a>.</p>
+<p><strong>3. (Challenge)</strong> Reproduce the scatter plot presented in <a href="02-fluxos.html#sec-fluxos-functions"><span>Section&nbsp;2.3</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="04-visualizacao_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p><strong>4.</strong> Reproduza a figura apresentada na <a href="03-dados.html#sec-dados-groupby"><span>Seção&nbsp;3.5.6</span></a>.</p>
+<p><strong>4.</strong> Reproduce the figure presented in <a href="03-dados.html#sec-dados-groupby"><span>Section&nbsp;3.5.6</span></a>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-gapminder" class="csl-entry" role="listitem">
-Rosling, Hans. 2012. <span>«Data - Gapminder.org»</span>. <a href="http://www.gapminder.org/data/" class="uri">http://www.gapminder.org/data/</a>.
+Rosling, Hans. 2012. <span>“Data - Gapminder.org.”</span> <a href="http://www.gapminder.org/data/" class="uri">http://www.gapminder.org/data/</a>.
 </div>
 <div id="ref-GG" class="csl-entry" role="listitem">
-Wilkinson, Leland. 2012. <em>The grammar of graphics</em>. Springer.
+Wilkinson, Leland. 2012. <em>The Grammar of Graphics</em>. Springer.
 </div>
 </div>
 </section>
@@ -818,12 +801,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copiada");
+    button.setAttribute("title", "Copied!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copiada");
+      button.setAttribute("data-bs-title", "Copied!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -1000,7 +983,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./03-dados.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Manipulação de dados</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Manipulation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -1,4 +1,3 @@
-```markdown
 ---
 output: html_document
 editor_options: 
@@ -441,7 +440,7 @@ ggplot2::ggplot(tidyr::tibble(t=5:30, mm=media_movel), ggplot2::aes(t, mm)) +
   ggplot2::theme_bw()
 ```
 
-**3. (Challenge)** Reproduce the scatter plot presented in @sec-fluxos-funcoes.
+**3. (Challenge)** Reproduce the scatter plot presented in @sec-fluxos-functions.
 
 ```{r echo=FALSE}
 # Function to perform simple linear regression

@@ -134,14 +134,14 @@ For example, using the `ls()` function (which lists the names of objects in the 
 ls()
 ```
 
-If you have correctly executed all the commands in Section [@sec-datatypes], you should see the following output in the console:
+If you have correctly executed all the commands in [@sec-datatypes], you should see the following output in the console:
 
 `[1] "company"               "country"                  "num_shares"`\
 `[4] "stock_price_falling"     "inflation_rate"         "interest_rate_rising"`
 
 ## Variables
 
-In Section [@sec-datatypes], several variables were created.
+In [@sec-datatypes], several variables were created.
 For example, the `company` variable stores a character string.
 Previously, you saw how to list all defined variables in your environment.
 But what exactly are variables?
