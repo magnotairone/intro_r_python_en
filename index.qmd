@@ -1,12 +1,12 @@
-# Introdução {.unnumbered}
+# Introduction {.unnumbered}
 
-Este livro consiste em notas de aula do minicurso de Introdução às Linguagens de Programação R e Python.
+This book consists of lecture notes from the short course *Introduction to Programming Languages R and Python*.
 
-Se você está interessado nos fundamentos da linguagem R, você pode encontrar esses tópicos na primeira parte do livro. Por outro lado, se deseja explorar os fundamentos de Python, a segunda parte é onde você encontrará essas informações.
+If you are interested in the fundamentals of the R language, you can find these topics in the first part of the book. On the other hand, if you want to explore the fundamentals of Python, the second part is where you will find that information.
 
-Este é um livro em constante evolução, projetado para crescer e se adaptar. Se você tiver alguma sugestão ou *feedback* sobre o conteúdo apresentado, sinta-se à vontade para enviar um e-mail para magnotairone\[at\]gmail.com.
+This is a continuously evolving book, designed to grow and adapt. If you have any suggestions or feedback on the content presented, feel free to send an email to magnotairone\[at\]gmail.com.
 
-Meus sinceros agradecimentos a Luiza Tuler pela revisão do conteúdo deste livro.
+My sincere thanks to Luiza Tuler for reviewing the content of this book.
 
 <!-- See @knuth84 for additional discussion of literate programming. -->
 

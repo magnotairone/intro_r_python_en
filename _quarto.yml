@@ -6,27 +6,27 @@ python:
   version: C:/Users/m_tai/anaconda3/python.exe
 
 book:
-  title: "Introdução à R e Python"
+  title: "Introduction to R and Python"
   author: "Magno Severino"
   date: "03/03/2024"
   chapters:
     - index.qmd
-    - part: Aprendendo R
+    - part: Learning R
       chapters: 
         - 01-fundamentos_r.qmd
         - 02-fluxos.qmd
         - 03-dados.qmd
         - 04-visualizacao.qmd
-    - part: Aprendendo Python
+    - part: Learning Python
       chapters:
         - 05-fundamentos_python.qmd
         - 06-visualizacao_python.qmd
-    - part: Prova Final
-      chapters:
-        - 07-prova.qmd
-    - part: Estudo de casos
+    - part: Case studies
       # chapters:
       #   - 07-casos.qmd
+    #- part: Final Exam
+      # chapters:
+      #  - 07-prova.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -39,4 +39,4 @@ format:
 
 editor: visual
 
-lang: pt    
+lang: en    

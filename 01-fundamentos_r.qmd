@@ -193,25 +193,29 @@ This will return `TRUE` if the variable `num_shares` is of type numeric.
 ```{r  eval=FALSE}
 is.logical(stock_price_falling)
 ```
+
 This will return `TRUE` if the variable `stock_price_falling` is of type logical.
 
 -   For the variable `inflation_rate`:
+
 ```{r eval=FALSE}
 is.numeric(inflation_rate)
 ```
+
 Just like for the variable `num_shares`, this will return `TRUE` if the variable `inflation_rate` is of type numeric.
 
 -   For the variable `interest_rate_rising`:
+
 ```{r eval=FALSE}
 is.logical(interest_rate_rising)
 ```
+
 This will return `TRUE` if the variable `interest_rate_rising` is of type logical.
 
 These examples illustrate how you can use the `is.*` functions to check the type of variables, helping ensure that you are handling data correctly in your analyses.
 
-
 Another important family of functions is the `as.*` functions.
-They are used to convert an object from one type to another. 
+They are used to convert an object from one type to another.
 They allow changing the data type of a variable, which can be useful in various situations, such as performing specific operations that require a certain data type or ensuring data type consistency in the code.
 
 Some of the most common `as.*` functions include:
@@ -223,39 +227,42 @@ number <- 123
 number_character <- as.character(number)
 ```
 
-
 -   `as.numeric()` converts to numeric:
+
 ```{r}
 text <- "3.14"
 number <- as.numeric(text)
 ```
 
 -   `as.logical()` converts to logical:
+
 ```{r}
 number <- 0
 logical <- as.logical(number)
 ```
 
-These functions are useful for ensuring that data types are correct in your code and for guaranteeing that you can perform the desired operations on your objects.  
-However, it is important to note that not all conversions may be successful, especially when there is a loss of information (e.g., when converting from character to numeric).  
-Therefore, it is always a good practice to verify if the conversion was done correctly and if the resulting data is as expected.  
+These functions are useful for ensuring that data types are correct in your code and for guaranteeing that you can perform the desired operations on your objects.\
+However, it is important to note that not all conversions may be successful, especially when there is a loss of information (e.g., when converting from character to numeric).\
+Therefore, it is always a good practice to verify if the conversion was done correctly and if the resulting data is as expected.
 
-Here is an example of converting a character to numeric with non-numeric text:  
+Here is an example of converting a character to numeric with non-numeric text:
 
 ```{r}
 text <- "abc"
 number <- as.numeric(text)
 ```
+
 In this case, the conversion will fail, returning `NA` (Not Available) and issuing a *warning* message.
 
 ## Data structures
 
-In any data analysis, it is common to work with datasets that have different structures and formats.  
-Let’s explore four fundamental data structures in R: vector, matrix, list, and DataFrame.
+In any data analysis, it is common to work with datasets that have different structures and formats.\
+Let's explore four fundamental data structures in R: vector, matrix, list, and DataFrame.
 
 ### Vectors
 
-A vector in R is a one-dimensional data structure with elements of the same type. Use `c()` to create vectors:
+A vector in R is a one-dimensional data structure with elements of the same type.
+Use `c()` to create vectors:
 
 ```{r}
 # Stock prices vector
@@ -284,13 +291,12 @@ length(stock_prices)
 length(1:10)
 ```
 
+To access elements in a vector in R, you can use numeric or logical indices inside square brackets `[ ]`.
 
-To access elements in a vector in R, you can use numeric or logical indices inside square brackets `[ ]`.  
+You can access elements using numeric indices within square brackets \[ \].\
+For example, `vector[i]` accesses the element at position `i` of `vector`.
 
-You can access elements using numeric indices within square brackets \[ \].  
-For example, `vector[i]` accesses the element at position `i` of `vector`.  
-
-```r
+```{r}
 # Stock prices vector
 stock_prices <- c(100, 110, 105, 120, 115)
 
@@ -299,64 +305,62 @@ second_element <- stock_prices[2]
 
 # Accessing a range of elements from the vector
 multiple_elements <- stock_prices[3:5]
-```  
+```
 
-You can also access elements using logical indices inside square brackets `[ ]`.  
-For example, `vector[logical_indices]` returns the elements of the vector where the logical indices are `TRUE`.  
+You can also access elements using logical indices inside square brackets `[ ]`.\
+For example, `vector[logical_indices]` returns the elements of the vector where the logical indices are `TRUE`.
 
-```r
+```{r}
 # Accessing stock prices greater than 110
 prices_above_110 <- stock_prices[stock_prices > 110]
-```  
+```
 
----
+------------------------------------------------------------------------
 
-### Matrices  
+### Matrices
 
-A matrix in R is a two-dimensional data structure consisting of rows and columns of elements of the same type.  
-It is useful for representing tabular datasets, such as time series data or covariance matrices.  
+A matrix in R is a two-dimensional data structure consisting of rows and columns of elements of the same type.\
+It is useful for representing tabular datasets, such as time series data or covariance matrices.
 
-```r
+```{r}
 # Asset returns matrix
 asset_returns <- matrix(c(0.05, 0.03, 0.02, 0.04, 0.06, 0.03), 
                         nrow = 2, byrow = TRUE)
 rownames(asset_returns) <- c("Stock 1", "Stock 2")
 colnames(asset_returns) <- c("Year 1", "Year 2", "Year 3")
-```  
+```
 
-The code above creates a matrix called `asset_returns` that stores the returns of two assets over three years.  
+The code above creates a matrix called `asset_returns` that stores the returns of two assets over three years.
 
-The `matrix()` function is used to create the matrix.  
-The vector `c(0.05, 0.03, 0.02, 0.04, 0.06, 0.03)` contains the return values, filled row by row.  
-Parameters `nrow = 2` and `byrow = TRUE` specify that the matrix should have 2 rows (to represent two assets), and values are filled by row.  
-The `rownames()` and `colnames()` functions assign names to the rows ("Stock 1" and "Stock 2") and columns ("Year 1", "Year 2", "Year 3").  
+The `matrix()` function is used to create the matrix.\
+The vector `c(0.05, 0.03, 0.02, 0.04, 0.06, 0.03)` contains the return values, filled row by row.\
+Parameters `nrow = 2` and `byrow = TRUE` specify that the matrix should have 2 rows (to represent two assets), and values are filled by row.\
+The `rownames()` and `colnames()` functions assign names to the rows ("Stock 1" and "Stock 2") and columns ("Year 1", "Year 2", "Year 3").
 
 The `class()` function returns the class of the object, which in this case will be "matrix," indicating that `asset_returns` is a matrix in R.
 
 The `dim()` function returns the dimensions of the matrix, i.e., the number of rows and columns.
 
-```r
+```{r}
 # Verifying the matrix dimensions
 dim(asset_returns)
-```  
+```
 
-This will output \[2, 3\], indicating that the matrix has 2 rows and 3 columns.  
+This will output \[2, 3\], indicating that the matrix has 2 rows and 3 columns.
 
-
-The `length()` function returns the total number of elements in an object.  
-For a matrix, this will return the total number of elements, which is the product of the number of rows and columns.  
+The `length()` function returns the total number of elements in an object.\
+For a matrix, this will return the total number of elements, which is the product of the number of rows and columns.
 
 ```{r}
 length(asset_returns)
-```  
+```
 
-To access rows, columns, and elements in a matrix in R, you can use numeric indices or names (if defined).  
-Here’s how to do it:  
+To access rows, columns, and elements in a matrix in R, you can use numeric indices or names (if defined).\
+Here's how to do it:
 
-- **Accessing Rows and Columns:** You can access rows and columns using numeric indices inside square brackets \[ \]. For example, `matrix[i, ]` accesses row `i`, and `matrix[, j]` accesses column `j`. To access a specific cell, you use `matrix[i, j]`, where `i` is the row number and `j` is the column number.  
+-   **Accessing Rows and Columns:** You can access rows and columns using numeric indices inside square brackets \[ \]. For example, `matrix[i, ]` accesses row `i`, and `matrix[, j]` accesses column `j`. To access a specific cell, you use `matrix[i, j]`, where `i` is the row number and `j` is the column number.
 
-
-```r
+```{r}
 # Accessing the first row of the matrix
 first_row <- asset_returns[1, ]
 
@@ -368,11 +372,11 @@ element <- asset_returns[2, 3]
 
 # Accessing more than one column
 selected_columns <- asset_returns[, c(1, 3)]
-```  
+```
 
-- **Accessing Rows and Columns by name:**If row or column names are defined, you can also use them to access data:  
+-   **Accessing Rows and Columns by name:**If row or column names are defined, you can also use them to access data:
 
-```r
+```{r}
 # Accessing the row named "Stock 1"
 stock1 <- asset_returns["Stock 1", ]
 
@@ -381,19 +385,19 @@ year2 <- asset_returns[, "Year 2"]
 
 # Accessing the element in "Stock 2" and "Year 3"
 specific_element <- asset_returns["Stock 2", "Year 3"]
-```  
-In R, unlike other programming languages, the indices of rows and columns in matrices (as well as in vectors, lists, etc.) start at 1 instead of 0.  
+```
+
+In R, unlike other programming languages, the indices of rows and columns in matrices (as well as in vectors, lists, etc.) start at 1 instead of 0.\
 This means the first element of a matrix is at index 1, the second at index 2, and so on.
- 
 
 ### Lists
 
-In R, a list is a flexible data structure that can store elements of different types, such as vectors, matrices, other lists, or even functions. 
+In R, a list is a flexible data structure that can store elements of different types, such as vectors, matrices, other lists, or even functions.
 Lists are useful when you need to store and manipulate heterogeneous data sets or complex structures.
 
 We can create a list that stores information about a country, such as its name, GDP, inflation rate, and a time series of exchange rate values.
 
-```r
+```{r}
 # Creating a list with country information
 country_info <- list(
   name = "Brazil",
@@ -401,21 +405,21 @@ country_info <- list(
   inflation = 0.05,
   exchange_rates = c(4.86, 5.13, 5.20, 5.07, 4.97)
 )
-```  
+```
 
-In this example, `country_info` is a list containing four elements:  
+In this example, `country_info` is a list containing four elements:
 
-- `name`: the name of the country (character type).  
-- `gdp`: the country's Gross Domestic Product (numeric type).  
-- `inflation`: the country's inflation rate (numeric type).  
-- `exchange_rates`: a time series of the country's exchange rate values (numeric vector type).  
+-   `name`: the name of the country (character type).\
+-   `gdp`: the country's Gross Domestic Product (numeric type).\
+-   `inflation`: the country's inflation rate (numeric type).\
+-   `exchange_rates`: a time series of the country's exchange rate values (numeric vector type).
 
-This list exemplifies how we can store different types of data in a list in R.  
-It can be used to represent a country's economic information in an organized and accessible manner.  
+This list exemplifies how we can store different types of data in a list in R.\
+It can be used to represent a country's economic information in an organized and accessible manner.
 
-To access individual elements in a list by name, we use the dollar operator `$`.  
+To access individual elements in a list by name, we use the dollar operator `$`.
 
-```r
+```{r}
 # Accessing the name of the country
 country_info$name
 
@@ -424,9 +428,9 @@ country_info$gdp
 
 # Accessing exchange rates
 country_info[["exchange_rates"]][3]
-```  
+```
 
-We can also access individual elements in a list by index using square brackets `[ ]`.  
+We can also access individual elements in a list by index using square brackets `[ ]`.
 
 ```{r}
 # Accessing the first element of the list (country name)
@@ -436,54 +440,54 @@ first_element <- country_info[[1]]
 third_element <- country_info[[3]]
 ```
 
-You may have noticed the use of double brackets to access list elements.  
-In R, single brackets (`[]`) and double brackets (`[[]]`) serve different purposes when accessing elements in a list.  
+You may have noticed the use of double brackets to access list elements.\
+In R, single brackets (`[]`) and double brackets (`[[]]`) serve different purposes when accessing elements in a list.
 
 **Understanding Lists Through the Train Analogy**
 
-Imagine a list in R as a train, and each element of the list is a wagon of the train.  
-Now, inside each wagon, you can store different types of cargo, such as boxes, sacks, or even other wagons.  
+Imagine a list in R as a train, and each element of the list is a wagon of the train.\
+Now, inside each wagon, you can store different types of cargo, such as boxes, sacks, or even other wagons.
 
-For instance, in one wagon, you might have a vector; in another, a matrix; and in another, just a single number.  
-Each element of the list can be different in type and content, just as each wagon of a train can hold different things.  
+For instance, in one wagon, you might have a vector; in another, a matrix; and in another, just a single number.\
+Each element of the list can be different in type and content, just as each wagon of a train can hold different things.
 
 **Accessing a Specific Wagon**
 
-To access specific information about Brazil, such as the country name or GDP, we use single brackets `[ ]`.  
-For example:  
+To access specific information about Brazil, such as the country name or GDP, we use single brackets `[ ]`.\
+For example:
 
-- `country_info["nome"]`: we get the wagon containing the country name, which is "Brazil".  
-- `country_info[2]`: we get the second wagon, which contains the GDP, with a value of 1609.  
+-   `country_info["nome"]`: we get the wagon containing the country name, which is "Brazil".\
+-   `country_info[2]`: we get the second wagon, which contains the GDP, with a value of 1609.
 
 **Accessing Elements Inside a Wagon**
 
-If we want to access specific elements inside a wagon, we use double brackets `[[ ]]`.  
-For example:  
+If we want to access specific elements inside a wagon, we use double brackets `[[ ]]`.\
+For example:
 
-- `country_info[["exchange_rates"]]`: we open the wagon containing the country's exchange rate information and access its contents, which is a vector of different exchange rate values over time.  
+-   `country_info[["exchange_rates"]]`: we open the wagon containing the country's exchange rate information and access its contents, which is a vector of different exchange rate values over time.
 
-To access a specific value from this vector, we can use single brackets `[ ]` again:  
+To access a specific value from this vector, we can use single brackets `[ ]` again:
 
-- `country_info[["exchange_rates"]][3]`: this opens the wagon containing the exchange rate vector and retrieves the third value, which is 5.20.  
+-   `country_info[["exchange_rates"]][3]`: this opens the wagon containing the exchange rate vector and retrieves the third value, which is 5.20.
 
-
-Using the `class()` function, we can observe the difference between objects obtained with single and double brackets.  
+Using the `class()` function, we can observe the difference between objects obtained with single and double brackets.
 
 ```{r}
 class(country_info["nome"])
 class(country_info[["nome"]])
 ```
 
-### ::: {.callout-note title="Summary"}  
-In summary, single brackets are used to access subsets of elements in a list while preserving their structure, whereas double brackets are used to access individual values from a list, without preserving the original structure.  
-:::  
+### ::: {.callout-note title="Summary"}
 
-### DataFrames  
+In summary, single brackets are used to access subsets of elements in a list while preserving their structure, whereas double brackets are used to access individual values from a list, without preserving the original structure.\
+:::
 
-DataFrames are tabular structures in R where columns can have different types.  
-You can create one using the `data.frame()` function:  
+### DataFrames
 
-```r
+DataFrames are tabular structures in R where columns can have different types.\
+You can create one using the `data.frame()` function:
+
+```{r}
 # Creating a dataframe with economic data
 economic_data <- data.frame(
   country = c("Brazil", "USA", "China", "India", "Japan"),
@@ -492,9 +496,9 @@ economic_data <- data.frame(
   gdp_per_capita = c(10294, 65741, 10380, 2353, 41581),
   inflation = c(0.02, 0.01, 0.04, 0.06, 0.005)
 )
-```  
+```
 
-We can access individual elements, rows, or columns of a dataframe using numeric indices or column names.  
+We can access individual elements, rows, or columns of a dataframe using numeric indices or column names.
 
 ```{r}
 # Accessing the first row of the dataframe
@@ -505,9 +509,9 @@ We can access individual elements, rows, or columns of a dataframe using numeric
 
 # Accessing the element in the second row and third column of the dataframe
 (element <- economic_data[2, 3])
-```  
+```
 
-We can combine dataframes based on common columns using the `merge()` function.  
+We can combine dataframes based on common columns using the `merge()` function.
 
 ```{r}
 # Creating another dataframe for merging
@@ -518,9 +522,9 @@ demographic_data <- data.frame(
 
 # Performing a merge based on the "country" column
 (data_and_demographic_info <- merge(economic_data, demographic_data, by = "country"))
-```  
+```
 
-We can also add new rows of data to an existing dataframe.  
+We can also add new rows of data to an existing dataframe.
 
 ```{r}
 # Creating another dataframe to combine rows
@@ -535,29 +539,29 @@ more_data <- data.frame(
 
 # Combining dataframes by rows
 (all_data <- rbind(data_and_demographic_info, more_data))
-```  
+```
 
-::: {.callout-important title="Missing Data"}  
-You may have noticed in the `more_data` dataframe that the inflation value for Germany is marked as `NA`.  
-An `NA` value, short for "Not Available," indicates a missing value in a dataset.  
-In the example above, the presence of `NA` in the inflation column for Germany means that no inflation value is available for this country in the provided table.  
+::: {.callout-important title="Missing Data"}
+You may have noticed in the `more_data` dataframe that the inflation value for Germany is marked as `NA`.\
+An `NA` value, short for "Not Available," indicates a missing value in a dataset.\
+In the example above, the presence of `NA` in the inflation column for Germany means that no inflation value is available for this country in the provided table.
 
-A value can be marked as `NA` in various situations, including:  
+A value can be marked as `NA` in various situations, including:
 
-- **Missing data**: When no information is available for a specific field in a dataset.  
-  Example: Lack of data on unemployment rates in certain regions due to unavailability or incomplete reporting.  
+-   **Missing data**: When no information is available for a specific field in a dataset.\
+    Example: Lack of data on unemployment rates in certain regions due to unavailability or incomplete reporting.
 
-- **Measurement or collection errors**: Errors during the measurement or data collection process can result in inaccurate or missing values.  
-  Example: Recording a country's GDP might lead to missing values for certain quarters due to collection errors.  
+-   **Measurement or collection errors**: Errors during the measurement or data collection process can result in inaccurate or missing values.\
+    Example: Recording a country's GDP might lead to missing values for certain quarters due to collection errors.
 
-- **Inapplicable values**: Some variables might not apply to all cases.  
-  Example: In analyzing government spending on education, some countries might not have data due to differences in reporting policies or lack of investment in education.  
+-   **Inapplicable values**: Some variables might not apply to all cases.\
+    Example: In analyzing government spending on education, some countries might not have data due to differences in reporting policies or lack of investment in education.
 
-- **Unrecorded values**: In some databases, specific values might not be recorded intentionally, either for privacy reasons or because they are irrelevant to the analysis.  
-  Example: Collecting data on individuals' net worth in an income survey might result in some participants opting not to disclose financial information for privacy reasons. In such cases, the corresponding values would be marked as `NA`.  
-:::  
+-   **Unrecorded values**: In some databases, specific values might not be recorded intentionally, either for privacy reasons or because they are irrelevant to the analysis.\
+    Example: Collecting data on individuals' net worth in an income survey might result in some participants opting not to disclose financial information for privacy reasons.
+    In such cases, the corresponding values would be marked as `NA`.\
+:::
 
+## Exercises
 
-## Exercises  
-
-1. **Consider the following economic sectors:** "Finance," "Information Technology," "Industrial Goods," and "Healthcare." Generate a random sample of size 1,000 from these sectors with equal probability for each. Display the first few values of the resulting variable and count how many companies belong to each economic sector.
+1.  **Consider the following economic sectors:** "Finance," "Information Technology," "Industrial Goods," and "Healthcare." Generate a random sample of size 1,000 from these sectors with equal probability for each. Display the first few values of the resulting variable and count how many companies belong to each economic sector.

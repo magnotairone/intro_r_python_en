@@ -1,7 +1,7 @@
 # Estudo de casos práticos
 
-O objetivo deste capítulo é apresentar estudos de casos reais usando tanto `R` quanto `Python`.
+The objective of this chapter is to present real case studies using both `R` and `Python`.
 
 ::: callout-important
-Página ainda em construção!
+Chapter under construction!
 :::
