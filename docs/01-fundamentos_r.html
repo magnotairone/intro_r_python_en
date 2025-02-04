@@ -313,11 +313,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking if the interest rate is increasing</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>interest_rate_rising <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking if stock prices are falling</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>stock_price_falling <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking if share prices are falling</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>share_price_falling <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking the class of stock_price_falling</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(stock_price_falling)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking the class of share_price_falling</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(share_price_falling)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "logical"</code></pre>
 </div>
@@ -372,14 +372,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>If you have correctly executed all the commands in <a href="#sec-datatypes"><span>Section&nbsp;1.2</span></a>, you should see the following output in the console:</p>
 <p><code>[1] "company"               "country"                  "num_shares"</code><br>
-<code>[4] "stock_price_falling"     "inflation_rate"         "interest_rate_rising"</code></p>
+<code>[4] "share_price_falling"     "inflation_rate"         "interest_rate_rising"</code></p>
 </section>
 <section id="variables" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="variables"><span class="header-section-number">1.4</span> Variables</h2>
 <p>In <a href="#sec-datatypes"><span>Section&nbsp;1.2</span></a>, several variables were created. For example, the <code>company</code> variable stores a character string. Previously, you saw how to list all defined variables in your environment. But what exactly are variables?</p>
 <p>In R, variables are fundamental elements used to store and manipulate data. They are like containers that hold values, objects, or expressions. When you assign a value to a variable, you are essentially giving it a name to access and manipulate it later.</p>
-<p>For example, by writing <code>stock_price &lt;- 10</code>, you are creating a variable called <code>stock_price</code> and assigning it the value 10. Now, whenever you use <code>stock_price</code> in your code, you are referring to this value.</p>
-<p>It is a common practice to choose descriptive variable names that help understand their purpose or content. For example, in an economic context, you might use <code>stock_price</code> to represent a stock’s price or <code>inflation_rate</code> to represent the inflation rate.</p>
+<p>For example, by writing <code>share_price &lt;- 10</code>, you are creating a variable called <code>share_price</code> and assigning it the value 10. Now, whenever you use <code>share_price</code> in your code, you are referring to this value.</p>
+<p>It is a common practice to choose descriptive variable names that help understand their purpose or content. For example, in an economic context, you might use <code>share_price</code> to represent a shares’s price or <code>inflation_rate</code> to represent the inflation rate.</p>
 <p>To assign a value to a variable, use the <code>&lt;-</code> operator. The <code>=</code> operator can also be used for assignment. Both have the same practical effect in R, and the choice between them usually comes down to personal preference and coding style, although some style guides recommend using <code>&lt;-</code>.</p>
 </section>
 <section id="checking-the-type-of-a-variable" class="level2" data-number="1.5">
@@ -407,12 +407,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>This will return <code>TRUE</code> if the variable <code>num_shares</code> is of type numeric.</p>
 <ul>
-<li>For the variable <code>stock_price_falling</code>:</li>
+<li>For the variable <code>share_price_falling</code>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.logical</span>(stock_price_falling)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.logical</span>(share_price_falling)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This will return <code>TRUE</code> if the variable <code>stock_price_falling</code> is of type logical.</p>
+<p>This will return <code>TRUE</code> if the variable <code>share_price_falling</code> is of type logical.</p>
 <ul>
 <li>For the variable <code>inflation_rate</code>:</li>
 </ul>
@@ -472,8 +472,8 @@ Let’s explore four fundamental data structures in R: vector, matrix, list, and
 <h3 data-number="1.6.1" class="anchored" data-anchor-id="vectors"><span class="header-section-number">1.6.1</span> Vectors</h3>
 <p>A vector in R is a one-dimensional data structure with elements of the same type. Use <code>c()</code> to create vectors:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stock prices vector</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>stock_prices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">110</span>, <span class="dv">105</span>, <span class="dv">120</span>, <span class="dv">115</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># share prices vector</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>share_prices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">110</span>, <span class="dv">105</span>, <span class="dv">120</span>, <span class="dv">115</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In some cases, it is useful to define sequences of numbers using the <code>:</code> operator and the <code>seq()</code> function.</p>
 <div class="cell">
@@ -494,8 +494,8 @@ Let’s explore four fundamental data structures in R: vector, matrix, list, and
 </div>
 <p>To check the size of a vector, you can use the <code>length()</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># checking the size of the stock prices vector</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(stock_prices)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># checking the size of the share prices vector</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(share_prices)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
@@ -508,20 +508,20 @@ Let’s explore four fundamental data structures in R: vector, matrix, list, and
 <p>You can access elements using numeric indices within square brackets [ ].<br>
 For example, <code>vector[i]</code> accesses the element at position <code>i</code> of <code>vector</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stock prices vector</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>stock_prices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">110</span>, <span class="dv">105</span>, <span class="dv">120</span>, <span class="dv">115</span>)</span>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># share prices vector</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>share_prices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">110</span>, <span class="dv">105</span>, <span class="dv">120</span>, <span class="dv">115</span>)</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing the second element of the vector</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>second_element <span class="ot">&lt;-</span> stock_prices[<span class="dv">2</span>]</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>second_element <span class="ot">&lt;-</span> share_prices[<span class="dv">2</span>]</span>
 <span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing a range of elements from the vector</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>multiple_elements <span class="ot">&lt;-</span> stock_prices[<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>multiple_elements <span class="ot">&lt;-</span> share_prices[<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can also access elements using logical indices inside square brackets <code>[ ]</code>.<br>
 For example, <code>vector[logical_indices]</code> returns the elements of the vector where the logical indices are <code>TRUE</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing stock prices greater than 110</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>prices_above_110 <span class="ot">&lt;-</span> stock_prices[stock_prices <span class="sc">&gt;</span> <span class="dv">110</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing share prices greater than 110</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>prices_above_110 <span class="ot">&lt;-</span> share_prices[share_prices <span class="sc">&gt;</span> <span class="dv">110</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -533,14 +533,14 @@ It is useful for representing tabular datasets, such as time series data or cova
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Asset returns matrix</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>asset_returns <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.03</span>, <span class="fl">0.02</span>, <span class="fl">0.04</span>, <span class="fl">0.06</span>, <span class="fl">0.03</span>), </span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(asset_returns) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Stock 1"</span>, <span class="st">"Stock 2"</span>)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(asset_returns) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Share 1"</span>, <span class="st">"Share 2"</span>)</span>
 <span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(asset_returns) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Year 1"</span>, <span class="st">"Year 2"</span>, <span class="st">"Year 3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The code above creates a matrix called <code>asset_returns</code> that stores the returns of two assets over three years.</p>
 <p>The <code>matrix()</code> function is used to create the matrix.<br>
 The vector <code>c(0.05, 0.03, 0.02, 0.04, 0.06, 0.03)</code> contains the return values, filled row by row.<br>
 Parameters <code>nrow = 2</code> and <code>byrow = TRUE</code> specify that the matrix should have 2 rows (to represent two assets), and values are filled by row.<br>
-The <code>rownames()</code> and <code>colnames()</code> functions assign names to the rows (“Stock 1” and “Stock 2”) and columns (“Year 1”, “Year 2”, “Year 3”).</p>
+The <code>rownames()</code> and <code>colnames()</code> functions assign names to the rows (“Share 1” and “Share 2”) and columns (“Year 1”, “Year 2”, “Year 3”).</p>
 <p>The <code>class()</code> function returns the class of the object, which in this case will be “matrix,” indicating that <code>asset_returns</code> is a matrix in R.</p>
 <p>The <code>dim()</code> function returns the dimensions of the matrix, i.e., the number of rows and columns.</p>
 <div class="cell">
@@ -581,14 +581,14 @@ Here’s how to do it:</p>
 <li><strong>Accessing Rows and Columns by name:</strong>If row or column names are defined, you can also use them to access data:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing the row named "Stock 1"</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>stock1 <span class="ot">&lt;-</span> asset_returns[<span class="st">"Stock 1"</span>, ]</span>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing the row named "Share 1"</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>share1 <span class="ot">&lt;-</span> asset_returns[<span class="st">"Share 1"</span>, ]</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing the column named "Year 2"</span></span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>year2 <span class="ot">&lt;-</span> asset_returns[, <span class="st">"Year 2"</span>]</span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing the element in "Stock 2" and "Year 3"</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>specific_element <span class="ot">&lt;-</span> asset_returns[<span class="st">"Stock 2"</span>, <span class="st">"Year 3"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing the element in "Share 2" and "Year 3"</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>specific_element <span class="ot">&lt;-</span> asset_returns[<span class="st">"Share 2"</span>, <span class="st">"Year 3"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In R, unlike other programming languages, the indices of rows and columns in matrices (as well as in vectors, lists, etc.) start at 1 instead of 0.<br>
 This means the first element of a matrix is at index 1, the second at index 2, and so on.</p>

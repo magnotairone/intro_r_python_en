@@ -81,11 +81,11 @@ In the example above, the `inflation_rate` variable belongs to the `numeric` cla
 # Checking if the interest rate is increasing
 interest_rate_rising <- TRUE
 
-# Checking if stock prices are falling
-stock_price_falling <- FALSE
+# Checking if share prices are falling
+share_price_falling <- FALSE
 
-# Checking the class of stock_price_falling
-class(stock_price_falling)
+# Checking the class of share_price_falling
+class(share_price_falling)
 ```
 
 ### Character Data Type
@@ -137,7 +137,7 @@ ls()
 If you have correctly executed all the commands in [@sec-datatypes], you should see the following output in the console:
 
 `[1] "company"               "country"                  "num_shares"`\
-`[4] "stock_price_falling"     "inflation_rate"         "interest_rate_rising"`
+`[4] "share_price_falling"     "inflation_rate"         "interest_rate_rising"`
 
 ## Variables
 
@@ -150,11 +150,11 @@ In R, variables are fundamental elements used to store and manipulate data.
 They are like containers that hold values, objects, or expressions.
 When you assign a value to a variable, you are essentially giving it a name to access and manipulate it later.
 
-For example, by writing `stock_price <- 10`, you are creating a variable called `stock_price` and assigning it the value 10.
-Now, whenever you use `stock_price` in your code, you are referring to this value.
+For example, by writing `share_price <- 10`, you are creating a variable called `share_price` and assigning it the value 10.
+Now, whenever you use `share_price` in your code, you are referring to this value.
 
 It is a common practice to choose descriptive variable names that help understand their purpose or content.
-For example, in an economic context, you might use `stock_price` to represent a stock's price or `inflation_rate` to represent the inflation rate.
+For example, in an economic context, you might use `share_price` to represent a shares's price or `inflation_rate` to represent the inflation rate.
 
 To assign a value to a variable, use the `<-` operator.
 The `=` operator can also be used for assignment.
@@ -188,13 +188,13 @@ is.numeric(num_shares)
 
 This will return `TRUE` if the variable `num_shares` is of type numeric.
 
--   For the variable `stock_price_falling`:
+-   For the variable `share_price_falling`:
 
 ```{r  eval=FALSE}
-is.logical(stock_price_falling)
+is.logical(share_price_falling)
 ```
 
-This will return `TRUE` if the variable `stock_price_falling` is of type logical.
+This will return `TRUE` if the variable `share_price_falling` is of type logical.
 
 -   For the variable `inflation_rate`:
 
@@ -265,8 +265,8 @@ A vector in R is a one-dimensional data structure with elements of the same type
 Use `c()` to create vectors:
 
 ```{r}
-# Stock prices vector
-stock_prices <- c(100, 110, 105, 120, 115)
+# share prices vector
+share_prices <- c(100, 110, 105, 120, 115)
 ```
 
 In some cases, it is useful to define sequences of numbers using the `:` operator and the `seq()` function.
@@ -286,8 +286,8 @@ increment_sequence
 To check the size of a vector, you can use the `length()` function.
 
 ```{r}
-# checking the size of the stock prices vector
-length(stock_prices)
+# checking the size of the share prices vector
+length(share_prices)
 length(1:10)
 ```
 
@@ -297,22 +297,22 @@ You can access elements using numeric indices within square brackets \[ \].\
 For example, `vector[i]` accesses the element at position `i` of `vector`.
 
 ```{r}
-# Stock prices vector
-stock_prices <- c(100, 110, 105, 120, 115)
+# share prices vector
+share_prices <- c(100, 110, 105, 120, 115)
 
 # Accessing the second element of the vector
-second_element <- stock_prices[2]
+second_element <- share_prices[2]
 
 # Accessing a range of elements from the vector
-multiple_elements <- stock_prices[3:5]
+multiple_elements <- share_prices[3:5]
 ```
 
 You can also access elements using logical indices inside square brackets `[ ]`.\
 For example, `vector[logical_indices]` returns the elements of the vector where the logical indices are `TRUE`.
 
 ```{r}
-# Accessing stock prices greater than 110
-prices_above_110 <- stock_prices[stock_prices > 110]
+# Accessing share prices greater than 110
+prices_above_110 <- share_prices[share_prices > 110]
 ```
 
 ------------------------------------------------------------------------
@@ -326,7 +326,7 @@ It is useful for representing tabular datasets, such as time series data or cova
 # Asset returns matrix
 asset_returns <- matrix(c(0.05, 0.03, 0.02, 0.04, 0.06, 0.03), 
                         nrow = 2, byrow = TRUE)
-rownames(asset_returns) <- c("Stock 1", "Stock 2")
+rownames(asset_returns) <- c("Share 1", "Share 2")
 colnames(asset_returns) <- c("Year 1", "Year 2", "Year 3")
 ```
 
@@ -335,7 +335,7 @@ The code above creates a matrix called `asset_returns` that stores the returns o
 The `matrix()` function is used to create the matrix.\
 The vector `c(0.05, 0.03, 0.02, 0.04, 0.06, 0.03)` contains the return values, filled row by row.\
 Parameters `nrow = 2` and `byrow = TRUE` specify that the matrix should have 2 rows (to represent two assets), and values are filled by row.\
-The `rownames()` and `colnames()` functions assign names to the rows ("Stock 1" and "Stock 2") and columns ("Year 1", "Year 2", "Year 3").
+The `rownames()` and `colnames()` functions assign names to the rows ("Share 1" and "Share 2") and columns ("Year 1", "Year 2", "Year 3").
 
 The `class()` function returns the class of the object, which in this case will be "matrix," indicating that `asset_returns` is a matrix in R.
 
@@ -377,14 +377,14 @@ selected_columns <- asset_returns[, c(1, 3)]
 -   **Accessing Rows and Columns by name:**If row or column names are defined, you can also use them to access data:
 
 ```{r}
-# Accessing the row named "Stock 1"
-stock1 <- asset_returns["Stock 1", ]
+# Accessing the row named "Share 1"
+share1 <- asset_returns["Share 1", ]
 
 # Accessing the column named "Year 2"
 year2 <- asset_returns[, "Year 2"]
 
-# Accessing the element in "Stock 2" and "Year 3"
-specific_element <- asset_returns["Stock 2", "Year 3"]
+# Accessing the element in "Share 2" and "Year 3"
+specific_element <- asset_returns["Share 2", "Year 3"]
 ```
 
 In R, unlike other programming languages, the indices of rows and columns in matrices (as well as in vectors, lists, etc.) start at 1 instead of 0.\
