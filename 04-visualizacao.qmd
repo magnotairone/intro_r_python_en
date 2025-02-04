@@ -1,28 +1,29 @@
+```markdown
 ---
 output: html_document
 editor_options: 
   chunk_output_type: console
 ---
 
-# Visualização de dados {#ch-dataviz}
+# Data Visualization {#ch-dataviz}
 
-A visualização de dados desempenha um papel fundamental na compreensão e comunicação de informações complexas. Ao transformar números e estatísticas em gráficos, tabelas e outras representações visuais, podemos identificar padrões, tendências e insights que podem não ser imediatamente aparentes em conjuntos de dados brutos. Além disso, a visualização de dados facilita a comunicação de resultados e descobertas para uma audiência mais ampla, tornando informações complexas mais acessíveis e compreensíveis.
+Data visualization plays a fundamental role in understanding and communicating complex information. By transforming numbers and statistics into charts, tables, and other visual representations, we can identify patterns, trends, and insights that may not be immediately apparent in raw datasets. Additionally, data visualization facilitates the communication of results and findings to a broader audience, making complex information more accessible and understandable.
 
-## Gramática dos Gráficos
+## Grammar of Graphics
 
-Ele é baseado na gramática dos gráficos (*grammar of graphics* - GG), veja @GG. A gramática dos gráficos é um conjunto de princípios e conceitos que descrevem a estrutura e as regras para criar gráficos de forma consistente e eficaz. A GG é um *framework* para visualização de dados que desmembra cada componente de um gráfico em elementos individuais, criando camadas distintas. Usando o sistema GG, podemos construir gráficos passo a passo para obter resultados flexíveis e personalizáveis. Cada aspecto do gráfico, como pontos, linhas, cores e escalas, é tratado como uma peça separada, permitindo um controle detalhado sobre a aparência e o conteúdo do gráfico final.
+It is based on the grammar of graphics (*grammar of graphics* - GG), see @GG. The grammar of graphics is a set of principles and concepts that describe the structure and rules for creating charts consistently and effectively. GG is a framework for data visualization that breaks down each component of a chart into individual elements, creating distinct layers. Using the GG system, we can build charts step by step to achieve flexible and customizable results. Each aspect of the chart, such as points, lines, colors, and scales, is treated as a separate piece, allowing detailed control over the appearance and content of the final chart.
 
-![Figura de @GG.](img/gglayers.png)
+![Figure from @GG.](img/gglayers.png)
 
-## O pacote `ggplot`
+## The `ggplot` Package
 
-O pacote mais conhecido de visualização de dados em R é o `ggplot2`, que é baseado na gramática dos gráficos. O `ggplot2` permite criar uma ampla variedade de gráficos, incluindo gráficos de dispersão, linhas, barras, histogramas, entre outros, de forma simples e flexível. Com o `ggplot2`, você pode personalizar praticamente todos os aspectos do gráfico, desde a forma e a cor dos pontos até a escala dos eixos e a aparência do plano de fundo.
+The most well-known data visualization package in R is `ggplot2`, which is based on the grammar of graphics. `ggplot2` allows the creation of a wide variety of charts, including scatter plots, line plots, bar charts, histograms, and more, in a simple and flexible way. With `ggplot2`, you can customize basicaly all aspects of the chart, from the shape and color of the points to the axis scales and the background appearance.
 
-Para exemplificar o uso do ggplot, vamos considerar os dados `gapminder`, @gapminder.
+To exemplify the use of ggplot, let's consider the `gapminder` dataset, @gapminder.
 
-### Dados
+### Data
 
-A função `ggplot()` inicializa um gráfico ggplot2 e define os dados que serão usados.
+The `ggplot()` function initializes a ggplot2 chart and defines the data to be used.
 
 ```{r warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -34,30 +35,30 @@ gapminder_2007 <- gapminder %>%
 ggplot(data = gapminder_2007)
 ```
 
-::: {.callout-note title="O gráfico gerado também não está errado!"}
-Esse código cria um gráfico utilizando os dados do `gapminder` apenas para o ano de 2007. Apenas isso. Não há instruções extras sobre o que exibir em cada eixo (estética do gráfico).
+::: {.callout-note title="The generated plot is also not wrong!"}
+This code creates a chart using the `gapminder` data for the year 2007 only. That's all. There are no extra instructions about what to display on each axis (chart aesthetics).
 :::
 
-### Estética
+### Aesthetics
 
-O mapeamento estético (`aes`) no `ggplot2` é uma função que permite vincular variáveis de um conjunto de dados às propriedades visuais de um gráfico, como cor, forma, tamanho e posição. Por meio do mapeamento estético, podemos controlar como os dados são representados visualmente no gráfico.
+The aesthetic mapping (`aes`) in `ggplot2` is a function that allows linking variables from a dataset to the visual properties of a chart, such as color, shape, size, and position. Through aesthetic mapping, we can control how the data is visually represented in the chart.
 
-Por exemplo, ao criar um gráfico de dispersão, podemos mapear a variável x (horizontal) e a variável y (vertical) do conjunto de dados às coordenadas do gráfico.
+For example, when creating a scatter plot, we can map the x (horizontal) variable and the y (vertical) variable from the dataset to the chart coordinates.
 
 ```{r}
 ggplot(data = gapminder_2007, 
        mapping = aes(x = gdpPercap, y = lifeExp))
 ```
 
-::: {.callout-note title="O gráfico gerado também não está errado!"}
-Esse código define um gráfico de dispersão utilizando os dados do gapminder apenas para o ano de 2007. O eixo x representa o PIB per capita (gdpPercap) e o eixo y representa a expectativa de vida (lifeExp). Apenas isso. Não há instruções extra no techo de código sobre o fomato (geometria) que deve ser usado para exibir os dados.
+::: {.callout-note title="The generated plot is also not wrong!"}
+This code defines a scatter plot using the gapminder data for the year 2007 only. The x-axis represents GDP per capita (gdpPercap), and the y-axis represents life expectancy (lifeExp). That's all. There are no extra instructions in the code snippet about the format (geometry) that should be used to display the data.
 :::
 
-### Geometria
+### Geometry
 
-A geometria refere-se aos elementos visuais que compõem um gráfico, como pontos, linhas, barras e áreas. Cada tipo de gráfico tem sua própria geometria correspondente, e é especificada pela função `geom_*`, seguida pelo tipo de geometria desejado.
+Geometry refers to the visual elements that make up a chart, such as points, lines, bars, and areas. Each chart type has its corresponding geometry, specified by the `geom_*` function followed by the desired geometry type.
 
-Por exemplo, para criar um gráfico de dispersão, usamos a geometria geom_point(), enquanto para criar um gráfico de barras, usamos a geometria geom_bar().
+For example, to create a scatter plot, we use the `geom_point()` geometry, while for creating a bar chart, we use the `geom_bar()` geometry.
 
 ```{r}
 ggplot(data = gapminder_2007, 
@@ -65,10 +66,10 @@ ggplot(data = gapminder_2007,
   geom_point()
 ```
 
-Cada geometria tem seus próprios parâmetros específicos que podem ser ajustados para personalizar a aparência do gráfico, como cor, tamanho, preenchimento e transparência.
+Each geometry has its specific parameters that can be adjusted to customize the appearance of the chart, such as color, size, fill, and transparency.
 
-::: {.callout-tip title="Adicionando uma estética de cores no gráfico"}
-Veja que para colorir cada ponto do gráfico de dispersão de acordo com o continente, basta adicionar no mapeamento estético `color = continent`.
+::: {.callout-tip title="Adding color aesthetics to the chart"}
+To color each point in the scatter plot according to the continent, just add `color = continent` to the aesthetic mapping.
 
 ```{r}
 ggplot(data = gapminder_2007, 
@@ -77,18 +78,18 @@ ggplot(data = gapminder_2007,
 ```
 :::
 
-#### Outras geometrias
+#### Other Geometries
 
-Abaixo, mostramos outras possíveis geometrias. Algumas alterações foram feitas na forma como as funções do `ggplot` são usadas. Propositalmente não foi adicionado texto descritivoos pois essas alterações devem ser fáceis de interpretar.
+Below are examples of other possible geometries. Some changes were made to how the `ggplot` functions are used. Purposefully, no descriptive text was added as these changes should be easy to interpret.
 
 `geom_line()`:
 
 ```{r}
-# Filtrar dados para o Brasil
+# Filter data for Brazil
 dados_pais <- gapminder %>%
   filter(country == "Brazil")
 
-# Criar gráfico de linha
+# Create line plot
 ggplot(data = gapminder %>%
          filter(country == "Brazil"), 
        aes(x = year, y = lifeExp)) +
@@ -98,7 +99,7 @@ ggplot(data = gapminder %>%
 `geom_bar()`:
 
 ```{r}
-# Criar gráfico de barras
+# Create bar plot
 ggplot(data = gapminder_2007, aes(x = continent, y = gdpPercap)) +
   geom_bar(stat = "summary", fun = "mean")
 ```
@@ -122,19 +123,19 @@ gapminder_2007 %>%
   geom_text(vjust = -0.5, hjust = 0.5)
 ```
 
-Note que estamos combinando duas geometrias em um único gráfico (ponto e texto). Os rótulos de texto são adicionados aos pontos usando a geometria `geom_text()`, com os parâmetros `vjust` e `hjust` definindo a posição vertical e horizontal do texto, respectivamente:
+Note that we are combining two geometries in a single plot (point and text). Text labels are added to points using the `geom_text()` geometry, with the parameters `vjust` and `hjust` defining the vertical and horizontal position of the text, respectively:
 
--   o parâmetro `vjust` ajusta o alinhamento vertical do texto em relação ao ponto. Um valor negativo (-0.5, por exemplo) move o texto acima do ponto, enquanto um valor positivo move o texto abaixo do ponto.
+- The `vjust` parameter adjusts the vertical alignment of the text relative to the point. A negative value (-0.5, for example) moves the text above the point, while a positive value moves it below the point.
 
--   o parâmetro `hjust` ajusta o alinhamento horizontal do texto em relação ao ponto. Um valor de 0.5 centraliza o texto horizontalmente em relação ao ponto.
+- The `hjust` parameter adjusts the horizontal alignment of the text relative to the point. A value of 0.5 centers the text horizontally relative to the point.
 
-### Facetas
+### Facets
 
-As facetas (`facet`) referem-se à capacidade de dividir um gráfico em múltiplas visualizações com base em uma ou mais variáveis categóricas. Isso permite comparar as relações entre variáveis em diferentes segmentos dos dados.
+Facets refer to the ability to split a plot into multiple visualizations based on one or more categorical variables. This allows comparing relationships between variables in different data segments.
 
-As facetas são adicionadas usando a função `facet_wrap()` para criar uma matriz de painéis com base em uma variável categórica ou `facet_grid()` para criar uma grade de painéis com base em duas variáveis categóricas.
+Facets are added using the `facet_wrap()` function to create a matrix of panels based on a categorical variable or `facet_grid()` to create a panel grid based on two categorical variables.
 
-Por exemplo, podemos usar facetas para criar um gráfico de dispersão separado para dois anos distintos, permitindo comparar as relações entre o PIB per capta e a expectativa de vida nesses dois anos.
+For example, we can use facets to create separate scatter plots for two distinct years, allowing comparisons of the relationships between GDP per capita and life expectancy in those two years.
 
 ```{r}
 gapminder_anos <- gapminder %>% 
@@ -146,11 +147,11 @@ ggplot(data = gapminder_anos,
   facet_wrap(~year)
 ```
 
-### Coordenadas
+### Coordinates
 
-As coordenadas em ggplot2 determinam como os dados são mapeados em um espaço gráfico. Isso inclui a escala dos eixos x e y, bem como qualquer transformação ou ajuste aplicado aos dados. As coordenadas afetam a aparência geral do gráfico, incluindo sua orientação, proporção e escala.
+Coordinates in ggplot2 determine how data is mapped in a graphic space. This includes the scales of the x and y axes, as well as any transformation or adjustment applied to the data. Coordinates affect the overall appearance of the chart, including its orientation, proportion, and scale.
 
-Para definir limites nos eixos x e y, podemos usar a função `coord_cartesian()` para controlar quais intervalos de valores são exibidos no gráfico. Isso é útil quando queremos focar em uma parte específica dos dados ou evitar que outliers influenciem a escala dos eixos.
+To set limits on the x and y axes, we can use the `coord_cartesian()` function to control which value ranges are displayed on the chart. This is useful when we want to focus on a specific part of the data or prevent outliers from influencing the axis scales.
 
 ```{r}
 ggplot(data = gapminder_anos, 
@@ -160,7 +161,7 @@ ggplot(data = gapminder_anos,
   coord_cartesian(ylim = c(40, 83))
 ```
 
-É possível aplicar a escala logarítmica aos eixos também. Isso é útil quando os dados têm uma ampla variação de valores e estamos interessados em destacar diferenças em uma ampla gama de valores, como em dados de renda ou PIB. Para fazer isso, basta utilizar a função `scale_*_log10()`:
+It is possible to apply a logarithmic scale to the axes as well. This is useful when the data has a wide range of values and we are interested in highlighting differences across a broad range of values, such as in income or GDP data. To do this, simply use the `scale_*_log10()` function:
 
 ```{r}
 ggplot(data = gapminder_anos, 
@@ -170,9 +171,9 @@ ggplot(data = gapminder_anos,
   scale_x_log10()
 ```
 
-### Temas
+### Themes
 
-Os temas controlam os aspectos visuais dos gráficos, como títulos, legendas, eixos e cores de fundo. Os temas pré-definidos, como `theme_bw()`, `theme_minimal()`, `theme_classic()` etc., oferecem estilos visuais consistentes que podem ser aplicados aos gráficos para obter uma aparência específica.
+Themes control the visual aspects of charts, such as titles, legends, axes, and background colors. Predefined themes, such as `theme_bw()`, `theme_minimal()`, and `theme_classic()`, offer consistent visual styles that can be applied to charts for a specific appearance.
 
 ```{r}
 ggplot(data = gapminder_anos, 
@@ -183,11 +184,11 @@ ggplot(data = gapminder_anos,
   theme_bw()
 ```
 
-::: {.callout-tip title="Tente também"}
-Apague a última linha do exemplo acima, digite `theme_`, aperte a tecla tab e experimente os diferentes temas pré-definidos no `ggplot`.
+::: {.callout-tip title="Try it too"}
+Delete the last line from the example above, type `theme_`, press the tab key, and experiment with the different predefined themes in `ggplot`.
 :::
 
-Além disso, podemos definir praticamente todos os aspectos do gráfico. Por exemplo, para trocar a posição da legenda para baixo, podemos usar a função `theme(legend.position = "bottom")`. Para alterar o tamanho da fonte, podemos usar a função `theme(text = element_text(size = 12))`. Essas definições podem ser combinadas em uma única chamada da função `theme()`, veja abaixo.
+Additionally, we can define virtually all aspects of the chart. For example, to move the legend position to the bottom, we can use the function `theme(legend.position = "bottom")`. To change the font size, we can use the function `theme(text = element_text(size = 12))`. These settings can be combined in a single call to the `theme()` function, as shown below.
 
 ```{r}
 ggplot(data = gapminder_anos, 
@@ -200,9 +201,9 @@ ggplot(data = gapminder_anos,
         text = element_text(size = 12))
 ```
 
-### Personalização e Estilização de Gráficos
+### Customization and Styling of Graphs
 
-A função `labs()` é responsável por personalizar rótulos e títulos em gráficos. No exemplo abaixo, renomeamos os eixos x e y e atribuimos um nome mais descritivo para a legenda de cores, que neste caso representa o continente.
+The `labs()` function is responsible for customizing labels and titles in plots. In the example below, we rename the x and y axes and assign a more descriptive name to the color legend, which in this case represents the continent.
 
 ```{r}
 ggplot(data = gapminder_anos, 
@@ -210,15 +211,15 @@ ggplot(data = gapminder_anos,
   geom_point() +
   facet_wrap(~year) +
   scale_x_log10() +
-  labs(x = "PIB per capita (log)", 
-       y = "Expectativa de vida", 
-       color = "Continente", 
-       title = "Relação entre PIB per capita e Expectativa de Vida") +
+  labs(x = "GDP per capita (log)", 
+       y = "Life Expectancy", 
+       color = "Continent", 
+       title = "Relationship between GDP per capita and Life Expectancy") +
   theme_bw() +
   theme(legend.position = "bottom")
 ```
 
-O parâmetro `alpha` controla a opacidade dos elementos geométricos, variando de 0 a 1. Por exemplo, geom_point(alpha = 0.5) torna os pontos semi-transparentes, o que pode ser útil para visualizar sobreposições de dados em um gráfico de dispersão.
+The `alpha` parameter controls the opacity of geometric elements, ranging from 0 to 1. For example, `geom_point(alpha = 0.5)` makes the points semi-transparent, which can be useful for visualizing data overlaps in a scatter plot.
 
 ```{r}
 ggplot(data = gapminder_anos, 
@@ -226,13 +227,13 @@ ggplot(data = gapminder_anos,
   geom_point(alpha = 0.5) +
   facet_wrap(~year) +
   scale_x_log10() +
-  labs(x = "PIB per capita (log)", 
-       y = "Expectativa de vida", 
-       color = "Continente", 
-       title = "Relação entre PIB per capita e Expectativa de Vida")
+  labs(x = "GDP per capita (log)", 
+       y = "Life Expectancy", 
+       color = "Continent", 
+       title = "Relationship between GDP per capita and Life Expectancy")
 ```
 
-Para escolher cores específicas para os níveis de uma variável categórica, podemos utilizar a função scale_color_manual() para atribuir manualmente cores a cada nível da variável.
+To choose specific colors for the levels of a categorical variable, we can use the `scale_color_manual()` function to manually assign colors to each level of the variable.
 
 ```{r}
 ggplot(data = gapminder_anos, 
@@ -241,14 +242,14 @@ ggplot(data = gapminder_anos,
   facet_wrap(~year) +
   scale_x_log10() +
   scale_color_manual(values = c("blue", "green", "orange", "purple", "red"))+
-  labs(x = "PIB per capita (log)", 
-       y = "Expectativa de vida", 
-       color = "Continente", 
-       title = "Relação entre PIB per capita e Expectativa de Vida")
+  labs(x = "GDP per capita (log)", 
+       y = "Life Expectancy", 
+       color = "Continent", 
+       title = "Relationship between GDP per capita and Life Expectancy")
 ```
 
-::: {.callout-tip title="Outras paletas de cores"}
-Você pode usar paletas de cores do pacote `RColorBrewer` usando a função `scale_color_brewer()`.
+::: {.callout-tip title="Other Color Palettes"}
+You can use color palettes from the `RColorBrewer` package using the `scale_color_brewer()` function.
 
 ```{r}
 ggplot(data = gapminder_anos, 
@@ -257,31 +258,31 @@ ggplot(data = gapminder_anos,
   facet_wrap(~year) +
   scale_x_log10() +
   scale_color_brewer(palette = "Set1")+
-  labs(x = "PIB per capita (log)", 
-       y = "Expectativa de vida", 
-       color = "Continente", 
-       title = "Relação entre PIB per capita e Expectativa de Vida")
+  labs(x = "GDP per capita (log)", 
+       y = "Life Expectancy", 
+       color = "Continent", 
+       title = "Relationship between GDP per capita and Life Expectancy")
 ```
 
-A vantagem de usar as paletas de cores do RColorBrewer é que elas foram cuidadosamente projetadas para serem perceptualmente distintas e adequadas para representar diferentes grupos ou categorias em gráficos. Isso significa que as cores em uma paleta são mais facilmente distinguíveis umas das outras, mesmo quando impressas em preto e branco ou quando vistas por pessoas com deficiências visuais. Veja todas paletas disponíves [aqui](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html)
+The advantage of using RColorBrewer color palettes is that they are carefully designed to be perceptually distinct and suitable for representing different groups or categories in plots. This means that the colors in a palette are more easily distinguishable from each other, even when printed in black and white or viewed by people with visual impairments. See all available palettes [here](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html).
 :::
 
-## Pacotes extras
+## Additional Packages
 
-Existem alguns pacotes extras que funcionam como extensões do `ggplot2`. Apresentamos alguns nessa seção.
+There are some extra packages that work as extensions of `ggplot2`. We present some in this section.
 
-### O pacote `patchwork`
+### The `patchwork` Package
 
-O pacote `patchwork` é usada para combinar múltiplos gráficos ggplot2 em uma única visualização. Ele permite criar layouts flexíveis e complexos, adicionando, organizando e ajustando gráficos individualmente.
+The `patchwork` package is used to combine multiple ggplot2 plots into a single visualization. It allows you to create flexible and complex layouts, adding, organizing, and adjusting individual plots.
 
 ```{r eval=FALSE}
-# Instalar o pacote patchwork (apenas se ainda não estiver instalado)
+# Install the patchwork package (only if not already installed)
 install.packages("patchwork")
 ```
 
-Depois de carregar o pacote, você pode usar o operador `+` para combinar gráficos ggplot2 em uma única visualização.
+After loading the package, you can use the `+` operator to combine ggplot2 plots into a single visualization.
 
-Aqui está um exemplo simples criando dois gráficos separados e, em seguida, são combinados usando o `patchwork`:
+Here is a simple example creating two separate plots and then combining them using `patchwork`:
 
 ```{r message=FALSE}
 library(patchwork)
@@ -289,42 +290,42 @@ library(patchwork)
 plot1 <- ggplot(data = gapminder_2007, 
        mapping = aes(x = gdpPercap, y = lifeExp)) +
   geom_point(alpha = 0.5) +
-  labs(x = "PIB per capita (log)", 
-       y = "Expectativa de vida em 2007", 
-       title = "Relação entre PIB per capita e Expectativa de Vida") +
+  labs(x = "GDP per capita (log)", 
+       y = "Life Expectancy in 2007", 
+       title = "Relationship between GDP per capita and Life Expectancy") +
   theme_classic()
 
 plot2 <- ggplot(data = gapminder_2007, 
        mapping = aes(lifeExp)) +
   geom_histogram() +
-  labs(title = "Histograma da expectativa de vida",
-       x = "Expectativa de Vida em 2007", 
-       y = "Frequência") +
+  labs(title = "Histogram of Life Expectancy",
+       x = "Life Expectancy in 2007", 
+       y = "Frequency") +
   theme_classic()
 
 plot1 + plot2
 ```
 
-### O pacote `ggthemes`
+### The `ggthemes` Package
 
-O pacote `ggthemes` é uma extensão do `ggplot2` que fornece uma variedade de temas pré-definidos para personalizar a aparência dos gráficos. Veja a [documentação aqui](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/).
+The `ggthemes` package is an extension of `ggplot2` that provides a variety of pre-defined themes to customize the appearance of plots. See the [documentation here](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/).
 
 ```{r eval=FALSE}
-# Instalar o pacote ggthemes (apenas se ainda não estiver instalado)
+# Install the ggthemes package (only if not already installed)
 install.packages("ggthemes")
 ```
 
-Depois de carregar o pacote, você pode aplicar qualquer um dos temas disponíveis aos seus gráficos `ggplot2` usando a função `theme_*()`. No exemplo abaixo, são criadas três versões do mesmo gráfico com temas diferentes. Os operadores `+` e `/` foram usados para definir como os gráficos serão exibidos.
+After loading the package, you can apply any of the available themes to your `ggplot2` plots using the `theme_*()` function. In the example below, three versions of the same plot are created with different themes. The `+` and `/` operators are used to define how the plots will be displayed.
 
 ```{r}
-# Carregar o pacote ggthemes
+# Load the ggthemes package
 library(ggthemes)
 
 plot0 <- ggplot(data = gapminder_2007, 
        mapping = aes(x = gdpPercap, y = lifeExp)) +
   geom_point(alpha = 0.5) +
-  labs(x = "PIB per capita (log)", 
-       y = "Expectativa de vida em 2007")
+  labs(x = "GDP per capita (log)", 
+       y = "Life Expectancy in 2007")
 
 plot1 <- plot0 + theme_economist()
 plot2 <- plot0 + theme_excel()
@@ -333,9 +334,9 @@ plot3 <- plot0 + theme_stata()
 plot1 +  (plot2 / plot3)
 ```
 
-### O pacote `plotly`
+### The `plotly` Package
 
-O pacote `plotly` oferece recursos para criar gráficos interativos. Para adicionar interação ao gráfico fornecido, podemos usar a função `ggplotly()` para converter um gráfico criado com `ggplot2` em um gráfico interativo. Utilize o comando `install.packages("plotly")` caso não tenha o pacote instalado.
+The `plotly` package offers features to create interactive plots. To add interactivity to the provided plot, we can use the `ggplotly()` function to convert a plot created with `ggplot2` into an interactive plot. Use the command `install.packages("plotly")` if you don't have the package installed.
 
 ```{r message=FALSE}
 library(plotly)
@@ -346,10 +347,10 @@ grafico <- ggplot(data = gapminder_anos,
   geom_point(alpha = 0.5) +
   facet_wrap(~year) +
   scale_x_log10() +
-  labs(x = "PIB per capita (log)", 
-       y = "Expectativa de vida", 
-       color = "Continente", 
-       title = "Relação entre PIB per capita e Expectativa de Vida")
+  labs(x = "GDP per capita (log)", 
+       y = "Life Expectancy", 
+       color = "Continent", 
+       title = "Relationship between GDP per capita and Life Expectancy")
 ```
 
 ::: {.content-visible when-format="html"}
@@ -366,17 +367,15 @@ ggplotly(grafico)
 ```
 :::
 
+## Extra Tips
 
+When exploring different types of plots to visualize your data, the website [Data to Viz](https://www.data-to-viz.com) can be a valuable tool. It provides a complete gallery of plot types and offers guidance on when and how to use each one. Additionally, the website provides specific examples of how to create these plots using different libraries, such as ggplot2 in R and matplotlib in Python.
 
-## Dicas extras
+## Exercises
 
-Quando você estiver explorando diferentes tipos de gráficos para visualizar seus dados, o site [Data to Viz](https://www.data-to-viz.com) pode ser uma ferramenta valiosa. Ele fornece uma galeria completa de tipos de gráficos e oferece orientações sobre quando e como usar cada um deles. Além disso, o site oferece exemplos específicos de como criar esses gráficos usando diferentes bibliotecas, como ggplot2 em R e matplotlib em Python.
+**1.** Let's use the Billboard data presented in @sec-ex-dados. Your task is to reproduce the plots below using data processing techniques with `dplyr` and data visualization with `ggplot`.
 
-## Exercícios
-
-**1.** Vamos utilizar os dados da Billboard que foram apresentados na @sec-ex-dados. Sua tarefa é reproduzir os gráficos abaixo utilizando técnicas de processamento de dados com `dplyr` e visualização de dados com `ggplot`.
-
-**a)** O gráfico abaixo mostra o histórico de cada musica no ranking ao longo das semanas.
+**a)** The plot below shows the history of each song in the ranking over the weeks.
 
 ```{r echo=FALSE}
 billboard_longer <- billboard %>% 
@@ -394,11 +393,11 @@ billboard_longer %>%
   ggplot(aes(x = week, y = rank, group = track)) + 
   geom_line(alpha = 0.25) + 
   scale_y_reverse() +
-  labs(y="Rank", x="Semana", color = "Música") +
+  labs(y="Rank", x="Week", color = "Song") +
   theme_bw() 
 ```
 
-**b)** O gráfico abaixo é uma pequena alteração do apresentado no item **a)**, no eixo x é apresentada a data que a música entrou no ranking.
+**b)** The plot below is a small modification of the one presented in item **a)**; the x-axis shows the date the song entered the ranking.
 
 ```{r echo=FALSE}
 billboard_longer %>% 
@@ -406,11 +405,11 @@ billboard_longer %>%
   ggplot(aes(x = date, y = rank, group = track)) + 
   geom_line(alpha = 0.25) + 
   scale_y_reverse()+
-  labs(y="Rank", x="Data", color = "Música") +
+  labs(y="Rank", x="Date", color = "Song") +
   theme_bw() 
 ```
 
-**c)** O gráfico abaixo mostra o histórico de duas músicas no ranking: "Higher" e "With Arms Wide Open".
+**c)** The plot below shows the ranking history of two songs: "Higher" and "With Arms Wide Open."
 
 ```{r echo=FALSE}
 billboard_longer %>% 
@@ -419,16 +418,16 @@ billboard_longer %>%
   ggplot(aes(x = date, y = rank, color = track)) + 
   geom_line(alpha = 1) + 
   scale_y_reverse() +
-  labs(y="Rank", x="Data", color = "Música") +
+  labs(y="Rank", x="Date", color = "Song") +
   theme_bw() 
 ```
 
-**2.** Utilize os dados gerados na @sec-fluxos-for que representam o preço de fechamento de uma ação e reproduza o gráfico abaixo, mostrando a evolução da média móvel ao longo do tempo.
+**2.** Use the data generated in @sec-fluxos-for representing the closing price of a stock and reproduce the plot below, showing the evolution of the moving average over time.
 
 ```{r echo=FALSE}
 set.seed(42)
 preco_acao <- runif(30, min = 9, max = 15)
-media_movel <- numeric(length = 26)  # Vetor para armazenar a média móvel
+media_movel <- numeric(length = 26)  # Vector to store the moving average
 
 for (i in 5:30) {
   media_movel[i - 4] <- mean(preco_acao[(i - 4):i])
@@ -437,18 +436,18 @@ for (i in 5:30) {
 ggplot2::ggplot(tidyr::tibble(t=5:30, mm=media_movel), ggplot2::aes(t, mm)) +
   ggplot2::geom_line(linewidth=2) +
   ggplot2::scale_x_continuous(breaks=seq(5,30,5))+
-  ggplot2::labs(x="Dia", y="Média móvel", title="Média Móvel do Preço de Fechamento")+
+  ggplot2::labs(x="Day", y="Moving Average", title="Moving Average of Closing Price")+
   ggplot2::ylim(10,15)+
   ggplot2::theme_bw()
 ```
 
-**3. (Desafio)** Reproduza o gráfico de dispersão abaixo que foi apresentado na @sec-fluxos-funcoes.
+**3. (Challenge)** Reproduce the scatter plot presented in @sec-fluxos-funcoes.
 
 ```{r echo=FALSE}
-# Função para realizar regressão linear simples
+# Function to perform simple linear regression
 regressao_linear <- function(x, y) {
-  modelo <- lm(y ~ x)  # Criando o modelo de regressão linear
-  return(modelo)  # Retornando o modelo
+  modelo <- lm(y ~ x)  # Creating the linear regression model
+  return(modelo)  # Returning the model
 }
 
 anos_educacao <- c(10, 12, 14, 16, 18)
@@ -467,10 +466,10 @@ ggplot2::ggplot(tidyr::tibble(anos_educacao = anos_educacao,
               ggplot2::aes(intercept=intercept,slope=slope,color=class),
               show.legend = TRUE)+
   ggplot2::scale_color_manual(breaks=c("coef"), 
-                              values="blue", labels=c("Modelo linear"))+
-  ggplot2::labs(x="Anos de educação", y="Salário", title="Relação entre escolaridade e salário",color="")+
+                              values="blue", labels=c("Linear Model"))+
+  ggplot2::labs(x="Years of Education", y="Salary", title="Relationship between Education and Salary",color="")+
   ggplot2::theme_bw()+
   ggplot2::theme(legend.position = "bottom")
 ```
 
-**4.** Reproduza a figura apresentada na @sec-dados-groupby.
+**4.** Reproduce the figure presented in @sec-dados-groupby.
