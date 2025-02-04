@@ -477,7 +477,7 @@ class(country_info["nome"])
 class(country_info[["nome"]])
 ```
 
-### ::: {.callout-note title="Summary"}
+::: {.callout-note title="Summary"}
 
 In summary, single brackets are used to access subsets of elements in a list while preserving their structure, whereas double brackets are used to access individual values from a list, without preserving the original structure.\
 :::
