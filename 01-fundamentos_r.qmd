@@ -569,7 +569,7 @@ A value can be marked as `NA` in various situations, including:
     In such cases, the corresponding values would be marked as `NA`.\
 :::
 
-#### Filtering Data in DataFrames
+<!-- #### Filtering Data in DataFrames -->
 
 If we want to filter data based on a specific criterion, we can use logical operators along with dataframe indexing:
 
@@ -586,15 +586,17 @@ all_data[all_data$continent == "Asia" & !is.na(all_data$continent), ]  # Filters
 We can also find specific rows based on conditions applied to numerical columns:
 
 ```{r}
-merged_data$population == max(merged_data$population)  # Returns a logical vector indicating the row(s) with the maximum population
+all_data$population == max(all_data$population)  # Returns a logical vector indicating the row(s) with the maximum population
 
-which(merged_data$population == max(merged_data$population))  # Returns the index of the row(s) where the population is maximum
+which(all_data$population == max(all_data$population))  # Returns the index of the row(s) where the population is maximum
 
-index <- which(merged_data$population == max(merged_data$population))  # Stores the index of the maximum population row(s)
+index <- which(all_data$population == max(all_data$population))  # Stores the index of the maximum population row(s)
 
-merged_data[index, ]  # Retrieves the row(s) corresponding to the maximum population
-
+all_data[index, ]  # Retrieves the row(s) corresponding to the maximum population
+```
 
 ## Exercises
 
-1.  **Consider the following economic sectors:** "Finance," "Information Technology," "Industrial Goods," and "Healthcare." Generate a random sample of size 1,000 from these sectors with equal probability for each. Display the first few values of the resulting variable and count how many companies belong to each economic sector.
+1.  **Consider the following economic sectors:** "Finance," "Information Technology," "Industrial Goods," and "Healthcare." 
+Generate a random sample of size 1,000 from these sectors with equal probability for each. 
+Display the first few values of the resulting variable and count how many companies belong to each economic sector.

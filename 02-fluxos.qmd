@@ -375,4 +375,4 @@ library(nycflights13)
 
 **f)** Get a summary of the `dep_delay` column. Are there missing values? If yes, remove them.
 
-**g)** Find the name of the destination airport of the flight with the longest departure delay on 12/25/2013. Hint: Merge the `flights` and `airports` datasets. \`\`\`
+**g)** Find the name of the destination airport of the flight with the longest departure delay on 12/25/2013. Hint: Merge the `flights` and `airports` datasets.
