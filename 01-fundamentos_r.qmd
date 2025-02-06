@@ -478,7 +478,6 @@ class(country_info[["nome"]])
 ```
 
 ::: {.callout-note title="Summary"}
-
 In summary, single brackets are used to access subsets of elements in a list while preserving their structure, whereas double brackets are used to access individual values from a list, without preserving the original structure.\
 :::
 
@@ -541,6 +540,14 @@ more_data <- data.frame(
 (all_data <- rbind(data_and_demographic_info, more_data))
 ```
 
+We can obtain information about the size of the dataframe using the `dim()`, `nrow()`, and `ncol()` functions:
+
+```{r}
+dim(all_data)  # Returns the number of rows and columns in the dataframe
+nrow(all_data) # Returns only the number of rows
+ncol(all_data) # Returns only the number of columns
+```
+
 ::: {.callout-important title="Missing Data"}
 You may have noticed in the `more_data` dataframe that the inflation value for Germany is marked as `NA`.\
 An `NA` value, short for "Not Available," indicates a missing value in a dataset.\
@@ -561,6 +568,32 @@ A value can be marked as `NA` in various situations, including:
     Example: Collecting data on individuals' net worth in an income survey might result in some participants opting not to disclose financial information for privacy reasons.
     In such cases, the corresponding values would be marked as `NA`.\
 :::
+
+#### Filtering Data in DataFrames
+
+If we want to filter data based on a specific criterion, we can use logical operators along with dataframe indexing:
+
+```{r}
+all_data$continent == "Asia"  # Returns a logical vector indicating which rows belong to the "Asia" continent
+
+all_data[all_data$continent == "Asia", ]  # Filters and returns only the rows where the continent is "Asia"
+
+all_data$continent == "Asia" & !is.na(all_data$continent)  # Ensures we exclude missing values before filtering
+
+all_data[all_data$continent == "Asia" & !is.na(all_data$continent), ]  # Filters rows where the continent is "Asia", ignoring missing values
+```
+
+We can also find specific rows based on conditions applied to numerical columns:
+
+```{r}
+merged_data$population == max(merged_data$population)  # Returns a logical vector indicating the row(s) with the maximum population
+
+which(merged_data$population == max(merged_data$population))  # Returns the index of the row(s) where the population is maximum
+
+index <- which(merged_data$population == max(merged_data$population))  # Stores the index of the maximum population row(s)
+
+merged_data[index, ]  # Retrieves the row(s) corresponding to the maximum population
+
 
 ## Exercises
 

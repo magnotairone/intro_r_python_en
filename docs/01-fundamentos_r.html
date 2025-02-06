@@ -96,6 +96,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -771,6 +773,21 @@ You can create one using the <code>data.frame()</code> function:</p>
 7      Germany    Europe         83          52947        NA              81</code></pre>
 </div>
 </div>
+<p>We can obtain information about the size of the dataframe using the <code>dim()</code>, <code>nrow()</code>, and <code>ncol()</code> functions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(all_data)  <span class="co"># Returns the number of rows and columns in the dataframe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(all_data) <span class="co"># Returns only the number of rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(all_data) <span class="co"># Returns only the number of columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+</div>
 <div class="callout callout-style-default callout-important callout-titled" title="Missing Data">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -798,6 +815,39 @@ Example: Collecting data on individuals’ net worth in an income survey might r
 </ul>
 </div>
 </div>
+<section id="filtering-data-in-dataframes" class="level4" data-number="1.6.4.1">
+<h4 data-number="1.6.4.1" class="anchored" data-anchor-id="filtering-data-in-dataframes"><span class="header-section-number">1.6.4.1</span> Filtering Data in DataFrames</h4>
+<p>If we want to filter data based on a specific criterion, we can use logical operators along with dataframe indexing:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>all_data<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Asia"</span>  <span class="co"># Returns a logical vector indicating which rows belong to the "Asia" continent</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>all_data[all_data<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Asia"</span>, ]  <span class="co"># Filters and returns only the rows where the continent is "Asia"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  country continent population gdp_per_capita inflation life_expectancy
+2   China      Asia       1441          10380     0.040              76
+3   India      Asia       1380           2353     0.060              69
+4   Japan      Asia        126          41581     0.005              84</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>all_data<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Asia"</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(all_data<span class="sc">$</span>continent)  <span class="co"># Ensures we exclude missing values before filtering</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>all_data[all_data<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Asia"</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(all_data<span class="sc">$</span>continent), ]  <span class="co"># Filters rows where the continent is "Asia", ignoring missing values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  country continent population gdp_per_capita inflation life_expectancy
+2   China      Asia       1441          10380     0.040              76
+3   India      Asia       1380           2353     0.060              69
+4   Japan      Asia        126          41581     0.005              84</code></pre>
+</div>
+</div>
+<p>We can also find specific rows based on conditions applied to numerical columns:</p>
+<p>merged_data<span class="math inline">\(population == max(merged_data\)</span>population) # Returns a logical vector indicating the row(s) with the maximum population</p>
+<p>which(merged_data<span class="math inline">\(population == max(merged_data\)</span>population)) # Returns the index of the row(s) where the population is maximum</p>
+<p>index &lt;- which(merged_data<span class="math inline">\(population == max(merged_data\)</span>population)) # Stores the index of the maximum population row(s)</p>
+<p>merged_data[index, ] # Retrieves the row(s) corresponding to the maximum population</p>
+</section>
 </section>
 </section>
 <section id="exercises" class="level2" data-number="1.7">
