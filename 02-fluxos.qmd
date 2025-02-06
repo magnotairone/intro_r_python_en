@@ -369,7 +369,7 @@ library(nycflights13)
 ?airports
 ```
 
-**d)** Filter the flights that occurred on 01/25/2013 and store them in the variable `christmas`.
+**d)** Filter the flights that occurred on 12/25/2013 and store them in the variable `christmas`.
 
 **e)** How many flights departed from New York on 12/25/2013?
 
