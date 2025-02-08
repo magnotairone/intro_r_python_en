@@ -13,7 +13,7 @@ use_python("C:/Users/m_tai/anaconda3/python.exe", required = TRUE)
 
 <!-- C:/Users/m_tai/anaconda3/python.exe -->
 
-<!-- C:\\Users\\m_tai\\Appdate\\Local\\r-miniconda/python.exe -->
+<!-- C:\\Users\\m_tai\\Appdata\\Local\\r-miniconda/python.exe -->
 
 ::: {.callout-important title="Attention!!!"}
 From now on, all code presented in this book will be in the Python language.
@@ -36,19 +36,19 @@ Follow the steps below to install Anaconda and JupyterLab:
 
 6.  In JupyterLab, you can create a new Python notebook by clicking the "+" icon in the left sidebar and selecting "Python 3" under the "Notebook" header.
 
-## Fundamental date Types
+## Fundamental data Types
 
-In Python, the fundamental date types include `integer`, `float`, `string`, and `boolean`:
+In Python, the fundamental data types include `integer`, `float`, `string`, and `boolean`:
 
 -   Integers are whole numbers, such as 1, 2, -3, etc. 
 - Floats are decimal numbers, such as 3.14, -0.5, etc.
 -   Strings are sequences of characters, such as "hello", "world", "python", etc.
 -   Booleans are logical values that represent true (`True`) or false (`False`).
 
-These date types are the basic building blocks for representing different types of information in Python, and are widely used in programming to perform operations and date manipulations.
+These data types are the basic building blocks for representing different types of information in Python, and are widely used in programming to perform operations and data manipulations.
 
-### The Integer date Type
-An integer date type (`integer`) in Python represents whole numbers, i.e., numbers without decimal places. For example, 5, -10, and 0 are all examples of integers. In Python, integers are represented by the `int` class. In the examples below, we perform basic operations with integers.
+### The Integer data Type
+An integer data type (`integer`) in Python represents whole numbers, i.e., numbers without decimal places. For example, 5, -10, and 0 are all examples of integers. In Python, integers are represented by the `int` class. In the examples below, we perform basic operations with integers.
 
 ```{python}
 2 + 2  
@@ -62,11 +62,11 @@ print(quantity)
 type(quantity)
 ```
 
-Above, we assign the value 200 to the variable `quantity` and print it using `print(quantity)`. Finally, we check the date type of the variable quantity with `type(quantity)`, which returns `<class 'int'>`, indicating that it is an integer.
+Above, we assign the value 200 to the variable `quantity` and print it using `print(quantity)`. Finally, we check the data type of the variable quantity with `type(quantity)`, which returns `<class 'int'>`, indicating that it is an integer.
 
-### The Float date Type
+### The Float data Type
 
-A float date type (`float`) in Python represents decimal numbers, i.e., numbers that can have a fractional part. For example, 3.14, -0.001, and 2.71828 are all floats. In Python, floats are represented by the `float` class.
+A float data type (`float`) in Python represents decimal numbers, i.e., numbers that can have a fractional part. For example, 3.14, -0.001, and 2.71828 are all floats. In Python, floats are represented by the `float` class.
 
 ```{python}
 1.75 + 2**3 
@@ -76,9 +76,9 @@ print(interest_rate)
 type(interest_rate)
 ```
 
-In the first line of the example above, we calculate the sum of 1.75 and 2 raised to the power of 3. Then, we assign the value 1.25 to the variable `interest_rate` and print it using `print(interest_rate)`. Finally, we check the date type of the variable `interest_rate` with `type(interest_rate)`, which returns `<class 'float'>`, indicating that it is a float.
+In the first line of the example above, we calculate the sum of 1.75 and 2 raised to the power of 3. Then, we assign the value 1.25 to the variable `interest_rate` and print it using `print(interest_rate)`. Finally, we check the data type of the variable `interest_rate` with `type(interest_rate)`, which returns `<class 'float'>`, indicating that it is a float.
 
-### The String date Type
+### The String data Type
 ```{python}
 country = "Brazil" 
 
@@ -86,10 +86,10 @@ print(country)
 type(country)
 ```
 
-In the code above, we create a variable called `country` and assign it the value "Brazil", which is a `string`. Then, we print the value of the variable country using `print(country)`, which displays "Brazil" on the screen. Finally, we check the date type of the variable country with `type(country)`, which returns `<class 'str'>`, indicating that it is a string.
+In the code above, we create a variable called `country` and assign it the value "Brazil", which is a `string`. Then, we print the value of the variable country using `print(country)`, which displays "Brazil" on the screen. Finally, we check the data type of the variable country with `type(country)`, which returns `<class 'str'>`, indicating that it is a string.
 
-### The Boolean date Type
-The boolean date type, also known as `bool`, is used to represent true or false values. In Python, the boolean values are `True` and `False`.
+### The Boolean data Type
+The boolean data type, also known as `bool`, is used to represent true or false values. In Python, the boolean values are `True` and `False`.
 
 ```{python}
 1 == 2
@@ -108,7 +108,7 @@ type(interest_rate_increasing)
 In the first line of the example above, there is an equality check between 1 and 2, which returns `False` because 1 is not equal to 2. Next, we have `5 % 2 == 0`, which also returns `False` because the remainder of 5 divided by 2 is not equal to zero. Finally, we have the variable `interest_rate_increasing` assigned to `True`, indicating that the interest rate is increasing. When printing and checking the type of this variable, we get `True` as the result and the type `bool`, indicating that it is a boolean value.
 
 ### Type Coercion
-Type coercion in Python refers to the forced conversion of one date type to another.
+Type coercion in Python refers to the forced conversion of one data type to another.
 
 ```{python}
 str_num = "1.41"
@@ -150,10 +150,10 @@ print(num_str)
 In the code above, we are converting a float value to a string.
 
 ## Basic Objects
-In Python, there are three basic date structures: lists, tuples, and dictionaries: - Lists are ordered and mutable collections of elements, allowing the inclusion of items of different types and the modification of the values contained in them. - Tuples are similar to lists, but they are immutable, meaning they cannot be changed after creation. - Dictionaries are unordered collections of key-value pairs, where each value is associated with a unique key, providing efficient access to date through the keys.
+In Python, there are three basic data structures: lists, tuples, and dictionaries: - Lists are ordered and mutable collections of elements, allowing the inclusion of items of different types and the modification of the values contained in them. - Tuples are similar to lists, but they are immutable, meaning they cannot be changed after creation. - Dictionaries are unordered collections of key-value pairs, where each value is associated with a unique key, providing efficient access to data through the keys.
 
 ### Lists
-In Python, a list is a date structure that allows storing an ordered collection of elements. To create a list, we use square brackets `[]`, and the elements are separated by commas. We can instantiate an empty list simply by using `[]` or the `list()` function. For example:
+In Python, a list is a data structure that allows storing an ordered collection of elements. To create a list, we use square brackets `[]`, and the elements are separated by commas. We can instantiate an empty list simply by using `[]` or the `list()` function. For example:
 
 ```{python}
 empty_list = [] # Empty list
@@ -216,16 +216,16 @@ The `.pop()` method is used to remove and return the last element of a list. We 
 # Removing and returning the last GDP from the list
 last_gdp = gdp_countries.pop()
 print("Last GDP removed:", last_gdp) 
-print("Updated list:", gdp_countries)
+print("Updatad list:", gdp_countries)
 
 # Removing and returning the GDP of a specific country from the list
 removed_gdp = gdp_countries.pop(1) 
 print("GDP removed:", removed_gdp) 
-print("Updated list:", gdp_countries)
+print("Updatad list:", gdp_countries)
 ```
 
 ### Tuples
-Tuples are date structures similar to lists, but with a fundamental difference: they are immutable, meaning once created, they cannot be modified. They are represented by parentheses `()` instead of square brackets `[]`.
+Tuples are data structures similar to lists, but with a fundamental difference: they are immutable, meaning once created, they cannot be modified. They are represented by parentheses `()` instead of square brackets `[]`.
 
 ```{python}
 x = (1, 2, 3) # tuple (immutable list)
@@ -240,14 +240,14 @@ We can use tuples to represent information that should not be changed, such as e
 exchange_rates = (("USD", "EUR", 0.82), ("USD", "JPY", 105.42), ("EUR", "JPY", 128.64))
 ```
 
-In this example, we have a tuple of tuples representing the exchange rates between the US dollar (USD), the euro (EUR), and the Japanese yen (JPY) for a fixed fictitious date. Each inner tuple contains three elements: the source currency, the target currency, and the exchange rate. Since this information should not be changed, a tuple is an appropriate choice.
+In this example, we have a tuple of tuples representing the exchange rates between the US dollar (USD), the euro (EUR), and the Japanese yen (JPY) for a fixed fictitious data. Each inner tuple contains three elements: the source currency, the target currency, and the exchange rate. Since this information should not be changed, a tuple is an appropriate choice.
 
 ::: callout-tip
 To access the elements of a tuple, you can use the same syntax you use to access the elements of a list, i.e., using square brackets `[]` and the index of the desired element. Remember that indices in Python start at 0!
 :::
 
 ### Dictionaries
-Dictionaries in Python are date structures that allow storing key-value pairs. Each value is associated with a specific key, allowing quick access to date through the keys, rather than numerical indices, as in lists and tuples. This structure is useful when you need to associate information in a way similar to a datebase, where you can search for information based on a specific key.
+Dictionaries in Python are data structures that allow storing key-value pairs. Each value is associated with a specific key, allowing quick access to data through the keys, rather than numerical indices, as in lists and tuples. This structure is useful when you need to associate information in a way similar to a database, where you can search for information based on a specific key.
 
 In the example below, we have share quotes of some Brazilian companies listed on the share exchange.
 
@@ -260,7 +260,7 @@ brazilian_share_quotes = {
 }
 ```
 
-Each key is the share ticker symbol, and the associated value is the share price on a fixed date. For example, `brazilian_share_quotes["PETR4"]` would return the price of Petrobras share.
+Each key is the share ticker symbol, and the associated value is the share price on a fixed data. For example, `brazilian_share_quotes["PETR4"]` would return the price of Petrobras share.
 
 Alternatively, you can create a dictionary using the `dict` function:
 
@@ -268,7 +268,7 @@ Alternatively, you can create a dictionary using the `dict` function:
 brazilian_share_quotes = dict(PETR4=36.12, VALE3=62.40, ITUB4=34.15, BBDC4=13.82)
 ```
 
-You can add new key-value pairs to a dictionary or update existing values. For example:
+You can add new key-value pairs to a dictionary or updata existing values. For example:
 
 ```{python}
 brazilian_share_quotes["ABEV3"] = 12.80
@@ -409,7 +409,7 @@ while years <= 10:
     years += 1
 ```
 
-In this example, the loop calculates the value of the investment over 10 years, considering an annual return of 5%. In each iteration, the investment value is updated by multiplying by the growth factor `(1 + return_rate)`.
+In this example, the loop calculates the value of the investment over 10 years, considering an annual return of 5%. In each iteration, the investment value is updatad by multiplying by the growth factor `(1 + return_rate)`.
 
 ## Comprehensions
 
@@ -517,33 +517,33 @@ Lambda functions are often used in situations where you need a temporary and sim
 
 A class is a structure that defines the behavior and properties of a type of object. We can think of a class as a representation of an abstract concept, such as a financial transaction or a specific type of investment.
 
-For example, we can create a class called `Transaction` to represent a financial transaction, with properties such as the transaction amount, date, and transaction type.
+For example, we can create a class called `Transaction` to represent a financial transaction, with properties such as the transaction amount, data, and transaction type.
 
-An object, on the other hand, is a specific instance of a class. It represents a concrete entity with its own characteristics and behaviors. Continuing with the `Transaction` class example, we can create individual objects to represent specific transactions, such as buying shares of a company on a certain date.
+An object, on the other hand, is a specific instance of a class. It represents a concrete entity with its own characteristics and behaviors. Continuing with the `Transaction` class example, we can create individual objects to represent specific transactions, such as buying shares of a company on a certain data.
 
 ```{python}
 class Transaction:
-    def __init__(self, value, date, type):
+    def __init__(self, value, data, type):
         self.value = value
-        self.date = date
+        self.data = data
         self.type = type
     
     def print_info(self):
-      print(f"Transaction type: {self.type}, Value: R${self.value}, Date: {self.date}")
+      print(f"Transaction type: {self.type}, Value: R${self.value}, data: {self.data}")
 ```
 
-In this example, the `Transaction` class has a special method `__init__` that is called when a new object is created. This method initializes the object's properties with the values provided as arguments. Additionally, the class has a method called `print_info`, which prints transaction information, including the type, value, and date. This method also receives `self` as a parameter to access the current instance's attributes. By calling `print_info()` on a `Transaction` object, it will display the formatted transaction information.
+In this example, the `Transaction` class has a special method `__init__` that is called when a new object is created. This method initializes the object's properties with the values provided as arguments. Additionally, the class has a method called `print_info`, which prints transaction information, including the type, value, and data. This method also receives `self` as a parameter to access the current instance's attributes. By calling `print_info()` on a `Transaction` object, it will display the formatted transaction information.
 
 Below, we create two objects of the `Transaction` class, `transaction1` and `transaction2`, and access their properties to obtain information about the transactions.
 
 ```{python}
 # Creating objects of the Transaction class
-transaction1 = Transaction(value=1000, date="2024-03-11", type="share purchase")
-transaction2 = Transaction(value=500, date="2024-03-12", type="share sale")
+transaction1 = Transaction(value=1000, data="2024-03-11", type="share purchase")
+transaction2 = Transaction(value=500, data="2024-03-12", type="share sale")
 
 # Accessing object properties
 print("Transaction 1 value:", transaction1.value)
-print("Transaction 2 date:", transaction2.date)
+print("Transaction 2 data:", transaction2.data)
 
 # Accessing object methods
 transaction1.print_info()
@@ -554,31 +554,31 @@ Aqui está a tradução solicitada:
 ```markdown
 ## Exercises
 
-**1.** Working with basic date types
+**1.** Working with basic data types
 
-**a)** Create variables to represent economic date, such as the GDP of at least three countries, inflation rates, or unemployment rates. Use recent and historical values to create a diverse set of economic date representing different economic contexts around the world.
+**a)** Create variables to represent economic data, such as the GDP of at least three countries, inflation rates, or unemployment rates. Use recent and historical values to create a diverse set of economic data representing different economic contexts around the world.
 
-**b)** Perform basic mathematical operations with this date, such as calculating averages, growth rates, or proportions. For example, you can calculate GDP value averages, GDP growth rates over time, and proportions between different economic indicators (such as per capita GDP relative to total GDP), among other operations.
+**b)** Perform basic mathematical operations with this data, such as calculating averages, growth rates, or proportions. For example, you can calculate GDP value averages, GDP growth rates over time, and proportions between different economic indicators (such as per capita GDP relative to total GDP), among other operations.
 
-**2.** During date analysis, it may be necessary to convert between different date types. Use fundamental date types (integers, floats, strings) and apply type coercion as needed. Consider, for instance, that the variables representing GDP were given in string format. Then, convert to a float type to compute the average of the GDP values considered. After that, convert the GDP values back to a string for output formatting in the following format: 1,111%.
+**2.** During data analysis, it may be necessary to convert between different data types. Use fundamental data types (integers, floats, strings) and apply type coercion as needed. Consider, for instance, that the variables representing GDP were given in string format. Then, convert to a float type to compute the average of the GDP values considered. After that, convert the GDP values back to a string for output formatting in the following format: 1,111%.
 
-**3.** Use the code below to generate a pandas dateFrame that represents the closing price of a share:
+**3.** Use the code below to generate a pandas dataFrame that represents the closing price of a share:
 
 ```python
 import pandas as pd
 
-# Creating a list of dates
-dates = pd.date_range(start='2023-01-01', end='2023-12-31', freq='B')  # Frequency 'B' to consider only business days
+# Creating a list of datas
+datas = pd.data_range(start='2023-01-01', end='2023-12-31', freq='B')  # Frequency 'B' to consider only business days
 
 # Creating a series of simulated closing prices
 import numpy as np
 np.random.seed(0)  # Set the random seed for reproducibility
-closing_prices = np.random.normal(loc=50, scale=5, size=len(dates))  # Simulating prices with a normal distribution
+closing_prices = np.random.normal(loc=50, scale=5, size=len(datas))  # Simulating prices with a normal distribution
 
-# Creating the dateFrame
-df_share_prices = pd.dateFrame({'Date': dates, 'Closing Price': closing_prices})
+# Creating the dataFrame
+df_share_prices = pd.dataFrame({'data': datas, 'Closing Price': closing_prices})
 
-# Displaying the first few rows of the dateFrame
+# Displaying the first few rows of the dataFrame
 print(df_share_prices.head())
 ```
 
@@ -590,9 +590,9 @@ print(df_share_prices.head())
 
 ```python
 # Creating a column to store the day of the week
-df_share_prices['Day of the Week'] = df_share_prices['Date'].dt.weekday
+df_share_prices['Day of the Week'] = df_share_prices['data'].dt.weekday
 
-# Displaying the first few rows of the dateFrame with the new column
+# Displaying the first few rows of the dataFrame with the new column
 print(df_share_prices.head())
 ```
 
