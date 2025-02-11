@@ -11,9 +11,6 @@ library(reticulate)
 use_python("C:/Users/m_tai/anaconda3/python.exe", required = TRUE)
 ```
 
-::: {.callout-caution title="Notice!"}
-Chapter to be translated!
-:::
 
 ## Library Installation
 
@@ -254,7 +251,7 @@ Consider the following DataFrame `df` representing customer data from a bank wit
 import pandas as pd
 import numpy as np
 
-data = {'Name': ['João', 'Maria', 'Pedro', 'Ana', 'Mariana'],
+data = {'Name': ["John", "Mary", "Peter", "Anna", "Marianne"],
         'Age': [25, 30, np.nan, 40, 35],
         'Monthly Income': [5000, 6000, np.nan, 4500, 5500],
         'Credit Limit': [10000, np.nan, 8000, 12000, np.nan]}
@@ -263,9 +260,11 @@ df_customers = pd.DataFrame(data)
 
 In this example,
 
--   The missing values in the "Age" column were filled with the median of the existing ages in the DataFrame.
--   The missing values in the "Credit Limit" column were filled with the mode of the existing credit limits in the DataFrame.
--   The missing values in the "Monthly Income" column were filled with the mean of the existing monthly incomes in the DataFrame.
+-   The missing values in the "Age" column will be filled with the median of the existing ages in the DataFrame.
+-   The missing values in the "Credit Limit" column will be filled with the mode of the existing credit limits in the DataFrame.
+-   The missing values in the "Monthly Income" column will be filled with the mean of the existing monthly incomes in the DataFrame.
+
+See the code below.
 
 ```{python}
 # Filling missing values in the 'Age' column with the median of existing ages
