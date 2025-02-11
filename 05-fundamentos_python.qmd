@@ -13,7 +13,7 @@ use_python("C:/Users/m_tai/anaconda3/python.exe", required = TRUE)
 
 <!-- C:/Users/m_tai/anaconda3/python.exe -->
 
-<!-- C:\\Users\\m_tai\\Appdata\\Local\\r-miniconda/python.exe -->
+<!-- C:\\Users\\m_tai\\AppData\\Local\\r-miniconda/python.exe -->
 
 ::: {.callout-important title="Attention!!!"}
 From now on, all code presented in this book will be in the Python language.
@@ -47,7 +47,7 @@ In Python, the fundamental data types include `integer`, `float`, `string`, and 
 
 These data types are the basic building blocks for representing different types of information in Python, and are widely used in programming to perform operations and data manipulations.
 
-### The Integer data Type
+### The Integer data type
 An integer data type (`integer`) in Python represents whole numbers, i.e., numbers without decimal places. For example, 5, -10, and 0 are all examples of integers. In Python, integers are represented by the `int` class. In the examples below, we perform basic operations with integers.
 
 ```{python}
@@ -76,7 +76,7 @@ print(interest_rate)
 type(interest_rate)
 ```
 
-In the first line of the example above, we calculate the sum of 1.75 and 2 raised to the power of 3. Then, we assign the value 1.25 to the variable `interest_rate` and print it using `print(interest_rate)`. Finally, we check the data type of the variable `interest_rate` with `type(interest_rate)`, which returns `<class 'float'>`, indicating that it is a float.
+In the first line of the example above, we calculated the sum of 1.75 and 2 raised to the power of 3. Then, we assigned the value 1.25 to the variable `interest_rate` and print it using `print(interest_rate)`. Finally, we checked the data type of the variable `interest_rate` with `type(interest_rate)`, which returned `<class 'float'>`, indicating that it is a float.
 
 ### The String data Type
 ```{python}
@@ -86,7 +86,7 @@ print(country)
 type(country)
 ```
 
-In the code above, we create a variable called `country` and assign it the value "Brazil", which is a `string`. Then, we print the value of the variable country using `print(country)`, which displays "Brazil" on the screen. Finally, we check the data type of the variable country with `type(country)`, which returns `<class 'str'>`, indicating that it is a string.
+In the code above, we created a variable called `country` and assigned it the value "Brazil", which was a `string`. Then, we printed the value of the variable country using `print(country)`, which displayed "Brazil" on the screen. Finally, we checked the data type of the variable country with `type(country)`, which returned `<class 'str'>`, indicating that it was a `string`.
 
 ### The Boolean data Type
 The boolean data type, also known as `bool`, is used to represent true or false values. In Python, the boolean values are `True` and `False`.
@@ -147,10 +147,16 @@ num_str = str(num_float)
 print(num_str) 
 ```
 
-In the code above, we are converting a float value to a string.
+In the code above, we are coercing a float value to a string.
 
 ## Basic Objects
-In Python, there are three basic data structures: lists, tuples, and dictionaries: - Lists are ordered and mutable collections of elements, allowing the inclusion of items of different types and the modification of the values contained in them. - Tuples are similar to lists, but they are immutable, meaning they cannot be changed after creation. - Dictionaries are unordered collections of key-value pairs, where each value is associated with a unique key, providing efficient access to data through the keys.
+In Python, there are three basic data structures: lists, tuples, and dictionaries: 
+
+- Lists are ordered and mutable collections of elements, allowing the inclusion of items of different types and the modification of the values contained in them. 
+
+- Tuples are similar to lists, but they are immutable, meaning they cannot be changed after creation. 
+
+- Dictionaries are unordered collections of key-value pairs, where each value is associated with a unique key, providing efficient access to data through the keys.
 
 ### Lists
 In Python, a list is a data structure that allows storing an ordered collection of elements. To create a list, we use square brackets `[]`, and the elements are separated by commas. We can instantiate an empty list simply by using `[]` or the `list()` function. For example:
@@ -549,9 +555,7 @@ print("Transaction 2 data:", transaction2.data)
 transaction1.print_info()
 transaction2.print_info()
 ```
-Aqui está a tradução solicitada:  
 
-```markdown
 ## Exercises
 
 **1.** Working with basic data types
@@ -567,8 +571,8 @@ Aqui está a tradução solicitada:
 ```python
 import pandas as pd
 
-# Creating a list of datas
-datas = pd.data_range(start='2023-01-01', end='2023-12-31', freq='B')  # Frequency 'B' to consider only business days
+# Creating a list of dates
+dates = pd.date_range(start='2023-01-01', end='2023-12-31', freq='B')  # Frequency 'B' to consider only business days
 
 # Creating a series of simulated closing prices
 import numpy as np
@@ -576,7 +580,7 @@ np.random.seed(0)  # Set the random seed for reproducibility
 closing_prices = np.random.normal(loc=50, scale=5, size=len(datas))  # Simulating prices with a normal distribution
 
 # Creating the dataFrame
-df_share_prices = pd.dataFrame({'data': datas, 'Closing Price': closing_prices})
+df_share_prices = pd.dataFrame({'date': dates, 'Closing Price': closing_prices})
 
 # Displaying the first few rows of the dataFrame
 print(df_share_prices.head())
@@ -590,7 +594,7 @@ print(df_share_prices.head())
 
 ```python
 # Creating a column to store the day of the week
-df_share_prices['Day of the Week'] = df_share_prices['data'].dt.weekday
+df_share_prices['Day of the Week'] = df_share_prices['date'].dt.weekday
 
 # Displaying the first few rows of the dataFrame with the new column
 print(df_share_prices.head())
@@ -629,7 +633,7 @@ def calculate_pci(product_basket, current_price, reference_price):
         pci += (preco_atual / preco_base) * product_basket[produto]
     return pci
 
-# Example usage of the calculate_pci function
+# Usage example of the calculate_pci function
 product_basket = {'rice': 1, 'beans': 2, 'meat': 3}  # Basket of products with their respective quantities
 current_price = {'rice': 5, 'beans': 8, 'meat': 12}      # Current prices of products
 reference_price = {'rice': 4, 'beans': 7, 'meat': 10}      # Reference prices of products
