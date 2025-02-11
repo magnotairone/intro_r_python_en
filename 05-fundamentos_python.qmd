@@ -274,7 +274,7 @@ Alternatively, you can create a dictionary using the `dict` function:
 brazilian_share_quotes = dict(PETR4=36.12, VALE3=62.40, ITUB4=34.15, BBDC4=13.82)
 ```
 
-You can add new key-value pairs to a dictionary or updata existing values. For example:
+You can add new key-value pairs to a dictionary or update existing values. For example:
 
 ```{python}
 brazilian_share_quotes["ABEV3"] = 12.80
