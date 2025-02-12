@@ -4,321 +4,320 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Processamento e visualização de dados
+# Data Processing and Visualization
 
 ```{r echo=FALSE}
 library(reticulate)
 use_python("C:/Users/m_tai/anaconda3/python.exe", required = TRUE)
 ```
 
-::: {.callout-caution title="Notice!"}
-Chapter to be translated!
-:::
 
-## Instalação de bibliotecas
+## Library Installation
 
-A instalação de bibliotecas em Python é essencial para expandir a funcionalidade da linguagem. Existem várias maneiras de instalar bibliotecas, mas a mais comum é usando um gerenciador de pacotes. O pip é o gerenciador de pacotes padrão para Python e geralmente acompanha a instalação do Python.
+Installing libraries in Python is essential to expand the language's functionality. There are several ways to install libraries, but the most common is using a package manager. Pip is the default package manager for Python and usually comes with the Python installation.
 
-Para instalar uma biblioteca com pip, abra o terminal ou prompt de comando e digite o seguinte comando:
+To install a library with pip, open the terminal or command prompt and type the following command:
 
 ```{python}
 #| eval: false
-pip install nome_da_biblioteca
+pip install library_name
 ```
 
-Substitua nome_da_biblioteca pelo nome da biblioteca que você deseja instalar.
+Replace `library_name` with the name of the library you want to install.
 
-## Processamento de dados numéricos
+## Numerical Data Processing
 
-O `NumPy` (Numerical Python) é uma biblioteca essencial para computação numérica em Python. Ele fornece estruturas de dados eficientes para trabalhar com arrays multidimensionais e funções matemáticas poderosas para manipulação de dados.
+`NumPy` (Numerical Python) is an essential library for numerical computing in Python. It provides efficient data structures for working with multidimensional arrays and powerful mathematical functions for data manipulation.
 
-Para instalar o NumPy, você pode usar o pip, que é o gerenciador de pacotes padrão do Python:
+To install NumPy, you can use pip, the default Python package manager:
 
 ```{python}
 #| eval: false
 pip install numpy
 ```
 
-O principal objeto em `NumPy` é o array multidimensional. Você pode criar arrays `NumPy` usando a função `numpy.array()` e realizar operações matemáticas básicas com eles:
+The main object in `NumPy` is the multidimensional array. You can create `NumPy` arrays using the `numpy.array()` function and perform basic mathematical operations with them:
 
 ```{python}
 import numpy as np
 
-# Criando um array NumPy
+# Creating a NumPy array
 arr = np.array([1, 2, 3, 4, 5])
 
-# Operações matemáticas básicas
-print("Soma:", np.sum(arr))
-print("Média:", np.mean(arr))
+# Basic mathematical operations
+print("Sum:", np.sum(arr))
+print("Mean:", np.mean(arr))
 ```
 
-Além das operações básicas, o NumPy oferece funções universais (`ufuncs`) para aplicar operações em todos os elementos de um array de uma vez:
+In addition to basic operations, NumPy provides universal functions (`ufuncs`) to apply operations to all elements of an array at once:
 
 ```{python}
-# Funções universais (ufuncs)
+# Universal functions (ufuncs)
 arr = np.array([1, 2, 3, 4, 5])
-print("Quadrado de cada elemento:", np.square(arr))
-print("Exponencial de cada elemento:", np.exp(arr))
+print("Square of each element:", np.square(arr))
+print("Exponential of each element:", np.exp(arr))
 
 ```
 
-A seguir, apresentamos três exemplos práticos de utilização das funções do `NumPy`.
+Next, we present three practical examples of using `NumPy` functions.
 
-**Exemplo 1: Cálculo de Estatísticas Descritivas**
+**Example 1: Descriptive Statistics Calculation**
 
-O `NumPy` pode ser usado para calcular estatísticas descritivas, como média, mediana, desvio padrão, mínimo e máximo de séries temporais de dados econômicos, como o preço das ações de uma empresa ao longo do tempo.
+`NumPy` can be used to calculate descriptive statistics, such as mean, median, standard deviation, minimum, and maximum of time series data, such as the stock price of a company over time.
 
 ```{python}
 import numpy as np
 
-# Preço das ações de uma empresa ao longo do tempo (em dólares)
-precos = np.array([100, 102, 105, 110, 108, 115, 120])
+# Stock price of a company over time (in dollars)
+prices = np.array([100, 102, 105, 110, 108, 115, 120])
 
-# Calculando estatísticas descritivas
-print("Média:", np.mean(precos))
-print("Desvio padrão:", np.std(precos))
-print("Máximo:", np.max(precos))
-print("Mínimo:", np.min(precos))
+# Calculating descriptive statistics
+print("Mean:", np.mean(prices))
+print("Standard deviation:", np.std(prices))
+print("Maximum:", np.max(prices))
+print("Minimum:", np.min(prices))
 ```
 
-**Exemplo 2: Análise de Séries Temporais** O `NumPy` é útil para manipulação e análise de séries temporais. Por exemplo, você pode usar `NumPy` para calcular a taxa de retorno de um investimento ao longo do tempo ou para suavizar uma série temporal usando médias móveis.
+**Example 2: Time Series Analysis** `NumPy` is useful for time series manipulation and analysis. For example, you can use `NumPy` to calculate the return rate of an investment over time or to smooth a time series using moving averages.
 
 ```{python}
-precos = np.array([100, 102, 105, 110, 108, 115, 120])
-# Calcular a taxa de retorno de um investimento ao longo do tempo
-retornos = np.diff(precos) / precos[:-1] * 100
-print("Taxa de retorno:", retornos)
+prices = np.array([100, 102, 105, 110, 108, 115, 120])
+# Calculating the return rate of an investment over time
+returns = np.diff(prices) / prices[:-1] * 100
+print("Return rate:", returns)
 ```
 
 ::: callout-tip
-A função np.diff em NumPy é usada para calcular a diferença entre elementos consecutivos ao longo de um determinado eixo de um array. *Atenção*: O tamanho do retorno da função np.diff será sempre menor que o tamanho do vetor original de entrada por um elemento. Por exemplo, se tivermos um vetor unidimensional com $n$ elementos, a função np.diff retornará um vetor com $n−1$ elementos, pois não há diferença para o último elemento.
+The `np.diff` function in NumPy is used to calculate the difference between consecutive elements along a specified axis of an array. *Note*: The size of the output from the `np.diff` function will always be one less than the size of the original input vector. For example, if we have a one-dimensional vector with $n$ elements, the `np.diff` function will return a vector with $n−1$ elements, as there is no difference for the last element.
 :::
 
 ```{python}
-precos = np.array([100, 102, 105, 110, 108, 115, 120])
-# Suavizar uma série temporal usando médias móveis
-tamanho_janela = 3
-media_movel = np.convolve(precos, np.ones(tamanho_janela) / tamanho_janela, mode='valid')
-print("Médias móveis:", media_movel)
+prices = np.array([100, 102, 105, 110, 108, 115, 120])
+# Smoothing a time series using moving averages
+window_size = 3
+moving_average = np.convolve(prices, np.ones(window_size) / window_size, mode='valid')
+print("Moving averages:", moving_average)
 ```
 
 ::: callout-tip
-A função `np.convolve` em `NumPy` é usada para realizar a convolução entre duas sequências, representadas por dois vetores unidimensionais. A convolução é uma operação matemática que combina duas funções para produzir uma terceira função que representa a quantidade de sobreposição entre elas conforme uma delas é deslocada ao longo do eixo.
+The `np.convolve` function in `NumPy` is used to perform convolution between two sequences, represented by two one-dimensional vectors. Convolution is a mathematical operation that combines two functions to produce a third function that represents the amount of overlap between them as one is shifted along the axis.
 
-A sintaxe básica da função é `np.convolve(a, b, mode='full')`, onde `a` e `b` são os dois vetores unidimensionais a serem convolvidos e `mode` é um parâmetro opcional que define o modo de convolução. Os modos mais comuns são:
+The basic syntax of the function is `np.convolve(a, b, mode='full')`, where `a` and `b` are the two one-dimensional vectors to be convolved, and `mode` is an optional parameter that defines the convolution mode. The most common modes are:
 
--   `'full'`: Retorna a saída completa da convolução. O comprimento do resultado será `len(a) + len(b) - 1`.
--   `'valid'`: Retorna apenas pontos onde as sequências se sobrepõem completamente. O comprimento do resultado será `max(len(a), len(b)) - min(len(a), len(b)) + 1`.
--   `'same'`: Retorna a saída do mesmo tamanho que o vetor de entrada mais longo. O comprimento do resultado será `max(len(a), len(b))`.
+-   `'full'`: Returns the full output of the convolution. The length of the result will be `len(a) + len(b) - 1`.
+-   `'valid'`: Returns only points where the sequences fully overlap. The length of the result will be `max(len(a), len(b)) - min(len(a), len(b)) + 1`.
+-   `'same'`: Returns output of the same size as the longest input vector. The length of the result will be `max(len(a), len(b))`.
 
-No exemplo anterior, a função `np.convolve` foi usada aqui para calcular a média móvel dos preços. Nesse caso, a primeira sequência é o vetor de preços e a segunda sequência é um vetor de 1s dividido pelo tamanho da janela de média móvel. Isso cria uma sequência que representa uma média ponderada dos valores.
+In the previous example, the `np.convolve` function was used here to calculate the moving average of prices. In this case, the first sequence is the price vector, and the second sequence is a vector of 1s divided by the moving average window size. This creates a sequence that represents a weighted average of the values.
 :::
 
-**Exemplo 3: Simulação Monte Carlo** O NumPy pode ser usado para realizar simulações Monte Carlo, que são amplamente utilizadas na modelagem financeira e na avaliação de risco. Por exemplo, você pode simular o desempenho de uma carteira de investimentos ao longo do tempo sob diferentes cenários de mercado.
+**Example 3: Monte Carlo Simulation** NumPy can be used to perform Monte Carlo simulations, which are widely used in financial modeling and risk assessment. For example, you can simulate the performance of an investment portfolio over time under different market scenarios.
 
 ```{python}
-# Simulação Monte Carlo do desempenho de uma carteira de investimentos
-num_simulacoes = 1000
-num_anos = 10
-retorno_medio = 0.08
-volatilidade = 0.15
+# Monte Carlo simulation of an investment portfolio's performance
+num_simulations = 1000
+num_years = 10
+mean_return = 0.08
+volatility = 0.15
 
-# Gerar retornos aleatórios usando uma distribuição normal
-retornos = np.random.normal(retorno_medio, volatilidade, size=(num_simulacoes, num_anos))
+# Generating random returns using a normal distribution
+returns = np.random.normal(mean_return, volatility, size=(num_simulations, num_years))
 
-# Calcular o valor final da carteira para cada simulação
-investimento_inicial = 10000
-valores_finais = investimento_inicial * np.cumprod(1 + retornos, axis=1)
+# Calculating the final portfolio value for each simulation
+initial_investment = 10000
+final_values = initial_investment * np.cumprod(1 + returns, axis=1)
 
-# Estatísticas descritivas dos valores finais da carteira
-print("Valor final médio:", np.mean(valores_finais[:,-1]))
-print("Desvio padrão dos valores finais:", np.std(valores_finais[:,-1]))
+# Descriptive statistics of the final portfolio values
+print("Mean final value:", np.mean(final_values[:,-1]))
+print("Standard deviation of final values:", np.std(final_values[:,-1]))
 ```
 
-Mais referências sobre `NumPy`:
+More references on `NumPy`:
 
--   **Documentação oficial do NumPy:** <https://numpy.org/doc/stable/> A documentação oficial do NumPy contém informações detalhadas sobre todas as funções e métodos disponíveis, além de tutoriais e exemplos.
+-   **Official NumPy Documentation:** <https://numpy.org/doc/stable/> The official NumPy documentation contains detailed information on all available functions and methods, as well as tutorials and examples.
 
--   **NumPy Quickstart Tutorial:** <https://numpy.org/doc/stable/user/quickstart.html> Este tutorial rápido fornece uma introdução rápida ao NumPy e suas funcionalidades básicas.
+-   **NumPy Quickstart Tutorial:** <https://numpy.org/doc/stable/user/quickstart.html> This quickstart tutorial provides a quick introduction to NumPy and its basic functionalities.
 
-## Análise e processamento de dados
+## Data Analysis and Processing
 
-O pandas é uma biblioteca de código aberto amplamente utilizada em Python para análise e manipulação de dados. Ele fornece estruturas de dados flexíveis e ferramentas poderosas para trabalhar com dados estruturados, facilitando a análise, limpeza e preparação de dados para diversas aplicações, como ciência de dados, finanças, pesquisa acadêmica e muito mais.
+Pandas is a widely used open-source library in Python for data analysis and manipulation. It provides flexible data structures and powerful tools for working with structured data, facilitating data analysis, cleaning, and preparation for various applications, such as data science, finance, academic research, and more.
 
-## O que é pandas?
+## What is Pandas?
 
-Pandas é uma biblioteca Python de código aberto que oferece estruturas de dados de alto desempenho e ferramentas de análise de dados. O pandas foi projetado para lidar com as complexidades do mundo real em análise de dados, oferecendo uma interface simples e intuitiva para trabalhar com dados tabulares.
+Pandas is an open-source Python library that offers high-performance data structures and data analysis tools. Pandas is designed to handle the complexities of real-world data analysis, offering a simple and intuitive interface for working with tabular data.
 
-Pandas é amplamente utilizado em análise de dados devido à sua capacidade de:
+Pandas is widely used in data analysis due to its ability to:
 
--   Importar e exportar dados de uma variedade de fontes, incluindo arquivos CSV, Excel, SQL, JSON, HDF5 e mais.
--   Manipular dados de forma eficiente, incluindo indexação, filtragem, agregação e limpeza.
--   Realizar operações estatísticas e matemáticas em dados, como média, soma, desvio padrão, correlação, etc.
+-   Import and export data from a variety of sources, including CSV, Excel, SQL, JSON, HDF5 files, and more.
+-   Efficiently manipulate data, including indexing, filtering, aggregation, and cleaning.
+-   Perform statistical and mathematical operations on data, such as mean, sum, standard deviation, correlation, etc.
 
-As duas principais estruturas de dados fornecidas pelo pandas são series e dataframes.
+The two main data structures provided by Pandas are Series and DataFrames.
 
-### Séries
+### Series
 
-Uma `Serie` é uma estrutura de dados unidimensional que pode conter qualquer tipo de dados, como inteiros, floats, strings, entre outros. Cada elemento em uma Série possui um rótulo único chamado de índice. A Série é semelhante a uma lista ou array unidimensional em Python, mas fornece recursos adicionais, como operações vetorizadas e alinhamento automático de dados com base nos rótulos de índice.
+A `Series` is a one-dimensional data structure that can contain any type of data, such as integers, floats, strings, among others. Each element in a Series has a unique label called an index. The Series is similar to a list or one-dimensional array in Python but provides additional features, such as vectorized operations and automatic data alignment based on index labels.
 
-Suponha que temos uma Série representando os preços diários de uma ação:
+Suppose we have a Series representing the daily prices of a stock:
 
-| Data       | Preço |
+| Date       | Price |
 |------------|-------|
 | 2024-03-18 | 100   |
 | 2024-03-19 | 105   |
 | 2024-03-20 | 98    |
 | 2024-03-21 | 102   |
 
-Podemos criar uma Serie pandas para representar esses dados:
+We can create a Pandas Series to represent this data:
 
 ```{python}
 import pandas as pd
 
-# Dados dos preços da ação
+# Stock price data
 data = ['2024-03-18', '2024-03-19', '2024-03-20', '2024-03-21']
-precos = [100, 105, 98, 102]
+prices = [100, 105, 98, 102]
 
-# Criando uma Série pandas
-serie_precos_acao = pd.Series(precos, index=pd.to_datetime(data), name='Preço da Ação')
-print(serie_precos_acao)
+# Creating a Pandas Series
+stock_price_series = pd.Series(prices, index=pd.to_datetime(data), name='Stock Price')
+print(stock_price_series)
 ```
 
 ### DataFrame
 
-DataFrame é uma estrutura de dados bidimensional semelhante a uma tabela de banco de dados ou uma planilha do Excel. Ele é composto por linhas e colunas, onde cada coluna pode conter um tipo de dado diferente. Cada coluna e linha em um DataFrame possui um rótulo exclusivo chamado de índice e nome, respectivamente. O DataFrame permite realizar uma ampla gama de operações de manipulação e análise de dados, como indexação, filtragem, agregação, limpeza, entre outras.
+A DataFrame is a two-dimensional data structure similar to a database table or an Excel spreadsheet. It consists of rows and columns, where each column can contain a different data type. Each column and row in a DataFrame has a unique label called an index and a name, respectively. The DataFrame allows for a wide range of data manipulation and analysis operations, such as indexing, filtering, aggregation, cleaning, among others.
 
-Suponha que temos um DataFrame representando os preços diários de várias ações. Podemos criar um DataFrame pandas para representar esses dados. Veja no exemplo abaixo.
+Suppose we have a DataFrame representing the daily prices of multiple stocks. We can create a Pandas DataFrame to represent this data. See the example below.
 
 ```{python}
 import pandas as pd
 import numpy as np
 
-# Dados dos preços das ações
+# Stock price data
 data = ['2024-03-18', '2024-03-19', '2024-03-20', '2024-03-21']
-precos_acoes = {
-    'Ação 1': [100, 105, np.nan, 102],
-    'Ação 2': [50, 52, 48, 49],
-    'Ação 3': [75, np.nan, 72, 74]
+stock_prices = {
+    'Stock 1': [100, 105, np.nan, 102],
+    'Stock 2': [50, 52, 48, 49],
+    'Stock 3': [75, np.nan, 72, 74]
 }
 
-# Criando um DataFrame pandas
-df_precos_acoes = pd.DataFrame(precos_acoes, index=pd.to_datetime(data))
-print(df_precos_acoes)
+# Creating a Pandas DataFrame
+df_stock_prices = pd.DataFrame(stock_prices, index=pd.to_datetime(data))
+print(df_stock_prices)
 
 ```
 
-### Principais funcionalidades
+### Main Functionalities
 
-A função `df.isna()` é uma função fornecida pelo pandas em um DataFrame (df) que retorna uma matriz booleana indicando se cada elemento do DataFrame é um valor ausente (NaN).
+The `df.isna()` function is a function provided by Pandas in a DataFrame (df) that returns a boolean matrix indicating whether each element in the DataFrame is a missing value (NaN).
 
-Quando aplicada a um DataFrame, a função `isna()` retorna um DataFrame com o mesmo formato, onde cada valor é substituído por `True` se for `NaN` e `False` caso contrário.
+When applied to a DataFrame, the `isna()` function returns a DataFrame with the same shape, where each value is replaced by `True` if it is `NaN` and `False` otherwise.
 
-Isso é útil para identificar rapidamente os valores ausentes em um DataFrame e realizar operações de limpeza ou tratamento de dados, como preenchimento de valores ausentes ou remoção de linhas ou colunas contendo esses valores.
+This is useful for quickly identifying missing values in a DataFrame and performing data cleaning or handling operations, such as filling missing values or removing rows or columns containing these values.
 
-Se aplicarmos `df_precos_acoes.isna()`, obteremos:
+If we apply `df_stock_prices.isna()`, we get:
 
 ```{python}
-df_precos_acoes.isna()
+df_stock_prices.isna()
 ```
 
-Para contar a quantidade de `NaN` em cada coluna, combine `is.na()` com `sum()`:
+To count the number of `NaN` values in each column, combine `is.na()` with `sum()`:
 
 ```{python}
-df_precos_acoes.isna().sum()
+df_stock_prices.isna().sum()
 ```
 
-O método `dropna()` no pandas é usado para remover linhas ou colunas que contenham valores ausentes (NaN).
+The `dropna()` method in Pandas is used to remove rows or columns that contain missing values (NaN).
 
 ```{python}
-df_precos_acoes.dropna()
+df_stock_prices.dropna()
 ```
 
-O parâmetro subset é usado para especificar em quais colunas ou linhas o pandas deve procurar por valores ausentes antes de remover. Quando usamos `df.dropna(subset=["Ação 3"])`, estamos instruindo o pandas a remover todas as linhas onde houver um valor ausente na coluna "Ação 3".
+The `subset` parameter is used to specify in which columns or rows Pandas should look for missing values before removing. When we use `df.dropna(subset=["Stock 3"])`, we are instructing Pandas to remove all rows where there is a missing value in the "Stock 3" column.
 
 ```{python}
-df_precos_acoes.dropna(subset=["Ação 3"])
+df_stock_prices.dropna(subset=["Stock 3"])
 ```
 
-Na função `dropna()`, o parâmetro `inplace=True` especifica que a modificação deve ser feita diretamente no DataFrame original, em vez de retornar um novo DataFrame sem os valores ausentes. Quando `inplace=True` é usado com dropna(), o DataFrame original é modificado e as linhas ou colunas com valores ausentes são removidas permanentemente.
+In the `dropna()` function, the `inplace=True` parameter specifies that the modification should be made directly to the original DataFrame, rather than returning a new DataFrame without the missing values. When `inplace=True` is used with `dropna()`, the original DataFrame is modified, and the rows or columns with missing values are permanently removed.
 
 ```{python}
-df_precos_acoes.dropna(inplace = True)
+df_stock_prices.dropna(inplace = True)
 ```
 
-A função `fillna()` no pandas é usada para preencher valores ausentes (NaN) em um DataFrame com um valor específico.
+The `fillna()` function in Pandas is used to fill missing values (NaN) in a DataFrame with a specific value.
 
-Considere o seguinte DataFrame `df` que representa os dados de clientes de um banco com alguns dados faltantes:
+Consider the following DataFrame `df` representing customer data from a bank with some missing data:
 
 ```{python}
 import pandas as pd
 import numpy as np
 
-dados = {'Nome': ['João', 'Maria', 'Pedro', 'Ana', 'Mariana'],
-        'Idade': [25, 30, np.nan, 40, 35],
-        'Renda Mensal': [5000, 6000, np.nan, 4500, 5500],
-        'Limite de Crédito': [10000, np.nan, 8000, 12000, np.nan]}
-df_clientes = pd.DataFrame(dados)
+data = {'Name': ["John", "Mary", "Peter", "Anna", "Marianne"],
+        'Age': [25, 30, np.nan, 40, 35],
+        'Monthly Income': [5000, 6000, np.nan, 4500, 5500],
+        'Credit Limit': [10000, np.nan, 8000, 12000, np.nan]}
+df_customers = pd.DataFrame(data)
 ```
 
-Neste exemplo,
+In this example,
 
--   Os valores ausentes na coluna "Idade" foram preenchidos com a mediana das idades existentes no DataFrame.
--   Os valores ausentes na coluna "Limite de Crédito" foram preenchidos com a moda dos limites de crédito existentes no DataFrame.
--   Os valores ausentes na coluna "Renda Mensal" foram preenchidos com a média das rendas mensais existentes no DataFrame.
+-   The missing values in the "Age" column will be filled with the median of the existing ages in the DataFrame.
+-   The missing values in the "Credit Limit" column will be filled with the mode of the existing credit limits in the DataFrame.
+-   The missing values in the "Monthly Income" column will be filled with the mean of the existing monthly incomes in the DataFrame.
+
+See the code below.
 
 ```{python}
-# Preenchendo valores ausentes na coluna 'Idade' com a mediana das idades
-df_clientes['Idade'] = df_clientes['Idade'].fillna(df_clientes['Idade'].median())
+# Filling missing values in the 'Age' column with the median of existing ages
+df_customers['Age'] = df_customers['Age'].fillna(df_customers['Age'].median())
 
-# Preenchendo valores ausentes na coluna 'Limite de Crédito' com a moda dos limites de crédito
-df_clientes['Limite de Crédito'] = df_clientes['Limite de Crédito'].fillna(df_clientes['Limite de Crédito'].mode()[0])
+# Filling missing values in the 'Credit Limit' column with the mode of existing credit limits
+df_customers['Credit Limit'] = df_customers['Credit Limit'].fillna(df_customers['Credit Limit'].mode()[0])
 
-# Preenchendo valores ausentes na coluna 'Renda Mensal' com a média das rendas mensais
-df_clientes['Renda Mensal'] = df_clientes['Renda Mensal'].fillna(df_clientes['Renda Mensal'].mean())
+# Filling missing values in the 'Monthly Income' column with the mean of existing monthly incomes
+df_customers['Monthly Income'] = df_customers['Monthly Income'].fillna(df_customers['Monthly Income'].mean())
 
-df_clientes
+df_customers
 ```
 
-Agora, vamos carregar os dados `gapminder`, que está no arquivo `gapminder.zip`.
+Now, let's load the `gapminder` data, which is in the `gapminder.zip` file.
 
 ```{python}
 gapminder = pd.read_csv("data/gapminder.zip", sep = "\t")
 ```
 
-A função head() é usada para visualizar as primeiras linhas do conjunto de dados gapminder, oferecendo uma rápida visão geral da sua estrutura e conteúdo.
+The `head()` function is used to view the first few rows of the `gapminder` dataset, providing a quick overview of its structure and content.
 
 ```{python}
 gapminder.head()
 ```
 
-O método info() fornece informações sobre o conjunto de dados, incluindo o número de entradas, o tipo de dados de cada coluna e se há valores nulos.
+The `info()` method provides information about the dataset, including the number of entries, the data type of each column, and whether there are any null values.
 
 ```{python}
 gapminder.info()
 ```
 
-A função describe() gera estatísticas descritivas para cada coluna numérica do conjunto de dados, como contagem, média, desvio padrão, mínimo e máximo.
+The `describe()` function generates descriptive statistics for each numeric column in the dataset, such as count, mean, standard deviation, minimum, and maximum.
 
 ```{python}
 gapminder.describe()
 ```
 
-A função `value_counts()` conta o número de ocorrências de cada categoria na coluna "continent" do conjunto de dados gapminder, transforma os resultados em um DataFrame, renomeia as colunas para "continent" e "n" (indicando a contagem), e reconfigura o índice.
+The `value_counts()` function counts the number of occurrences of each category in the "continent" column of the `gapminder` dataset, transforms the results into a DataFrame, renames the columns to "continent" and "n" (indicating the count), and resets the index.
 
 ```{python}
 gapminder.value_counts("continent").to_frame("n").reset_index()
 ```
 
-No trecho abaixo, fazemos uma contagem de valores para as combinações únicas de categorias nas colunas "continent" e "year" do DataFrame gapminder. Os resultados são transformados em um DataFrame, renomeados como "continent", "year" e "n" (indicando a contagem), e o índice é reconfigurado.
+In the following snippet, we perform a value count for the unique combinations of categories in the "continent" and "year" columns of the `gapminder` DataFrame. The results are transformed into a DataFrame, renamed as "continent", "year", and "n" (indicating the count), and the index is reset.
 
 ```{python}
 gapminder.value_counts(["continent", "year"]).to_frame("n").reset_index()
 ```
 
-## Dados organizados (tidy data)
+## Tidy Data
 
-Todas as tabelas abaixo tem o mesmo dado (foram tiradas do pacote `tidyr` do R), que mostra a quantidade de casos de uma doença e a população total de alguns países.
+All the tables below contain the same data (taken from the `tidyr` package in R), which shows the number of cases of a disease and the total population of some countries.
 
 ```{python}
 table1 = pd.read_csv("data/table1.csv")
@@ -348,13 +347,13 @@ table4a
 table4b
 ```
 
-O exemplo abaixo cria uma nova coluna chamada rate no DataFrame `table1.` A função `assign` adiciona uma nova coluna ao DataFrame, enquanto a expressão `lambda` calcula os valores para essa nova coluna.
+The example below creates a new column called `rate` in the `table1` DataFrame. The `assign` function adds a new column to the DataFrame, while the `lambda` expression calculates the values for this new column.
 
 ```{python}
 table1.assign(rate = lambda _: 10000 * (_.cases / _.population))
 ```
 
-No exemplo abaixo, agrupamos os dados do DataFrame `table1` pela coluna "year" (ano) e depois calcula a soma dos casos para cada ano. O método `groupby("year")` agrupa os dados por ano, criando grupos separados para cada ano. `as_index = False` especifica que a coluna usada para agrupamento ("year") não deve ser definida como índice no DataFrame resultante. O método `agg` é usado para realizar uma operação de agregação nos grupos. Aqui, np.sum é usado para calcular a soma dos valores da coluna "cases" para cada grupo.
+In the example below, we group the data in the `table1` DataFrame by the "year" column and then calculate the sum of cases for each year. The `groupby("year")` method groups the data by year, creating separate groups for each year. `as_index = False` specifies that the column used for grouping ("year") should not be set as the index in the resulting DataFrame. The `agg` method is used to perform an aggregation operation on the groups. Here, `np.sum` is used to calculate the sum of the values in the "cases" column for each group.
 
 ```{python}
 #| warning: false
@@ -362,7 +361,7 @@ No exemplo abaixo, agrupamos os dados do DataFrame `table1` pela coluna "year" (
        .agg(total_cases = ("cases", np.sum)))
 ```
 
-Para fazer o mesmo com os dados da table1, temos que usar a função `pivot_table`:
+To do the same with the data from `table1`, we have to use the `pivot_table` function:
 
 ```{python}
 #| warning: false
@@ -373,14 +372,14 @@ table2_tidy = (table2.pivot_table(index = ["country", "year"], columns = "type",
 table2_tidy.assign(rate = lambda _: 10000 * (_.cases / _.population))
 ```
 
-No exemplo acima, usamos o método `pivot_table` do pandas para reorganizar os dados do DataFrame `table2`. Ele reorganiza os dados de forma que os valores da coluna "count" sejam pivotados (transformados em colunas) com base nos valores únicos da combinação de "country" e "year". Os parâmetros index, columns e values especificam respectivamente as colunas que serão usadas como índice, as que serão transformadas em colunas e os valores a serem preenchidos na tabela pivô. Após a operação de pivotagem, são encadeados métodos adicionais para modificar a estrutura do DataFrame resultante:
+In the example above, we use the `pivot_table` method from Pandas to reorganize the data in the `table2` DataFrame. It reorganizes the data so that the values in the "count" column are pivoted (transformed into columns) based on the unique values of the combination of "country" and "year". The `index`, `columns`, and `values` parameters specify the columns to be used as the index, the columns to be transformed into columns, and the values to be filled in the pivot table, respectively. After the pivot operation, additional methods are chained to modify the structure of the resulting DataFrame:
 
--   `reset_index()` redefine os índices do DataFrame para índices numéricos padrão, movendo os índices anteriores (no caso, "country" e "year") para colunas.
--   `rename_axis(None, axis=1)` remove os nomes dos índices das colunas, substituindo-os por None. Isso é feito especificamente para limpar os nomes das colunas do DataFrame.
+-   `reset_index()` resets the DataFrame's indices to default numeric indices, moving the previous indices (in this case, "country" and "year") to columns.
+-   `rename_axis(None, axis=1)` removes the column index names, replacing them with `None`. This is done specifically to clean up the column names of the DataFrame.
 
-Após a transformação dos dados, a função `assign` é usada para criar uma nova coluna chamada `rate` no DataFrame resultante `table2_tidy`.
+After transforming the data, the `assign` function is used to create a new column called `rate` in the resulting DataFrame `table2_tidy`.
 
-Agora, vamos fazer o mesmo para a `table4a` e `table4b`:
+Now, let's do the same for `table4a` and `table4b`:
 
 ```{python}
 #| warning: false
@@ -391,17 +390,17 @@ table4_tidy = (table4a.melt(id_vars = "country", value_vars = ["1999", "2000"], 
 table4_tidy.assign(rate = lambda _: 10000 * (_.cases / _.population))
 ```
 
-Os DataFrames `table4a` e `table4b` são derretidos usando o método `melt`:
+The DataFrames `table4a` and `table4b` are melted using the `melt` method:
 
--   Para `table4a`, as colunas que permanecerão fixas são especificadas através do argumento id_vars = "country", enquanto as colunas "1999" e "2000" são derretidas como variáveis usando value_vars = \["1999", "2000"\]. Os nomes das variáveis derretidas são renomeadas para "year" e "cases" usando var_name = "year" e value_name = "cases", respectivamente.
+- For `table4a`, the columns that will remain fixed are specified through the argument `id_vars = "country"`, while the columns "1999" and "2000" are melted as variables using `value_vars = ["1999", "2000"]`. The names of the melted variables are renamed to "year" and "cases" using `var_name = "year"` and `value_name = "cases"`, respectively.
 
--   Da mesma forma, para `table4b`, as colunas "country" e "1999", "2000" são derretidas, com os nomes das variáveis renomeadas para "year" e "population", respectivamente.
+- Similarly, for `table4b`, the columns "country" and "1999", "2000" are melted, with the variable names renamed to "year" and "population", respectively.
 
-Os DataFrames resultantes do derretimento de table4a e table4b são mesclados usando o método merge. A mesclagem é feita com base nas colunas "country" e "year", garantindo que os dados correspondentes de table4a e table4b sejam combinados corretamente.
+The DataFrames resulting from the melting of `table4a` and `table4b` are merged using the `merge` method. The merge is performed based on the columns "country" and "year", ensuring that corresponding data from `table4a` and `table4b` are correctly combined.
 
-Finalmente, o método `assign` é usado para criar uma nova coluna chamada "rate", que representa a taxa de casos por 10.000 habitantes.
+Finally, the `assign` method is used to create a new column called "rate", which represents the number of cases per 10,000 inhabitants.
 
-Para a `table3`, basta separar a coluna `cases` considerando o separador `\`:
+For `table3`, just split the `cases` column using the separator `/`:
 
 ```{python}
 #| warning: false
@@ -416,90 +415,89 @@ table3_tidy
 table3_tidy.assign(rate = lambda _: 10000 * (_.cases / _.population))
 ```
 
-O parâmetro `expand` é utilizado no método`str.split()` para especificar se o resultado da divisão deve ser expandido em um DataFrame (se True) ou mantido como uma lista de valores (se False, que é o padrão).
+The `expand` parameter is used in the `str.split()` method to specify whether the split result should be expanded into a DataFrame (if `True`) or kept as a list of values (if `False`, which is the default).
 
-Principais funcionaldiades - ver aulas paulo
+Main functionalities - see Paulo's lectures
 
-<!-- aulas 4, 5 (data wrangling) e 6 (missing data) -->
+<!-- lectures 4, 5 (data wrangling) and 6 (missing data) -->
 
-## Visualização de dados
+## Data Visualization
 
-Duas bibliotecas amplamente utilizadas para visualização em Python são o `Matplotlib` e o `Plotnine.` O `Matplotlib` oferece uma ampla gama de opções para criar visualizações estáticas, desde gráficos simples até gráficos complexos e personalizados. Por outro lado, o `Plotnine` é uma biblioteca baseada na gramática de gráficos (parecido com o `ggplot2` do R), o que facilita a criação de visualizações elegantes e concisas usando uma sintaxe intuitiva e expressiva.
+Two widely used libraries for visualization in Python are `Matplotlib` and `Plotnine`. `Matplotlib` offers a wide range of options to create static visualizations, from simple charts to complex and customized graphs. On the other hand, `Plotnine` is a library based on the grammar of graphics (similar to R's `ggplot2`), which makes it easy to create elegant and concise visualizations using an intuitive and expressive syntax.
 
 ### Matplotlib
 
-Antes de começarmos a criar visualizações, é importante entender alguns conceitos básicos do Matplotlib:
+Before we start creating visualizations, it's important to understand some basic concepts of Matplotlib:
 
--   **Figura e Eixo (Axes)**: No Matplotlib, uma figura é a janela ou página na qual tudo é desenhado. Dentro de uma figura, pode haver vários eixos (ou subplots), onde os dados são efetivamente plotados.
+- **Figure and Axes**: In Matplotlib, a figure is the window or page where everything is drawn. Within a figure, there can be multiple axes (or subplots), where data is effectively plotted.
 
--   **Método plot()**: O método plot() é usado para criar gráficos de linha, pontos ou marcadores. Ele aceita uma variedade de argumentos para personalizar a aparência do gráfico, como cor, estilo de linha, largura da linha, etc.
+- **The plot() Method**: The `plot()` method is used to create line, point, or marker charts. It accepts various arguments to customize the appearance of the graph, such as color, line style, line width, etc.
 
--   **Customização**: O Matplotlib oferece muitas opções de personalização para ajustar a aparência dos gráficos, incluindo a adição de rótulos aos eixos, título do gráfico, legendas, entre outros.
+- **Customization**: Matplotlib offers many customization options to adjust the appearance of charts, including adding axis labels, chart titles, legends, and more.
 
-Agora, vamos ver um exemplo de como criar um gráfico de pontos usando dados fictícios, onde cada unidade de dado está relacionada a uma empresa.
+Now let's see an example of how to create a scatter plot using fictitious data, where each data unit is related to a company.
 
 ```{python}
 #| warning: false
 import matplotlib.pyplot as plt
 
-# Dados de exemplo: Nome das empresas, receita e número de funcionários
-empresas = ['A', 'B', 'C', 'D', 'E']
-receita = [200, 300, 400, 250, 350]  # em milhões de reais
-funcionarios = [1000, 1200, 1500, 900, 1100]
+# Example data: Company names, revenue, and number of employees
+companies = ['A', 'B', 'C', 'D', 'E']
+revenue = [200, 300, 400, 250, 350]  # in millions of reais
+employees = [1000, 1200, 1500, 900, 1100]
 
-# Criando o gráfico de pontos
+# Creating the scatter plot
 plt.figure(figsize=(8, 6))
-plt.scatter(receita, funcionarios, color='blue', marker='o')
+plt.scatter(revenue, employees, color='blue', marker='o')
 
-# Adicionando rótulos e título
-plt.xlabel('Receita (em milhões de reais)')
-plt.ylabel('Número de Funcionários')
-plt.title('Receita vs. Número de Funcionários')
+# Adding labels and title
+plt.xlabel('Revenue (in millions of reais)')
+plt.ylabel('Number of Employees')
+plt.title('Revenue vs. Number of Employees')
 
-# Adicionando anotações para cada ponto
-for i in range(len(empresas)):
-    plt.annotate(empresas[i], (receita[i], funcionarios[i]))
+# Adding annotations for each point
+for i in range(len(companies)):
+    plt.annotate(companies[i], (revenue[i], employees[i]))
 
-# Exibindo o gráfico
+# Displaying the plot
 plt.grid(True)
 plt.show()
-
 ```
 
-Neste exemplo, cada ponto no gráfico representa uma empresa, onde o eixo x representa a receita (em milhões de reais) e o eixo y representa o número de funcionários. As anotações são usadas para identificar cada empresa no gráfico.
+In this example, each point on the graph represents a company, where the x-axis represents revenue (in millions of reais) and the y-axis represents the number of employees. Annotations are used to identify each company on the graph.
 
-Na sequência, utilizamos o Matplotlib para criar um gráfico de linha que representa a evolução das vendas de dois produtos ao longo de vários anos. Cada ponto no gráfico representa o número de vendas em um ano específico.
+Next, we use Matplotlib to create a line graph representing the sales evolution of two products over several years. Each point on the graph represents the number of sales in a specific year.
 
 ```{python}
 #| warning: false
 import matplotlib.pyplot as plt
 
-# Dados de exemplo: Anos e vendas de produtos
-anos = [2010, 2011, 2012, 2013, 2014, 2015, 2016]
-vendas_produto_A = [500, 600, 550, 700, 800, 750, 900]
-vendas_produto_B = [400, 450, 500, 550, 600, 650, 700]
+# Example data: Years and product sales
+years = [2010, 2011, 2012, 2013, 2014, 2015, 2016]
+product_A_sales = [500, 600, 550, 700, 800, 750, 900]
+product_B_sales = [400, 450, 500, 550, 600, 650, 700]
 
-# Criando o gráfico de linha
+# Creating the line plot
 plt.figure(figsize=(10, 6))
-plt.plot(anos, vendas_produto_A, marker='o', label='Produto A')
-plt.plot(anos, vendas_produto_B, marker='s', label='Produto B')
+plt.plot(years, product_A_sales, marker='o', label='Product A')
+plt.plot(years, product_B_sales, marker='s', label='Product B')
 
-# Adicionando rótulos e título
-plt.xlabel('Ano')
-plt.ylabel('Vendas')
-plt.title('Vendas ao longo do tempo')
+# Adding labels and title
+plt.xlabel('Year')
+plt.ylabel('Sales')
+plt.title('Sales over Time')
 
-# Adicionando legenda
+# Adding legend
 plt.legend()
 
-# Exibindo o gráfico
+# Displaying the plot
 plt.grid(True)
 plt.show()
 ```
 
 ### Plotnine
 
-Plotnine é uma biblioteca em Python que permite criar visualizações de dados estatísticos de uma forma simples e concisa, utilizando a gramática de gráficos do R (também conhecida como ggplot2). Essa gramática consiste em uma abordagem declarativa para a construção de gráficos, onde os elementos visuais são adicionados em camadas para formar o gráfico final.
+Plotnine is a Python library that allows the creation of statistical data visualizations in a simple and concise way, using the grammar of graphics from R (also known as `ggplot2`). This grammar consists of a declarative approach to chart construction, where visual elements are added in layers to form the final graph.
 
 ```{python}
 #| warning: false
@@ -507,7 +505,7 @@ Plotnine é uma biblioteca em Python que permite criar visualizações de dados 
 from plotnine import *
 ```
 
-Para exemplificar, vamos utilizar a base de dados `gapminder`.
+To illustrate, let's use the `gapminder` dataset.
 
 ```{python}
 #| warning: false
@@ -553,11 +551,11 @@ Para exemplificar, vamos utilizar a base de dados `gapminder`.
                           .show())
 ```
 
-<!-- ## Análise de Dados Avançada -->
+<!-- ## Advanced Data Analysis -->
 
-<!-- ### Caso 1: Visualizando dados `NumPy` com `Matplotlib` {.unnumbered} -->
+<!-- ### Case 1: Visualizing `NumPy` Data with `Matplotlib` {.unnumbered} -->
 
-<!-- O objetivo deste exemplo é demonstrar como usar NumPy e Matplotlib em conjunto para analisar dados econômicos simulados. Leia o código abaixo e tente entender o que está sendo feito. -->
+<!-- The objective of this example is to demonstrate how to use NumPy and Matplotlib together to analyze simulated economic data. Read the code below and try to understand what is being done. -->
 
 ```{python}
 #| warning: false
@@ -566,32 +564,32 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# Gerando dados aleatórios para simular valores de PIB
+# Generating random data to simulate GDP values
 np.random.seed(42)
-pib = np.random.normal(500, 100, 100)  # Simulando 100 valores de PIB
+gdp = np.random.normal(500, 100, 100)  # Simulating 100 GDP values
 
-# Calculando média, mediana e desvio padrão do PIB
-media_pib = np.mean(pib)
-mediana_pib = np.median(pib)
-desvio_padrao_pib = np.std(pib)
+# Calculating mean, median, and standard deviation of GDP
+mean_gdp = np.mean(gdp)
+median_gdp = np.median(gdp)
+std_dev_gdp = np.std(gdp)
 
-print("Média do PIB:", media_pib)
-print("Mediana do PIB:", mediana_pib)
-print("Desvio padrão do PIB:", desvio_padrao_pib)
+print("Mean GDP:", mean_gdp)
+print("Median GDP:", median_gdp)
+print("Standard Deviation of GDP:", std_dev_gdp)
 
-# Plotando um histograma dos valores do PIB
-plt.hist(pib, bins=10, color='skyblue', edgecolor='black')
-plt.title('Distribuição do PIB')
-plt.xlabel('PIB')
-plt.ylabel('Frequência')
+# Plotting a histogram of GDP values
+plt.hist(gdp, bins=10, color='skyblue', edgecolor='black')
+plt.title('GDP Distribution')
+plt.xlabel('GDP')
+plt.ylabel('Frequency')
 plt.show()
 ```
 
-<!-- No exemplo acima, começamos gerando dados aleatórios para simular valores de PIB usando a distribuição normal com uma média de 500 e um desvio padrão de 100. Em seguida, calculamos a média, a mediana e o desvio padrão desses valores usando funções NumPy. Para facilitar a visualização e análise dos dados, plotamos um histograma usando Matplotlib. Este histograma nos permite visualizar a distribuição dos valores do PIB e identificar tendências ou padrões nos dados. -->
+<!-- In the example above, we start by generating random data to simulate GDP values using the normal distribution with a mean of 500 and a standard deviation of 100. Next, we calculate the mean, median, and standard deviation of these values using NumPy functions. To facilitate visualization and data analysis, we plot a histogram using Matplotlib. This histogram allows us to visualize the distribution of GDP values and identify trends or patterns in the data. -->
 
-<!-- ### Caso 2: Gapminder {.unnumbered} -->
+<!-- ### Case 2: Gapminder {.unnumbered} -->
 
-<!-- O objetivo deste exemplo é demonstrar como usar Pandas, NumPy e Matplotlib em conjunto para realizar análises exploratórias de dados do Gapminder. -->
+<!-- The objective of this example is to demonstrate how to use Pandas, NumPy, and Matplotlib together to perform exploratory data analysis on the Gapminder dataset. -->
 
 ```{python}
 #| warning: false
@@ -601,33 +599,32 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Calcular a média da expectativa de vida usando NumPy
+# Calculate the mean life expectancy using NumPy
 mean_life_expectancy = np.mean(gapminder['lifeExp'])
 
-# Calcular a mediana do PIB per capita usando NumPy
+# Calculate the median GDP per capita using NumPy
 median_gdp_per_capita = np.median(gapminder['gdpPercap'])
 
-# Plotar um histograma da expectativa de vida usando Matplotlib
+# Plot a histogram of life expectancy using Matplotlib
 plt.hist(gapminder['lifeExp'], bins=20, color='skyblue', edgecolor='black')
 plt.axvline(mean_life_expectancy, color='red', linestyle='dashed', linewidth=1)
-plt.text(mean_life_expectancy + 1, 50, f'Média: {mean_life_expectancy:.2f}', color='red')
-plt.xlabel('Expectativa de Vida')
-plt.ylabel('Frequência')
-plt.title('Distribuição da Expectativa de Vida')
+plt.text(mean_life_expectancy + 1, 50, f'Mean: {mean_life_expectancy:.2f}', color='red')
+plt.xlabel('Life Expectancy')
+plt.ylabel('Frequency')
+plt.title('Life Expectancy Distribution')
 plt.show()
 
-# Plotar um gráfico de dispersão entre expectativa de vida e PIB per capita usando Matplotlib
+# Plot a scatter plot between life expectancy and GDP per capita using Matplotlib
 plt.scatter(gapminder['gdpPercap'], gapminder['lifeExp'], alpha=0.5)
 plt.axhline(mean_life_expectancy, color='red', linestyle='dashed', linewidth=1)
 plt.axvline(median_gdp_per_capita, color='green', linestyle='dashed', linewidth=1)
-plt.text(median_gdp_per_capita + 500, mean_life_expectancy + 1, f'Mediana: {median_gdp_per_capita:.2f}', color='green')
-plt.xlabel('PIB per Capita')
-plt.ylabel('Expectativa de Vida')
-plt.title('PIB per Capita vs Expectativa de Vida')
+plt.text(median_gdp_per_capita + 500, mean_life_expectancy + 1, f'Median: {median_gdp_per_capita:.2f}', color='green')
+plt.xlabel('GDP per Capita')
+plt.ylabel('Life Expectancy')
+plt.title('GDP per Capita vs Life Expectancy')
 plt.show()
-
 ```
 
-<!-- No código acima, começamos carregando os dados do Gapminder usando a função pd.read_csv() do Pandas. Em seguida, calculamos a média da expectativa de vida e a mediana do PIB per capita usando funções NumPy np.mean() e np.median(), respectivamente. Para visualizar a distribuição da expectativa de vida, plotamos um histograma usando a função plt.hist() do Matplotlib. -->
+<!-- In the code above, we start by loading the Gapminder data using the `pd.read_csv()` function from Pandas. Next, we calculate the mean life expectancy and the median GDP per capita using NumPy functions `np.mean()` and `np.median()`, respectively. To visualize the distribution of life expectancy, we plot a histogram using the `plt.hist()` function from Matplotlib. -->
 
-<!-- ## Exercícios -->
+<!-- ## Exercises -->
