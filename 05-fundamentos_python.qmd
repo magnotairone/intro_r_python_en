@@ -11,92 +11,85 @@ library(reticulate)
 use_python("C:/Users/m_tai/anaconda3/python.exe", required = TRUE)
 ```
 
-::: {.callout-caution title="Notice!"}
-Chapter to be translated!
-:::
-
 <!-- C:/Users/m_tai/anaconda3/python.exe -->
 
 <!-- C:\\Users\\m_tai\\AppData\\Local\\r-miniconda/python.exe -->
 
-::: {.callout-important title="Atenção!!!"}
-A partir de agora, todo o código apresentado neste livro está na linguagem Python.
+::: {.callout-important title="Attention!!!"}
+From now on, all code presented in this book will be in the Python language.
 :::
 
-A fonte para a contrução deste material é @mckinney2022.
+The source for the construction of this material is @mckinney2022.
 
-## Instalação
+## Installation
+Follow the steps below to install Anaconda and JupyterLab:
 
-Siga os passos abaixo para realizar a instalação do Anaconda e do JupyterLab:
+1.  Download and install Anaconda from the [official website](https://www.anaconda.com/products/distribution). Follow the installation instructions for your specific operating system.
 
-1.  Baixe e instale o Anaconda a partir do [site oficial](https://www.anaconda.com/products/distribution). Siga as instruções de instalação para o seu sistema operacional específico.
+2.  After installing Anaconda, open the Anaconda Navigator and create a new virtual environment. Navigate to the "Environments" section and click "Create" to add a new environment. Name the environment and choose the Python version you want to use.
 
-2.  Após instalar o Anaconda, abra o Anaconda Navigator e crie um novo ambiente virtual. Navegue até a seção "Environments" e clique em "Create" para adicionar um novo ambiente. Dê um nome ao ambiente e escolha a versão do Python que deseja usar.
+3.  After creating the virtual environment, activate it by clicking on the newly created environment in the list of environments and selecting "Open Terminal". In the terminal, type the command `conda activate your_environment_name` (replace your_environment_name with the name of the environment you created).
 
-3.  Após criar o ambiente virtual, ative-o clicando no ambiente virtual recém-criado na lista de ambientes e selecionando "Open Terminal". No terminal, digite o comando `conda activate nome_do_seu_ambiente` (substitua `nome_do_seu_ambiente` pelo nome do ambiente que você criou).
+4.  With the virtual environment activated, install JupyterLab by typing `conda install jupyterlab` in the terminal.
 
-4.  Com o ambiente virtual ativado, instale o JupyterLab digitando `conda install jupyterlab` no terminal.
+5.  After installing JupyterLab, run it by typing `jupyter lab` in the terminal or through the Anaconda interface. This will open JupyterLab in your default browser.
 
-5.  Depois de instalar o JupyterLab, execute-o digitando `jupyter lab` no terminal ou através da interface do Anaconda. Isso abrirá o JupyterLab no seu navegador padrão.
+6.  In JupyterLab, you can create a new Python notebook by clicking the "+" icon in the left sidebar and selecting "Python 3" under the "Notebook" header.
 
-6.  No JupyterLab, você pode criar um novo notebook Python clicando no ícone "+" na barra lateral esquerda e selecionando "Python 3" sob o cabeçalho "Notebook".
+## Fundamental data Types
 
-## Tipos de dados fundamentais
+In Python, the fundamental data types include `integer`, `float`, `string`, and `boolean`:
 
-Em Python, os tipos de dados fundamentais incluem `integer`, `float`, `string` e `boolean`:
+-   Integers are whole numbers, such as 1, 2, -3, etc. 
+- Floats are decimal numbers, such as 3.14, -0.5, etc.
+-   Strings are sequences of characters, such as "hello", "world", "python", etc.
+-   Booleans are logical values that represent true (`True`) or false (`False`).
 
--   Integers são números inteiros, como 1, 2, -3, etc. - Floats são números decimais, como 3.14, -0.5, etc.
--   Strings são sequências de caracteres, como "hello", "world", "python", etc.
--   Booleans são valores lógicos que representam verdadeiro (`True`) ou falso (`False`).
+These data types are the basic building blocks for representing different types of information in Python, and are widely used in programming to perform operations and data manipulations.
 
-Esses tipos de dados são os blocos básicos para representar diferentes tipos de informações em Python, e são amplamente utilizados em programação para realizar operações e manipulações de dados.
-
-### O tipo de dado inteiro
-
-Um tipo de dados inteiro (`integer`) em Python representa números inteiros, ou seja, números sem casas decimais. Por exemplo, 5, -10 e 0 são todos exemplos de números inteiros. No Python, os inteiros são representados pela classe `int`. Nos exemplos abaixo realizamos operações básicas com números inteiros.
+### The Integer data type
+An integer data type (`integer`) in Python represents whole numbers, i.e., numbers without decimal places. For example, 5, -10, and 0 are all examples of integers. In Python, integers are represented by the `int` class. In the examples below, we perform basic operations with integers.
 
 ```{python}
 2 + 2  
 ```
 
-Na primeira linha, calculamos a soma de 2 com 2.
+In the first line, we calculate the sum of 2 and 2.
 
 ```{python}
-quantidade = 200
-print(quantidade)
-type(quantidade)
+quantity = 200
+print(quantity)
+type(quantity)
 ```
 
-Acima, atribuímos o valor 200 à variável `quantidade` e a imprimimos usando `print(quantidade)`. Por fim, verificamos o tipo de dado da variável `quantidade` com `type(quantidade)`, que retorna `<class 'int'>`, indicando que é um número inteiro.
+Above, we assign the value 200 to the variable `quantity` and print it using `print(quantity)`. Finally, we check the data type of the variable quantity with `type(quantity)`, which returns `<class 'int'>`, indicating that it is an integer.
 
-### O tipo de dado ponto flutuante
+### The Float data Type
 
-Um tipo de dado ponto flutuante (`float`) em Python representa números decimais, ou seja, números que podem ter uma parte fracionária. Por exemplo, 3.14, -0.001, e 2.71828 são todos floats. Em Python, os floats são representados pela classe `float`.
+A float data type (`float`) in Python represents decimal numbers, i.e., numbers that can have a fractional part. For example, 3.14, -0.001, and 2.71828 are all floats. In Python, floats are represented by the `float` class.
 
 ```{python}
 1.75 + 2**3 
-taxa_juros = 1.25
+interest_rate = 1.25
 
-print(taxa_juros)
-type(taxa_juros)
+print(interest_rate)
+type(interest_rate)
 ```
 
-Na primeira linha do exemplo acima, calculamos a soma de 1.75 com 2 elevado à terceira potência. Em seguida, atribuímos o valor 1.25 à variável `taxa_juros` e a imprimimos usando `print(taxa_juros)`. Por fim, verificamos o tipo de dado da variável `taxa_juros` com `type(taxa_juros)`, que retorna `<class 'float'>`, indicando que é um número do tipo ponto flutuante.
+In the first line of the example above, we calculated the sum of 1.75 and 2 raised to the power of 3. Then, we assigned the value 1.25 to the variable `interest_rate` and print it using `print(interest_rate)`. Finally, we checked the data type of the variable `interest_rate` with `type(interest_rate)`, which returned `<class 'float'>`, indicating that it is a float.
 
-### O tipo de dado cadeia de caracteres
-
+### The String data Type
 ```{python}
-pais = "Brasil" 
+country = "Brazil" 
 
-print(pais)
-type(pais)
+print(country)
+type(country)
 ```
 
-No código acima, criamos uma variável chamada `pais` e atribuímos a ela o valor "Brasil", que é uma string. Em seguida, imprimimos o valor da variável `pais` usando `print(pais)`, o que exibe "Brasil" na tela. Por fim, verificamos o tipo de dado da variável `pais` com `type(pais)`, que retorna `<class 'str'>`, indicando que é uma string.
+In the code above, we created a variable called `country` and assigned it the value "Brazil", which was a `string`. Then, we printed the value of the variable country using `print(country)`, which displayed "Brazil" on the screen. Finally, we checked the data type of the variable country with `type(country)`, which returned `<class 'str'>`, indicating that it was a `string`.
 
-### O tipo de dado lógico
-
-O tipo de dados lógico, também conhecido como booleano (`bool`), é usado para representar valores de verdadeiro ou falso. No Python, os valores booleanos são `True` e `False`, que representam verdadeiro e falso, respectivamente.
+### The Boolean data Type
+The boolean data type, also known as `bool`, is used to represent true or false values. In Python, the boolean values are `True` and `False`.
 
 ```{python}
 1 == 2
@@ -107,16 +100,15 @@ O tipo de dados lógico, também conhecido como booleano (`bool`), é usado para
 ```
 
 ```{python}
-taxa_juros_aumentando = True
-print(taxa_juros_aumentando)
-type(taxa_juros_aumentando)
+interest_rate_increasing = True
+print(interest_rate_increasing)
+type(interest_rate_increasing)
 ```
 
-Na primeira linha do exemplo acima, há uma verificação de igualdade entre 1 e 2, que retorna `False` porque 1 não é igual a 2. Em seguida, temos `5 % 2 == 0`, que também retorna `False` porque o resto da divisão de 5 por 2 não é igual a zero. Por fim, temos a variável `taxa_juros_aumentando` atribuída a `True`, indicando que a taxa de juros está aumentando. Ao imprimir e verificar o tipo dessa variável, obtemos `True` como resultado e o tipo `bool`, indicando que é um valor lógico.
+In the first line of the example above, there is an equality check between 1 and 2, which returns `False` because 1 is not equal to 2. Next, we have `5 % 2 == 0`, which also returns `False` because the remainder of 5 divided by 2 is not equal to zero. Finally, we have the variable `interest_rate_increasing` assigned to `True`, indicating that the interest rate is increasing. When printing and checking the type of this variable, we get `True` as the result and the type `bool`, indicating that it is a boolean value.
 
-### Coerção de tipos
-
-A coerção de dados em Python refere-se à conversão forçada de um tipo de dado para outro.
+### Type Coercion
+Type coercion in Python refers to the forced conversion of one data type to another.
 
 ```{python}
 str_num = "1.41"
@@ -127,11 +119,11 @@ type(str_num)
 float(str_num)
 ```
 
-Veja que a variável `str_num` é uma string que representa o número 1.41. Inicialmente, seu tipo é verificado usando a função `type`, que retorna `<class 'str'>`, indicando que é uma `string`. Em seguida, usamos a função `float()` para converter explicitamente `str_num` em um float. Após a conversão, o valor de `str_num` é "1.41" e seu tipo é alterado para `<class 'float'>`.
+Note that the variable `str_num` is a string representing the number 1.41. Initially, its type is checked using the `type` function, which returns `<class 'str'>`, indicating that it is a string. Then, we use the `float()` function to explicitly convert `str_num` to a `float`. After the conversion, the value of `str_num` is "1.41" and its type is changed to `<class 'float'>`.
 
-A seguir, outros exemplos de cooerção.
+Below are other examples of coercion.
 
-Coerção para inteiro:
+Coercion to integer:
 
 ```{python}
 num_float = 3.14
@@ -139,15 +131,15 @@ num_int = int(num_float)
 print(num_int)
 ```
 
-Coerção para lógico:
+Coercion to boolean:
 
 ```{python}
-valor_inteiro = 0
-valor_logico = bool(valor_inteiro)
-print(valor_logico)
+int_value = 0
+bool_value = bool(int_value)
+print(bool_value)
 ```
 
-Coerção para string (str):
+Coercion to string (str):
 
 ```{python}
 num_float = 3.14
@@ -155,621 +147,617 @@ num_str = str(num_float)
 print(num_str) 
 ```
 
-No código acima, estamos convertendo um valor float em string.
+In the code above, we are coercing a float value to a string.
 
-## Objetos básicos
+## Basic Objects
+In Python, there are three basic data structures: lists, tuples, and dictionaries: 
 
-Em Python, há três estruturas de dados básicas: listas, tuplas e dicionários: - As listas são coleções ordenadas e mutáveis de elementos, permitindo a inclusão de itens de diferentes tipos e a modificação dos valores contidos nelas. - As tuplas são semelhantes às listas, porém são imutáveis, ou seja, não podem ser alteradas após a sua criação. - Já os dicionários são coleções não ordenadas de pares chave-valor, onde cada valor é associado a uma chave única, proporcionando acesso eficiente aos dados por meio das chaves.
+- Lists are ordered and mutable collections of elements, allowing the inclusion of items of different types and the modification of the values contained in them. 
 
-### Listas
+- Tuples are similar to lists, but they are immutable, meaning they cannot be changed after creation. 
 
-Em Python, uma lista é uma estrutura de dados que permite armazenar uma coleção ordenada de elementos. Para criar uma lista, utilizamos colchetes `[]`, e os elementos são separados por vírgulas. Podemos instanciar uma lista vazia simplesmente utilizando `[]` ou a função `list()`. Por exemplo:
+- Dictionaries are unordered collections of key-value pairs, where each value is associated with a unique key, providing efficient access to data through the keys.
+
+### Lists
+In Python, a list is a data structure that allows storing an ordered collection of elements. To create a list, we use square brackets `[]`, and the elements are separated by commas. We can instantiate an empty list simply by using `[]` or the `list()` function. For example:
 
 ```{python}
-lista_vazia = [] # Lista vazia
-lista_vazia = list() # alternativa
+empty_list = [] # Empty list
+empty_list = list() # alternative
 
-# lista com PIB de paises
-pib_paises = [1800, 2500, 3200, 5600, 6700]
+# list with GDP of countries
+gdp_countries = [1800, 2500, 3200, 5600, 6700]
 ```
 
-No exemplo acima, também temos a lista `pib_paises` que armazena o Produto Interno Bruto (PIB) de diferentes países. Para acessar elementos de uma lista em Python, podemos utilizar o índice do elemento desejado dentro de colchetes `[]`. O índice começa do zero para o primeiro elemento, um para o segundo, e assim por diante. Por exemplo:
+In the example above, we also have the list `gdp_countries` that stores the Gross Domestic Product (GDP) of different countries. To access elements of a list in Python, we can use the index of the desired element within square brackets `[]`. The index starts at zero for the first element, one for the second, and so on. For example:
 
 ```{python}
-print(pib_paises[1])
+print(gdp_countries[1])
 ```
 
-Também podemos acessar os elementos a partir do final da lista utilizando índices negativos, onde -1 representa o último elemento, -2 o penúltimo, e assim por diante:
+We can also access elements from the end of the list using negative indices, where -1 represents the last element, -2 the second last, and so on:
 
 ```{python}
-# Acessando o último elemento
-ultimo_elemento = pib_paises[-1]
-print(ultimo_elemento)
+# Accessing the last element
+last_element = gdp_countries[-1]
+print(last_element)
 
-# Acessando o penúltimo elemento
-penultimo_elemento = pib_paises[-2]
-print(penultimo_elemento)
-
+# Accessing the second last element
+second_last_element = gdp_countries[-2]
+print(second_last_element)
 ```
 
-Podemos usar o método `append()`se desejamos adicionar um elemento ao final da lista, ou o método `insert()` se queremos adicionar um elemento em uma posição específica. Veja os exemplos de como usar ambos os métodos:
+We can use the `append()` method if we want to add an element to the end of the list, or the `insert()` method if we want to add an element at a specific position. See the examples of how to use both methods:
 
 ```{python}
-# Adicionando elementos ao final da lista usando append()
-pib_paises.append(2000)  # Adiciona o valor 2000 ao final da lista
+# Adding elements to the end of the list using append()
+gdp_countries.append(2000)  # Adds the value 2000 to the end of the list
 
-# Adicionando um elemento em uma posição específica usando insert()
-pib_paises.insert(1, 1500)  # Adiciona o valor 1500 na posição 1 da lista
+# Adding an element at a specific position using insert()
+gdp_countries.insert(1, 1500)  # Adds the value 1500 at position 1 of the list
 ```
 
-Para verificar o tamanho de uma lista em Python, podemos usar a função `len()`.
+To check the size of a list in Python, we can use the `len()` function.
 
 ```{python}
-tamanho_lista = len(pib_paises)
-print("Tamanho da lista:", tamanho_lista) 
+list_size = len(gdp_countries)
+print("List size:", list_size) 
 ```
 
-Para ordenar uma lista, podemos usar o método `sort()` para ordenação *in-place* (ou seja, a lista é modificada) ou a função `sorted()` para retornar uma nova lista ordenada sem modificar a original:
+To sort a list, we can use the `sort()` method for *in-place* sorting (i.e., the list is modified) or the `sorted()` function to return a new sorted list without modifying the original:
 
 ```{python}
-# Usando a função sorted() para retornar uma nova lista ordenada
-lista_ordenada = sorted(pib_paises)
-print("Nova lista ordenada:", lista_ordenada)
+# Using the sorted() function to return a new sorted list
+sorted_list = sorted(gdp_countries)
+print("New sorted list:", sorted_list)
 
-# Ordenando a lista usando o método sort()
-pib_paises.sort()
-print("Lista ordenada:", pib_paises)
+# Sorting the list using the sort() method
+gdp_countries.sort()
+print("Sorted list:", gdp_countries)
 ```
 
-O método `.pop()` é usado para remover e retornar o último elemento de uma lista. Também podemos especificar um índice para remover e retornar um elemento em uma posição específica da lista. Aqui está como usar o método `.pop()`:
+The `.pop()` method is used to remove and return the last element of a list. We can also specify an index to remove and return an element at a specific position in the list. Here's how to use the `.pop()` method:
 
 ```{python}
-# Removendo e retornando o último PIB da lista
-ultimo_pib = pib_paises.pop()
-print("Último PIB removido:", ultimo_pib) 
-print("Lista atualizada:", pib_paises)
+# Removing and returning the last GDP from the list
+last_gdp = gdp_countries.pop()
+print("Last GDP removed:", last_gdp) 
+print("Updatad list:", gdp_countries)
 
-# Removendo e retornando o PIB de um país específico da lista
-pib_removido = pib_paises.pop(1) 
-print("PIB removido:", pib_removido) 
-print("Lista atualizada:", pib_paises)
+# Removing and returning the GDP of a specific country from the list
+removed_gdp = gdp_countries.pop(1) 
+print("GDP removed:", removed_gdp) 
+print("Updatad list:", gdp_countries)
 ```
 
-### Tuplas
-
-As tuplas são estruturas de dados semelhantes às listas, mas com uma diferença fundamental: elas são imutáveis, ou seja, uma vez criadas, não podem ser modificadas. Elas são representadas por parênteses `()` em vez de colchetes `[]`.
+### Tuples
+Tuples are data structures similar to lists, but with a fundamental difference: they are immutable, meaning once created, they cannot be modified. They are represented by parentheses `()` instead of square brackets `[]`.
 
 ```{python}
-x = (1, 2, 3) # tupla (lista imutável)
+x = (1, 2, 3) # tuple (immutable list)
 print(x)
 
-# x[0] = 5 # gera erro!
+# x[0] = 5 # generates an error!
 ```
 
-Podemos usar tuplas para representar informações que não devem ser alteradas, como por exemplo, as taxas de câmbio entre moedas. Veja:
+We can use tuples to represent information that should not be changed, such as exchange rates between currencies. See:
 
 ```{python}
-taxas_cambio = (("USD", "EUR", 0.82), ("USD", "JPY", 105.42), ("EUR", "JPY", 128.64))
+exchange_rates = (("USD", "EUR", 0.82), ("USD", "JPY", 105.42), ("EUR", "JPY", 128.64))
 ```
 
-Neste exemplo, temos uma tupla de tuplas que representam as taxas de câmbio entre o dólar (USD), o euro (EUR) e o iene japonês (JPY) para uma data fixa fictícia. Cada tupla interna contém três elementos: a moeda de origem, a moeda de destino e a taxa de câmbio. Como essas informações não devem ser alteradas, uma tupla é uma escolha apropriada.
+In this example, we have a tuple of tuples representing the exchange rates between the US dollar (USD), the euro (EUR), and the Japanese yen (JPY) for a fixed fictitious data. Each inner tuple contains three elements: the source currency, the target currency, and the exchange rate. Since this information should not be changed, a tuple is an appropriate choice.
 
 ::: callout-tip
-Para acessar os elementos de uma tupla, você pode usar a mesma sintaxe que usa para acessar os elementos de uma lista, ou seja, usando colchetes `[]` e o índice do elemento desejado. Lembre-se de que os índices em Python começam em 0!
+To access the elements of a tuple, you can use the same syntax you use to access the elements of a list, i.e., using square brackets `[]` and the index of the desired element. Remember that indices in Python start at 0!
 :::
 
-### Dicionários
+### Dictionaries
+Dictionaries in Python are data structures that allow storing key-value pairs. Each value is associated with a specific key, allowing quick access to data through the keys, rather than numerical indices, as in lists and tuples. This structure is useful when you need to associate information in a way similar to a database, where you can search for information based on a specific key.
 
-Dicionários em Python são estruturas de dados que permitem armazenar pares de chave-valor. Cada valor é associado a uma chave específica, permitindo o acesso rápido aos dados por meio das chaves, em vez de índices numéricos, como em listas e tuplas. Essa estrutura é útil quando você precisa associar informações de maneira semelhante a um banco de dados, onde você pode buscar informações com base em uma chave específica.
-
-No exemplo abaixo, temos cotações de ações de algumas empresas brasileiras listadas na bolsa de valores.
+In the example below, we have share quotes of some Brazilian companies listed on the share exchange.
 
 ```{python}
-cotacoes_acoes_brasileiras = {
+brazilian_share_quotes = {
     "PETR4": 36.75,
     "VALE3": 62.40,
     "ITUB4": 34.15,
     "BBDC4": 13.82
 }
-
 ```
 
-Cada chave é o código de negociação da ação na bolsa, e o valor associado é o preço da ação em uma data fixada. Por exemplo, `cotacoes_acoes_brasileiras["PETR4"]` retornaria o preço da ação da Petrobras.
+Each key is the share ticker symbol, and the associated value is the share price on a fixed data. For example, `brazilian_share_quotes["PETR4"]` would return the price of Petrobras share.
 
-Alternativamente, você pode criar um dicionário usando a função `dict`:
+Alternatively, you can create a dictionary using the `dict` function:
 
 ```{python}
-cotacoes_acoes_brasileiras = dict(PETR4=36.12, VALE3=62.40, ITUB4=34.15, BBDC4=13.82)
+brazilian_share_quotes = dict(PETR4=36.12, VALE3=62.40, ITUB4=34.15, BBDC4=13.82)
 ```
 
-Você pode adicionar novos pares chave-valor a um dicionário ou atualizar os valores existentes. Por exemplo:
+You can add new key-value pairs to a dictionary or update existing values. For example:
 
 ```{python}
-cotacoes_acoes_brasileiras["ABEV3"] = 12.80
-cotacoes_acoes_brasileiras["PETR4"] = 36.75
+brazilian_share_quotes["ABEV3"] = 12.80
+brazilian_share_quotes["PETR4"] = 36.75
 ```
 
-Você pode remover pares chave-valor de um dicionário usando o comando método `pop()`. Por exemplo:
+You can remove key-value pairs from a dictionary using the `pop()` method. For example:
 
 ```{python}
-valor_removido = cotacoes_acoes_brasileiras.pop("BBDC4")
+removed_value = brazilian_share_quotes.pop("BBDC4")
 ```
 
-Outros métodos úteis para trabalhar com dicionários são `keys()`, `values()` e `items()` que retornam listas com as chaves, valores e itens do dicionário, respectivamente.
+Other useful methods for working with dictionaries are `keys()`, `values()`, and `items()` which return lists with the keys, values, and items of the dictionary, respectively.
 
 ```{python}
-cotacoes_acoes_brasileiras.keys() # retorna uma lista contendo todas as chaves
-```
-
-```{python}
-cotacoes_acoes_brasileiras.values() # retorna uma lista contendo todos os valores
+brazilian_share_quotes.keys() # returns a list containing all the keys
 ```
 
 ```{python}
-cotacoes_acoes_brasileiras.items() # retorna uma lista de tuplas
+brazilian_share_quotes.values() # returns a list containing all the values
 ```
 
-## Fatias (*slices*)
-
-O conceito de fatias, também conhecido como "*slicing*" em inglês, refere-se à técnica de extrair partes específicas de uma sequência, como uma lista, tupla ou string, usando índices. Ao utilizar fatias, você pode selecionar um intervalo de elementos dentro da sequência.
-
-A sintaxe básica para fatias é `sequencia[inicio:fim:passo]`, onde:
-
--   `inicio`: o índice inicial do intervalo a ser incluído na fatia (incluído).
-
--   `fim`: o índice final do intervalo a ser incluído na fatia (excluído).
-
--   `passo`: o tamanho do passo entre os elementos selecionados (opcional).
-
-Considere a lista abaixo.
-
 ```{python}
-nomes_paises = ["Indonésia", "Índia", "Brasil", "África do Sul", "Alemanha"]
+brazilian_share_quotes.items() # returns a list of tuples
 ```
 
-Para acessar os três primeiros países, podemos fazer:
+
+## Slices
+The concept of slices, also known as "*slicing*", refers to the technique of extracting specific parts of a sequence, such as a list, tuple, or string, using indices. By using slices, you can select a range of elements within the sequence.
+
+The basic syntax for slices is `sequence[start:stop:step]`, where:
+
+-   `start`: the starting index of the range to be included in the slice (inclusive).
+
+-   `stop`: the ending index of the range to be included in the slice (exclusive).
+
+-   `step`: the step size between selected elements (optional).
+
+Consider the list below.
 
 ```{python}
-nomes_paises[:3]
+country_names = ["Indonesia", "India", "Brazil", "South Africa", "Germany"]
 ```
 
-Isso retorna os elementos da lista do índice 0 (inclusivo) ao índice 3 (exclusivo).
-
-Se quisermos acessar os países do segundo ao terceiro:
+To access the first three countries, we can do:
 
 ```{python}
-nomes_paises[1:4]
+country_names[:3]
 ```
 
-Podemos até mesmo fazer fatias reversas, onde o índice inicial é maior que o índice final, indicando que queremos percorrer a lista de trás para frente. Por exemplo, para acessar os últimos três países:
+This returns the elements of the list from index 0 (inclusive) to index 3 (exclusive).
+
+If we want to access the countries from the second to the third:
 
 ```{python}
-nomes_paises[-3:]
+country_names[1:4]
 ```
 
-Suponha que queremos acessar todos os países, mas pulando de dois em dois:
+We can even make reverse slices, where the starting index is greater than the ending index, indicating that we want to traverse the list from back to front. For example, to access the last three countries:
 
 ```{python}
-nomes_paises[::2]
+country_names[-3:]
 ```
 
-Neste exemplo, o `::2` indica que queremos começar do início da lista e ir até o final, pulando de dois em dois elementos.
-
-## Condicionais
-
-O `if` e o `else` são estruturas de controle de fluxo em Python, usadas para tomar decisões com base em condições.
-
-O bloco de código dentro do `if` é executado se a condição for avaliada como verdadeira (`True`). Por exemplo:
+Suppose we want to access all countries, but skipping every two:
 
 ```{python}
-idade = 18
-if idade >= 18:
-    print("Você é maior de idade.")
+country_names[::2]
 ```
 
-O bloco de código dentro do `else` é executado se a condição do if for avaliada como falsa (`False`). Por exemplo:
+In this example, `::2` indicates that we want to start from the beginning of the list and go to the end, skipping every two elements.
+
+## Conditionals
+The `if` and `else` are control flow structures in Python, used to make decisions based on conditions.
+
+The block of code inside the `if` is executed if the condition evaluates to true (`True`). For example:
 
 ```{python}
-idade = 16
-if idade >= 18:
-    print("Você é maior de idade.")
+age = 18
+if age >= 18:
+    print("You are of legal age.")
+```
+
+The block of code inside the `else` is executed if the condition of the if evaluates to false (`False`). For example:
+
+```{python}
+age = 16
+if age >= 18:
+    print("You are of legal age.")
 else:
-    print("Você é menor de idade.")
+    print("You are underage.")
 ```
 
-::: {.callout-tip title="Indentação"}
-Em Python, a indentação é fundamental para definir blocos de código. No exemplo acima, observe que o código dentro do `if` e do `else` está indentado com quatro espaços. Isso indica que essas linhas pertencem ao bloco de código condicional. Se não houver indentação correta, o Python gerará um erro de sintaxe.
+::: {.callout-tip title="Indentation"}
+In Python, indentation is crucial for defining code blocks. In the example above, notice that the code inside the `if` and `else` is indented with four spaces. This indicates that these lines belong to the conditional code block. If there is no proper indentation, Python will raise a syntax error.
 :::
 
-## Estruturas repetitivas
+## Loop Structures
 
-As estruturas de repetição são utilizadas para executar um bloco de código repetidamente com base em uma condição específica. Existem duas principais estruturas de repetição em Python: `for` e `while`.
+Repetition structures are used to execute a block of code repeatedly based on a specific condition. There are two main repetition structures in Python: `for` and `while`.
 
 ### `for`
 
-O loop `for` é utilizado para iterar sobre uma sequência (como uma lista, tupla, dicionário, etc.) e executar um bloco de código para cada item da sequência. Por exemplo:
+The `for` loop is used to iterate over a sequence (such as a list, tuple, dictionary, etc.) and execute a block of code for each item in the sequence. For example:
 
 ```{python}
-for x in range(0, 20, 3): # lembre da notação dos slices
+for x in range(0, 20, 3):  # remember slice notation
     print(x)
 ```
 
 ```{python}
-for pais in nomes_paises:
-    print("País:", pais)
+for country in country_names:
+    print("Country:", country)
 ```
 
-No exemplo abaixo, temos uma lista de empresas e uma lista de lucros. Usando a função `zip()`, iteramos sobre essas duas listas em paralelo, imprimindo o nome da empresa e seu lucro correspondente. A função `zip()` combina elementos de duas ou mais sequências (como listas, tuplas, etc.) em pares ordenados.
+In the example below, we have a list of companies and a list of profits. Using the `zip()` function, we iterate over these two lists in parallel, printing the company name and its corresponding profit. The `zip()` function combines elements from two or more sequences (like lists, tuples, etc.) into ordered pairs.
 
 ```{python}
-empresas = ["Empresa A", "Empresa B", "Empresa C"]
-lucros = [100000, 150000, 80000]
+companies = ["Company A", "Company B", "Company C"]
+profits = [100000, 150000, 80000]
 
-for empresa, lucro in zip(empresas, lucros):
-    print("O lucro da empresa ", empresa, "foi R$", lucro)
+for company, profit in zip(companies, profits):
+    print("The profit of", company, "was R$", profit)
 ```
 
 ### `while`
 
-O `while` é uma estrutura de controle de fluxo que executa um bloco de código repetidamente enquanto uma condição especificada for verdadeira.
+The `while` loop is a control flow structure that executes a block of code repeatedly while a specified condition is true.
 
 ```{python}
-anos = 1
-investimento = 1000
-taxa_de_retorno = 0.05
+years = 1
+investment = 1000
+return_rate = 0.05
 
-while anos <= 10:
-    investimento *= (1 + taxa_de_retorno)
-    print("Após", anos, "anos, o investimento vale R$", round(investimento, 2))
-    anos += 1
+while years <= 10:
+    investment *= (1 + return_rate)
+    print("After", years, "years, the investment is worth R$", round(investment, 2))
+    years += 1
 ```
 
-Neste exemplo, o loop calcula o valor do investimento ao longo de 10 anos, considerando um retorno anual de 5%. A cada iteração, o valor do investimento é atualizado multiplicando-se pelo fator de crescimento `(1 + taxa_de_retorno)`.
+In this example, the loop calculates the value of the investment over 10 years, considering an annual return of 5%. In each iteration, the investment value is updatad by multiplying by the growth factor `(1 + return_rate)`.
 
 ## Comprehensions
 
-As comprehensions são uma maneira concisa e poderosa de criar coleções em Python, como listas, dicionários e conjuntos, a partir de iteráveis existentes, como listas, dicionários, conjuntos ou sequências. Elas permitem criar essas coleções de forma mais eficiente e legível em comparação com a abordagem tradicional de usar loops. As *comprehensions* podem incluir expressões condicionais para filtrar elementos ou expressões para transformar os elementos durante a criação da coleção.
+*Comprehensions* are a concise and powerful way to create collections in Python, such as lists, dictionaries, and sets, from existing iterables like lists, dictionaries, sets, or sequences. They allow the creation of these collections more efficiently and readably compared to the traditional approach using loops. Comprehensions can include conditional expressions to filter elements or transform elements during collection creation.
 
-Por exemplo, você pode criar uma lista de quadrados dos números de 1 a 10 usando uma compreensão de lista:
+For example, you can create a list of squares of numbers from 1 to 10 using a list comprehension:
 
 ```{python}
-quadrados = [x ** 2 for x in range(1, 11)]
-quadrados
+squares = [x ** 2 for x in range(1, 11)]
+squares
 ```
 
-Isso é equivalente a:
+This is equivalent to:
 
 ```{python}
-quadrados = []
+squares = []
 for x in range(1, 11):
-    quadrados.append(x ** 2)
+    squares.append(x ** 2)
 ```
 
-As *comprehensions* podem ser aplicadas a listas, dicionários e conjuntos, e você pode adicionar cláusulas condicionais para filtrar elementos com base em uma condição específica.
+Comprehensions can be applied to lists, dictionaries, and sets, and you can add conditional clauses to filter elements based on a specific condition.
 
-Abaixo, as variáveis `linhas` e `colunas` são definidas como intervalos de números de 1 a 3 e de 1 a 2, respectivamente. Em seguida, é utilizada uma compreensão de lista para gerar todos os pares possíveis, combinando cada valor de `linha` com cada valor de `coluna.` Por fim, um loop `for` é usado para iterar sobre a lista de pares e imprimir cada par na saída. O resultado será a impressão de todos os pares ordenados possíveis, combinando os valores de linha e coluna especificados.
+Below, the variables `rows` and `columns` are defined as ranges from 1 to 3 and 1 to 2, respectively. Then, a list comprehension is used to generate all possible pairs, combining each value of `row` with each value of `column`. Finally, a `for` loop iterates over the list of pairs and prints each pair to the output. The result will be the printing of all possible ordered pairs, combining the specified row and column values.
 
 ```{python}
-linhas = range(1, 4)
-colunas = range(1, 3)
+rows = range(1, 4)
+columns = range(1, 3)
 
-pares = [(r, c) for r in linhas for c in colunas]
+pairs = [(r, c) for r in rows for c in columns]
 
-for x in pares:
+for x in pairs:
     print(x)
 ```
 
-Neste exemplo abaixo, a palavra "inconstitucionalissimamente" é analisada para contar quantas vezes cada letra aparece. Em seguida, é feito um loop sobre o dicionário resultante para imprimir a contagem de ocorrências de cada letra.
+In the example below, the word "pneumonoultramicroscopicsilicovolcanoconiosis" is analyzed to count how many times each letter appears. Then, a loop is performed over the resulting dictionary to print the count of occurrences for each letter.
 
 ```{python}
-palavra = "inconstitucionalissimamente"
+word = "pneumonoultramicroscopicsilicovolcanoconiosis"
 
-frequencia_letras = {letra: palavra.count(letra) for letra in palavra}
+letter_frequency = {letter: word.count(letter) for letter in word}
 
-for letra, ocorrencias in frequencia_letras.items():
-    print("A letra", letra, "ocorre", ocorrencias, "vezes" if ocorrencias > 1 else "vez")
-
+for letter, occurrences in letter_frequency.items():
+    print("The letter", letter, "occurs", occurrences, "times" if occurrences > 1 else "time")
 ```
 
-## Funções
+## Functions
 
-As funções são blocos de código reutilizáveis que realizam uma tarefa específica.\
-Elas aceitam entradas, chamadas de argumentos, e podem retornar resultados.
+Functions are reusable code blocks that perform a specific task. They accept inputs, called arguments, and can return results.
 
-Em Python, a sintaxe básica de uma função é a seguinte:
+In Python, the basic syntax of a function is as follows:
 
 ```{python}
 #| eval: false
 
-def nome_da_funcao(argumento1, argumento2, ...):
-    # Corpo da função
-    # Faça alguma coisa com os argumentos
-    resultado = argumento1 + argumento2
-    return resultado
+def function_name(argument1, argument2, ...):
+    # Function body
+    # Do something with the arguments
+    result = argument1 + argument2
+    return result
 ```
 
-Por exemplo, vamos criar uma função em Python chamada `calcular_juros` que calcula o montante final de um investimento com base no valor inicial, na taxa de juros e no número de anos:
+For example, let's create a function in Python called `calculate_interest` that calculates the final amount of an investment based on the initial value, the interest rate, and the number of years:
 
 ```{python}
-def calcular_juros(valor_inicial, taxa_juros, anos):
-    montante_final = valor_inicial * (1 + taxa_juros) ** anos
-    return montante_final
+def calculate_interest(initial_value, interest_rate, years):
+    final_amount = initial_value * (1 + interest_rate) ** years
+    return final_amount
 ```
 
-Agora, definimos valores e chamamos a função:
+Now, let's define values and call the function:
 
 ```{python}
-investimento_inicial = 1000  # Valor inicial do investimento
-taxa_juros_anual = 0.05      # Taxa de juros anual (5%)
-anos = 5                     # Número de anos
-resultado = calcular_juros(investimento_inicial, taxa_juros_anual, anos)
-print("O montante final após", anos, "anos será de: R$", round(resultado, 2))
+initial_investment = 1000  # Initial investment value
+annual_interest_rate = 0.05  # Annual interest rate (5%)
+years = 5  # Number of years
+result = calculate_interest(initial_investment, annual_interest_rate, years)
+print("The final amount after", years, "years will be: R$", round(result, 2))
 ```
 
-### Função `lambda`
+### `lambda` Function
 
-Uma função lambda em Python é uma função anônima, o que significa que é uma função sem nome. Ela é definida usando a palavra-chave lambda e pode ter qualquer número de argumentos, mas apenas uma expressão. A sintaxe básica é a seguinte:
+A lambda function in Python is an anonymous function, which means it is a function without a name. It is defined using the keyword `lambda` and can have any number of arguments but only one expression. The basic syntax is as follows:
 
 ```{python}
 #| eval: false
-lambda argumento1, argumento2, ...: expressao
+lambda argument1, argument2, ...: expression
 ```
 
-Veja um exemplo de uma função lambda que calcula o quadrado de um número:
+See an example of a lambda function that calculates the square of a number:
 
 ```{python}
-quadrado = lambda x: x ** 2
+square = lambda x: x ** 2
 ```
 
-Neste exemplo, `lambda x: x ** 2` cria uma função que aceita um argumento `x` e retorna `x` ao quadrado. Você pode então usar essa função da mesma forma que qualquer outra função. Por exemplo:
+In this example, `lambda x: x ** 2` creates a function that accepts an argument `x` and returns `x` squared. You can then use this function the same way as any other function. For example:
 
 ```{python}
-resultado = quadrado(5)
-print(resultado)
+result = square(5)
+print(result)
 ```
 
-As funções lambda são frequentemente usadas em situações em que você precisa de uma função temporária e simples, como em operações de mapeamento, filtragem e ordenação de dados.
+Lambda functions are often used in situations where you need a temporary and simple function, such as in mapping, filtering, and sorting operations.
 
-## Classes e objetos
+## Classes and Objects
 
-Uma classe é uma estrutura que define o comportamento e as propriedades de um tipo de objeto. Podemos pensar em uma classe como uma representação de um conceito abstrato, como uma transação financeira ou um tipo específico de investimento.
+A class is a structure that defines the behavior and properties of a type of object. We can think of a class as a representation of an abstract concept, such as a financial transaction or a specific type of investment.
 
-Por exemplo, podemos criar uma classe chamada `Transacao` para representar uma transação financeira, com propriedades como o valor da transação, a data e o tipo de transação.
+For example, we can create a class called `Transaction` to represent a financial transaction, with properties such as the transaction amount, data, and transaction type.
 
-Um objeto, por outro lado, é uma instância específica de uma classe. Ele representa uma entidade concreta com suas próprias características e comportamentos. Continuando com o exemplo da classe `Transacao`, podemos criar objetos individuais para representar transações específicas, como a compra de ações de uma empresa em uma determinada data.
+An object, on the other hand, is a specific instance of a class. It represents a concrete entity with its own characteristics and behaviors. Continuing with the `Transaction` class example, we can create individual objects to represent specific transactions, such as buying shares of a company on a certain data.
 
 ```{python}
-class Transacao:
-    def __init__(self, valor, data, tipo):
-        self.valor = valor
+class Transaction:
+    def __init__(self, value, data, type):
+        self.value = value
         self.data = data
-        self.tipo = tipo
+        self.type = type
     
     def print_info(self):
-      print(f"Tipo da transação: {self.tipo}, Valor: R${self.valor}, Data:{self.data}")
+      print(f"Transaction type: {self.type}, Value: R${self.value}, data: {self.data}")
 ```
 
-Neste exemplo, a classe `Transacao` possui um método especial `__init__` que é chamado quando um novo objeto é criado. Esse método inicializa as propriedades do objeto com os valores fornecidos como argumentos. Além disso, a classe possui um método chamado `print_info`, que imprime as informações da transação, incluindo o tipo, o valor e a data. Esse método também recebe `self` como parâmetro para acessar os atributos da instância atual da classe. Ao chamar `print_info()` em um objeto `Transacao`, ele exibirá as informações formatadas da transação.
+In this example, the `Transaction` class has a special method `__init__` that is called when a new object is created. This method initializes the object's properties with the values provided as arguments. Additionally, the class has a method called `print_info`, which prints transaction information, including the type, value, and data. This method also receives `self` as a parameter to access the current instance's attributes. By calling `print_info()` on a `Transaction` object, it will display the formatted transaction information.
 
-A seguir, criamos dois objetos da classe `Transacao`, `transacao1` e `transacao2`, e acessamos suas propriedades para obter informações sobre as transações.
+Below, we create two objects of the `Transaction` class, `transaction1` and `transaction2`, and access their properties to obtain information about the transactions.
 
 ```{python}
-# Criando objetos da classe Transacao
-transacao1 = Transacao(valor=1000, data="2024-03-11", tipo="Compra de ações")
-transacao2 = Transacao(valor=500, data="2024-03-12", tipo="Venda de ações")
+# Creating objects of the Transaction class
+transaction1 = Transaction(value=1000, data="2024-03-11", type="share purchase")
+transaction2 = Transaction(value=500, data="2024-03-12", type="share sale")
 
-# Acessando as propriedades dos objetos
-print("Valor da transação 1:", transacao1.valor)
-print("Data da transação 2:", transacao2.data)
+# Accessing object properties
+print("Transaction 1 value:", transaction1.value)
+print("Transaction 2 data:", transaction2.data)
 
-# Acessando métodos dos objetos
-transacao1.print_info()
-transacao2.print_info()
+# Accessing object methods
+transaction1.print_info()
+transaction2.print_info()
 ```
 
-## Exercícios
+## Exercises
 
-**1.** Trabalhando com tipos de dados básicos
+**1.** Working with basic data types
 
-**a)** Crie variáveis para representar dados econômicos, como o PIB de pelo menos três países, taxas de inflação ou taxas de desemprego. Use valores recentes e históricos para criar um conjunto diversificado de dados econômicos que representem diferentes contextos econômicos ao redor do mundo.
+**a)** Create variables to represent economic data, such as the GDP of at least three countries, inflation rates, or unemployment rates. Use recent and historical values to create a diverse set of economic data representing different economic contexts around the world.
 
-**b)** Realize operações matemáticas básicas com esses dados, como calcular médias, taxas de crescimento ou proporções. Por exemplo, você pode calcular médias dos valores do PIB, taxas de crescimento do PIB ao longo do tempo, proporções entre diferentes indicadores econômicos (como o PIB per capita em relação ao PIB total), entre outras operações.
+**b)** Perform basic mathematical operations with this data, such as calculating averages, growth rates, or proportions. For example, you can calculate GDP value averages, GDP growth rates over time, and proportions between different economic indicators (such as per capita GDP relative to total GDP), among other operations.
 
-**2.** Durante a análise de dados, pode ser necessário converter entre diferentes tipos de dados. Utilize os tipos de dados fundamentais (integers, floats, strings) e aplique coerção de tipos conforme necessário. Considere, por exemplo que as variáveis representando o PIB foram dadas em formato `string`. Então, converta um tipo `float` para computar a média dos PIBs considerados. Depois disso, converta novamente os valores de PIB em uma `string` para formatação de saída ser no seguinte formato `1,111%`.
+**2.** During data analysis, it may be necessary to convert between different data types. Use fundamental data types (integers, floats, strings) and apply type coercion as needed. Consider, for instance, that the variables representing GDP were given in string format. Then, convert to a float type to compute the average of the GDP values considered. After that, convert the GDP values back to a string for output formatting in the following format: 1,111%.
 
-**3.** Utilize o código abaixo para gerar um pandas dataframe que representa o preço de fechamento de uma ação
+**3.** Use the code below to generate a pandas dataFrame that represents the closing price of a share:
 
-```{python}
+```python
 import pandas as pd
 
-# Criando uma lista de datas
-datas = pd.date_range(start='2023-01-01', end='2023-12-31', freq='B')  # Frequência 'B' para considerar apenas dias úteis
+# Creating a list of dates
+dates = pd.date_range(start='2023-01-01', end='2023-12-31', freq='B')  # Frequency 'B' to consider only business days
 
-# Criando uma série de preços de fechamento simulados
+# Creating a series of simulated closing prices
 import numpy as np
-np.random.seed(0)  # Define a semente aleatória para reprodutibilidade
-precos_fechamento = np.random.normal(loc=50, scale=5, size=len(datas))  # Simulando preços com distribuição normal
+np.random.seed(0)  # Set the random seed for reproducibility
+closing_prices = np.random.normal(loc=50, scale=5, size=len(datas))  # Simulating prices with a normal distribution
 
-# Criando o DataFrame
-df_precos_acoes = pd.DataFrame({'Data': datas, 'Preço de Fechamento': precos_fechamento})
+# Creating the dataFrame
+df_share_prices = pd.dataFrame({'date': dates, 'Closing Price': closing_prices})
 
-# Exibindo as primeiras linhas do DataFrame
-print(df_precos_acoes.head())
+# Displaying the first few rows of the dataFrame
+print(df_share_prices.head())
 ```
 
-**a)** Obtenha os preços de fechamento da ação durante do mês de janeiro determinado.
+**a)** Obtain the share closing prices during the specified month of January.
 
-**b)** Obtenha os preços de fechamento da ação entre 2023-06-01 e 2023-12-31.
+**b)** Obtain the share closing prices between 2023-06-01 and 2023-12-31.
 
-**c)** Obtenha os preços de fechamento da ação às sextas-feiras ao longo de todo o período. Calcule o preço de fechamento médio às segundas-feiras e compare com o das sextas-feiras. Qual deles apresenta maior desvio padrão?
+**c)** Obtain the share closing prices on Fridays throughout the entire period. Calculate the average closing price on Mondays and compare it to Fridays. Which one has a higher standard deviation?
 
-```{python}
-# Criando uma coluna para armazenar o dia da semana
-df_precos_acoes['Dia da Semana'] = df_precos_acoes['Data'].dt.weekday
+```python
+# Creating a column to store the day of the week
+df_share_prices['Day of the Week'] = df_share_prices['date'].dt.weekday
 
-# Exibindo as primeiras linhas do DataFrame com a nova coluna
-print(df_precos_acoes.head())
-
+# Displaying the first few rows of the dataFrame with the new column
+print(df_share_prices.head())
 ```
 
-**4.** Considere a lista armazenada na variável `pib_anos` abaixo e utilize uma compreensão de lista para calcular o crescimento percentual do PIB em relação ao ano anterior para cada país.
+**4.** Consider the list stored in the variable `gdp_years` below and use a list comprehension to calculate the GDP growth percentage relative to the previous year for each country.
 
-```{python}
-# Lista de PIB de um pais nos últimos cinco anos
-pib_anos = [1000, 1200, 800, 1500, 2000]  # Exemplo de valores fictícios para o PIB
+```python
+# List of GDP values for a country over the last five years
+gdp_years = [1000, 1200, 800, 1500, 2000]  # Example fictitious GDP values
 ```
 
-```{python}
+```python
 #| eval: false
 #| echo: false
-# Compreensão de lista para calcular o crescimento percentual do PIB em relação ao ano anterior para cada país
-crescimento_pib = [(atual / anterior - 1) * 100 for atual, anterior in zip(pib_anos[1:], pib_anos[:-1])]
-print("Crescimento percentual do PIB em relação ao ano anterior:")
-for i, crescimento in enumerate(crescimento_pib):
-    print(f"País {i + 2}: {crescimento:.2f}%")
+# List comprehension to calculate GDP growth percentage relative to the previous year for each country
+gdp_growth = [(current / previous - 1) * 100 for current, previous in zip(gdp_years[1:], gdp_years[:-1])]
+print("GDP growth percentage relative to the previous year:")
+for i, growth in enumerate(gdp_growth):
+    print(f"Country {i + 2}: {growth:.2f}%")
 ```
 
-**5.** Escreva uma função chamada `calcular_ipc` que receba três argumentos:
+**5.** Write a function called `calculate_pci` that takes three arguments:
 
--   cesta_de_produtos: Um dicionário que mapeia cada produto a sua quantidade na cesta.
--   precos_atual: Um dicionário que mapeia cada produto ao seu preço atual.
--   precos_base: Um dicionário que mapeia cada produto ao seu preço base (preço de referência). O IPC é calculado utilizando a seguinte fórmula: $$IPC = \sum_i \frac{\text{preço atual do produto}_i}{\text{preço base do produto}_i}\times \text{quantidade do produto}_i.$$ A função deve retornar o valor calculado do IPC. Use o código abaixo para testar sua função.
+- `product_basket`: A dictionary mapping each product to its quantity in the basket.  
+- `current_price`: A dictionary mapping each product to its current price.  
+- `reference_price`: A dictionary mapping each product to its base price (reference price). The Consumer Price Index (CPI) is calculated using the following formula: $$PCI = \sum_i \frac{\text{current price of product}_i}{\text{reference price of product}_i} \times \text{product quantity}_i.$$ The function should return the calculated PCI value. Use the code below to test your function.
 
-```{python}
+```python
 #| eval: false
 #| echo: false
-def calcular_ipc(cesta_de_produtos, precos_atual, precos_base):
-    ipc = 0
-    for produto, preco_atual in precos_atual.items():
-        preco_base = precos_base[produto]
-        ipc += (preco_atual / preco_base) * cesta_de_produtos[produto]
-    return ipc
+def calculate_pci(product_basket, current_price, reference_price):
+    pci = 0
+    for produto, preco_atual in current_price.items():
+        preco_base = reference_price[produto]
+        pci += (preco_atual / preco_base) * product_basket[produto]
+    return pci
 
-# Exemplo de uso da função calcular_ipc
-cesta_de_produtos = {'arroz': 1, 'feijao': 2, 'carne': 3}  # Cesta de produtos com suas respectivas quantidades
-precos_atual = {'arroz': 5, 'feijao': 8, 'carne': 12}      # Preços atuais dos produtos
-precos_base = {'arroz': 4, 'feijao': 7, 'carne': 10}      # Preços base dos produtos
+# Usage example of the calculate_pci function
+product_basket = {'rice': 1, 'beans': 2, 'meat': 3}  # Basket of products with their respective quantities
+current_price = {'rice': 5, 'beans': 8, 'meat': 12}      # Current prices of products
+reference_price = {'rice': 4, 'beans': 7, 'meat': 10}      # Reference prices of products
 
-ipc = calcular_ipc(cesta_de_produtos, precos_atual, precos_base)
-print("O Índice de Preços ao Consumidor (IPC) é:", ipc)
-
+pci = calculate_pci(product_basket, current_price, reference_price)
+print("The Consumer Price Index (CPI) is:", pci)
 ```
-
 ```{python}
 #| eval: false
-# Cesta de produtos com suas respectivas quantidades
-cesta_de_produtos = {'arroz': 1, 'feijao': 2, 'carne': 3}  
-# Preços atuais dos produtos
-precos_atual = {'arroz': 5, 'feijao': 8, 'carne': 12}      
-# Preços base dos produtos
-precos_base = {'arroz': 4, 'feijao': 7, 'carne': 10}      
+# Basket of products with their respective quantities
+product_basket = {'rice': 1, 'beans': 2, 'meat': 3}  
+# Current prices of the products
+current_price = {'rice': 5, 'beans': 8, 'meat': 12}      
+# Reference prices of the products
+reference_price = {'rice': 4, 'beans': 7, 'meat': 10}      
 
-# Chamada da função para calcular o IPC
-ipc = calcular_ipc(cesta_de_produtos, precos_atual, precos_base)
-print("O Índice de Preços ao Consumidor (IPC) é:", ipc)
+# Call the function to calculate the pci
+pci = calculate_pci(product_basket, current_price, reference_price)
+print("The Consumer Price Index (IPC) is:", pci)
 
 ```
 
-**6.** Você está encarregado de desenvolver um sistema para registrar e gerenciar transações de compra e venda de ações, além de calcular informações importantes sobre a carteira de investimentos. Para isso, você deve implementar duas classes em Python: `Transacao` e `Carteira.`
+**6.** You are tasked with developing a system to record and manage share buy and sell transactions, as well as calculate important information about the investment portfolio. For this, you must implement two Python classes: `Transaction` and `Portfolio`.
 
-A classe `Transacao` representa uma única transação de compra ou venda de ações. Ela possui os seguintes atributos:
+The `transaction` class represents a single share buy or sell transaction. It has the following attributes:
 
--   `data`: uma string representando a data da transação no formato 'AAAA-MM-DD'. tipo: uma string indicando o tipo da transação, que pode ser 'compra' ou 'venda'.
--   `valor`: um número inteiro representando a quantidade de ações transacionadas.
+- `date`: a string representing the transaction date in the format 'YYYY-MM-DD'.  
+- `type`: a string indicating the transaction type, which can be 'buy' or 'sell'.  
+- `value`: an integer representing the number of shares transacted.  
 
-A classe `Carteira` representa a carteira de investimentos do usuário, que contém várias transações de ações. Ela possui os seguintes atributos: - `transacoes`: uma lista que armazena todas as transações de ações realizadas.
+The `Portfolio` class represents the user's investment portfolio, which contains several share transactions. It has the following attributes:
 
-Além disso, a classe `Carteira` possui os seguintes métodos:
+- `transactions`: a list that stores all the share transactions performed.  
 
--   `adicionar_transacao(transacao)`: adiciona uma nova transação à carteira.
--   `calcular_posicao_atual(valor_atual_acao)`: calcula a posição atual da ação na carteira com base no valor atual da ação.
--   `calcular_valor_presente(valor_atual_acao)`: calcula o valor presente da ação na carteira com base no valor atual da ação.
+Additionally, the `Portfolio` class has the following methods:
 
-```{python}
+- `add_transaction(transaction)`: adds a new transaction to the portfolio.  
+- `calculate_current_position(current_share_price)`: calculates the current share position in the portfolio based on the current share price.  
+- `calculate_present_value(current_share_price)`: calculates the present value of the share in the portfolio based on the current share price.  
+
+```python
 #| eval: false
 #| echo: false
-class Transacao:
-    def __init__(self, data, tipo, valor):
-        self.data = data
-        self.tipo = tipo  # 'compra' ou 'venda'
-        self.valor = valor
+class transaction:
+    def __init__(self, date, type, value):
+        self.date = date
+        self.type = type  # 'buy' or 'sell'
+        self.value = value
 
-class Carteira:
+class Portfolio:
     def __init__(self):
-        self.transacoes = []
+        self.transactions = []
 
-    def adicionar_transacao(self, transacao):
-        self.transacoes.append(transacao)
+    def add_transaction(self, transaction):
+        self.transactions.append(transaction)
 
-    def calcular_posicao_atual(self, valor_atual_acao):
-        qtd_acoes = 0
-        for transacao in self.transacoes:
-            if transacao.tipo == 'compra':
-                qtd_acoes += transacao.valor
-            elif transacao.tipo == 'venda':
-                qtd_acoes -= transacao.valor
-        return qtd_acoes
+    def calculate_current_position(self, current_share_price):
+        n_shares = 0
+        for transaction in self.transactions:
+            if transaction.type == 'buy':
+                n_shares += transaction.value
+            elif transaction.type == 'sell':
+                n_shares -= transaction.value
+        return n_shares
 
-    def calcular_valor_presente(self, valor_atual_acao):
-        posicao_atual = self.calcular_posicao_atual(valor_atual_acao)
-        valor_presente = posicao_atual * valor_atual_acao
-        return valor_presente
+    def calculate_present_value(self, current_share_price):
+        current_position = self.calculate_current_position(current_share_price)
+        present_value = current_position * current_share_price
+        return present_value
 
+# Example usage of the classes
 
-# Exemplo de uso das classes
+# Creating some transactions
+transaction1 = transaction('2024-03-18', 'buy', 10)  # Buy 10 shares
+transaction2 = transaction('2024-03-19', 'buy', 5)   # Buy 5 more shares
+transaction3 = transaction('2024-03-20', 'sell', 8)    # Sell 8 shares
 
-# Criando algumas transações
-transacao1 = Transacao('2024-03-18', 'compra', 10)  # Compra de 10 ações
-transacao2 = Transacao('2024-03-19', 'compra', 5)   # Compra de mais 5 ações
-transacao3 = Transacao('2024-03-20', 'venda', 8)    # Venda de 8 ações
+# Creating a portfolio and adding transactions
+Portfolio = Portfolio()
+Portfolio.add_transaction(transaction1)
+Portfolio.add_transaction(transaction2)
+Portfolio.add_transaction(transaction3)
 
-# Criando uma carteira e adicionando as transações
-carteira = Carteira()
-carteira.adicionar_transacao(transacao1)
-carteira.adicionar_transacao(transacao2)
-carteira.adicionar_transacao(transacao3)
+# Current share value
+current_share_price = 50  # Hypothetical share value
 
-# Valor atual da ação
-valor_atual_acao = 50  # Valor hipotético da ação
+# Calculating the current position and present value in the portfolio
+current_position = Portfolio.calculate_current_position(current_share_price)
+present_value = Portfolio.calculate_present_value(current_share_price)
 
-# Calculando a posição atual e o valor presente na carteira
-posicao_atual = carteira.calcular_posicao_atual(valor_atual_acao)
-valor_presente = carteira.calcular_valor_presente(valor_atual_acao)
-
-print("Posição atual da ação na carteira:", posicao_atual)
-print("Valor presente na carteira:", valor_presente)
-
+print("Current share position in the portfolio:", current_position)
+print("Present value in the portfolio:", present_value)
 ```
 
-**a)** Implemente as classes Transacao e Carteira com os atributos e métodos descritos acima.
+**a)** Implement the `transaction` and `Portfolio` classes with the attributes and methods described above.
 
-**b)** Crie três instâncias da classe Transacao para representar diferentes transações de compra e venda de ações.
+**b)** Create three instances of the `transaction` class to represent different share buy and sell transactions.
 
-**c)** Crie uma instância da classe Carteira e adicione as transações criadas à carteira.
+**c)** Create an instance of the `Portfolio` class and add the created transactions to the portfolio.
 
-**d)** Teste os métodos da classe Carteira, utilizando os exemplos fornecidos no código de teste abaixo.
+**d)** Test the methods of the `Portfolio` class using the examples provided in the test code above.
+
 
 ```{python}
 #| eval: false
-# Criando algumas transações
-transacao1 = Transacao('2024-03-18', 'compra', 10)  # Compra de 10 ações
-transacao2 = Transacao('2024-03-19', 'compra', 5)   # Compra de mais 5 ações
-transacao3 = Transacao('2024-03-20', 'venda', 8)    # Venda de 8 ações
+# Creating some transactions
+transaction1 = transaction('2024-03-18', 'buy', 10)  # Buy 10 shares
+transaction2 = transaction('2024-03-19', 'buy', 5)   # Buy 5 more shares
+transaction3 = transaction('2024-03-20', 'sell', 8)    # Sell 8 shares
 
-# Criando uma carteira e adicionando as transações
-carteira = Carteira()
-carteira.adicionar_transacao(transacao1)
-carteira.adicionar_transacao(transacao2)
-carteira.adicionar_transacao(transacao3)
+# Creating a portfolio and adding transactions
+Portfolio = Portfolio()
+Portfolio.add_transaction(transaction1)
+Portfolio.add_transaction(transaction2)
+Portfolio.add_transaction(transaction3)
 
-# Valor atual da ação (hipotético)
-valor_atual_acao = 50
+# Current share value
+current_share_price = 50  # Hypothetical share value
 
-# Testando os métodos da classe Carteira
-posicao_atual = carteira.calcular_posicao_atual(valor_atual_acao)
-valor_presente = carteira.calcular_valor_presente(valor_atual_acao)
+# Testing the methods of the Portfolio class
+current_position = Portfolio.calculate_current_position(current_share_price)
+present_value = Portfolio.calculate_present_value(current_share_price)
 
 # Exibindo os resultados
-print("Posição atual da ação na carteira:", posicao_atual)
-print("Valor presente na carteira:", valor_presente)
+print("Current share position in the Portfolio:", current_position)
+print("Present value in the Portfolio:", present_value)
 ```
