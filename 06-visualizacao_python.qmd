@@ -11,7 +11,6 @@ library(reticulate)
 use_python("C:/Users/m_tai/anaconda3/python.exe", required = TRUE)
 ```
 
-
 ## Library Installation
 
 Installing libraries in Python is essential to expand the language's functionality. There are several ways to install libraries, but the most common is using a package manager. Pip is the default package manager for Python and usually comes with the Python installation.
@@ -392,9 +391,9 @@ table4_tidy.assign(rate = lambda _: 10000 * (_.cases / _.population))
 
 The DataFrames `table4a` and `table4b` are melted using the `melt` method:
 
-- For `table4a`, the columns that will remain fixed are specified through the argument `id_vars = "country"`, while the columns "1999" and "2000" are melted as variables using `value_vars = ["1999", "2000"]`. The names of the melted variables are renamed to "year" and "cases" using `var_name = "year"` and `value_name = "cases"`, respectively.
+-   For `table4a`, the columns that will remain fixed are specified through the argument `id_vars = "country"`, while the columns "1999" and "2000" are melted as variables using `value_vars = ["1999", "2000"]`. The names of the melted variables are renamed to "year" and "cases" using `var_name = "year"` and `value_name = "cases"`, respectively.
 
-- Similarly, for `table4b`, the columns "country" and "1999", "2000" are melted, with the variable names renamed to "year" and "population", respectively.
+-   Similarly, for `table4b`, the columns "country" and "1999", "2000" are melted, with the variable names renamed to "year" and "population", respectively.
 
 The DataFrames resulting from the melting of `table4a` and `table4b` are merged using the `merge` method. The merge is performed based on the columns "country" and "year", ensuring that corresponding data from `table4a` and `table4b` are correctly combined.
 
@@ -429,11 +428,11 @@ Two widely used libraries for visualization in Python are `Matplotlib` and `Plot
 
 Before we start creating visualizations, it's important to understand some basic concepts of Matplotlib:
 
-- **Figure and Axes**: In Matplotlib, a figure is the window or page where everything is drawn. Within a figure, there can be multiple axes (or subplots), where data is effectively plotted.
+-   **Figure and Axes**: In Matplotlib, a figure is the window or page where everything is drawn. Within a figure, there can be multiple axes (or subplots), where data is effectively plotted.
 
-- **The plot() Method**: The `plot()` method is used to create line, point, or marker charts. It accepts various arguments to customize the appearance of the graph, such as color, line style, line width, etc.
+-   **The plot() Method**: The `plot()` method is used to create line, point, or marker charts. It accepts various arguments to customize the appearance of the graph, such as color, line style, line width, etc.
 
-- **Customization**: Matplotlib offers many customization options to adjust the appearance of charts, including adding axis labels, chart titles, legends, and more.
+-   **Customization**: Matplotlib offers many customization options to adjust the appearance of charts, including adding axis labels, chart titles, legends, and more.
 
 Now let's see an example of how to create a scatter plot using fictitious data, where each data unit is related to a company.
 

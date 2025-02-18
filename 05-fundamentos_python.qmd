@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Fundamentos de Python
+# Python Fundamentals
 
 ```{r echo=FALSE}
 library(reticulate)

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to R and Python - 6&nbsp; Processamento e visualização de dados</title>
+<title>Introduction to R and Python - 6&nbsp; Data Processing and Visualization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-fundamentos_python.html">Learning Python</a></li><li class="breadcrumb-item"><a href="./06-visualizacao_python.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Processamento e visualização de dados</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-fundamentos_python.html">Learning Python</a></li><li class="breadcrumb-item"><a href="./06-visualizacao_python.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Processing and Visualization</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -188,13 +188,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05-fundamentos_python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Fundamentos de Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Python Fundamentals</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-visualizacao_python.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Processamento e visualização de dados</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Processing and Visualization</span></span></a>
   </div>
 </li>
       </ul>
@@ -219,17 +219,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#instalação-de-bibliotecas" id="toc-instalação-de-bibliotecas" class="nav-link active" data-scroll-target="#instalação-de-bibliotecas"><span class="header-section-number">6.1</span> Instalação de bibliotecas</a></li>
-  <li><a href="#processamento-de-dados-numéricos" id="toc-processamento-de-dados-numéricos" class="nav-link" data-scroll-target="#processamento-de-dados-numéricos"><span class="header-section-number">6.2</span> Processamento de dados numéricos</a></li>
-  <li><a href="#análise-e-processamento-de-dados" id="toc-análise-e-processamento-de-dados" class="nav-link" data-scroll-target="#análise-e-processamento-de-dados"><span class="header-section-number">6.3</span> Análise e processamento de dados</a></li>
-  <li><a href="#o-que-é-pandas" id="toc-o-que-é-pandas" class="nav-link" data-scroll-target="#o-que-é-pandas"><span class="header-section-number">6.4</span> O que é pandas?</a>
+  <li><a href="#library-installation" id="toc-library-installation" class="nav-link active" data-scroll-target="#library-installation"><span class="header-section-number">6.1</span> Library Installation</a></li>
+  <li><a href="#numerical-data-processing" id="toc-numerical-data-processing" class="nav-link" data-scroll-target="#numerical-data-processing"><span class="header-section-number">6.2</span> Numerical Data Processing</a></li>
+  <li><a href="#data-analysis-and-processing" id="toc-data-analysis-and-processing" class="nav-link" data-scroll-target="#data-analysis-and-processing"><span class="header-section-number">6.3</span> Data Analysis and Processing</a></li>
+  <li><a href="#what-is-pandas" id="toc-what-is-pandas" class="nav-link" data-scroll-target="#what-is-pandas"><span class="header-section-number">6.4</span> What is Pandas?</a>
   <ul class="collapse">
-  <li><a href="#séries" id="toc-séries" class="nav-link" data-scroll-target="#séries"><span class="header-section-number">6.4.1</span> Séries</a></li>
+  <li><a href="#series" id="toc-series" class="nav-link" data-scroll-target="#series"><span class="header-section-number">6.4.1</span> Series</a></li>
   <li><a href="#dataframe" id="toc-dataframe" class="nav-link" data-scroll-target="#dataframe"><span class="header-section-number">6.4.2</span> DataFrame</a></li>
-  <li><a href="#principais-funcionalidades" id="toc-principais-funcionalidades" class="nav-link" data-scroll-target="#principais-funcionalidades"><span class="header-section-number">6.4.3</span> Principais funcionalidades</a></li>
+  <li><a href="#main-functionalities" id="toc-main-functionalities" class="nav-link" data-scroll-target="#main-functionalities"><span class="header-section-number">6.4.3</span> Main Functionalities</a></li>
   </ul></li>
-  <li><a href="#dados-organizados-tidy-data" id="toc-dados-organizados-tidy-data" class="nav-link" data-scroll-target="#dados-organizados-tidy-data"><span class="header-section-number">6.5</span> Dados organizados (tidy data)</a></li>
-  <li><a href="#visualização-de-dados" id="toc-visualização-de-dados" class="nav-link" data-scroll-target="#visualização-de-dados"><span class="header-section-number">6.6</span> Visualização de dados</a>
+  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data"><span class="header-section-number">6.5</span> Tidy Data</a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization"><span class="header-section-number">6.6</span> Data Visualization</a>
   <ul class="collapse">
   <li><a href="#matplotlib" id="toc-matplotlib" class="nav-link" data-scroll-target="#matplotlib"><span class="header-section-number">6.6.1</span> Matplotlib</a></li>
   <li><a href="#plotnine" id="toc-plotnine" class="nav-link" data-scroll-target="#plotnine"><span class="header-section-number">6.6.2</span> Plotnine</a></li>
@@ -242,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Processamento e visualização de dados</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Processing and Visualization</span></h1>
 </div>
 
 
@@ -257,100 +257,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="callout callout-style-default callout-caution callout-titled" title="Notice!">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Notice!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Chapter to be translated!</p>
-</div>
-</div>
-<section id="instalação-de-bibliotecas" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="instalação-de-bibliotecas"><span class="header-section-number">6.1</span> Instalação de bibliotecas</h2>
-<p>A instalação de bibliotecas em Python é essencial para expandir a funcionalidade da linguagem. Existem várias maneiras de instalar bibliotecas, mas a mais comum é usando um gerenciador de pacotes. O pip é o gerenciador de pacotes padrão para Python e geralmente acompanha a instalação do Python.</p>
-<p>Para instalar uma biblioteca com pip, abra o terminal ou prompt de comando e digite o seguinte comando:</p>
+<section id="library-installation" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="library-installation"><span class="header-section-number">6.1</span> Library Installation</h2>
+<p>Installing libraries in Python is essential to expand the language’s functionality. There are several ways to install libraries, but the most common is using a package manager. Pip is the default package manager for Python and usually comes with the Python installation.</p>
+<p>To install a library with pip, open the terminal or command prompt and type the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install nome_da_biblioteca</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install library_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Substitua nome_da_biblioteca pelo nome da biblioteca que você deseja instalar.</p>
+<p>Replace <code>library_name</code> with the name of the library you want to install.</p>
 </section>
-<section id="processamento-de-dados-numéricos" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="processamento-de-dados-numéricos"><span class="header-section-number">6.2</span> Processamento de dados numéricos</h2>
-<p>O <code>NumPy</code> (Numerical Python) é uma biblioteca essencial para computação numérica em Python. Ele fornece estruturas de dados eficientes para trabalhar com arrays multidimensionais e funções matemáticas poderosas para manipulação de dados.</p>
-<p>Para instalar o NumPy, você pode usar o pip, que é o gerenciador de pacotes padrão do Python:</p>
+<section id="numerical-data-processing" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="numerical-data-processing"><span class="header-section-number">6.2</span> Numerical Data Processing</h2>
+<p><code>NumPy</code> (Numerical Python) is an essential library for numerical computing in Python. It provides efficient data structures for working with multidimensional arrays and powerful mathematical functions for data manipulation.</p>
+<p>To install NumPy, you can use pip, the default Python package manager:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pip install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>O principal objeto em <code>NumPy</code> é o array multidimensional. Você pode criar arrays <code>NumPy</code> usando a função <code>numpy.array()</code> e realizar operações matemáticas básicas com eles:</p>
+<p>The main object in <code>NumPy</code> is the multidimensional array. You can create <code>NumPy</code> arrays using the <code>numpy.array()</code> function and perform basic mathematical operations with them:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um array NumPy</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a NumPy array</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Operações matemáticas básicas</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Soma:"</span>, np.<span class="bu">sum</span>(arr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic mathematical operations</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sum:"</span>, np.<span class="bu">sum</span>(arr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Soma: 15</code></pre>
+<pre><code>Sum: 15</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Média:"</span>, np.mean(arr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean:"</span>, np.mean(arr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Média: 3.0</code></pre>
+<pre><code>Mean: 3.0</code></pre>
 </div>
 </div>
-<p>Além das operações básicas, o NumPy oferece funções universais (<code>ufuncs</code>) para aplicar operações em todos os elementos de um array de uma vez:</p>
+<p>In addition to basic operations, NumPy provides universal functions (<code>ufuncs</code>) to apply operations to all elements of an array at once:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Funções universais (ufuncs)</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Universal functions (ufuncs)</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Quadrado de cada elemento:"</span>, np.square(arr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Square of each element:"</span>, np.square(arr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Quadrado de cada elemento: [ 1  4  9 16 25]</code></pre>
+<pre><code>Square of each element: [ 1  4  9 16 25]</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Exponencial de cada elemento:"</span>, np.exp(arr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Exponential of each element:"</span>, np.exp(arr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Exponencial de cada elemento: [  2.71828183   7.3890561   20.08553692  54.59815003 148.4131591 ]</code></pre>
+<pre><code>Exponential of each element: [  2.71828183   7.3890561   20.08553692  54.59815003 148.4131591 ]</code></pre>
 </div>
 </div>
-<p>A seguir, apresentamos três exemplos práticos de utilização das funções do <code>NumPy</code>.</p>
-<p><strong>Exemplo 1: Cálculo de Estatísticas Descritivas</strong></p>
-<p>O <code>NumPy</code> pode ser usado para calcular estatísticas descritivas, como média, mediana, desvio padrão, mínimo e máximo de séries temporais de dados econômicos, como o preço das ações de uma empresa ao longo do tempo.</p>
+<p>Next, we present three practical examples of using <code>NumPy</code> functions.</p>
+<p><strong>Example 1: Descriptive Statistics Calculation</strong></p>
+<p><code>NumPy</code> can be used to calculate descriptive statistics, such as mean, median, standard deviation, minimum, and maximum of time series data, such as the stock price of a company over time.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Preço das ações de uma empresa ao longo do tempo (em dólares)</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>precos <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="dv">102</span>, <span class="dv">105</span>, <span class="dv">110</span>, <span class="dv">108</span>, <span class="dv">115</span>, <span class="dv">120</span>])</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Stock price of a company over time (in dollars)</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>prices <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="dv">102</span>, <span class="dv">105</span>, <span class="dv">110</span>, <span class="dv">108</span>, <span class="dv">115</span>, <span class="dv">120</span>])</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando estatísticas descritivas</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Média:"</span>, np.mean(precos))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating descriptive statistics</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean:"</span>, np.mean(prices))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Média: 108.57142857142857</code></pre>
+<pre><code>Mean: 108.57142857142857</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Desvio padrão:"</span>, np.std(precos))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Standard deviation:"</span>, np.std(prices))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Desvio padrão: 6.58693821908486</code></pre>
+<pre><code>Standard deviation: 6.58693821908486</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Máximo:"</span>, np.<span class="bu">max</span>(precos))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Maximum:"</span>, np.<span class="bu">max</span>(prices))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Máximo: 120</code></pre>
+<pre><code>Maximum: 120</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mínimo:"</span>, np.<span class="bu">min</span>(precos))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Minimum:"</span>, np.<span class="bu">min</span>(prices))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Mínimo: 100</code></pre>
+<pre><code>Minimum: 100</code></pre>
 </div>
 </div>
-<p><strong>Exemplo 2: Análise de Séries Temporais</strong> O <code>NumPy</code> é útil para manipulação e análise de séries temporais. Por exemplo, você pode usar <code>NumPy</code> para calcular a taxa de retorno de um investimento ao longo do tempo ou para suavizar uma série temporal usando médias móveis.</p>
+<p><strong>Example 2: Time Series Analysis</strong> <code>NumPy</code> is useful for time series manipulation and analysis. For example, you can use <code>NumPy</code> to calculate the return rate of an investment over time or to smooth a time series using moving averages.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>precos <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="dv">102</span>, <span class="dv">105</span>, <span class="dv">110</span>, <span class="dv">108</span>, <span class="dv">115</span>, <span class="dv">120</span>])</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular a taxa de retorno de um investimento ao longo do tempo</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>retornos <span class="op">=</span> np.diff(precos) <span class="op">/</span> precos[:<span class="op">-</span><span class="dv">1</span>] <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Taxa de retorno:"</span>, retornos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>prices <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="dv">102</span>, <span class="dv">105</span>, <span class="dv">110</span>, <span class="dv">108</span>, <span class="dv">115</span>, <span class="dv">120</span>])</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the return rate of an investment over time</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>returns <span class="op">=</span> np.diff(prices) <span class="op">/</span> prices[:<span class="op">-</span><span class="dv">1</span>] <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Return rate:"</span>, returns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Taxa de retorno: [ 2.          2.94117647  4.76190476 -1.81818182  6.48148148  4.34782609]</code></pre>
+<pre><code>Return rate: [ 2.          2.94117647  4.76190476 -1.81818182  6.48148148  4.34782609]</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -363,17 +350,17 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A função np.diff em NumPy é usada para calcular a diferença entre elementos consecutivos ao longo de um determinado eixo de um array. <em>Atenção</em>: O tamanho do retorno da função np.diff será sempre menor que o tamanho do vetor original de entrada por um elemento. Por exemplo, se tivermos um vetor unidimensional com <span class="math inline">\(n\)</span> elementos, a função np.diff retornará um vetor com <span class="math inline">\(n−1\)</span> elementos, pois não há diferença para o último elemento.</p>
+<p>The <code>np.diff</code> function in NumPy is used to calculate the difference between consecutive elements along a specified axis of an array. <em>Note</em>: The size of the output from the <code>np.diff</code> function will always be one less than the size of the original input vector. For example, if we have a one-dimensional vector with <span class="math inline">\(n\)</span> elements, the <code>np.diff</code> function will return a vector with <span class="math inline">\(n−1\)</span> elements, as there is no difference for the last element.</p>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>precos <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="dv">102</span>, <span class="dv">105</span>, <span class="dv">110</span>, <span class="dv">108</span>, <span class="dv">115</span>, <span class="dv">120</span>])</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Suavizar uma série temporal usando médias móveis</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>tamanho_janela <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>media_movel <span class="op">=</span> np.convolve(precos, np.ones(tamanho_janela) <span class="op">/</span> tamanho_janela, mode<span class="op">=</span><span class="st">'valid'</span>)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Médias móveis:"</span>, media_movel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>prices <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="dv">102</span>, <span class="dv">105</span>, <span class="dv">110</span>, <span class="dv">108</span>, <span class="dv">115</span>, <span class="dv">120</span>])</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Smoothing a time series using moving averages</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>window_size <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>moving_average <span class="op">=</span> np.convolve(prices, np.ones(window_size) <span class="op">/</span> window_size, mode<span class="op">=</span><span class="st">'valid'</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Moving averages:"</span>, moving_average)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Médias móveis: [102.33333333 105.66666667 107.66666667 111.         114.33333333]</code></pre>
+<pre><code>Moving averages: [102.33333333 105.66666667 107.66666667 111.         114.33333333]</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -386,70 +373,70 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A função <code>np.convolve</code> em <code>NumPy</code> é usada para realizar a convolução entre duas sequências, representadas por dois vetores unidimensionais. A convolução é uma operação matemática que combina duas funções para produzir uma terceira função que representa a quantidade de sobreposição entre elas conforme uma delas é deslocada ao longo do eixo.</p>
-<p>A sintaxe básica da função é <code>np.convolve(a, b, mode='full')</code>, onde <code>a</code> e <code>b</code> são os dois vetores unidimensionais a serem convolvidos e <code>mode</code> é um parâmetro opcional que define o modo de convolução. Os modos mais comuns são:</p>
+<p>The <code>np.convolve</code> function in <code>NumPy</code> is used to perform convolution between two sequences, represented by two one-dimensional vectors. Convolution is a mathematical operation that combines two functions to produce a third function that represents the amount of overlap between them as one is shifted along the axis.</p>
+<p>The basic syntax of the function is <code>np.convolve(a, b, mode='full')</code>, where <code>a</code> and <code>b</code> are the two one-dimensional vectors to be convolved, and <code>mode</code> is an optional parameter that defines the convolution mode. The most common modes are:</p>
 <ul>
-<li><code>'full'</code>: Retorna a saída completa da convolução. O comprimento do resultado será <code>len(a) + len(b) - 1</code>.</li>
-<li><code>'valid'</code>: Retorna apenas pontos onde as sequências se sobrepõem completamente. O comprimento do resultado será <code>max(len(a), len(b)) - min(len(a), len(b)) + 1</code>.</li>
-<li><code>'same'</code>: Retorna a saída do mesmo tamanho que o vetor de entrada mais longo. O comprimento do resultado será <code>max(len(a), len(b))</code>.</li>
+<li><code>'full'</code>: Returns the full output of the convolution. The length of the result will be <code>len(a) + len(b) - 1</code>.</li>
+<li><code>'valid'</code>: Returns only points where the sequences fully overlap. The length of the result will be <code>max(len(a), len(b)) - min(len(a), len(b)) + 1</code>.</li>
+<li><code>'same'</code>: Returns output of the same size as the longest input vector. The length of the result will be <code>max(len(a), len(b))</code>.</li>
 </ul>
-<p>No exemplo anterior, a função <code>np.convolve</code> foi usada aqui para calcular a média móvel dos preços. Nesse caso, a primeira sequência é o vetor de preços e a segunda sequência é um vetor de 1s dividido pelo tamanho da janela de média móvel. Isso cria uma sequência que representa uma média ponderada dos valores.</p>
+<p>In the previous example, the <code>np.convolve</code> function was used here to calculate the moving average of prices. In this case, the first sequence is the price vector, and the second sequence is a vector of 1s divided by the moving average window size. This creates a sequence that represents a weighted average of the values.</p>
 </div>
 </div>
-<p><strong>Exemplo 3: Simulação Monte Carlo</strong> O NumPy pode ser usado para realizar simulações Monte Carlo, que são amplamente utilizadas na modelagem financeira e na avaliação de risco. Por exemplo, você pode simular o desempenho de uma carteira de investimentos ao longo do tempo sob diferentes cenários de mercado.</p>
+<p><strong>Example 3: Monte Carlo Simulation</strong> NumPy can be used to perform Monte Carlo simulations, which are widely used in financial modeling and risk assessment. For example, you can simulate the performance of an investment portfolio over time under different market scenarios.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulação Monte Carlo do desempenho de uma carteira de investimentos</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>num_simulacoes <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>num_anos <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>retorno_medio <span class="op">=</span> <span class="fl">0.08</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>volatilidade <span class="op">=</span> <span class="fl">0.15</span></span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Monte Carlo simulation of an investment portfolio's performance</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>num_simulations <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>num_years <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>mean_return <span class="op">=</span> <span class="fl">0.08</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>volatility <span class="op">=</span> <span class="fl">0.15</span></span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Gerar retornos aleatórios usando uma distribuição normal</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>retornos <span class="op">=</span> np.random.normal(retorno_medio, volatilidade, size<span class="op">=</span>(num_simulacoes, num_anos))</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generating random returns using a normal distribution</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>returns <span class="op">=</span> np.random.normal(mean_return, volatility, size<span class="op">=</span>(num_simulations, num_years))</span>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular o valor final da carteira para cada simulação</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>investimento_inicial <span class="op">=</span> <span class="dv">10000</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>valores_finais <span class="op">=</span> investimento_inicial <span class="op">*</span> np.cumprod(<span class="dv">1</span> <span class="op">+</span> retornos, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the final portfolio value for each simulation</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>initial_investment <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>final_values <span class="op">=</span> initial_investment <span class="op">*</span> np.cumprod(<span class="dv">1</span> <span class="op">+</span> returns, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Estatísticas descritivas dos valores finais da carteira</span></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Valor final médio:"</span>, np.mean(valores_finais[:,<span class="op">-</span><span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Descriptive statistics of the final portfolio values</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean final value:"</span>, np.mean(final_values[:,<span class="op">-</span><span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Valor final médio: 21277.309029347114</code></pre>
+<pre><code>Mean final value: 21419.40917776627</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Desvio padrão dos valores finais:"</span>, np.std(valores_finais[:,<span class="op">-</span><span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Standard deviation of final values:"</span>, np.std(final_values[:,<span class="op">-</span><span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Desvio padrão dos valores finais: 9571.011821238177</code></pre>
+<pre><code>Standard deviation of final values: 10252.053756660043</code></pre>
 </div>
 </div>
-<p>Mais referências sobre <code>NumPy</code>:</p>
+<p>More references on <code>NumPy</code>:</p>
 <ul>
-<li><p><strong>Documentação oficial do NumPy:</strong> <a href="https://numpy.org/doc/stable/" class="uri">https://numpy.org/doc/stable/</a> A documentação oficial do NumPy contém informações detalhadas sobre todas as funções e métodos disponíveis, além de tutoriais e exemplos.</p></li>
-<li><p><strong>NumPy Quickstart Tutorial:</strong> <a href="https://numpy.org/doc/stable/user/quickstart.html" class="uri">https://numpy.org/doc/stable/user/quickstart.html</a> Este tutorial rápido fornece uma introdução rápida ao NumPy e suas funcionalidades básicas.</p></li>
+<li><p><strong>Official NumPy Documentation:</strong> <a href="https://numpy.org/doc/stable/" class="uri">https://numpy.org/doc/stable/</a> The official NumPy documentation contains detailed information on all available functions and methods, as well as tutorials and examples.</p></li>
+<li><p><strong>NumPy Quickstart Tutorial:</strong> <a href="https://numpy.org/doc/stable/user/quickstart.html" class="uri">https://numpy.org/doc/stable/user/quickstart.html</a> This quickstart tutorial provides a quick introduction to NumPy and its basic functionalities.</p></li>
 </ul>
 </section>
-<section id="análise-e-processamento-de-dados" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="análise-e-processamento-de-dados"><span class="header-section-number">6.3</span> Análise e processamento de dados</h2>
-<p>O pandas é uma biblioteca de código aberto amplamente utilizada em Python para análise e manipulação de dados. Ele fornece estruturas de dados flexíveis e ferramentas poderosas para trabalhar com dados estruturados, facilitando a análise, limpeza e preparação de dados para diversas aplicações, como ciência de dados, finanças, pesquisa acadêmica e muito mais.</p>
+<section id="data-analysis-and-processing" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="data-analysis-and-processing"><span class="header-section-number">6.3</span> Data Analysis and Processing</h2>
+<p>Pandas is a widely used open-source library in Python for data analysis and manipulation. It provides flexible data structures and powerful tools for working with structured data, facilitating data analysis, cleaning, and preparation for various applications, such as data science, finance, academic research, and more.</p>
 </section>
-<section id="o-que-é-pandas" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="o-que-é-pandas"><span class="header-section-number">6.4</span> O que é pandas?</h2>
-<p>Pandas é uma biblioteca Python de código aberto que oferece estruturas de dados de alto desempenho e ferramentas de análise de dados. O pandas foi projetado para lidar com as complexidades do mundo real em análise de dados, oferecendo uma interface simples e intuitiva para trabalhar com dados tabulares.</p>
-<p>Pandas é amplamente utilizado em análise de dados devido à sua capacidade de:</p>
+<section id="what-is-pandas" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="what-is-pandas"><span class="header-section-number">6.4</span> What is Pandas?</h2>
+<p>Pandas is an open-source Python library that offers high-performance data structures and data analysis tools. Pandas is designed to handle the complexities of real-world data analysis, offering a simple and intuitive interface for working with tabular data.</p>
+<p>Pandas is widely used in data analysis due to its ability to:</p>
 <ul>
-<li>Importar e exportar dados de uma variedade de fontes, incluindo arquivos CSV, Excel, SQL, JSON, HDF5 e mais.</li>
-<li>Manipular dados de forma eficiente, incluindo indexação, filtragem, agregação e limpeza.</li>
-<li>Realizar operações estatísticas e matemáticas em dados, como média, soma, desvio padrão, correlação, etc.</li>
+<li>Import and export data from a variety of sources, including CSV, Excel, SQL, JSON, HDF5 files, and more.</li>
+<li>Efficiently manipulate data, including indexing, filtering, aggregation, and cleaning.</li>
+<li>Perform statistical and mathematical operations on data, such as mean, sum, standard deviation, correlation, etc.</li>
 </ul>
-<p>As duas principais estruturas de dados fornecidas pelo pandas são series e dataframes.</p>
-<section id="séries" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="séries"><span class="header-section-number">6.4.1</span> Séries</h3>
-<p>Uma <code>Serie</code> é uma estrutura de dados unidimensional que pode conter qualquer tipo de dados, como inteiros, floats, strings, entre outros. Cada elemento em uma Série possui um rótulo único chamado de índice. A Série é semelhante a uma lista ou array unidimensional em Python, mas fornece recursos adicionais, como operações vetorizadas e alinhamento automático de dados com base nos rótulos de índice.</p>
-<p>Suponha que temos uma Série representando os preços diários de uma ação:</p>
+<p>The two main data structures provided by Pandas are Series and DataFrames.</p>
+<section id="series" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="series"><span class="header-section-number">6.4.1</span> Series</h3>
+<p>A <code>Series</code> is a one-dimensional data structure that can contain any type of data, such as integers, floats, strings, among others. Each element in a Series has a unique label called an index. The Series is similar to a list or one-dimensional array in Python but provides additional features, such as vectorized operations and automatic data alignment based on index labels.</p>
+<p>Suppose we have a Series representing the daily prices of a stock:</p>
 <table class="table">
 <thead>
 <tr class="header">
-<th>Data</th>
-<th>Preço</th>
+<th>Date</th>
+<th>Price</th>
 </tr>
 </thead>
 <tbody>
@@ -471,146 +458,147 @@ Tip
 </tr>
 </tbody>
 </table>
-<p>Podemos criar uma Serie pandas para representar esses dados:</p>
+<p>We can create a Pandas Series to represent this data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados dos preços da ação</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Stock price data</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="st">'2024-03-18'</span>, <span class="st">'2024-03-19'</span>, <span class="st">'2024-03-20'</span>, <span class="st">'2024-03-21'</span>]</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>precos <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">105</span>, <span class="dv">98</span>, <span class="dv">102</span>]</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>prices <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">105</span>, <span class="dv">98</span>, <span class="dv">102</span>]</span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando uma Série pandas</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>serie_precos_acao <span class="op">=</span> pd.Series(precos, index<span class="op">=</span>pd.to_datetime(data), name<span class="op">=</span><span class="st">'Preço da Ação'</span>)</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(serie_precos_acao)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a Pandas Series</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>stock_price_series <span class="op">=</span> pd.Series(prices, index<span class="op">=</span>pd.to_datetime(data), name<span class="op">=</span><span class="st">'Stock Price'</span>)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stock_price_series)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2024-03-18    100
 2024-03-19    105
 2024-03-20     98
 2024-03-21    102
-Name: Preço da Ação, dtype: int64</code></pre>
+Name: Stock Price, dtype: int64</code></pre>
 </div>
 </div>
 </section>
 <section id="dataframe" class="level3" data-number="6.4.2">
 <h3 data-number="6.4.2" class="anchored" data-anchor-id="dataframe"><span class="header-section-number">6.4.2</span> DataFrame</h3>
-<p>DataFrame é uma estrutura de dados bidimensional semelhante a uma tabela de banco de dados ou uma planilha do Excel. Ele é composto por linhas e colunas, onde cada coluna pode conter um tipo de dado diferente. Cada coluna e linha em um DataFrame possui um rótulo exclusivo chamado de índice e nome, respectivamente. O DataFrame permite realizar uma ampla gama de operações de manipulação e análise de dados, como indexação, filtragem, agregação, limpeza, entre outras.</p>
-<p>Suponha que temos um DataFrame representando os preços diários de várias ações. Podemos criar um DataFrame pandas para representar esses dados. Veja no exemplo abaixo.</p>
+<p>A DataFrame is a two-dimensional data structure similar to a database table or an Excel spreadsheet. It consists of rows and columns, where each column can contain a different data type. Each column and row in a DataFrame has a unique label called an index and a name, respectively. The DataFrame allows for a wide range of data manipulation and analysis operations, such as indexing, filtering, aggregation, cleaning, among others.</p>
+<p>Suppose we have a DataFrame representing the daily prices of multiple stocks. We can create a Pandas DataFrame to represent this data. See the example below.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados dos preços das ações</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Stock price data</span></span>
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="st">'2024-03-18'</span>, <span class="st">'2024-03-19'</span>, <span class="st">'2024-03-20'</span>, <span class="st">'2024-03-21'</span>]</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>precos_acoes <span class="op">=</span> {</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Ação 1'</span>: [<span class="dv">100</span>, <span class="dv">105</span>, np.nan, <span class="dv">102</span>],</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Ação 2'</span>: [<span class="dv">50</span>, <span class="dv">52</span>, <span class="dv">48</span>, <span class="dv">49</span>],</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Ação 3'</span>: [<span class="dv">75</span>, np.nan, <span class="dv">72</span>, <span class="dv">74</span>]</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>stock_prices <span class="op">=</span> {</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Stock 1'</span>: [<span class="dv">100</span>, <span class="dv">105</span>, np.nan, <span class="dv">102</span>],</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Stock 2'</span>: [<span class="dv">50</span>, <span class="dv">52</span>, <span class="dv">48</span>, <span class="dv">49</span>],</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Stock 3'</span>: [<span class="dv">75</span>, np.nan, <span class="dv">72</span>, <span class="dv">74</span>]</span>
 <span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um DataFrame pandas</span></span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>df_precos_acoes <span class="op">=</span> pd.DataFrame(precos_acoes, index<span class="op">=</span>pd.to_datetime(data))</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_precos_acoes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a Pandas DataFrame</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>df_stock_prices <span class="op">=</span> pd.DataFrame(stock_prices, index<span class="op">=</span>pd.to_datetime(data))</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_stock_prices)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>            Ação 1  Ação 2  Ação 3
-2024-03-18   100.0      50    75.0
-2024-03-19   105.0      52     NaN
-2024-03-20     NaN      48    72.0
-2024-03-21   102.0      49    74.0</code></pre>
+<pre><code>            Stock 1  Stock 2  Stock 3
+2024-03-18    100.0       50     75.0
+2024-03-19    105.0       52      NaN
+2024-03-20      NaN       48     72.0
+2024-03-21    102.0       49     74.0</code></pre>
 </div>
 </div>
 </section>
-<section id="principais-funcionalidades" class="level3" data-number="6.4.3">
-<h3 data-number="6.4.3" class="anchored" data-anchor-id="principais-funcionalidades"><span class="header-section-number">6.4.3</span> Principais funcionalidades</h3>
-<p>A função <code>df.isna()</code> é uma função fornecida pelo pandas em um DataFrame (df) que retorna uma matriz booleana indicando se cada elemento do DataFrame é um valor ausente (NaN).</p>
-<p>Quando aplicada a um DataFrame, a função <code>isna()</code> retorna um DataFrame com o mesmo formato, onde cada valor é substituído por <code>True</code> se for <code>NaN</code> e <code>False</code> caso contrário.</p>
-<p>Isso é útil para identificar rapidamente os valores ausentes em um DataFrame e realizar operações de limpeza ou tratamento de dados, como preenchimento de valores ausentes ou remoção de linhas ou colunas contendo esses valores.</p>
-<p>Se aplicarmos <code>df_precos_acoes.isna()</code>, obteremos:</p>
+<section id="main-functionalities" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="main-functionalities"><span class="header-section-number">6.4.3</span> Main Functionalities</h3>
+<p>The <code>df.isna()</code> function is a function provided by Pandas in a DataFrame (df) that returns a boolean matrix indicating whether each element in the DataFrame is a missing value (NaN).</p>
+<p>When applied to a DataFrame, the <code>isna()</code> function returns a DataFrame with the same shape, where each value is replaced by <code>True</code> if it is <code>NaN</code> and <code>False</code> otherwise.</p>
+<p>This is useful for quickly identifying missing values in a DataFrame and performing data cleaning or handling operations, such as filling missing values or removing rows or columns containing these values.</p>
+<p>If we apply <code>df_stock_prices.isna()</code>, we get:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df_precos_acoes.isna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df_stock_prices.isna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>            Ação 1  Ação 2  Ação 3
-2024-03-18   False   False   False
-2024-03-19   False   False    True
-2024-03-20    True   False   False
-2024-03-21   False   False   False</code></pre>
+<pre><code>            Stock 1  Stock 2  Stock 3
+2024-03-18    False    False    False
+2024-03-19    False    False     True
+2024-03-20     True    False    False
+2024-03-21    False    False    False</code></pre>
 </div>
 </div>
-<p>Para contar a quantidade de <code>NaN</code> em cada coluna, combine <code>is.na()</code> com <code>sum()</code>:</p>
+<p>To count the number of <code>NaN</code> values in each column, combine <code>is.na()</code> with <code>sum()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>df_precos_acoes.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>df_stock_prices.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Ação 1    1
-Ação 2    0
-Ação 3    1
+<pre><code>Stock 1    1
+Stock 2    0
+Stock 3    1
 dtype: int64</code></pre>
 </div>
 </div>
-<p>O método <code>dropna()</code> no pandas é usado para remover linhas ou colunas que contenham valores ausentes (NaN).</p>
+<p>The <code>dropna()</code> method in Pandas is used to remove rows or columns that contain missing values (NaN).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df_precos_acoes.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df_stock_prices.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>            Ação 1  Ação 2  Ação 3
-2024-03-18   100.0      50    75.0
-2024-03-21   102.0      49    74.0</code></pre>
+<pre><code>            Stock 1  Stock 2  Stock 3
+2024-03-18    100.0       50     75.0
+2024-03-21    102.0       49     74.0</code></pre>
 </div>
 </div>
-<p>O parâmetro subset é usado para especificar em quais colunas ou linhas o pandas deve procurar por valores ausentes antes de remover. Quando usamos <code>df.dropna(subset=["Ação 3"])</code>, estamos instruindo o pandas a remover todas as linhas onde houver um valor ausente na coluna “Ação 3”.</p>
+<p>The <code>subset</code> parameter is used to specify in which columns or rows Pandas should look for missing values before removing. When we use <code>df.dropna(subset=["Stock 3"])</code>, we are instructing Pandas to remove all rows where there is a missing value in the “Stock 3” column.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df_precos_acoes.dropna(subset<span class="op">=</span>[<span class="st">"Ação 3"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df_stock_prices.dropna(subset<span class="op">=</span>[<span class="st">"Stock 3"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>            Ação 1  Ação 2  Ação 3
-2024-03-18   100.0      50    75.0
-2024-03-20     NaN      48    72.0
-2024-03-21   102.0      49    74.0</code></pre>
+<pre><code>            Stock 1  Stock 2  Stock 3
+2024-03-18    100.0       50     75.0
+2024-03-20      NaN       48     72.0
+2024-03-21    102.0       49     74.0</code></pre>
 </div>
 </div>
-<p>Na função <code>dropna()</code>, o parâmetro <code>inplace=True</code> especifica que a modificação deve ser feita diretamente no DataFrame original, em vez de retornar um novo DataFrame sem os valores ausentes. Quando <code>inplace=True</code> é usado com dropna(), o DataFrame original é modificado e as linhas ou colunas com valores ausentes são removidas permanentemente.</p>
+<p>In the <code>dropna()</code> function, the <code>inplace=True</code> parameter specifies that the modification should be made directly to the original DataFrame, rather than returning a new DataFrame without the missing values. When <code>inplace=True</code> is used with <code>dropna()</code>, the original DataFrame is modified, and the rows or columns with missing values are permanently removed.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>df_precos_acoes.dropna(inplace <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>df_stock_prices.dropna(inplace <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>A função <code>fillna()</code> no pandas é usada para preencher valores ausentes (NaN) em um DataFrame com um valor específico.</p>
-<p>Considere o seguinte DataFrame <code>df</code> que representa os dados de clientes de um banco com alguns dados faltantes:</p>
+<p>The <code>fillna()</code> function in Pandas is used to fill missing values (NaN) in a DataFrame with a specific value.</p>
+<p>Consider the following DataFrame <code>df</code> representing customer data from a bank with some missing data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>dados <span class="op">=</span> {<span class="st">'Nome'</span>: [<span class="st">'João'</span>, <span class="st">'Maria'</span>, <span class="st">'Pedro'</span>, <span class="st">'Ana'</span>, <span class="st">'Mariana'</span>],</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Idade'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, np.nan, <span class="dv">40</span>, <span class="dv">35</span>],</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Renda Mensal'</span>: [<span class="dv">5000</span>, <span class="dv">6000</span>, np.nan, <span class="dv">4500</span>, <span class="dv">5500</span>],</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Limite de Crédito'</span>: [<span class="dv">10000</span>, np.nan, <span class="dv">8000</span>, <span class="dv">12000</span>, np.nan]}</span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>df_clientes <span class="op">=</span> pd.DataFrame(dados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'Name'</span>: [<span class="st">"John"</span>, <span class="st">"Mary"</span>, <span class="st">"Peter"</span>, <span class="st">"Anna"</span>, <span class="st">"Marianne"</span>],</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Age'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, np.nan, <span class="dv">40</span>, <span class="dv">35</span>],</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Monthly Income'</span>: [<span class="dv">5000</span>, <span class="dv">6000</span>, np.nan, <span class="dv">4500</span>, <span class="dv">5500</span>],</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Credit Limit'</span>: [<span class="dv">10000</span>, np.nan, <span class="dv">8000</span>, <span class="dv">12000</span>, np.nan]}</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>df_customers <span class="op">=</span> pd.DataFrame(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Neste exemplo,</p>
+<p>In this example,</p>
 <ul>
-<li>Os valores ausentes na coluna “Idade” foram preenchidos com a mediana das idades existentes no DataFrame.</li>
-<li>Os valores ausentes na coluna “Limite de Crédito” foram preenchidos com a moda dos limites de crédito existentes no DataFrame.</li>
-<li>Os valores ausentes na coluna “Renda Mensal” foram preenchidos com a média das rendas mensais existentes no DataFrame.</li>
+<li>The missing values in the “Age” column will be filled with the median of the existing ages in the DataFrame.</li>
+<li>The missing values in the “Credit Limit” column will be filled with the mode of the existing credit limits in the DataFrame.</li>
+<li>The missing values in the “Monthly Income” column will be filled with the mean of the existing monthly incomes in the DataFrame.</li>
 </ul>
+<p>See the code below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchendo valores ausentes na coluna 'Idade' com a mediana das idades</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>df_clientes[<span class="st">'Idade'</span>] <span class="op">=</span> df_clientes[<span class="st">'Idade'</span>].fillna(df_clientes[<span class="st">'Idade'</span>].median())</span>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filling missing values in the 'Age' column with the median of existing ages</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>df_customers[<span class="st">'Age'</span>] <span class="op">=</span> df_customers[<span class="st">'Age'</span>].fillna(df_customers[<span class="st">'Age'</span>].median())</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchendo valores ausentes na coluna 'Limite de Crédito' com a moda dos limites de crédito</span></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>df_clientes[<span class="st">'Limite de Crédito'</span>] <span class="op">=</span> df_clientes[<span class="st">'Limite de Crédito'</span>].fillna(df_clientes[<span class="st">'Limite de Crédito'</span>].mode()[<span class="dv">0</span>])</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Filling missing values in the 'Credit Limit' column with the mode of existing credit limits</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>df_customers[<span class="st">'Credit Limit'</span>] <span class="op">=</span> df_customers[<span class="st">'Credit Limit'</span>].fillna(df_customers[<span class="st">'Credit Limit'</span>].mode()[<span class="dv">0</span>])</span>
 <span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchendo valores ausentes na coluna 'Renda Mensal' com a média das rendas mensais</span></span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>df_clientes[<span class="st">'Renda Mensal'</span>] <span class="op">=</span> df_clientes[<span class="st">'Renda Mensal'</span>].fillna(df_clientes[<span class="st">'Renda Mensal'</span>].mean())</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Filling missing values in the 'Monthly Income' column with the mean of existing monthly incomes</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>df_customers[<span class="st">'Monthly Income'</span>] <span class="op">=</span> df_customers[<span class="st">'Monthly Income'</span>].fillna(df_customers[<span class="st">'Monthly Income'</span>].mean())</span>
 <span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>df_clientes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>df_customers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      Nome  Idade  Renda Mensal  Limite de Crédito
-0     João   25.0        5000.0            10000.0
-1    Maria   30.0        6000.0             8000.0
-2    Pedro   32.5        5250.0             8000.0
-3      Ana   40.0        4500.0            12000.0
-4  Mariana   35.0        5500.0             8000.0</code></pre>
+<pre><code>       Name   Age  Monthly Income  Credit Limit
+0      John  25.0          5000.0       10000.0
+1      Mary  30.0          6000.0        8000.0
+2     Peter  32.5          5250.0        8000.0
+3      Anna  40.0          4500.0       12000.0
+4  Marianne  35.0          5500.0        8000.0</code></pre>
 </div>
 </div>
-<p>Agora, vamos carregar os dados <code>gapminder</code>, que está no arquivo <code>gapminder.zip</code>.</p>
+<p>Now, let’s load the <code>gapminder</code> data, which is in the <code>gapminder.zip</code> file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="op">=</span> pd.read_csv(<span class="st">"data/gapminder.zip"</span>, sep <span class="op">=</span> <span class="st">"</span><span class="ch">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>A função head() é usada para visualizar as primeiras linhas do conjunto de dados gapminder, oferecendo uma rápida visão geral da sua estrutura e conteúdo.</p>
+<p>The <code>head()</code> function is used to view the first few rows of the <code>gapminder</code> dataset, providing a quick overview of its structure and content.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>gapminder.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -622,7 +610,7 @@ dtype: int64</code></pre>
 4  Afghanistan      Asia  1972   36.088  13079460  739.981106</code></pre>
 </div>
 </div>
-<p>O método info() fornece informações sobre o conjunto de dados, incluindo o número de entradas, o tipo de dados de cada coluna e se há valores nulos.</p>
+<p>The <code>info()</code> method provides information about the dataset, including the number of entries, the data type of each column, and whether there are any null values.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>gapminder.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -641,7 +629,7 @@ dtypes: float64(2), int64(2), object(2)
 memory usage: 80.0+ KB</code></pre>
 </div>
 </div>
-<p>A função describe() gera estatísticas descritivas para cada coluna numérica do conjunto de dados, como contagem, média, desvio padrão, mínimo e máximo.</p>
+<p>The <code>describe()</code> function generates descriptive statistics for each numeric column in the dataset, such as count, mean, standard deviation, minimum, and maximum.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>gapminder.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -656,7 +644,7 @@ min    1952.00000    23.599000  6.001100e+04     241.165876
 max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 </div>
 </div>
-<p>A função <code>value_counts()</code> conta o número de ocorrências de cada categoria na coluna “continent” do conjunto de dados gapminder, transforma os resultados em um DataFrame, renomeia as colunas para “continent” e “n” (indicando a contagem), e reconfigura o índice.</p>
+<p>The <code>value_counts()</code> function counts the number of occurrences of each category in the “continent” column of the <code>gapminder</code> dataset, transforms the results into a DataFrame, renames the columns to “continent” and “n” (indicating the count), and resets the index.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>gapminder.value_counts(<span class="st">"continent"</span>).to_frame(<span class="st">"n"</span>).reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -668,7 +656,7 @@ max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 4   Oceania   24</code></pre>
 </div>
 </div>
-<p>No trecho abaixo, fazemos uma contagem de valores para as combinações únicas de categorias nas colunas “continent” e “year” do DataFrame gapminder. Os resultados são transformados em um DataFrame, renomeados como “continent”, “year” e “n” (indicando a contagem), e o índice é reconfigurado.</p>
+<p>In the following snippet, we perform a value count for the unique combinations of categories in the “continent” and “year” columns of the <code>gapminder</code> DataFrame. The results are transformed into a DataFrame, renamed as “continent”, “year”, and “n” (indicating the count), and the index is reset.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>gapminder.value_counts([<span class="st">"continent"</span>, <span class="st">"year"</span>]).to_frame(<span class="st">"n"</span>).reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -737,9 +725,9 @@ max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 </div>
 </section>
 </section>
-<section id="dados-organizados-tidy-data" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="dados-organizados-tidy-data"><span class="header-section-number">6.5</span> Dados organizados (tidy data)</h2>
-<p>Todas as tabelas abaixo tem o mesmo dado (foram tiradas do pacote <code>tidyr</code> do R), que mostra a quantidade de casos de uma doença e a população total de alguns países.</p>
+<section id="tidy-data" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">6.5</span> Tidy Data</h2>
+<p>All the tables below contain the same data (taken from the <code>tidyr</code> package in R), which shows the number of cases of a disease and the total population of some countries.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>table1 <span class="op">=</span> pd.read_csv(<span class="st">"data/table1.csv"</span>)</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>table2 <span class="op">=</span> pd.read_csv(<span class="st">"data/table2.csv"</span>)</span>
@@ -807,7 +795,7 @@ max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 2        China  1272915272  1280428583</code></pre>
 </div>
 </div>
-<p>O exemplo abaixo cria uma nova coluna chamada rate no DataFrame <code>table1.</code> A função <code>assign</code> adiciona uma nova coluna ao DataFrame, enquanto a expressão <code>lambda</code> calcula os valores para essa nova coluna.</p>
+<p>The example below creates a new column called <code>rate</code> in the <code>table1</code> DataFrame. The <code>assign</code> function adds a new column to the DataFrame, while the <code>lambda</code> expression calculates the values for this new column.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>table1.assign(rate <span class="op">=</span> <span class="kw">lambda</span> _: <span class="dv">10000</span> <span class="op">*</span> (_.cases <span class="op">/</span> _.population))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -820,7 +808,7 @@ max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 5        China  2000  213766  1280428583  1.669488</code></pre>
 </div>
 </div>
-<p>No exemplo abaixo, agrupamos os dados do DataFrame <code>table1</code> pela coluna “year” (ano) e depois calcula a soma dos casos para cada ano. O método <code>groupby("year")</code> agrupa os dados por ano, criando grupos separados para cada ano. <code>as_index = False</code> especifica que a coluna usada para agrupamento (“year”) não deve ser definida como índice no DataFrame resultante. O método <code>agg</code> é usado para realizar uma operação de agregação nos grupos. Aqui, np.sum é usado para calcular a soma dos valores da coluna “cases” para cada grupo.</p>
+<p>In the example below, we group the data in the <code>table1</code> DataFrame by the “year” column and then calculate the sum of cases for each year. The <code>groupby("year")</code> method groups the data by year, creating separate groups for each year. <code>as_index = False</code> specifies that the column used for grouping (“year”) should not be set as the index in the resulting DataFrame. The <code>agg</code> method is used to perform an aggregation operation on the groups. Here, <code>np.sum</code> is used to calculate the sum of the values in the “cases” column for each group.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>(table1.groupby(<span class="st">"year"</span>, as_index <span class="op">=</span> <span class="va">False</span>)</span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>       .agg(total_cases <span class="op">=</span> (<span class="st">"cases"</span>, np.<span class="bu">sum</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -830,7 +818,7 @@ max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 1  2000       296920</code></pre>
 </div>
 </div>
-<p>Para fazer o mesmo com os dados da table1, temos que usar a função <code>pivot_table</code>:</p>
+<p>To do the same with the data from <code>table1</code>, we have to use the <code>pivot_table</code> function:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>table2_tidy <span class="op">=</span> (table2.pivot_table(index <span class="op">=</span> [<span class="st">"country"</span>, <span class="st">"year"</span>], columns <span class="op">=</span> <span class="st">"type"</span>, values <span class="op">=</span> <span class="st">"count"</span>)</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>               .reset_index()</span>
@@ -847,13 +835,13 @@ max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 5        China  2000  213766.0  1.280429e+09  1.669488</code></pre>
 </div>
 </div>
-<p>No exemplo acima, usamos o método <code>pivot_table</code> do pandas para reorganizar os dados do DataFrame <code>table2</code>. Ele reorganiza os dados de forma que os valores da coluna “count” sejam pivotados (transformados em colunas) com base nos valores únicos da combinação de “country” e “year”. Os parâmetros index, columns e values especificam respectivamente as colunas que serão usadas como índice, as que serão transformadas em colunas e os valores a serem preenchidos na tabela pivô. Após a operação de pivotagem, são encadeados métodos adicionais para modificar a estrutura do DataFrame resultante:</p>
+<p>In the example above, we use the <code>pivot_table</code> method from Pandas to reorganize the data in the <code>table2</code> DataFrame. It reorganizes the data so that the values in the “count” column are pivoted (transformed into columns) based on the unique values of the combination of “country” and “year”. The <code>index</code>, <code>columns</code>, and <code>values</code> parameters specify the columns to be used as the index, the columns to be transformed into columns, and the values to be filled in the pivot table, respectively. After the pivot operation, additional methods are chained to modify the structure of the resulting DataFrame:</p>
 <ul>
-<li><code>reset_index()</code> redefine os índices do DataFrame para índices numéricos padrão, movendo os índices anteriores (no caso, “country” e “year”) para colunas.</li>
-<li><code>rename_axis(None, axis=1)</code> remove os nomes dos índices das colunas, substituindo-os por None. Isso é feito especificamente para limpar os nomes das colunas do DataFrame.</li>
+<li><code>reset_index()</code> resets the DataFrame’s indices to default numeric indices, moving the previous indices (in this case, “country” and “year”) to columns.</li>
+<li><code>rename_axis(None, axis=1)</code> removes the column index names, replacing them with <code>None</code>. This is done specifically to clean up the column names of the DataFrame.</li>
 </ul>
-<p>Após a transformação dos dados, a função <code>assign</code> é usada para criar uma nova coluna chamada <code>rate</code> no DataFrame resultante <code>table2_tidy</code>.</p>
-<p>Agora, vamos fazer o mesmo para a <code>table4a</code> e <code>table4b</code>:</p>
+<p>After transforming the data, the <code>assign</code> function is used to create a new column called <code>rate</code> in the resulting DataFrame <code>table2_tidy</code>.</p>
+<p>Now, let’s do the same for <code>table4a</code> and <code>table4b</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>table4_tidy <span class="op">=</span> (table4a.melt(id_vars <span class="op">=</span> <span class="st">"country"</span>, value_vars <span class="op">=</span> [<span class="st">"1999"</span>, <span class="st">"2000"</span>], var_name <span class="op">=</span> <span class="st">"year"</span>, value_name <span class="op">=</span> <span class="st">"cases"</span>)</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>                .merge(table4b.melt(id_vars <span class="op">=</span> <span class="st">"country"</span>, value_vars <span class="op">=</span> [<span class="st">"1999"</span>, <span class="st">"2000"</span>], var_name <span class="op">=</span> <span class="st">"year"</span>, value_name <span class="op">=</span> <span class="st">"population"</span>),</span>
@@ -870,14 +858,14 @@ max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 5        China  2000  213766  1280428583  1.669488</code></pre>
 </div>
 </div>
-<p>Os DataFrames <code>table4a</code> e <code>table4b</code> são derretidos usando o método <code>melt</code>:</p>
+<p>The DataFrames <code>table4a</code> and <code>table4b</code> are melted using the <code>melt</code> method:</p>
 <ul>
-<li><p>Para <code>table4a</code>, as colunas que permanecerão fixas são especificadas através do argumento id_vars = “country”, enquanto as colunas “1999” e “2000” são derretidas como variáveis usando value_vars = [“1999”, “2000”]. Os nomes das variáveis derretidas são renomeadas para “year” e “cases” usando var_name = “year” e value_name = “cases”, respectivamente.</p></li>
-<li><p>Da mesma forma, para <code>table4b</code>, as colunas “country” e “1999”, “2000” são derretidas, com os nomes das variáveis renomeadas para “year” e “population”, respectivamente.</p></li>
+<li><p>For <code>table4a</code>, the columns that will remain fixed are specified through the argument <code>id_vars = "country"</code>, while the columns “1999” and “2000” are melted as variables using <code>value_vars = ["1999", "2000"]</code>. The names of the melted variables are renamed to “year” and “cases” using <code>var_name = "year"</code> and <code>value_name = "cases"</code>, respectively.</p></li>
+<li><p>Similarly, for <code>table4b</code>, the columns “country” and “1999”, “2000” are melted, with the variable names renamed to “year” and “population”, respectively.</p></li>
 </ul>
-<p>Os DataFrames resultantes do derretimento de table4a e table4b são mesclados usando o método merge. A mesclagem é feita com base nas colunas “country” e “year”, garantindo que os dados correspondentes de table4a e table4b sejam combinados corretamente.</p>
-<p>Finalmente, o método <code>assign</code> é usado para criar uma nova coluna chamada “rate”, que representa a taxa de casos por 10.000 habitantes.</p>
-<p>Para a <code>table3</code>, basta separar a coluna <code>cases</code> considerando o separador <code>\</code>:</p>
+<p>The DataFrames resulting from the melting of <code>table4a</code> and <code>table4b</code> are merged using the <code>merge</code> method. The merge is performed based on the columns “country” and “year”, ensuring that corresponding data from <code>table4a</code> and <code>table4b</code> are correctly combined.</p>
+<p>Finally, the <code>assign</code> method is used to create a new column called “rate”, which represents the number of cases per 10,000 inhabitants.</p>
+<p>For <code>table3</code>, just split the <code>cases</code> column using the separator <code>/</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(table3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -914,74 +902,74 @@ max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 5        China  2000  213766  1280428583  1.669488</code></pre>
 </div>
 </div>
-<p>O parâmetro <code>expand</code> é utilizado no método<code>str.split()</code> para especificar se o resultado da divisão deve ser expandido em um DataFrame (se True) ou mantido como uma lista de valores (se False, que é o padrão).</p>
-<p>Principais funcionaldiades - ver aulas paulo</p>
-<!-- aulas 4, 5 (data wrangling) e 6 (missing data) -->
+<p>The <code>expand</code> parameter is used in the <code>str.split()</code> method to specify whether the split result should be expanded into a DataFrame (if <code>True</code>) or kept as a list of values (if <code>False</code>, which is the default).</p>
+<p>Main functionalities - see Paulo’s lectures</p>
+<!-- lectures 4, 5 (data wrangling) and 6 (missing data) -->
 </section>
-<section id="visualização-de-dados" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="visualização-de-dados"><span class="header-section-number">6.6</span> Visualização de dados</h2>
-<p>Duas bibliotecas amplamente utilizadas para visualização em Python são o <code>Matplotlib</code> e o <code>Plotnine.</code> O <code>Matplotlib</code> oferece uma ampla gama de opções para criar visualizações estáticas, desde gráficos simples até gráficos complexos e personalizados. Por outro lado, o <code>Plotnine</code> é uma biblioteca baseada na gramática de gráficos (parecido com o <code>ggplot2</code> do R), o que facilita a criação de visualizações elegantes e concisas usando uma sintaxe intuitiva e expressiva.</p>
+<section id="data-visualization" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="data-visualization"><span class="header-section-number">6.6</span> Data Visualization</h2>
+<p>Two widely used libraries for visualization in Python are <code>Matplotlib</code> and <code>Plotnine</code>. <code>Matplotlib</code> offers a wide range of options to create static visualizations, from simple charts to complex and customized graphs. On the other hand, <code>Plotnine</code> is a library based on the grammar of graphics (similar to R’s <code>ggplot2</code>), which makes it easy to create elegant and concise visualizations using an intuitive and expressive syntax.</p>
 <section id="matplotlib" class="level3" data-number="6.6.1">
 <h3 data-number="6.6.1" class="anchored" data-anchor-id="matplotlib"><span class="header-section-number">6.6.1</span> Matplotlib</h3>
-<p>Antes de começarmos a criar visualizações, é importante entender alguns conceitos básicos do Matplotlib:</p>
+<p>Before we start creating visualizations, it’s important to understand some basic concepts of Matplotlib:</p>
 <ul>
-<li><p><strong>Figura e Eixo (Axes)</strong>: No Matplotlib, uma figura é a janela ou página na qual tudo é desenhado. Dentro de uma figura, pode haver vários eixos (ou subplots), onde os dados são efetivamente plotados.</p></li>
-<li><p><strong>Método plot()</strong>: O método plot() é usado para criar gráficos de linha, pontos ou marcadores. Ele aceita uma variedade de argumentos para personalizar a aparência do gráfico, como cor, estilo de linha, largura da linha, etc.</p></li>
-<li><p><strong>Customização</strong>: O Matplotlib oferece muitas opções de personalização para ajustar a aparência dos gráficos, incluindo a adição de rótulos aos eixos, título do gráfico, legendas, entre outros.</p></li>
+<li><p><strong>Figure and Axes</strong>: In Matplotlib, a figure is the window or page where everything is drawn. Within a figure, there can be multiple axes (or subplots), where data is effectively plotted.</p></li>
+<li><p><strong>The plot() Method</strong>: The <code>plot()</code> method is used to create line, point, or marker charts. It accepts various arguments to customize the appearance of the graph, such as color, line style, line width, etc.</p></li>
+<li><p><strong>Customization</strong>: Matplotlib offers many customization options to adjust the appearance of charts, including adding axis labels, chart titles, legends, and more.</p></li>
 </ul>
-<p>Agora, vamos ver um exemplo de como criar um gráfico de pontos usando dados fictícios, onde cada unidade de dado está relacionada a uma empresa.</p>
+<p>Now let’s see an example of how to create a scatter plot using fictitious data, where each data unit is related to a company.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados de exemplo: Nome das empresas, receita e número de funcionários</span></span>
-<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>empresas <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>, <span class="st">'E'</span>]</span>
-<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>receita <span class="op">=</span> [<span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>, <span class="dv">250</span>, <span class="dv">350</span>]  <span class="co"># em milhões de reais</span></span>
-<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>funcionarios <span class="op">=</span> [<span class="dv">1000</span>, <span class="dv">1200</span>, <span class="dv">1500</span>, <span class="dv">900</span>, <span class="dv">1100</span>]</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example data: Company names, revenue, and number of employees</span></span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>companies <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>, <span class="st">'E'</span>]</span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>revenue <span class="op">=</span> [<span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>, <span class="dv">250</span>, <span class="dv">350</span>]  <span class="co"># in millions of reais</span></span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>employees <span class="op">=</span> [<span class="dv">1000</span>, <span class="dv">1200</span>, <span class="dv">1500</span>, <span class="dv">900</span>, <span class="dv">1100</span>]</span>
 <span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando o gráfico de pontos</span></span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating the scatter plot</span></span>
 <span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
-<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a>plt.scatter(receita, funcionarios, color<span class="op">=</span><span class="st">'blue'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a>plt.scatter(revenue, employees, color<span class="op">=</span><span class="st">'blue'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
 <span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-12"><a href="#cb79-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionando rótulos e título</span></span>
-<span id="cb79-13"><a href="#cb79-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Receita (em milhões de reais)'</span>)</span>
-<span id="cb79-14"><a href="#cb79-14" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Número de Funcionários'</span>)</span>
-<span id="cb79-15"><a href="#cb79-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Receita vs. Número de Funcionários'</span>)</span>
+<span id="cb79-12"><a href="#cb79-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding labels and title</span></span>
+<span id="cb79-13"><a href="#cb79-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Revenue (in millions of reais)'</span>)</span>
+<span id="cb79-14"><a href="#cb79-14" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number of Employees'</span>)</span>
+<span id="cb79-15"><a href="#cb79-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Revenue vs. Number of Employees'</span>)</span>
 <span id="cb79-16"><a href="#cb79-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-17"><a href="#cb79-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionando anotações para cada ponto</span></span>
-<span id="cb79-18"><a href="#cb79-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(empresas)):</span>
-<span id="cb79-19"><a href="#cb79-19" aria-hidden="true" tabindex="-1"></a>    plt.annotate(empresas[i], (receita[i], funcionarios[i]))</span>
+<span id="cb79-17"><a href="#cb79-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding annotations for each point</span></span>
+<span id="cb79-18"><a href="#cb79-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(companies)):</span>
+<span id="cb79-19"><a href="#cb79-19" aria-hidden="true" tabindex="-1"></a>    plt.annotate(companies[i], (revenue[i], employees[i]))</span>
 <span id="cb79-20"><a href="#cb79-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-21"><a href="#cb79-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibindo o gráfico</span></span>
+<span id="cb79-21"><a href="#cb79-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the plot</span></span>
 <span id="cb79-22"><a href="#cb79-22" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
 <span id="cb79-23"><a href="#cb79-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="06-visualizacao_python_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
-<p>Neste exemplo, cada ponto no gráfico representa uma empresa, onde o eixo x representa a receita (em milhões de reais) e o eixo y representa o número de funcionários. As anotações são usadas para identificar cada empresa no gráfico.</p>
-<p>Na sequência, utilizamos o Matplotlib para criar um gráfico de linha que representa a evolução das vendas de dois produtos ao longo de vários anos. Cada ponto no gráfico representa o número de vendas em um ano específico.</p>
+<p>In this example, each point on the graph represents a company, where the x-axis represents revenue (in millions of reais) and the y-axis represents the number of employees. Annotations are used to identify each company on the graph.</p>
+<p>Next, we use Matplotlib to create a line graph representing the sales evolution of two products over several years. Each point on the graph represents the number of sales in a specific year.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados de exemplo: Anos e vendas de produtos</span></span>
-<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>anos <span class="op">=</span> [<span class="dv">2010</span>, <span class="dv">2011</span>, <span class="dv">2012</span>, <span class="dv">2013</span>, <span class="dv">2014</span>, <span class="dv">2015</span>, <span class="dv">2016</span>]</span>
-<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>vendas_produto_A <span class="op">=</span> [<span class="dv">500</span>, <span class="dv">600</span>, <span class="dv">550</span>, <span class="dv">700</span>, <span class="dv">800</span>, <span class="dv">750</span>, <span class="dv">900</span>]</span>
-<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>vendas_produto_B <span class="op">=</span> [<span class="dv">400</span>, <span class="dv">450</span>, <span class="dv">500</span>, <span class="dv">550</span>, <span class="dv">600</span>, <span class="dv">650</span>, <span class="dv">700</span>]</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example data: Years and product sales</span></span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> [<span class="dv">2010</span>, <span class="dv">2011</span>, <span class="dv">2012</span>, <span class="dv">2013</span>, <span class="dv">2014</span>, <span class="dv">2015</span>, <span class="dv">2016</span>]</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>product_A_sales <span class="op">=</span> [<span class="dv">500</span>, <span class="dv">600</span>, <span class="dv">550</span>, <span class="dv">700</span>, <span class="dv">800</span>, <span class="dv">750</span>, <span class="dv">900</span>]</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>product_B_sales <span class="op">=</span> [<span class="dv">400</span>, <span class="dv">450</span>, <span class="dv">500</span>, <span class="dv">550</span>, <span class="dv">600</span>, <span class="dv">650</span>, <span class="dv">700</span>]</span>
 <span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando o gráfico de linha</span></span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating the line plot</span></span>
 <span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a>plt.plot(anos, vendas_produto_A, marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'Produto A'</span>)</span>
-<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a>plt.plot(anos, vendas_produto_B, marker<span class="op">=</span><span class="st">'s'</span>, label<span class="op">=</span><span class="st">'Produto B'</span>)</span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a>plt.plot(years, product_A_sales, marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'Product A'</span>)</span>
+<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a>plt.plot(years, product_B_sales, marker<span class="op">=</span><span class="st">'s'</span>, label<span class="op">=</span><span class="st">'Product B'</span>)</span>
 <span id="cb80-12"><a href="#cb80-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-13"><a href="#cb80-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionando rótulos e título</span></span>
-<span id="cb80-14"><a href="#cb80-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Ano'</span>)</span>
-<span id="cb80-15"><a href="#cb80-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Vendas'</span>)</span>
-<span id="cb80-16"><a href="#cb80-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Vendas ao longo do tempo'</span>)</span>
+<span id="cb80-13"><a href="#cb80-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding labels and title</span></span>
+<span id="cb80-14"><a href="#cb80-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
+<span id="cb80-15"><a href="#cb80-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Sales'</span>)</span>
+<span id="cb80-16"><a href="#cb80-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Sales over Time'</span>)</span>
 <span id="cb80-17"><a href="#cb80-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-18"><a href="#cb80-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionando legenda</span></span>
+<span id="cb80-18"><a href="#cb80-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding legend</span></span>
 <span id="cb80-19"><a href="#cb80-19" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb80-20"><a href="#cb80-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-21"><a href="#cb80-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibindo o gráfico</span></span>
+<span id="cb80-21"><a href="#cb80-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the plot</span></span>
 <span id="cb80-22"><a href="#cb80-22" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
 <span id="cb80-23"><a href="#cb80-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -991,11 +979,11 @@ max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 </section>
 <section id="plotnine" class="level3" data-number="6.6.2">
 <h3 data-number="6.6.2" class="anchored" data-anchor-id="plotnine"><span class="header-section-number">6.6.2</span> Plotnine</h3>
-<p>Plotnine é uma biblioteca em Python que permite criar visualizações de dados estatísticos de uma forma simples e concisa, utilizando a gramática de gráficos do R (também conhecida como ggplot2). Essa gramática consiste em uma abordagem declarativa para a construção de gráficos, onde os elementos visuais são adicionados em camadas para formar o gráfico final.</p>
+<p>Plotnine is a Python library that allows the creation of statistical data visualizations in a simple and concise way, using the grammar of graphics from R (also known as <code>ggplot2</code>). This grammar consists of a declarative approach to chart construction, where visual elements are added in layers to form the final graph.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para exemplificar, vamos utilizar a base de dados <code>gapminder</code>.</p>
+<p>To illustrate, let’s use the <code>gapminder</code> dataset.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>((ggplot(gapminder, aes(x <span class="op">=</span> <span class="st">"continent"</span>, fill <span class="op">=</span> <span class="st">"continent"</span>)) <span class="op">+</span></span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>     geom_bar(aes(y <span class="op">=</span> <span class="st">"stat(count) / 12"</span>), alpha <span class="op">=</span> <span class="fl">0.75</span>) <span class="op">+</span></span>
@@ -1028,14 +1016,14 @@ max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 <span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>                          labs(x <span class="op">=</span> <span class="st">"Year"</span>, y <span class="op">=</span> <span class="st">"Median Life Expectancy"</span>, color <span class="op">=</span> <span class="st">"Continent"</span>, title <span class="op">=</span> <span class="st">"Gapminder"</span>)))</span>
 <span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>                          .show())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!-- ## Análise de Dados Avançada -->
-<!-- ### Caso 1: Visualizando dados `NumPy` com `Matplotlib` {.unnumbered} -->
-<!-- O objetivo deste exemplo é demonstrar como usar NumPy e Matplotlib em conjunto para analisar dados econômicos simulados. Leia o código abaixo e tente entender o que está sendo feito. -->
-<!-- No exemplo acima, começamos gerando dados aleatórios para simular valores de PIB usando a distribuição normal com uma média de 500 e um desvio padrão de 100. Em seguida, calculamos a média, a mediana e o desvio padrão desses valores usando funções NumPy. Para facilitar a visualização e análise dos dados, plotamos um histograma usando Matplotlib. Este histograma nos permite visualizar a distribuição dos valores do PIB e identificar tendências ou padrões nos dados. -->
-<!-- ### Caso 2: Gapminder {.unnumbered} -->
-<!-- O objetivo deste exemplo é demonstrar como usar Pandas, NumPy e Matplotlib em conjunto para realizar análises exploratórias de dados do Gapminder. -->
-<!-- No código acima, começamos carregando os dados do Gapminder usando a função pd.read_csv() do Pandas. Em seguida, calculamos a média da expectativa de vida e a mediana do PIB per capita usando funções NumPy np.mean() e np.median(), respectivamente. Para visualizar a distribuição da expectativa de vida, plotamos um histograma usando a função plt.hist() do Matplotlib. -->
-<!-- ## Exercícios -->
+<!-- ## Advanced Data Analysis -->
+<!-- ### Case 1: Visualizing `NumPy` Data with `Matplotlib` {.unnumbered} -->
+<!-- The objective of this example is to demonstrate how to use NumPy and Matplotlib together to analyze simulated economic data. Read the code below and try to understand what is being done. -->
+<!-- In the example above, we start by generating random data to simulate GDP values using the normal distribution with a mean of 500 and a standard deviation of 100. Next, we calculate the mean, median, and standard deviation of these values using NumPy functions. To facilitate visualization and data analysis, we plot a histogram using Matplotlib. This histogram allows us to visualize the distribution of GDP values and identify trends or patterns in the data. -->
+<!-- ### Case 2: Gapminder {.unnumbered} -->
+<!-- The objective of this example is to demonstrate how to use Pandas, NumPy, and Matplotlib together to perform exploratory data analysis on the Gapminder dataset. -->
+<!-- In the code above, we start by loading the Gapminder data using the `pd.read_csv()` function from Pandas. Next, we calculate the mean life expectancy and the median GDP per capita using NumPy functions `np.mean()` and `np.median()`, respectively. To visualize the distribution of life expectancy, we plot a histogram using the `plt.hist()` function from Matplotlib. -->
+<!-- ## Exercises -->
 
 
 </section>
@@ -1278,7 +1266,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./05-fundamentos_python.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Fundamentos de Python</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Python Fundamentals</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
