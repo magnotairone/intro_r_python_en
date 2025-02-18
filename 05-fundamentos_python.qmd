@@ -22,6 +22,7 @@ From now on, all code presented in this book will be in the Python language.
 The source for the construction of this material is @mckinney2022.
 
 ## Installation
+
 Follow the steps below to install Anaconda and JupyterLab:
 
 1.  Download and install Anaconda from the [official website](https://www.anaconda.com/products/distribution). Follow the installation instructions for your specific operating system.
@@ -40,14 +41,15 @@ Follow the steps below to install Anaconda and JupyterLab:
 
 In Python, the fundamental data types include `integer`, `float`, `string`, and `boolean`:
 
--   Integers are whole numbers, such as 1, 2, -3, etc. 
-- Floats are decimal numbers, such as 3.14, -0.5, etc.
+-   Integers are whole numbers, such as 1, 2, -3, etc.
+-   Floats are decimal numbers, such as 3.14, -0.5, etc.
 -   Strings are sequences of characters, such as "hello", "world", "python", etc.
 -   Booleans are logical values that represent true (`True`) or false (`False`).
 
 These data types are the basic building blocks for representing different types of information in Python, and are widely used in programming to perform operations and data manipulations.
 
 ### The Integer data type
+
 An integer data type (`integer`) in Python represents whole numbers, i.e., numbers without decimal places. For example, 5, -10, and 0 are all examples of integers. In Python, integers are represented by the `int` class. In the examples below, we perform basic operations with integers.
 
 ```{python}
@@ -79,6 +81,7 @@ type(interest_rate)
 In the first line of the example above, we calculated the sum of 1.75 and 2 raised to the power of 3. Then, we assigned the value 1.25 to the variable `interest_rate` and print it using `print(interest_rate)`. Finally, we checked the data type of the variable `interest_rate` with `type(interest_rate)`, which returned `<class 'float'>`, indicating that it is a float.
 
 ### The String data Type
+
 ```{python}
 country = "Brazil" 
 
@@ -89,6 +92,7 @@ type(country)
 In the code above, we created a variable called `country` and assigned it the value "Brazil", which was a `string`. Then, we printed the value of the variable country using `print(country)`, which displayed "Brazil" on the screen. Finally, we checked the data type of the variable country with `type(country)`, which returned `<class 'str'>`, indicating that it was a `string`.
 
 ### The Boolean data Type
+
 The boolean data type, also known as `bool`, is used to represent true or false values. In Python, the boolean values are `True` and `False`.
 
 ```{python}
@@ -108,6 +112,7 @@ type(interest_rate_increasing)
 In the first line of the example above, there is an equality check between 1 and 2, which returns `False` because 1 is not equal to 2. Next, we have `5 % 2 == 0`, which also returns `False` because the remainder of 5 divided by 2 is not equal to zero. Finally, we have the variable `interest_rate_increasing` assigned to `True`, indicating that the interest rate is increasing. When printing and checking the type of this variable, we get `True` as the result and the type `bool`, indicating that it is a boolean value.
 
 ### Type Coercion
+
 Type coercion in Python refers to the forced conversion of one data type to another.
 
 ```{python}
@@ -150,15 +155,17 @@ print(num_str)
 In the code above, we are coercing a float value to a string.
 
 ## Basic Objects
-In Python, there are three basic data structures: lists, tuples, and dictionaries: 
 
-- Lists are ordered and mutable collections of elements, allowing the inclusion of items of different types and the modification of the values contained in them. 
+In Python, there are three basic data structures: lists, tuples, and dictionaries:
 
-- Tuples are similar to lists, but they are immutable, meaning they cannot be changed after creation. 
+-   Lists are ordered and mutable collections of elements, allowing the inclusion of items of different types and the modification of the values contained in them.
 
-- Dictionaries are unordered collections of key-value pairs, where each value is associated with a unique key, providing efficient access to data through the keys.
+-   Tuples are similar to lists, but they are immutable, meaning they cannot be changed after creation.
+
+-   Dictionaries are unordered collections of key-value pairs, where each value is associated with a unique key, providing efficient access to data through the keys.
 
 ### Lists
+
 In Python, a list is a data structure that allows storing an ordered collection of elements. To create a list, we use square brackets `[]`, and the elements are separated by commas. We can instantiate an empty list simply by using `[]` or the `list()` function. For example:
 
 ```{python}
@@ -231,6 +238,7 @@ print("Updatad list:", gdp_countries)
 ```
 
 ### Tuples
+
 Tuples are data structures similar to lists, but with a fundamental difference: they are immutable, meaning once created, they cannot be modified. They are represented by parentheses `()` instead of square brackets `[]`.
 
 ```{python}
@@ -253,6 +261,7 @@ To access the elements of a tuple, you can use the same syntax you use to access
 :::
 
 ### Dictionaries
+
 Dictionaries in Python are data structures that allow storing key-value pairs. Each value is associated with a specific key, allowing quick access to data through the keys, rather than numerical indices, as in lists and tuples. This structure is useful when you need to associate information in a way similar to a database, where you can search for information based on a specific key.
 
 In the example below, we have share quotes of some Brazilian companies listed on the share exchange.
@@ -301,8 +310,8 @@ brazilian_share_quotes.values() # returns a list containing all the values
 brazilian_share_quotes.items() # returns a list of tuples
 ```
 
-
 ## Slices
+
 The concept of slices, also known as "*slicing*", refers to the technique of extracting specific parts of a sequence, such as a list, tuple, or string, using indices. By using slices, you can select a range of elements within the sequence.
 
 The basic syntax for slices is `sequence[start:stop:step]`, where:
@@ -348,6 +357,7 @@ country_names[::2]
 In this example, `::2` indicates that we want to start from the beginning of the list and go to the end, skipping every two elements.
 
 ## Conditionals
+
 The `if` and `else` are control flow structures in Python, used to make decisions based on conditions.
 
 The block of code inside the `if` is executed if the condition evaluates to true (`True`). For example:
@@ -568,7 +578,7 @@ transaction2.print_info()
 
 **3.** Use the code below to generate a pandas dataFrame that represents the closing price of a share:
 
-```python
+``` python
 import pandas as pd
 
 # Creating a list of dates
@@ -592,7 +602,7 @@ print(df_share_prices.head())
 
 **c)** Obtain the share closing prices on Fridays throughout the entire period. Calculate the average closing price on Mondays and compare it to Fridays. Which one has a higher standard deviation?
 
-```python
+``` python
 # Creating a column to store the day of the week
 df_share_prices['Day of the Week'] = df_share_prices['date'].dt.weekday
 
@@ -602,12 +612,12 @@ print(df_share_prices.head())
 
 **4.** Consider the list stored in the variable `gdp_years` below and use a list comprehension to calculate the GDP growth percentage relative to the previous year for each country.
 
-```python
+``` python
 # List of GDP values for a country over the last five years
 gdp_years = [1000, 1200, 800, 1500, 2000]  # Example fictitious GDP values
 ```
 
-```python
+``` python
 #| eval: false
 #| echo: false
 # List comprehension to calculate GDP growth percentage relative to the previous year for each country
@@ -619,11 +629,11 @@ for i, growth in enumerate(gdp_growth):
 
 **5.** Write a function called `calculate_pci` that takes three arguments:
 
-- `product_basket`: A dictionary mapping each product to its quantity in the basket.  
-- `current_price`: A dictionary mapping each product to its current price.  
-- `reference_price`: A dictionary mapping each product to its base price (reference price). The Consumer Price Index (CPI) is calculated using the following formula: $$PCI = \sum_i \frac{\text{current price of product}_i}{\text{reference price of product}_i} \times \text{product quantity}_i.$$ The function should return the calculated PCI value. Use the code below to test your function.
+-   `product_basket`: A dictionary mapping each product to its quantity in the basket.\
+-   `current_price`: A dictionary mapping each product to its current price.\
+-   `reference_price`: A dictionary mapping each product to its base price (reference price). The Consumer Price Index (CPI) is calculated using the following formula: $$PCI = \sum_i \frac{\text{current price of product}_i}{\text{reference price of product}_i} \times \text{product quantity}_i.$$ The function should return the calculated PCI value. Use the code below to test your function.
 
-```python
+``` python
 #| eval: false
 #| echo: false
 def calculate_pci(product_basket, current_price, reference_price):
@@ -641,6 +651,7 @@ reference_price = {'rice': 4, 'beans': 7, 'meat': 10}      # Reference prices of
 pci = calculate_pci(product_basket, current_price, reference_price)
 print("The Consumer Price Index (CPI) is:", pci)
 ```
+
 ```{python}
 #| eval: false
 # Basket of products with their respective quantities
@@ -660,21 +671,21 @@ print("The Consumer Price Index (IPC) is:", pci)
 
 The `transaction` class represents a single share buy or sell transaction. It has the following attributes:
 
-- `date`: a string representing the transaction date in the format 'YYYY-MM-DD'.  
-- `type`: a string indicating the transaction type, which can be 'buy' or 'sell'.  
-- `value`: an integer representing the number of shares transacted.  
+-   `date`: a string representing the transaction date in the format 'YYYY-MM-DD'.\
+-   `type`: a string indicating the transaction type, which can be 'buy' or 'sell'.\
+-   `value`: an integer representing the number of shares transacted.
 
 The `Portfolio` class represents the user's investment portfolio, which contains several share transactions. It has the following attributes:
 
-- `transactions`: a list that stores all the share transactions performed.  
+-   `transactions`: a list that stores all the share transactions performed.
 
 Additionally, the `Portfolio` class has the following methods:
 
-- `add_transaction(transaction)`: adds a new transaction to the portfolio.  
-- `calculate_current_position(current_share_price)`: calculates the current share position in the portfolio based on the current share price.  
-- `calculate_present_value(current_share_price)`: calculates the present value of the share in the portfolio based on the current share price.  
+-   `add_transaction(transaction)`: adds a new transaction to the portfolio.\
+-   `calculate_current_position(current_share_price)`: calculates the current share position in the portfolio based on the current share price.\
+-   `calculate_present_value(current_share_price)`: calculates the present value of the share in the portfolio based on the current share price.
 
-```python
+``` python
 #| eval: false
 #| echo: false
 class transaction:
@@ -735,7 +746,6 @@ print("Present value in the portfolio:", present_value)
 **c)** Create an instance of the `Portfolio` class and add the created transactions to the portfolio.
 
 **d)** Test the methods of the `Portfolio` class using the examples provided in the test code above.
-
 
 ```{python}
 #| eval: false
