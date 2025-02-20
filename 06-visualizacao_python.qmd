@@ -500,7 +500,6 @@ Plotnine is a Python library that allows the creation of statistical data visual
 
 ```{python}
 #| warning: false
-#| eval: false
 from plotnine import *
 ```
 
@@ -508,7 +507,6 @@ To illustrate, let's use the `gapminder` dataset.
 
 ```{python}
 #| warning: false
-#| eval: false
 ((ggplot(gapminder, aes(x = "continent", fill = "continent")) +
      geom_bar(aes(y = "stat(count) / 12"), alpha = 0.75) +
      labs(x = "", y = "Number of countries", title = "Continents") +
@@ -520,7 +518,6 @@ To illustrate, let's use the `gapminder` dataset.
 
 ```{python}
 #| warning: false
-#| eval: false
 ((ggplot(gapminder, aes(x = "lifeExp", y = "stat(density)")) +
      geom_histogram(fill = "blue", color = "white", alpha = 0.5) +
      labs(x = "Life Expectancy", y = "", title = "Gapminder"))
@@ -529,7 +526,6 @@ To illustrate, let's use the `gapminder` dataset.
 
 ```{python}
 #| warning: false
-#| eval: false
 ((ggplot(gapminder, aes(x = "lifeExp", y = "stat(density)")) +
      geom_histogram(fill = "blue", color = "white", alpha = 0.5) +
      labs(x = "Life Expectancy", y = "", title = "Gapminder") +
@@ -540,7 +536,6 @@ To illustrate, let's use the `gapminder` dataset.
 
 ```{python}
 #| warning: false
-#| eval: false
 ((gapminder.groupby(["continent", "year"], as_index = False)
       .agg(median_lifeExp = ("lifeExp", np.median))
       .pipe(lambda _: ggplot(_, aes(x = "year", y = "median_lifeExp", color = "continent")) +

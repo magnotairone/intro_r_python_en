@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./08-prova.html" rel="next">
 <link href="./05-fundamentos_python.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -202,6 +202,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
  <span class="menu-text">Case studies</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Final Exam</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-prova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exam</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -401,11 +418,11 @@ Tip
 <span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Descriptive statistics of the final portfolio values</span></span>
 <span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean final value:"</span>, np.mean(final_values[:,<span class="op">-</span><span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Mean final value: 21419.40917776627</code></pre>
+<pre><code>Mean final value: 21532.622967818224</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Standard deviation of final values:"</span>, np.std(final_values[:,<span class="op">-</span><span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Standard deviation of final values: 10252.053756660043</code></pre>
+<pre><code>Standard deviation of final values: 9696.09187831584</code></pre>
 </div>
 </div>
 <p>More references on <code>NumPy</code>:</p>
@@ -992,12 +1009,18 @@ max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 <span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>     coord_flip()<span class="op">+</span></span>
 <span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>     theme_bw())</span>
 <span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>     .show())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="06-visualizacao_python_files/figure-html/unnamed-chunk-39-5.png" class="img-fluid" width="614"></p>
+</div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>((ggplot(gapminder, aes(x <span class="op">=</span> <span class="st">"lifeExp"</span>, y <span class="op">=</span> <span class="st">"stat(density)"</span>)) <span class="op">+</span></span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>     geom_histogram(fill <span class="op">=</span> <span class="st">"blue"</span>, color <span class="op">=</span> <span class="st">"white"</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
 <span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>     labs(x <span class="op">=</span> <span class="st">"Life Expectancy"</span>, y <span class="op">=</span> <span class="st">""</span>, title <span class="op">=</span> <span class="st">"Gapminder"</span>))</span>
 <span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>     .show())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="06-visualizacao_python_files/figure-html/unnamed-chunk-40-7.png" class="img-fluid" width="614"></p>
+</div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>((ggplot(gapminder, aes(x <span class="op">=</span> <span class="st">"lifeExp"</span>, y <span class="op">=</span> <span class="st">"stat(density)"</span>)) <span class="op">+</span></span>
@@ -1006,15 +1029,21 @@ max    2007.00000    82.603000  1.318683e+09  113523.132900</code></pre>
 <span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>     facet_wrap(<span class="st">"~ continent"</span>, nrow <span class="op">=</span> <span class="dv">1</span>) <span class="op">+</span></span>
 <span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>     theme(figure_size <span class="op">=</span> (<span class="dv">12</span>, <span class="dv">2</span>))).</span>
 <span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>     show)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;bound method ggplot.show of &lt;plotnine.ggplot.ggplot object at 0x00000146B542DC40&gt;&gt;</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>((gapminder.groupby([<span class="st">"continent"</span>, <span class="st">"year"</span>], as_index <span class="op">=</span> <span class="va">False</span>)</span>
-<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>      .agg(median_lifeExp <span class="op">=</span> (<span class="st">"lifeExp"</span>, np.median))</span>
-<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>      .pipe(<span class="kw">lambda</span> _: ggplot(_, aes(x <span class="op">=</span> <span class="st">"year"</span>, y <span class="op">=</span> <span class="st">"median_lifeExp"</span>, color <span class="op">=</span> <span class="st">"continent"</span>)) <span class="op">+</span></span>
-<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>                          geom_line(size <span class="op">=</span> <span class="fl">0.75</span>) <span class="op">+</span></span>
-<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>                          geom_point(size <span class="op">=</span> <span class="fl">1.5</span>) <span class="op">+</span></span>
-<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>                          labs(x <span class="op">=</span> <span class="st">"Year"</span>, y <span class="op">=</span> <span class="st">"Median Life Expectancy"</span>, color <span class="op">=</span> <span class="st">"Continent"</span>, title <span class="op">=</span> <span class="st">"Gapminder"</span>)))</span>
-<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>                          .show())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>((gapminder.groupby([<span class="st">"continent"</span>, <span class="st">"year"</span>], as_index <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>      .agg(median_lifeExp <span class="op">=</span> (<span class="st">"lifeExp"</span>, np.median))</span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>      .pipe(<span class="kw">lambda</span> _: ggplot(_, aes(x <span class="op">=</span> <span class="st">"year"</span>, y <span class="op">=</span> <span class="st">"median_lifeExp"</span>, color <span class="op">=</span> <span class="st">"continent"</span>)) <span class="op">+</span></span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>                          geom_line(size <span class="op">=</span> <span class="fl">0.75</span>) <span class="op">+</span></span>
+<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>                          geom_point(size <span class="op">=</span> <span class="fl">1.5</span>) <span class="op">+</span></span>
+<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>                          labs(x <span class="op">=</span> <span class="st">"Year"</span>, y <span class="op">=</span> <span class="st">"Median Life Expectancy"</span>, color <span class="op">=</span> <span class="st">"Continent"</span>, title <span class="op">=</span> <span class="st">"Gapminder"</span>)))</span>
+<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a>                          .show())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="06-visualizacao_python_files/figure-html/unnamed-chunk-42-9.png" class="img-fluid" width="614"></p>
+</div>
 </div>
 <!-- ## Advanced Data Analysis -->
 <!-- ### Case 1: Visualizing `NumPy` Data with `Matplotlib` {.unnumbered} -->
@@ -1270,8 +1299,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./08-prova.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exam</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
