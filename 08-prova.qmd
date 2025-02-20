@@ -1,86 +1,61 @@
-# Prova Final
+# Exam
 
-Solução dos exercícios da prova final do minicurso.
+The dataset `relinc.csv` presents the count of individuals from different religious groups according to different income ranges in the USA. The original file is structured so that each row represents a different religion, each column represents a different income range, and the cells contain the count of individuals belonging to the corresponding religion and income range.
 
-```{r eval=FALSE}
-# Questao 1 
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)
+relinc <- read_csv("data/relinc.csv")
 
-relinc <- read.csv("relinc.csv")
-relinc_tidy <- relinc  %>%  
-  pivot_longer(cols = (ends_with("k") | "refused"), 
-               names_to = "income", 
-               values_to="count") 
-
-# pt 2 
-
-religion_count <- relinc_tidy %>% 
-  select(religion,count) %>% 
-  group_by(religion) %>% 
-  summarise(count = sum(count))
-
-# pt 3
-relinc_tidy %>% 
-  select(income,count) %>% 
-  group_by(income) %>% 
-  summarise(count = sum(count)
-            
-# pt 4 
-religion_count %>% 
-  ggplot(aes(x = count, y = religion)) +
-  geom_col() +
-  labs(x = "Número de adeptos", 
-       y = "Religião",
-       title = "Número de adeptos por religião nos EUA")+
-  theme_bw()
-
-religion_count %>% 
-  ggplot(aes(x = count, y = fct_reorder(religion, count))) +
-  geom_col() +
-  labs(x = "Número de adeptos", 
-       y = "Religião",
-       title = "Número de adeptos por religião nos EUA")+
-  theme_bw()
-
-# pt 5 
-religion_count %>% 
-  slice_max(count, n=2)
-
-religion_count %>% 
-  slice_min(count, n=2)
-
-# pt 6 
-relinc2 <- relinc_tidy %>% 
-  filter(religion != "refused" & income !="refused")
-
-relinc2 %>%
-  select(religion) %>% 
-  pull() %>% 
-  unique()
-
-relinc2 %>%
-  select(income) %>% 
-  pull() %>% 
-  unique()
-
-# pt 7 - 3
-
-relinc_q3 <-
-  relinc_tidy %>% 
-  select(income,count) %>% 
-  group_by(income) %>% 
-  summarise(count = sum(count))
-
-ponto_medio = NULL
-for (i in 1:nrow(relinc_q3)){
-  income_clean <- str_remove_all(relinc_q3$income, "[Xk]")[i]
-  LI_income <- as.numeric(unlist(strsplit(income_clean, ".",fixed=TRUE))[1])
-  LS_income <- as.numeric(unlist(strsplit(income_clean, ".",fixed=TRUE))[2])
-  ponto_medio[i] <- ifelse(LS_income == 10, 5,
-                           ifelse(LS_income == 150, 175, (LI_income+LS_income)/2))
-}
-
-relinc_q7 <- relinc_q3 %>% 
-  cbind(ponto_medio)
-
-relinc_q7
+relinc |> kableExtra::kable(format = "html")
 ```
+
+### (a)
+
+Read the `relinc.csv` file available in BlackBoard
+<!-- [here](https://github.com/magnotairone/intro_r_python_en/blob/main/data/gapminder.csv)  -->
+and adjust it to fit the tidy data format, meaning:
+
+1.  Each variable is a column; each column represents a variable,
+2.  Each observation is a row; each row represents an observation,
+3.  Each value is a cell; each cell contains a single value.
+
+The final table shoud have three columns: `Religion`, `Income`, `Count`.  
+
+```{r include=FALSE}
+
+relinc_tidy <- relinc |> 
+  pivot_longer(cols = (ends_with("k") | "refused"), names_to = "income", values_to = "count")
+
+relinc_tidy |> slice_sample(n=5)
+```
+
+### (b)
+
+Return a table showing the total number of people for each religion and another table showing the total number of people in each income range.
+
+### (c)
+
+List the existing categories of the `religion` variable and print them. 
+Select only those religions that do not start with "Other" and exclude those who refused to disclose their religion (category "refused") or income range.
+
+### (d)
+
+For the table resulting from item (c), create a new variable with the midpoint of each income range as follows:
+
+| Income Range | Midpoint |
+|:------------:|:--------:|
+|    \<10k     |    5k    |
+|    10-20k    |   15k    |
+|    20-30k    |   25k    |
+|    30-40k    |   35k    |
+|    40-50k    |   45k    |
+|    50-75k    |  62.5k   |
+|   75-100k    |  87.5k   |
+|   100-150k   |   125k   |
+|    \>150k    | 175k \*  |
+
+Then, calculate an approximation of the average income for each religion, using the midpoint of each income range.
+
+### (e)
+
+Return the religion that had, on average, the highest and lowest income.
