@@ -9,7 +9,7 @@ relinc <- read_csv("data/relinc.csv")
 relinc |> kableExtra::kable(format = "html")
 ```
 
-### (a)
+### (a) {.unnumbered}
 
 Read the `relinc.csv` file available in BlackBoard
 <!-- [here](https://github.com/magnotairone/intro_r_python_en/blob/main/data/gapminder.csv)  -->
@@ -29,16 +29,16 @@ relinc_tidy <- relinc |>
 relinc_tidy |> slice_sample(n=5)
 ```
 
-### (b)
+### (b) {.unnumbered}
 
 Return a table showing the total number of people for each religion and another table showing the total number of people in each income range.
 
-### (c)
+### (c) {.unnumbered}
 
 List the existing categories of the `religion` variable and print them. 
 Select only those religions that do not start with "Other" and exclude those who refused to disclose their religion (category "refused") or income range.
 
-### (d)
+### (d) {.unnumbered}
 
 For the table resulting from item (c), create a new variable with the midpoint of each income range as follows:
 
@@ -56,6 +56,6 @@ For the table resulting from item (c), create a new variable with the midpoint o
 
 Then, calculate an approximation of the average income for each religion, using the midpoint of each income range.
 
-### (e)
+### (e) {.unnumbered}
 
 Return the religion that had, on average, the highest and lowest income.
