@@ -24,9 +24,9 @@ book:
     - part: Case studies
       # chapters:
       #   - 07-casos.qmd
-    #- part: Final Exam
-      # chapters:
-      #  - 07-prova.qmd
+    - part: Final Exam
+      chapters:
+        - 08-prova.qmd
     - references.qmd
 
 bibliography: references.bib
