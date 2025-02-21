@@ -533,33 +533,33 @@ Lambda functions are often used in situations where you need a temporary and sim
 
 A class is a structure that defines the behavior and properties of a type of object. We can think of a class as a representation of an abstract concept, such as a financial transaction or a specific type of investment.
 
-For example, we can create a class called `Transaction` to represent a financial transaction, with properties such as the transaction amount, data, and transaction type.
+For example, we can create a class called `Transaction` to represent a financial transaction, with properties such as the transaction amount, date, and transaction type.
 
 An object, on the other hand, is a specific instance of a class. It represents a concrete entity with its own characteristics and behaviors. Continuing with the `Transaction` class example, we can create individual objects to represent specific transactions, such as buying shares of a company on a certain data.
 
 ```{python}
 class Transaction:
-    def __init__(self, value, data, type):
+    def __init__(self, value, date, type):
         self.value = value
-        self.data = data
+        self.date = date
         self.type = type
     
     def print_info(self):
-      print(f"Transaction type: {self.type}, Value: R${self.value}, data: {self.data}")
+      print(f"Transaction type: {self.type}, Value: R${self.value}, date: {self.date}")
 ```
 
-In this example, the `Transaction` class has a special method `__init__` that is called when a new object is created. This method initializes the object's properties with the values provided as arguments. Additionally, the class has a method called `print_info`, which prints transaction information, including the type, value, and data. This method also receives `self` as a parameter to access the current instance's attributes. By calling `print_info()` on a `Transaction` object, it will display the formatted transaction information.
+In this example, the `Transaction` class has a special method `__init__` that is called when a new object is created. This method initializes the object's properties with the values provided as arguments. Additionally, the class has a method called `print_info`, which prints transaction information, including the type, value, and date. This method also receives `self` as a parameter to access the current instance's attributes. By calling `print_info()` on a `Transaction` object, it will display the formatted transaction information.
 
 Below, we create two objects of the `Transaction` class, `transaction1` and `transaction2`, and access their properties to obtain information about the transactions.
 
 ```{python}
 # Creating objects of the Transaction class
-transaction1 = Transaction(value=1000, data="2024-03-11", type="share purchase")
-transaction2 = Transaction(value=500, data="2024-03-12", type="share sale")
+transaction1 = Transaction(value=1000, date="2024-03-11", type="share purchase")
+transaction2 = Transaction(value=500, date="2024-03-12", type="share sale")
 
 # Accessing object properties
 print("Transaction 1 value:", transaction1.value)
-print("Transaction 2 data:", transaction2.data)
+print("Transaction 2 date:", transaction2.date)
 
 # Accessing object methods
 transaction1.print_info()
@@ -638,9 +638,9 @@ for i, growth in enumerate(gdp_growth):
 #| echo: false
 def calculate_pci(product_basket, current_price, reference_price):
     pci = 0
-    for produto, preco_atual in current_price.items():
-        preco_base = reference_price[produto]
-        pci += (preco_atual / preco_base) * product_basket[produto]
+    for product, current_price in current_price.items():
+        reference_price = reference_price[product]
+        pci += (current_price / reference_price) * product_basket[product]
     return pci
 
 # Usage example of the calculate_pci function
